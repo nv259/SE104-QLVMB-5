@@ -9,6 +9,18 @@ namespace Service
         public LoginForm()
         { 
             InitializeComponent();
+
+            if (Properties.Settings.Default.remember)
+            {
+                Username_txtBox.Text = Properties.Settings.Default.username;
+                PasswordtxtBox.Text = Properties.Settings.Default.password;
+                rmb_txtBox.Checked = true;
+            } else
+            {
+                Username_txtBox.Text = "";
+                PasswordtxtBox.Text = "";
+                rmb_txtBox.Checked = false;
+            }
         }
 
         private void loginBtn_Click(object sender, EventArgs e)
@@ -21,7 +33,18 @@ namespace Service
             if (DataProvider.Instance.ExecuteQuery(query, new object[] { MaDangNhap, MatKhau }).Rows.Count > 0)
             {
                 if (this.rmb_txtBox.Checked)
-                    File.WriteAllText(path, MaDangNhap + Environment.NewLine + MatKhau);
+                {
+                    Properties.Settings.Default.username = Username_txtBox.Text;
+                    Properties.Settings.Default.password = PasswordtxtBox.Text;
+                    Properties.Settings.Default.remember = true;
+                    Properties.Settings.Default.Save();
+                } else
+                {
+                    Properties.Settings.Default.username = "";
+                    Properties.Settings.Default.password = "";
+                    Properties.Settings.Default.remember = false;
+                    Properties.Settings.Default.Save();
+                }
 
                 this.Hide();
 

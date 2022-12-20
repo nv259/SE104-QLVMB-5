@@ -16,7 +16,7 @@ namespace Service
         private BindingSource userList = new BindingSource();
         public AdminForm()
         {
-            MonthlyUpdate();
+            ///MonthlyUpdate();
             InitializeComponent();
             user_dtgv.DataSource = userList;
             Add_Binding();

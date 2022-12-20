@@ -42,7 +42,7 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.email_txtBox = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.firstName_txtBox = new System.Windows.Forms.TextBox();
+            this.fullName_txtBox = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
@@ -64,7 +64,7 @@
             this.panel1.Controls.Add(this.textBox7);
             this.panel1.Controls.Add(this.email_txtBox);
             this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.firstName_txtBox);
+            this.panel1.Controls.Add(this.fullName_txtBox);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Location = new System.Drawing.Point(1, 1);
@@ -235,16 +235,16 @@
             this.textBox5.Text = "Email";
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // firstName_txtBox
+            // fullName_txtBox
             // 
-            this.firstName_txtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.firstName_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.firstName_txtBox.Location = new System.Drawing.Point(161, 62);
-            this.firstName_txtBox.Name = "firstName_txtBox";
-            this.firstName_txtBox.PlaceholderText = "     Nguyễn Văn A";
-            this.firstName_txtBox.Size = new System.Drawing.Size(307, 27);
-            this.firstName_txtBox.TabIndex = 2;
-            this.firstName_txtBox.TextChanged += new System.EventHandler(this.firstName_txtBox_TextChanged);
+            this.fullName_txtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.fullName_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.fullName_txtBox.Location = new System.Drawing.Point(161, 62);
+            this.fullName_txtBox.Name = "fullName_txtBox";
+            this.fullName_txtBox.PlaceholderText = "     Nguyễn Văn A";
+            this.fullName_txtBox.Size = new System.Drawing.Size(307, 27);
+            this.fullName_txtBox.TabIndex = 2;
+            this.fullName_txtBox.TextChanged += new System.EventHandler(this.firstName_txtBox_TextChanged);
             // 
             // textBox2
             // 
@@ -311,7 +311,7 @@
         private TextBox textBox7;
         private TextBox email_txtBox;
         private TextBox textBox5;
-        private TextBox firstName_txtBox;
+        private TextBox fullName_txtBox;
         private TextBox textBox2;
         private TextBox textBox1;
     }

@@ -23,17 +23,18 @@ namespace Service
 
         private void regBtn_Click(object sender, EventArgs e)
         {
-            string MaDangNhap, MatKhau, TenNguoiDung, DinhDanh, SoDienThoai;
+            string MaDangNhap, MatKhau, TenNguoiDung, DinhDanh, SoDienThoai, Email;
             MaDangNhap = this.username_txtBox.Text;
-            TenNguoiDung = this.lastName_txtBox.Text.Trim() + " " + this.firstName_txtBox.Text.Trim();
+            TenNguoiDung = this.fullName_txtBox.Text.Trim();
             MatKhau = this.pwd_txtBox.Text;
             DinhDanh = this.ID_txtBox.Text;
             SoDienThoai = this.PhoneNumber_txtBox.Text.Trim();
+            Email = this.email_txtBox.Text;
 
             if (CheckAll() && this.checkBox2.Checked)
             {
-                string query = "INSERT INTO [dbo].NGUOIDUNG VALUES ( @MaDangNhap , @MatKhau , '2' , @TenNguoiDung , @DinhDanh , @SoDienThoai ) ";
-                object i = DataProvider.Instance.ExecuteScalar(query, new object[] { MaDangNhap, MatKhau, TenNguoiDung, DinhDanh, SoDienThoai });
+                string query = "INSERT INTO [dbo].NGUOIDUNG VALUES ( @MaDangNhap , @MatKhau , '2' , @TenNguoiDung , @DinhDanh , @SoDienThoai , @Email ) ";
+                object i = DataProvider.Instance.ExecuteScalar(query, new object[] { MaDangNhap, MatKhau, TenNguoiDung, DinhDanh, SoDienThoai , Email });
                 MessageBox.Show("Tạo tài khoản thành công!");
                 this.Close();
             }
