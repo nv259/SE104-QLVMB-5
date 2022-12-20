@@ -16,5 +16,10 @@ namespace Service
         {
             InitializeComponent();
         }
+
+        private void userInfo_pnl_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

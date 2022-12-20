@@ -34,9 +34,11 @@
             this.publicAnnoucementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.userInfo_pnl = new System.Windows.Forms.Panel();
-            this.pwd_pnl = new System.Windows.Forms.Panel();
-            this.funding_pnl = new System.Windows.Forms.Panel();
+            this.shortUserInfoPnl = new System.Windows.Forms.Panel();
+            this.cancelTicketBtn = new System.Windows.Forms.Button();
+            this.changeInfoBtn = new System.Windows.Forms.Button();
+            this.buyTicketBtn = new System.Windows.Forms.Button();
+            this.danhSachVeLstBox = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,45 +88,65 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
-            // userInfo_pnl
+            // shortUserInfoPnl
             // 
-            this.userInfo_pnl.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.userInfo_pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userInfo_pnl.Location = new System.Drawing.Point(12, 54);
-            this.userInfo_pnl.Name = "userInfo_pnl";
-            this.userInfo_pnl.Size = new System.Drawing.Size(446, 181);
-            this.userInfo_pnl.TabIndex = 1;
+            this.shortUserInfoPnl.BackColor = System.Drawing.Color.DarkGray;
+            this.shortUserInfoPnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.shortUserInfoPnl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.shortUserInfoPnl.Location = new System.Drawing.Point(492, 54);
+            this.shortUserInfoPnl.Name = "shortUserInfoPnl";
+            this.shortUserInfoPnl.Size = new System.Drawing.Size(305, 262);
+            this.shortUserInfoPnl.TabIndex = 4;
             // 
-            // pwd_pnl
+            // cancelTicketBtn
             // 
-            this.pwd_pnl.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.pwd_pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pwd_pnl.Location = new System.Drawing.Point(12, 241);
-            this.pwd_pnl.Name = "pwd_pnl";
-            this.pwd_pnl.Size = new System.Drawing.Size(446, 210);
-            this.pwd_pnl.TabIndex = 2;
+            this.cancelTicketBtn.Location = new System.Drawing.Point(134, 395);
+            this.cancelTicketBtn.Name = "cancelTicketBtn";
+            this.cancelTicketBtn.Size = new System.Drawing.Size(111, 33);
+            this.cancelTicketBtn.TabIndex = 5;
+            this.cancelTicketBtn.Text = "Hủy vé";
+            this.cancelTicketBtn.UseVisualStyleBackColor = true;
             // 
-            // funding_pnl
+            // changeInfoBtn
             // 
-            this.funding_pnl.BackColor = System.Drawing.Color.DarkGray;
-            this.funding_pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.funding_pnl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.funding_pnl.Location = new System.Drawing.Point(492, 54);
-            this.funding_pnl.Name = "funding_pnl";
-            this.funding_pnl.Size = new System.Drawing.Size(305, 262);
-            this.funding_pnl.TabIndex = 4;
+            this.changeInfoBtn.Location = new System.Drawing.Point(596, 322);
+            this.changeInfoBtn.Name = "changeInfoBtn";
+            this.changeInfoBtn.Size = new System.Drawing.Size(99, 27);
+            this.changeInfoBtn.TabIndex = 6;
+            this.changeInfoBtn.Text = "Chỉnh sửa";
+            this.changeInfoBtn.UseVisualStyleBackColor = true;
             // 
-            // HomeForm
+            // buyTicketBtn
+            // 
+            this.buyTicketBtn.Location = new System.Drawing.Point(524, 366);
+            this.buyTicketBtn.Name = "buyTicketBtn";
+            this.buyTicketBtn.Size = new System.Drawing.Size(241, 62);
+            this.buyTicketBtn.TabIndex = 7;
+            this.buyTicketBtn.Text = "Đặt vé";
+            this.buyTicketBtn.UseVisualStyleBackColor = true;
+            // 
+            // danhSachVeLstBox
+            // 
+            this.danhSachVeLstBox.FormattingEnabled = true;
+            this.danhSachVeLstBox.ItemHeight = 20;
+            this.danhSachVeLstBox.Location = new System.Drawing.Point(26, 61);
+            this.danhSachVeLstBox.Name = "danhSachVeLstBox";
+            this.danhSachVeLstBox.Size = new System.Drawing.Size(358, 284);
+            this.danhSachVeLstBox.TabIndex = 8;
+            // 
+            // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(252)))), ((int)(((byte)(254)))));
             this.ClientSize = new System.Drawing.Size(800, 463);
-            this.Controls.Add(this.funding_pnl);
-            this.Controls.Add(this.pwd_pnl);
-            this.Controls.Add(this.userInfo_pnl);
+            this.Controls.Add(this.danhSachVeLstBox);
+            this.Controls.Add(this.buyTicketBtn);
+            this.Controls.Add(this.changeInfoBtn);
+            this.Controls.Add(this.cancelTicketBtn);
+            this.Controls.Add(this.shortUserInfoPnl);
             this.Controls.Add(this.menuStrip1);
-            this.Name = "HomeForm";
+            this.Name = "UserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -141,8 +163,10 @@
         private ToolStripMenuItem publicAnnoucementToolStripMenuItem;
         private ToolStripMenuItem logoutToolStripMenuItem;
         private ToolStripMenuItem exitToolStripMenuItem;
-        private Panel userInfo_pnl;
-        private Panel pwd_pnl;
-        private Panel funding_pnl;
+        private Panel shortUserInfoPnl;
+        private Button cancelTicketBtn;
+        private Button changeInfoBtn;
+        private Button buyTicketBtn;
+        private ListBox danhSachVeLstBox;
     }
 }
