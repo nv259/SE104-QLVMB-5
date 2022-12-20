@@ -17,7 +17,7 @@ namespace DataAccess.DAO
 
         public Account GetAccountByUserName(string name)
         {
-            string query = "SELECT * FROM dbo.Account WHERE MaDangNhap = @name ";
+            string query = "SELECT * FROM [dbo].NGUOIDUNG WHERE MaDangNhap = @name ";
             DataTable dt = new DataTable();
             dt = DataProvider.Instance.ExecuteQuery(query, new object[] { name });
             
