@@ -30,6 +30,7 @@
         {
             this.MainTab = new System.Windows.Forms.TabControl();
             this.userInforTab = new System.Windows.Forms.TabPage();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.StatementTab = new System.Windows.Forms.TabPage();
             this.findBtn = new System.Windows.Forms.Button();
             this.searchTxtBox = new System.Windows.Forms.TextBox();
@@ -56,6 +57,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.user_dtgv = new System.Windows.Forms.DataGridView();
             this.MainTab.SuspendLayout();
+            this.userInforTab.SuspendLayout();
             this.StatementTab.SuspendLayout();
             this.panel1.SuspendLayout();
             this.showData_panel.SuspendLayout();
@@ -75,6 +77,7 @@
             // 
             // userInforTab
             // 
+            this.userInforTab.Controls.Add(this.checkBox1);
             this.userInforTab.Location = new System.Drawing.Point(4, 29);
             this.userInforTab.Name = "userInforTab";
             this.userInforTab.Padding = new System.Windows.Forms.Padding(3);
@@ -82,6 +85,16 @@
             this.userInforTab.TabIndex = 0;
             this.userInforTab.Text = "Portrait";
             this.userInforTab.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(113, 38);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(101, 24);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // StatementTab
             // 
@@ -369,8 +382,10 @@
             this.ClientSize = new System.Drawing.Size(1044, 564);
             this.Controls.Add(this.MainTab);
             this.Name = "AdminForm";
-            this.Text = "AdminForm";
+            this.Text = "Admin";
             this.MainTab.ResumeLayout(false);
+            this.userInforTab.ResumeLayout(false);
+            this.userInforTab.PerformLayout();
             this.StatementTab.ResumeLayout(false);
             this.StatementTab.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -412,5 +427,6 @@
         private TextBox textBox3;
         private ComboBox userRole_comboBox;
         private Button Add_btn;
+        private CheckBox checkBox1;
     }
 }

@@ -30,21 +30,22 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtBox4 = new System.Windows.Forms.TextBox();
-            this.updateUserInfoBtn = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.showData_panel = new System.Windows.Forms.Panel();
             this.usernameTxtBox = new System.Windows.Forms.TextBox();
             this.lastNameTxtBox = new System.Windows.Forms.TextBox();
             this.firstNameTxtBox = new System.Windows.Forms.TextBox();
             this.idTxtBox = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.updateUserInfoBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.changePasswordCkBox = new System.Windows.Forms.CheckBox();
             this.phoneTxtBox = new System.Windows.Forms.TextBox();
             this.newPasswordTxtBox = new System.Windows.Forms.TextBox();
             this.oldPasswordTxtBox = new System.Windows.Forms.TextBox();
@@ -79,54 +80,6 @@
             this.txtBox4.TabIndex = 12;
             this.txtBox4.TabStop = false;
             this.txtBox4.Text = "Username:";
-            // 
-            // updateUserInfoBtn
-            // 
-            this.updateUserInfoBtn.Location = new System.Drawing.Point(307, 294);
-            this.updateUserInfoBtn.Name = "updateUserInfoBtn";
-            this.updateUserInfoBtn.Size = new System.Drawing.Size(94, 29);
-            this.updateUserInfoBtn.TabIndex = 3;
-            this.updateUserInfoBtn.Text = "Update";
-            this.updateUserInfoBtn.UseVisualStyleBackColor = true;
-            // 
-            // textBox8
-            // 
-            this.textBox8.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox8.Location = new System.Drawing.Point(3, 176);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(91, 23);
-            this.textBox8.TabIndex = 4;
-            this.textBox8.TabStop = false;
-            this.textBox8.Text = "Last name:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(3, 119);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(91, 23);
-            this.textBox4.TabIndex = 2;
-            this.textBox4.TabStop = false;
-            this.textBox4.Text = "First name:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(3, 60);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(62, 23);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TabStop = false;
-            this.textBox1.Text = "ID:";
             // 
             // showData_panel
             // 
@@ -174,6 +127,54 @@
             this.idTxtBox.Name = "idTxtBox";
             this.idTxtBox.Size = new System.Drawing.Size(214, 27);
             this.idTxtBox.TabIndex = 14;
+            // 
+            // textBox8
+            // 
+            this.textBox8.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox8.Location = new System.Drawing.Point(3, 176);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
+            this.textBox8.Size = new System.Drawing.Size(91, 23);
+            this.textBox8.TabIndex = 4;
+            this.textBox8.TabStop = false;
+            this.textBox8.Text = "Last name:";
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox4.Location = new System.Drawing.Point(3, 119);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(91, 23);
+            this.textBox4.TabIndex = 2;
+            this.textBox4.TabStop = false;
+            this.textBox4.Text = "First name:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(3, 60);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(62, 23);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.TabStop = false;
+            this.textBox1.Text = "ID:";
+            // 
+            // updateUserInfoBtn
+            // 
+            this.updateUserInfoBtn.Location = new System.Drawing.Point(307, 294);
+            this.updateUserInfoBtn.Name = "updateUserInfoBtn";
+            this.updateUserInfoBtn.Size = new System.Drawing.Size(94, 29);
+            this.updateUserInfoBtn.TabIndex = 3;
+            this.updateUserInfoBtn.Text = "Update";
+            this.updateUserInfoBtn.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -241,6 +242,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.changePasswordCkBox);
             this.panel3.Controls.Add(this.phoneTxtBox);
             this.panel3.Controls.Add(this.newPasswordTxtBox);
             this.panel3.Controls.Add(this.oldPasswordTxtBox);
@@ -250,6 +252,16 @@
             this.panel3.Size = new System.Drawing.Size(219, 234);
             this.panel3.TabIndex = 5;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // changePasswordCkBox
+            // 
+            this.changePasswordCkBox.AutoSize = true;
+            this.changePasswordCkBox.Location = new System.Drawing.Point(3, 207);
+            this.changePasswordCkBox.Name = "changePasswordCkBox";
+            this.changePasswordCkBox.Size = new System.Drawing.Size(120, 24);
+            this.changePasswordCkBox.TabIndex = 13;
+            this.changePasswordCkBox.Text = "Đổi mật khẩu";
+            this.changePasswordCkBox.UseVisualStyleBackColor = true;
             // 
             // phoneTxtBox
             // 
@@ -263,6 +275,7 @@
             // newPasswordTxtBox
             // 
             this.newPasswordTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.newPasswordTxtBox.Enabled = false;
             this.newPasswordTxtBox.Location = new System.Drawing.Point(2, 178);
             this.newPasswordTxtBox.Name = "newPasswordTxtBox";
             this.newPasswordTxtBox.ReadOnly = true;
@@ -272,6 +285,7 @@
             // oldPasswordTxtBox
             // 
             this.oldPasswordTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.oldPasswordTxtBox.Enabled = false;
             this.oldPasswordTxtBox.Location = new System.Drawing.Point(2, 121);
             this.oldPasswordTxtBox.Name = "oldPasswordTxtBox";
             this.oldPasswordTxtBox.ReadOnly = true;
@@ -297,7 +311,7 @@
             this.Controls.Add(this.updateUserInfoBtn);
             this.Controls.Add(this.panel2);
             this.Name = "UserInfoForm";
-            this.Text = "UserInfoForm";
+            this.Text = "Thông tin";
             this.Load += new System.EventHandler(this.UserInfoForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -334,5 +348,6 @@
         private TextBox newPasswordTxtBox;
         private TextBox oldPasswordTxtBox;
         private TextBox emailTxtBox;
+        private CheckBox changePasswordCkBox;
     }
 }
