@@ -23,15 +23,46 @@ namespace Service
         {
         }
 
-        private void username_txtBox_TextChanged(object sender, EventArgs e)
+        private void chk_all()
         {
+            Regex validate_emailaddress = email_validation();
+
+            if (validate_emailaddress.IsMatch(this.email_txtBox.Text) != true)
+            {
+                this.alert_txtBox.Text = "Email không đúng!";
+                return;
+            }
+            else
+            {
+                this.alert_txtBox.Text = "";
+            }
+
             string MaDangNhap = this.username_txtBox.Text;
             string query = "SELECT * FROM [dbo].NGUOIDUNG WHERE @MaDangNhap = MaDangNhap ";
 
             if (DataProvider.Instance.ExecuteQuery(query, new object[] { MaDangNhap }).Rows.Count > 0)
             {
                 this.alert_txtBox.Text = "Tên đăng nhập đã tồn tại!";
-            } 
+                return;
+            }
+
+            string pwd = this.pwd_txtBox.Text;
+            string confirm_pwd = this.confirmPwd_txtBox.Text;
+
+            if (pwd != confirm_pwd)
+            {
+                this.alert_txtBox.Text = "Mật khẩu chưa khớp!";
+                return;
+            }
+            else
+            {
+                this.alert_txtBox.Text = "";
+            }
+        }
+
+        private void username_txtBox_TextChanged(object sender, EventArgs e)
+        {
+            chk_all();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -51,36 +82,17 @@ namespace Service
 
         private void alert_txtBox_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void pwd_txtBox_TextChanged(object sender, EventArgs e)
         {
-            string pwd = this.pwd_txtBox.Text;
-            string confirm_pwd = this.confirmPwd_txtBox.Text;
-
-            if (pwd != confirm_pwd)
-            {
-                this.alert_txtBox.Text = "Mật khẩu chưa khớp!";
-            }
-            else
-            {
-                this.alert_txtBox.Text = "";
-            }
+            chk_all();
         }
 
         private void confirmPwd_txtBox_TextChanged(object sender, EventArgs e)
         {
-            string pwd = this.pwd_txtBox.Text;
-            string confirm_pwd = this.confirmPwd_txtBox.Text;
-
-            if (pwd != confirm_pwd)
-            {
-                this.alert_txtBox.Text = "Mật khẩu chưa khớp!";
-            } else
-            {
-                this.alert_txtBox.Text = "";
-            }
+            chk_all();
         }
         private static Regex email_validation()
         {
@@ -93,16 +105,7 @@ namespace Service
 
         private void email_txtBox_TextChanged(object sender, EventArgs e)
         {
-             Regex validate_emailaddress = email_validation();
-
-            if (validate_emailaddress.IsMatch(this.email_txtBox.Text) != true)
-            {
-                this.alert_txtBox.Text = "Email không đúng!";
-            }
-            else
-            {
-                this.alert_txtBox.Text = "";
-            }
+            chk_all();
         }
     }
 }
