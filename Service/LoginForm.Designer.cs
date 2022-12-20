@@ -48,7 +48,6 @@
             this.Username_txtBox.PlaceholderText = "  username";
             this.Username_txtBox.Size = new System.Drawing.Size(427, 27);
             this.Username_txtBox.TabIndex = 0;
-            //this.Username_txtBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // PasswordtxtBox
             // 
@@ -145,6 +144,7 @@
             // 
             // LoginForm
             // 
+            this.AcceptButton = this.LoginBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -180,6 +180,6 @@
         private TextBox textBox1;
         private ComboBox langBox;
         private PictureBox pictureBox1;
-        private string path = @"c:\pwd.txt";
+        private string path = @".\pwd.txt";
     }
 }
