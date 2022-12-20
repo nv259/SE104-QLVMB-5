@@ -22,6 +22,18 @@ namespace Service
 
         private void regBtn_Click(object sender, EventArgs e)
         {
+            string MaDangNhap, MatKhau, TenNguoiDung, DinhDanh, SoDienThoai;
+            MaDangNhap = this.username_txtBox.Text;
+            TenNguoiDung = this.lastName_txtBox.Text.Trim() + " " + this.firstName_txtBox.Text.Trim();
+            MatKhau = this.pwd_txtBox.Text;
+            DinhDanh = this.ID_txtBox.Text;
+            SoDienThoai = this.PhoneNumber_txtBox.Text.Trim();
+
+            if (CheckAll() && this.checkBox2.Checked)
+            {
+                string query = "INSERT INTO [dbo].NGUOIDUNG VALUES ( @MaDangNhap , @MatKhau , 2 , @TenNguoiDung , @DinhDanh , @SoDienThoai ) ";
+                object i = DataProvider.Instance.ExecuteScalar(query, new object[] { MaDangNhap, MatKhau, TenNguoiDung, DinhDanh, SoDienThoai });
+            }
         }
 
         private bool CheckAll()
@@ -78,26 +90,6 @@ namespace Service
         private void username_txtBox_TextChanged(object sender, EventArgs e)
         {
             CheckAll();
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox1_CheckedChanged_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void alert_txtBox_TextChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void pwd_txtBox_TextChanged(object sender, EventArgs e)
