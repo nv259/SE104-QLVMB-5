@@ -34,6 +34,8 @@ namespace Service
             {
                 string query = "INSERT INTO [dbo].NGUOIDUNG VALUES ( @MaDangNhap , @MatKhau , '2' , @TenNguoiDung , @DinhDanh , @SoDienThoai ) ";
                 object i = DataProvider.Instance.ExecuteScalar(query, new object[] { MaDangNhap, MatKhau, TenNguoiDung, DinhDanh, SoDienThoai });
+                MessageBox.Show("Tạo tài khoản thành công!");
+                this.Close();
             }
         }
 
