@@ -106,7 +106,7 @@
             this.datVeBtn.Name = "datVeBtn";
             this.datVeBtn.Size = new System.Drawing.Size(158, 62);
             this.datVeBtn.TabIndex = 7;
-            this.datVeBtn.Text = "/";
+            this.datVeBtn.Text = "Đặt vé";
             this.datVeBtn.UseVisualStyleBackColor = true;
             // 
             // DatVeForm
@@ -123,7 +123,7 @@
             this.Controls.Add(this.fromComboBox);
             this.Controls.Add(this.flightListLstBox);
             this.Name = "DatVeForm";
-            this.Text = "Form1";
+            this.Text = "Đặt vé";
             this.ResumeLayout(false);
 
         }
