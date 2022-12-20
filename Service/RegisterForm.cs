@@ -56,7 +56,17 @@ namespace Service
 
         private void pwd_txtBox_TextChanged(object sender, EventArgs e)
         {
-            
+            string pwd = this.pwd_txtBox.Text;
+            string confirm_pwd = this.confirmPwd_txtBox.Text;
+
+            if (pwd != confirm_pwd)
+            {
+                this.alert_txtBox.Text = "Mật khẩu chưa khớp!";
+            }
+            else
+            {
+                this.alert_txtBox.Text = "";
+            }
         }
 
         private void confirmPwd_txtBox_TextChanged(object sender, EventArgs e)
