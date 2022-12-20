@@ -142,6 +142,7 @@
             this.confirmPwd_txtBox.Size = new System.Drawing.Size(307, 27);
             this.confirmPwd_txtBox.TabIndex = 11;
             this.confirmPwd_txtBox.UseSystemPasswordChar = true;
+            this.confirmPwd_txtBox.TextChanged += new System.EventHandler(this.confirmPwd_txtBox_TextChanged);
             // 
             // textBox11
             // 
@@ -166,6 +167,7 @@
             this.pwd_txtBox.Size = new System.Drawing.Size(307, 27);
             this.pwd_txtBox.TabIndex = 9;
             this.pwd_txtBox.UseSystemPasswordChar = true;
+            this.pwd_txtBox.TextChanged += new System.EventHandler(this.pwd_txtBox_TextChanged);
             // 
             // textBox9
             // 
@@ -191,6 +193,7 @@
             this.username_txtBox.PlaceholderText = "     Alibaba123";
             this.username_txtBox.Size = new System.Drawing.Size(307, 27);
             this.username_txtBox.TabIndex = 7;
+            this.username_txtBox.TextChanged += new System.EventHandler(this.username_txtBox_TextChanged);
             // 
             // textBox7
             // 
@@ -216,6 +219,7 @@
             this.email_txtBox.PlaceholderText = "     example@gmail.com";
             this.email_txtBox.Size = new System.Drawing.Size(307, 27);
             this.email_txtBox.TabIndex = 5;
+            this.email_txtBox.TextChanged += new System.EventHandler(this.email_txtBox_TextChanged);
             // 
             // textBox5
             // 

@@ -16,7 +16,7 @@ namespace Service
             string MaDangNhap = this.Username_txtBox.Text;
             string MatKhau = this.PasswordtxtBox.Text;
 
-            string query = "SELECT * FROM [dbo].NGUOIDUNG WHERE MaDangNhap = @MaDangNhap AND @MatKhau";
+            string query = "SELECT * FROM [dbo].NGUOIDUNG WHERE MaDangNhap = @MaDangNhap AND @MatKhau = MatKhau ";
 
             if (DataProvider.Instance.ExecuteQuery(query, new object[] { MaDangNhap, MatKhau }).Rows.Count > 0)
             {
@@ -41,7 +41,12 @@ namespace Service
 
         private void regBtn_click(object sender, EventArgs e)
         {
+            this.Hide();
 
+            RegisterForm register_form = new RegisterForm();
+            register_form.ShowDialog();
+
+            this.Show();
         }
 
         private void PasswordtxtBox_TextChanged(object sender, EventArgs e)
