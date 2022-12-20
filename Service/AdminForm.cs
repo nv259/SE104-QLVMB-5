@@ -15,6 +15,7 @@ namespace Service
         public AdminForm()
         {
             InitializeComponent();
+
         }
     }
 }
