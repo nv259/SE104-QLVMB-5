@@ -93,7 +93,7 @@
             this.shortUserInfoPnl.BackColor = System.Drawing.Color.DarkGray;
             this.shortUserInfoPnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.shortUserInfoPnl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.shortUserInfoPnl.Location = new System.Drawing.Point(492, 54);
+            this.shortUserInfoPnl.Location = new System.Drawing.Point(12, 31);
             this.shortUserInfoPnl.Name = "shortUserInfoPnl";
             this.shortUserInfoPnl.Size = new System.Drawing.Size(305, 262);
             this.shortUserInfoPnl.TabIndex = 4;
@@ -109,7 +109,7 @@
             // 
             // changeInfoBtn
             // 
-            this.changeInfoBtn.Location = new System.Drawing.Point(596, 322);
+            this.changeInfoBtn.Location = new System.Drawing.Point(589, 329);
             this.changeInfoBtn.Name = "changeInfoBtn";
             this.changeInfoBtn.Size = new System.Drawing.Size(99, 27);
             this.changeInfoBtn.TabIndex = 6;
@@ -129,7 +129,7 @@
             // 
             this.danhSachVeLstBox.FormattingEnabled = true;
             this.danhSachVeLstBox.ItemHeight = 20;
-            this.danhSachVeLstBox.Location = new System.Drawing.Point(26, 61);
+            this.danhSachVeLstBox.Location = new System.Drawing.Point(146, 204);
             this.danhSachVeLstBox.Name = "danhSachVeLstBox";
             this.danhSachVeLstBox.Size = new System.Drawing.Size(358, 284);
             this.danhSachVeLstBox.TabIndex = 8;

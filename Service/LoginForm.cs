@@ -25,7 +25,7 @@ namespace Service
 
                 this.Hide();
 
-                UserForm user_form = new UserForm();
+                UserForm user_form = new UserForm(MaDangNhap);
                 user_form.ShowDialog();
 
                 this.Show();

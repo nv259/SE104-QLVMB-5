@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataAccess.DTO;
+using DataAccess.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +14,10 @@ namespace Service
 {
     public partial class UserForm : Form
     {
-        public UserForm()
+        public UserForm(string MaDangNhap)
         {
+            Account acc = AccountDAO.Instance.GetAccountByUserName(MaDangNhap);
+
             InitializeComponent();
         }
 
