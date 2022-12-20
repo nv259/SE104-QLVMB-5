@@ -42,7 +42,6 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.email_txtBox = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.lastName_txtBox = new System.Windows.Forms.TextBox();
             this.firstName_txtBox = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -65,7 +64,6 @@
             this.panel1.Controls.Add(this.textBox7);
             this.panel1.Controls.Add(this.email_txtBox);
             this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.lastName_txtBox);
             this.panel1.Controls.Add(this.firstName_txtBox);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox1);
@@ -77,10 +75,10 @@
             // PhoneNumber_txtBox
             // 
             this.PhoneNumber_txtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.PhoneNumber_txtBox.Location = new System.Drawing.Point(276, 373);
+            this.PhoneNumber_txtBox.Location = new System.Drawing.Point(323, 373);
             this.PhoneNumber_txtBox.Name = "PhoneNumber_txtBox";
-            this.PhoneNumber_txtBox.PlaceholderText = "             Phone Number";
-            this.PhoneNumber_txtBox.Size = new System.Drawing.Size(192, 27);
+            this.PhoneNumber_txtBox.PlaceholderText = "      Số điện thoại";
+            this.PhoneNumber_txtBox.Size = new System.Drawing.Size(145, 27);
             this.PhoneNumber_txtBox.TabIndex = 14;
             this.PhoneNumber_txtBox.TextChanged += new System.EventHandler(this.PhoneNumber_txtBox_TextChanged);
             // 
@@ -89,8 +87,8 @@
             this.ID_txtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ID_txtBox.Location = new System.Drawing.Point(161, 373);
             this.ID_txtBox.Name = "ID_txtBox";
-            this.ID_txtBox.PlaceholderText = "        CCCD";
-            this.ID_txtBox.Size = new System.Drawing.Size(109, 27);
+            this.ID_txtBox.PlaceholderText = "   Định danh / CCCD";
+            this.ID_txtBox.Size = new System.Drawing.Size(156, 27);
             this.ID_txtBox.TabIndex = 13;
             // 
             // alert_txtBox
@@ -118,7 +116,7 @@
             this.regBtn.Name = "regBtn";
             this.regBtn.Size = new System.Drawing.Size(132, 35);
             this.regBtn.TabIndex = 16;
-            this.regBtn.Text = "Register";
+            this.regBtn.Text = "Đăng ký";
             this.regBtn.UseVisualStyleBackColor = true;
             this.regBtn.Click += new System.EventHandler(this.regBtn_Click);
             // 
@@ -128,11 +126,11 @@
             this.checkBox2.BackColor = System.Drawing.Color.SlateBlue;
             this.checkBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBox2.ForeColor = System.Drawing.Color.White;
-            this.checkBox2.Location = new System.Drawing.Point(161, 425);
+            this.checkBox2.Location = new System.Drawing.Point(140, 425);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(308, 24);
+            this.checkBox2.Size = new System.Drawing.Size(348, 24);
             this.checkBox2.TabIndex = 15;
-            this.checkBox2.Text = "I have read and agree the terms of service";
+            this.checkBox2.Text = "Tôi đã đọc và đồng ý với các điều khoản dịch vụ";
             this.checkBox2.UseVisualStyleBackColor = false;
             // 
             // confirmPwd_txtBox
@@ -157,7 +155,7 @@
             this.textBox11.Size = new System.Drawing.Size(206, 20);
             this.textBox11.TabIndex = 10;
             this.textBox11.TabStop = false;
-            this.textBox11.Text = "Confirm Password";
+            this.textBox11.Text = "Xác nhận mật khẩu";
             this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // pwd_txtBox
@@ -182,7 +180,7 @@
             this.textBox9.Size = new System.Drawing.Size(141, 20);
             this.textBox9.TabIndex = 8;
             this.textBox9.TabStop = false;
-            this.textBox9.Text = "Password";
+            this.textBox9.Text = "Mật khẩu";
             this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // username_txtBox
@@ -191,7 +189,7 @@
             this.username_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.username_txtBox.Location = new System.Drawing.Point(161, 181);
             this.username_txtBox.Name = "username_txtBox";
-            this.username_txtBox.PlaceholderText = "     Alibaba123";
+            this.username_txtBox.PlaceholderText = "     nguyenvana123";
             this.username_txtBox.Size = new System.Drawing.Size(307, 27);
             this.username_txtBox.TabIndex = 7;
             this.username_txtBox.TextChanged += new System.EventHandler(this.username_txtBox_TextChanged);
@@ -208,7 +206,7 @@
             this.textBox7.Size = new System.Drawing.Size(141, 20);
             this.textBox7.TabIndex = 6;
             this.textBox7.TabStop = false;
-            this.textBox7.Text = "Username";
+            this.textBox7.Text = "Tên đăng nhập";
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // email_txtBox
@@ -237,24 +235,14 @@
             this.textBox5.Text = "Email";
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // lastName_txtBox
-            // 
-            this.lastName_txtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lastName_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lastName_txtBox.Location = new System.Drawing.Point(323, 62);
-            this.lastName_txtBox.Name = "lastName_txtBox";
-            this.lastName_txtBox.PlaceholderText = "     Last name";
-            this.lastName_txtBox.Size = new System.Drawing.Size(145, 27);
-            this.lastName_txtBox.TabIndex = 3;
-            // 
             // firstName_txtBox
             // 
             this.firstName_txtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.firstName_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.firstName_txtBox.Location = new System.Drawing.Point(161, 62);
             this.firstName_txtBox.Name = "firstName_txtBox";
-            this.firstName_txtBox.PlaceholderText = "     First name";
-            this.firstName_txtBox.Size = new System.Drawing.Size(140, 27);
+            this.firstName_txtBox.PlaceholderText = "     Nguyễn Văn A";
+            this.firstName_txtBox.Size = new System.Drawing.Size(307, 27);
             this.firstName_txtBox.TabIndex = 2;
             this.firstName_txtBox.TextChanged += new System.EventHandler(this.firstName_txtBox_TextChanged);
             // 
@@ -270,7 +258,7 @@
             this.textBox2.Size = new System.Drawing.Size(141, 20);
             this.textBox2.TabIndex = 1;
             this.textBox2.TabStop = false;
-            this.textBox2.Text = "Name";
+            this.textBox2.Text = "Họ và tên";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox1
@@ -286,7 +274,7 @@
             this.textBox1.Size = new System.Drawing.Size(500, 32);
             this.textBox1.TabIndex = 0;
             this.textBox1.TabStop = false;
-            this.textBox1.Text = "Registation Form";
+            this.textBox1.Text = "ĐĂNG KÝ";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // RegisterForm
@@ -300,7 +288,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "RegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Đăng kí";
+            this.Text = "Đăng ký";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -323,7 +311,6 @@
         private TextBox textBox7;
         private TextBox email_txtBox;
         private TextBox textBox5;
-        private TextBox lastName_txtBox;
         private TextBox firstName_txtBox;
         private TextBox textBox2;
         private TextBox textBox1;

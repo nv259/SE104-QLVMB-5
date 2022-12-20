@@ -51,7 +51,7 @@
             // 
             // PasswordtxtBox
             // 
-            this.PasswordtxtBox.Location = new System.Drawing.Point(12, 127);
+            this.PasswordtxtBox.Location = new System.Drawing.Point(12, 110);
             this.PasswordtxtBox.MaxLength = 255;
             this.PasswordtxtBox.Name = "PasswordtxtBox";
             this.PasswordtxtBox.PasswordChar = '•';
@@ -90,6 +90,7 @@
             // 
             this.rmb_txtBox.AutoSize = true;
             this.rmb_txtBox.BackColor = System.Drawing.Color.Transparent;
+            this.rmb_txtBox.BackgroundImage = global::Service.Properties.Resources.login_background_1;
             this.rmb_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rmb_txtBox.ForeColor = System.Drawing.Color.RoyalBlue;
             this.rmb_txtBox.Location = new System.Drawing.Point(12, 160);
@@ -133,12 +134,13 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::Service.Properties.Resources.login_background_1;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Image = global::Service.Properties.Resources.login_background_1;
-            this.pictureBox1.Location = new System.Drawing.Point(145, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(-6, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(536, 378);
+            this.pictureBox1.Size = new System.Drawing.Size(669, 378);
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
