@@ -38,8 +38,7 @@
             this.userName_txtBox = new System.Windows.Forms.TextBox();
             this.email_txtBox = new System.Windows.Forms.TextBox();
             this.phone_txtBox = new System.Windows.Forms.TextBox();
-            this.lName_txtBox = new System.Windows.Forms.TextBox();
-            this.fName_txtBox = new System.Windows.Forms.TextBox();
+            this.Name_txtBox = new System.Windows.Forms.TextBox();
             this.ID_txtBox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Add_btn = new System.Windows.Forms.Button();
@@ -51,7 +50,6 @@
             this.updateBtn = new System.Windows.Forms.Button();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.user_dtgv = new System.Windows.Forms.DataGridView();
@@ -128,12 +126,11 @@
             this.showData_panel.Controls.Add(this.userName_txtBox);
             this.showData_panel.Controls.Add(this.email_txtBox);
             this.showData_panel.Controls.Add(this.phone_txtBox);
-            this.showData_panel.Controls.Add(this.lName_txtBox);
-            this.showData_panel.Controls.Add(this.fName_txtBox);
+            this.showData_panel.Controls.Add(this.Name_txtBox);
             this.showData_panel.Controls.Add(this.ID_txtBox);
             this.showData_panel.Location = new System.Drawing.Point(804, 3);
             this.showData_panel.Name = "showData_panel";
-            this.showData_panel.Size = new System.Drawing.Size(219, 331);
+            this.showData_panel.Size = new System.Drawing.Size(219, 277);
             this.showData_panel.TabIndex = 2;
             // 
             // userName_txtBox
@@ -148,7 +145,7 @@
             // email_txtBox
             // 
             this.email_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.email_txtBox.Location = new System.Drawing.Point(2, 295);
+            this.email_txtBox.Location = new System.Drawing.Point(2, 241);
             this.email_txtBox.Name = "email_txtBox";
             this.email_txtBox.ReadOnly = true;
             this.email_txtBox.Size = new System.Drawing.Size(214, 27);
@@ -157,29 +154,20 @@
             // phone_txtBox
             // 
             this.phone_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.phone_txtBox.Location = new System.Drawing.Point(2, 235);
+            this.phone_txtBox.Location = new System.Drawing.Point(2, 181);
             this.phone_txtBox.Name = "phone_txtBox";
             this.phone_txtBox.ReadOnly = true;
             this.phone_txtBox.Size = new System.Drawing.Size(214, 27);
             this.phone_txtBox.TabIndex = 17;
             // 
-            // lName_txtBox
+            // Name_txtBox
             // 
-            this.lName_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lName_txtBox.Location = new System.Drawing.Point(2, 178);
-            this.lName_txtBox.Name = "lName_txtBox";
-            this.lName_txtBox.ReadOnly = true;
-            this.lName_txtBox.Size = new System.Drawing.Size(214, 27);
-            this.lName_txtBox.TabIndex = 16;
-            // 
-            // fName_txtBox
-            // 
-            this.fName_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.fName_txtBox.Location = new System.Drawing.Point(2, 121);
-            this.fName_txtBox.Name = "fName_txtBox";
-            this.fName_txtBox.ReadOnly = true;
-            this.fName_txtBox.Size = new System.Drawing.Size(214, 27);
-            this.fName_txtBox.TabIndex = 15;
+            this.Name_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Name_txtBox.Location = new System.Drawing.Point(2, 121);
+            this.Name_txtBox.Name = "Name_txtBox";
+            this.Name_txtBox.ReadOnly = true;
+            this.Name_txtBox.Size = new System.Drawing.Size(214, 27);
+            this.Name_txtBox.TabIndex = 15;
             // 
             // ID_txtBox
             // 
@@ -201,7 +189,6 @@
             this.panel2.Controls.Add(this.updateBtn);
             this.panel2.Controls.Add(this.textBox10);
             this.panel2.Controls.Add(this.textBox6);
-            this.panel2.Controls.Add(this.textBox8);
             this.panel2.Controls.Add(this.textBox4);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Location = new System.Drawing.Point(704, 9);
@@ -211,7 +198,7 @@
             // 
             // Add_btn
             // 
-            this.Add_btn.Location = new System.Drawing.Point(123, 374);
+            this.Add_btn.Location = new System.Drawing.Point(100, 344);
             this.Add_btn.Name = "Add_btn";
             this.Add_btn.Size = new System.Drawing.Size(94, 29);
             this.Add_btn.TabIndex = 21;
@@ -225,7 +212,7 @@
             "User",
             "Staff",
             "Admin"});
-            this.userRole_comboBox.Location = new System.Drawing.Point(102, 342);
+            this.userRole_comboBox.Location = new System.Drawing.Point(100, 294);
             this.userRole_comboBox.Name = "userRole_comboBox";
             this.userRole_comboBox.Size = new System.Drawing.Size(115, 28);
             this.userRole_comboBox.TabIndex = 20;
@@ -235,7 +222,7 @@
             this.textBox3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Segoe UI", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(3, 347);
+            this.textBox3.Location = new System.Drawing.Point(7, 294);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(66, 23);
@@ -245,9 +232,9 @@
             // 
             // resetBtn
             // 
-            this.resetBtn.Location = new System.Drawing.Point(223, 374);
+            this.resetBtn.Location = new System.Drawing.Point(196, 344);
             this.resetBtn.Name = "resetBtn";
-            this.resetBtn.Size = new System.Drawing.Size(90, 29);
+            this.resetBtn.Size = new System.Drawing.Size(94, 29);
             this.resetBtn.TabIndex = 13;
             this.resetBtn.Text = "Reset";
             this.resetBtn.UseVisualStyleBackColor = true;
@@ -267,7 +254,7 @@
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(123, 409);
+            this.deleteBtn.Location = new System.Drawing.Point(100, 374);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(94, 29);
             this.deleteBtn.TabIndex = 4;
@@ -276,7 +263,7 @@
             // 
             // updateBtn
             // 
-            this.updateBtn.Location = new System.Drawing.Point(223, 409);
+            this.updateBtn.Location = new System.Drawing.Point(196, 374);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(94, 29);
             this.updateBtn.TabIndex = 3;
@@ -288,7 +275,7 @@
             this.textBox10.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox10.Location = new System.Drawing.Point(3, 291);
+            this.textBox10.Location = new System.Drawing.Point(7, 235);
             this.textBox10.Name = "textBox10";
             this.textBox10.ReadOnly = true;
             this.textBox10.Size = new System.Drawing.Size(62, 23);
@@ -301,26 +288,13 @@
             this.textBox6.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox6.Location = new System.Drawing.Point(3, 231);
+            this.textBox6.Location = new System.Drawing.Point(3, 175);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(62, 23);
             this.textBox6.TabIndex = 6;
             this.textBox6.TabStop = false;
             this.textBox6.Text = "Phone:";
-            // 
-            // textBox8
-            // 
-            this.textBox8.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox8.Location = new System.Drawing.Point(3, 174);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(91, 23);
-            this.textBox8.TabIndex = 4;
-            this.textBox8.TabStop = false;
-            this.textBox8.Text = "Last name:";
             // 
             // textBox4
             // 
@@ -333,7 +307,7 @@
             this.textBox4.Size = new System.Drawing.Size(91, 23);
             this.textBox4.TabIndex = 2;
             this.textBox4.TabStop = false;
-            this.textBox4.Text = "First name:";
+            this.textBox4.Text = "Name:";
             // 
             // textBox1
             // 
@@ -395,8 +369,7 @@
         private TextBox userName_txtBox;
         private TextBox email_txtBox;
         private TextBox phone_txtBox;
-        private TextBox lName_txtBox;
-        private TextBox fName_txtBox;
+        private TextBox Name_txtBox;
         private TextBox ID_txtBox;
         private Panel panel2;
         private Button resetBtn;
@@ -405,7 +378,6 @@
         private Button updateBtn;
         private TextBox textBox10;
         private TextBox textBox6;
-        private TextBox textBox8;
         private TextBox textBox4;
         private TextBox textBox1;
         private DataGridView user_dtgv;
