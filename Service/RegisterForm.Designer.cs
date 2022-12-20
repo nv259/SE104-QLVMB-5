@@ -82,6 +82,7 @@
             this.PhoneNumber_txtBox.PlaceholderText = "             Phone Number";
             this.PhoneNumber_txtBox.Size = new System.Drawing.Size(192, 27);
             this.PhoneNumber_txtBox.TabIndex = 14;
+            this.PhoneNumber_txtBox.TextChanged += new System.EventHandler(this.PhoneNumber_txtBox_TextChanged);
             // 
             // ID_txtBox
             // 

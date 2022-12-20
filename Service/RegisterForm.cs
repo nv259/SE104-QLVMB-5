@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace Service
 {
@@ -23,19 +24,31 @@ namespace Service
         {
         }
 
-        private void chk_all()
+        private bool CheckAll()
         {
             Regex validate_emailaddress = email_validation();
 
             if (validate_emailaddress.IsMatch(this.email_txtBox.Text) != true)
             {
                 this.alert_txtBox.Text = "Email không đúng!";
-                return;
+                return false;
             }
             else
             {
                 this.alert_txtBox.Text = "";
             }
+
+            string phone_number = this.PhoneNumber_txtBox.Text;
+
+            if (!phone_number.All(char.IsDigit))
+            {
+                this.alert_txtBox.Text = "Số điện thoại không đúng!";
+                return false;
+            } else
+            {
+                this.alert_txtBox.Text = "";
+            }
+
 
             string MaDangNhap = this.username_txtBox.Text;
             string query = "SELECT * FROM [dbo].NGUOIDUNG WHERE @MaDangNhap = MaDangNhap ";
@@ -43,7 +56,7 @@ namespace Service
             if (DataProvider.Instance.ExecuteQuery(query, new object[] { MaDangNhap }).Rows.Count > 0)
             {
                 this.alert_txtBox.Text = "Tên đăng nhập đã tồn tại!";
-                return;
+                return false;
             }
 
             string pwd = this.pwd_txtBox.Text;
@@ -52,17 +65,19 @@ namespace Service
             if (pwd != confirm_pwd)
             {
                 this.alert_txtBox.Text = "Mật khẩu chưa khớp!";
-                return;
+                return false;
             }
             else
             {
                 this.alert_txtBox.Text = "";
             }
+
+            return true;
         }
 
         private void username_txtBox_TextChanged(object sender, EventArgs e)
         {
-            chk_all();
+            CheckAll();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -87,12 +102,12 @@ namespace Service
 
         private void pwd_txtBox_TextChanged(object sender, EventArgs e)
         {
-            chk_all();
+            CheckAll();
         }
 
         private void confirmPwd_txtBox_TextChanged(object sender, EventArgs e)
         {
-            chk_all();
+            CheckAll();
         }
         private static Regex email_validation()
         {
@@ -105,7 +120,12 @@ namespace Service
 
         private void email_txtBox_TextChanged(object sender, EventArgs e)
         {
-            chk_all();
+            CheckAll();
+        }
+
+        private void PhoneNumber_txtBox_TextChanged(object sender, EventArgs e)
+        {
+            CheckAll();
         }
     }
 }
