@@ -28,7 +28,7 @@ namespace Service
         {
             Regex validate_emailaddress = email_validation();
 
-            if (validate_emailaddress.IsMatch(this.email_txtBox.Text) != true)
+            if (validate_emailaddress.IsMatch(this.email_txtBox.Text.Trim()) != true)
             {
                 this.alert_txtBox.Text = "Email không đúng!";
                 return false;
@@ -38,9 +38,17 @@ namespace Service
                 this.alert_txtBox.Text = "";
             }
 
-            string phone_number = this.PhoneNumber_txtBox.Text;
-
-            if (!phone_number.All(char.IsDigit))
+            string phone_number = this.PhoneNumber_txtBox.Text.Trim();
+            if (phone_number.Length == 12 && phone_number.Substring(0, 3) == "+84") {
+                phone_number = phone_number.Remove(0, 3);
+                if (!phone_number.All(char.IsDigit)) {
+                    this.alert_txtBox.Text = "Số điện thoại không đúng!";
+                    return false;
+                }
+                else {
+                    this.alert_txtBox.Text = "";
+                }
+        } else if (phone_number.Length != 10 || !phone_number.All(char.IsDigit) || phone_number[0] != '0')
             {
                 this.alert_txtBox.Text = "Số điện thoại không đúng!";
                 return false;
@@ -48,7 +56,6 @@ namespace Service
             {
                 this.alert_txtBox.Text = "";
             }
-
 
             string MaDangNhap = this.username_txtBox.Text;
             string query = "SELECT * FROM [dbo].NGUOIDUNG WHERE @MaDangNhap = MaDangNhap ";
@@ -126,6 +133,11 @@ namespace Service
         private void PhoneNumber_txtBox_TextChanged(object sender, EventArgs e)
         {
             CheckAll();
+        }
+
+        private void firstName_txtBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
