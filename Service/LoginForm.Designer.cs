@@ -59,7 +59,6 @@
             this.PasswordtxtBox.PlaceholderText = "  password";
             this.PasswordtxtBox.Size = new System.Drawing.Size(427, 27);
             this.PasswordtxtBox.TabIndex = 1;
-            this.PasswordtxtBox.TextChanged += new System.EventHandler(this.PasswordtxtBox_TextChanged);
             // 
             // LoginBtn
             // 
@@ -181,5 +180,6 @@
         private TextBox textBox1;
         private ComboBox langBox;
         private PictureBox pictureBox1;
+        private string path = @"c:\pwd.txt";
     }
 }

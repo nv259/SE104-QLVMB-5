@@ -7,7 +7,7 @@ namespace Service
     public partial class LoginForm : Form
     {
         public LoginForm()
-        {
+        { 
             InitializeComponent();
         }
 
@@ -16,10 +16,13 @@ namespace Service
             string MaDangNhap = this.Username_txtBox.Text;
             string MatKhau = this.PasswordtxtBox.Text;
 
-            string query = "SELECT * FROM [dbo].NGUOIDUNG WHERE MaDangNhap = @MaDangNhap AND @MatKhau";
+            string query = "SELECT * FROM [dbo].NGUOIDUNG WHERE MaDangNhap = @MaDangNhap AND MatKhau = @MatKhau";
 
             if (DataProvider.Instance.ExecuteQuery(query, new object[] { MaDangNhap, MatKhau }).Rows.Count > 0)
             {
+                if (this.rmb_txtBox.Checked)
+                    File.WriteAllText(path, MaDangNhap + Environment.NewLine + MatKhau);
+
                 this.Hide();
 
                 UserForm user_form = new UserForm();
@@ -41,12 +44,12 @@ namespace Service
 
         private void regBtn_click(object sender, EventArgs e)
         {
+            this.Hide();
 
-        }
+            RegisterForm f = new RegisterForm();
+            f.ShowDialog();
 
-        private void PasswordtxtBox_TextChanged(object sender, EventArgs e)
-        {
-
+            this.Show();
         }
     }
 }
