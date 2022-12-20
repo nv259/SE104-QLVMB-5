@@ -291,6 +291,7 @@
             // 
             // RegisterForm
             // 
+            this.AcceptButton = this.regBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
