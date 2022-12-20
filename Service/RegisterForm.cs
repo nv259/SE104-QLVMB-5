@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Linq;
+using System.ComponentModel.Design;
 
 namespace Service
 {
@@ -22,6 +23,18 @@ namespace Service
 
         private void regBtn_Click(object sender, EventArgs e)
         {
+        }
+
+        private bool IsLowerChar(char ch)
+        {
+            if ('a' <= ch && ch <= 'z') return true;
+            return false;
+        }
+
+        private bool IsDigit(char ch)
+        {
+            if ('0' <= ch && ch <= '9') return true;
+            return false;
         }
 
         private bool CheckAll()
@@ -38,26 +51,27 @@ namespace Service
                 this.alert_txtBox.Text = "";
             }
 
-            string phone_number = this.PhoneNumber_txtBox.Text.Trim();
-            if (phone_number.Length == 12 && phone_number.Substring(0, 3) == "+84") {
-                phone_number = phone_number.Remove(0, 3);
-                if (!phone_number.All(char.IsDigit)) {
-                    this.alert_txtBox.Text = "Số điện thoại không đúng!";
+            string MaDangNhap = this.username_txtBox.Text;
+            if (MaDangNhap.Length > 0)
+            {
+                if (!IsLowerChar(MaDangNhap[0]))
+                {
+                    this.alert_txtBox.Text = "Tên đăng nhập không hợp lệ";
                     return false;
                 }
-                else {
-                    this.alert_txtBox.Text = "";
-                }
-        } else if (phone_number.Length != 10 || !phone_number.All(char.IsDigit) || phone_number[0] != '0')
-            {
-                this.alert_txtBox.Text = "Số điện thoại không đúng!";
-                return false;
+
+                this.alert_txtBox.Text = "";
+
+                for (int i = 0; i < MaDangNhap.Length; ++i)
+                    if (!IsDigit(MaDangNhap[i]) && !IsLowerChar(MaDangNhap[i]))
+                    {
+                        this.alert_txtBox.Text = "Tên đăng nhập không hợp lệ";
+                        return false;
+                    }
             } else
             {
-                this.alert_txtBox.Text = "";
+                return false;
             }
-
-            string MaDangNhap = this.username_txtBox.Text;
             string query = "SELECT * FROM [dbo].NGUOIDUNG WHERE @MaDangNhap = MaDangNhap ";
 
             if (DataProvider.Instance.ExecuteQuery(query, new object[] { MaDangNhap }).Rows.Count > 0)
@@ -72,6 +86,30 @@ namespace Service
             if (pwd != confirm_pwd)
             {
                 this.alert_txtBox.Text = "Mật khẩu chưa khớp!";
+                return false;
+            }
+            else
+            {
+                this.alert_txtBox.Text = "";
+            }
+
+            string phone_number = this.PhoneNumber_txtBox.Text.Trim();
+            if (phone_number.Length == 12 && phone_number.Substring(0, 3) == "+84")
+            {
+                phone_number = phone_number.Remove(0, 3);
+                if (!phone_number.All(char.IsDigit))
+                {
+                    this.alert_txtBox.Text = "Số điện thoại không đúng!";
+                    return false;
+                }
+                else
+                {
+                    this.alert_txtBox.Text = "";
+                }
+            }
+            else if (phone_number.Length != 10 || !phone_number.All(char.IsDigit) || phone_number[0] != '0')
+            {
+                this.alert_txtBox.Text = "Số điện thoại không đúng!";
                 return false;
             }
             else
