@@ -65,6 +65,15 @@ namespace Service
             UserInfoForm userInfoForm = new UserInfoForm(this.account);
             userInfoForm.ShowDialog();
 
+            this.account = AccountDAO.Instance.GetAccountByUserName(this.account.MaDangNhap);
+
+            this.userName_txtBox.Text = account.MaDangNhap;
+            this.fullName_txtBox.Text = account.TenNguoiDung;
+            this.ID_txtBox.Text = account.DinhDanh;
+            this.email_txtBox.Text = account.Email;
+            this.phoneNumber_txtBox.Text = account.Sdt;
+            flightDgv.DataSource = flightList;
+
             this.Show();
         }
 
@@ -101,7 +110,12 @@ namespace Service
 
         private void LookUpBtn_Click(object sender, EventArgs e)
         {
+            this.Hide();
 
+/*            TraCuuVeMayBayForm tracuu = new TraCuuVeMayBayForm(this.account);
+*//*            tracuu.ShowDialog();
+*/
+            this.Show();
         }
     }
 }
