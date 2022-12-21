@@ -17,10 +17,10 @@ namespace Service
             InitializeComponent();
         }
 
-        private void sellTicketBtn_Click(object sender, EventArgs e)
+        private void makeReportBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            SellTicketForm f = new SellTicketForm();
+            ReportForm f = new ReportForm();
             f.ShowDialog();
             this.Show();
         }
