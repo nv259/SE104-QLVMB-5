@@ -46,6 +46,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.ticketBoughtDgv = new System.Windows.Forms.DataGridView();
             this.flightDgv = new System.Windows.Forms.DataGridView();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.userInfo_pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,7 +65,7 @@
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1099, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1340, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -88,7 +90,7 @@
             // cancelTicketBtn
             // 
             this.cancelTicketBtn.BackColor = System.Drawing.Color.Red;
-            this.cancelTicketBtn.Location = new System.Drawing.Point(789, 597);
+            this.cancelTicketBtn.Location = new System.Drawing.Point(989, 603);
             this.cancelTicketBtn.Name = "cancelTicketBtn";
             this.cancelTicketBtn.Size = new System.Drawing.Size(134, 49);
             this.cancelTicketBtn.TabIndex = 5;
@@ -97,7 +99,7 @@
             // 
             // changeInfoBtn
             // 
-            this.changeInfoBtn.Location = new System.Drawing.Point(824, 229);
+            this.changeInfoBtn.Location = new System.Drawing.Point(995, 243);
             this.changeInfoBtn.Name = "changeInfoBtn";
             this.changeInfoBtn.Size = new System.Drawing.Size(99, 27);
             this.changeInfoBtn.TabIndex = 6;
@@ -108,7 +110,7 @@
             // buyTicketBtn
             // 
             this.buyTicketBtn.BackColor = System.Drawing.Color.SpringGreen;
-            this.buyTicketBtn.Location = new System.Drawing.Point(153, 590);
+            this.buyTicketBtn.Location = new System.Drawing.Point(253, 603);
             this.buyTicketBtn.Name = "buyTicketBtn";
             this.buyTicketBtn.Size = new System.Drawing.Size(241, 62);
             this.buyTicketBtn.TabIndex = 7;
@@ -127,7 +129,7 @@
             this.userInfo_pnl.Controls.Add(this.userName_txtBox);
             this.userInfo_pnl.Controls.Add(this.fullName_txtBox);
             this.userInfo_pnl.Controls.Add(this.textBox1);
-            this.userInfo_pnl.Location = new System.Drawing.Point(612, 42);
+            this.userInfo_pnl.Location = new System.Drawing.Point(812, 56);
             this.userInfo_pnl.Name = "userInfo_pnl";
             this.userInfo_pnl.Size = new System.Drawing.Size(475, 181);
             this.userInfo_pnl.TabIndex = 9;
@@ -237,30 +239,63 @@
             // ticketBoughtDgv
             // 
             this.ticketBoughtDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ticketBoughtDgv.Location = new System.Drawing.Point(614, 262);
+            this.ticketBoughtDgv.Location = new System.Drawing.Point(812, 317);
             this.ticketBoughtDgv.Name = "ticketBoughtDgv";
             this.ticketBoughtDgv.RowHeadersWidth = 51;
             this.ticketBoughtDgv.RowTemplate.Height = 29;
-            this.ticketBoughtDgv.Size = new System.Drawing.Size(471, 308);
+            this.ticketBoughtDgv.Size = new System.Drawing.Size(471, 274);
             this.ticketBoughtDgv.TabIndex = 10;
+            this.ticketBoughtDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ticketBoughtDgv_CellContentClick);
             // 
             // flightDgv
             // 
             this.flightDgv.BackgroundColor = System.Drawing.SystemColors.Highlight;
             this.flightDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.flightDgv.Location = new System.Drawing.Point(18, 56);
+            this.flightDgv.Location = new System.Drawing.Point(25, 90);
             this.flightDgv.Name = "flightDgv";
             this.flightDgv.RowHeadersWidth = 51;
             this.flightDgv.RowTemplate.Height = 29;
-            this.flightDgv.Size = new System.Drawing.Size(558, 514);
+            this.flightDgv.Size = new System.Drawing.Size(747, 501);
             this.flightDgv.TabIndex = 11;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(244)))));
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox2.Location = new System.Drawing.Point(25, 56);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(747, 36);
+            this.textBox2.TabIndex = 10;
+            this.textBox2.TabStop = false;
+            this.textBox2.Text = "Danh sách chuyến bay";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(244)))));
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox3.Location = new System.Drawing.Point(812, 282);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(471, 36);
+            this.textBox3.TabIndex = 12;
+            this.textBox3.TabStop = false;
+            this.textBox3.Text = "Danh sách vé đã đặt";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(1099, 689);
+            this.ClientSize = new System.Drawing.Size(1340, 727);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.flightDgv);
             this.Controls.Add(this.ticketBoughtDgv);
             this.Controls.Add(this.userInfo_pnl);
@@ -305,5 +340,7 @@
         private DataGridView ticketBoughtDgv;
         private DataGridView flightDgv;
         private PictureBox pictureBox1;
+        private TextBox textBox2;
+        private TextBox textBox3;
     }
 }
