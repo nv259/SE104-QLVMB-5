@@ -11,7 +11,7 @@ namespace DataAccess.DTO
     {
         public Account(DataRow dr)
         {
-            ma_dang_nhap = dr["MaDangNhap"].ToString();
+            ma_dang_nhap = dr["MaDangNhap"].ToString().TrimEnd();
             mat_khau = dr["MatKhau"].ToString();
             ma_nhom = dr["MaNhom"].ToString();
             ten_nguoi_dung = dr["TenNguoiDung"].ToString();
