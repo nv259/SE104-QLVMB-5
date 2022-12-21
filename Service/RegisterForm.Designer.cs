@@ -45,12 +45,16 @@
             this.fullName_txtBox = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NgaySinh_txtBox = new System.Windows.Forms.TextBox();
+            this.tmp = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SlateBlue;
+            this.panel1.Controls.Add(this.tmp);
+            this.panel1.Controls.Add(this.NgaySinh_txtBox);
             this.panel1.Controls.Add(this.PhoneNumber_txtBox);
             this.panel1.Controls.Add(this.ID_txtBox);
             this.panel1.Controls.Add(this.alert_txtBox);
@@ -162,7 +166,7 @@
             // pwd_txtBox
             // 
             this.pwd_txtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.pwd_txtBox.Location = new System.Drawing.Point(161, 244);
+            this.pwd_txtBox.Location = new System.Drawing.Point(161, 263);
             this.pwd_txtBox.Name = "pwd_txtBox";
             this.pwd_txtBox.Size = new System.Drawing.Size(307, 27);
             this.pwd_txtBox.TabIndex = 9;
@@ -175,10 +179,10 @@
             this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox9.ForeColor = System.Drawing.Color.White;
-            this.textBox9.Location = new System.Drawing.Point(14, 247);
+            this.textBox9.Location = new System.Drawing.Point(3, 266);
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(141, 20);
+            this.textBox9.Size = new System.Drawing.Size(144, 20);
             this.textBox9.TabIndex = 8;
             this.textBox9.TabStop = false;
             this.textBox9.Text = "Mật khẩu";
@@ -188,7 +192,7 @@
             // 
             this.username_txtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.username_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.username_txtBox.Location = new System.Drawing.Point(161, 181);
+            this.username_txtBox.Location = new System.Drawing.Point(161, 216);
             this.username_txtBox.Name = "username_txtBox";
             this.username_txtBox.PlaceholderText = "     nguyenvana123";
             this.username_txtBox.Size = new System.Drawing.Size(307, 27);
@@ -201,7 +205,7 @@
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox7.ForeColor = System.Drawing.Color.White;
-            this.textBox7.Location = new System.Drawing.Point(14, 181);
+            this.textBox7.Location = new System.Drawing.Point(14, 216);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(141, 20);
@@ -214,7 +218,7 @@
             // 
             this.email_txtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.email_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.email_txtBox.Location = new System.Drawing.Point(161, 118);
+            this.email_txtBox.Location = new System.Drawing.Point(161, 170);
             this.email_txtBox.Name = "email_txtBox";
             this.email_txtBox.PlaceholderText = "     example@gmail.com";
             this.email_txtBox.Size = new System.Drawing.Size(307, 27);
@@ -227,7 +231,7 @@
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox5.ForeColor = System.Drawing.Color.White;
-            this.textBox5.Location = new System.Drawing.Point(14, 121);
+            this.textBox5.Location = new System.Drawing.Point(13, 173);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(141, 20);
@@ -240,7 +244,7 @@
             // 
             this.fullName_txtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.fullName_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.fullName_txtBox.Location = new System.Drawing.Point(161, 62);
+            this.fullName_txtBox.Location = new System.Drawing.Point(161, 78);
             this.fullName_txtBox.Name = "fullName_txtBox";
             this.fullName_txtBox.PlaceholderText = "     Nguyễn Văn A";
             this.fullName_txtBox.Size = new System.Drawing.Size(307, 27);
@@ -253,7 +257,7 @@
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(14, 65);
+            this.textBox2.Location = new System.Drawing.Point(11, 81);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(141, 20);
@@ -277,6 +281,32 @@
             this.textBox1.TabStop = false;
             this.textBox1.Text = "ĐĂNG KÝ";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // NgaySinh_txtBox
+            // 
+            this.NgaySinh_txtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.NgaySinh_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.NgaySinh_txtBox.Location = new System.Drawing.Point(161, 121);
+            this.NgaySinh_txtBox.Name = "NgaySinh_txtBox";
+            this.NgaySinh_txtBox.PlaceholderText = "     dd-MM-yyyy";
+            this.NgaySinh_txtBox.Size = new System.Drawing.Size(307, 27);
+            this.NgaySinh_txtBox.TabIndex = 17;
+            this.NgaySinh_txtBox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // tmp
+            // 
+            this.tmp.BackColor = System.Drawing.Color.SlateBlue;
+            this.tmp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tmp.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.tmp.ForeColor = System.Drawing.Color.White;
+            this.tmp.Location = new System.Drawing.Point(11, 124);
+            this.tmp.Name = "tmp";
+            this.tmp.ReadOnly = true;
+            this.tmp.Size = new System.Drawing.Size(141, 20);
+            this.tmp.TabIndex = 18;
+            this.tmp.TabStop = false;
+            this.tmp.Text = "Ngày sinh";
+            this.tmp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // RegisterForm
             // 
@@ -315,5 +345,7 @@
         private TextBox fullName_txtBox;
         private TextBox textBox2;
         private TextBox textBox1;
+        private TextBox tmp;
+        private TextBox NgaySinh_txtBox;
     }
 }

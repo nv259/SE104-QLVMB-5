@@ -493,7 +493,6 @@
             this.ngSinhBox.Enabled = false;
             this.ngSinhBox.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.ngSinhBox.Location = new System.Drawing.Point(11, 125);
-            this.ngSinhBox.MinDate = new System.DateTime(2022, 12, 21, 11, 25, 7, 0);
             this.ngSinhBox.Name = "ngSinhBox";
             this.ngSinhBox.Size = new System.Drawing.Size(194, 27);
             this.ngSinhBox.TabIndex = 19;

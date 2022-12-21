@@ -25,6 +25,7 @@ namespace Service
             ID_txtBox.Text = account.DinhDanh;
             phone_txtBox.Text = account.Sdt;
             name_txtBox.Text = account.TenNguoiDung;
+            ngSinhBox.Text = account.NgaySinh.ToString();
             list_flight();
         }
 
