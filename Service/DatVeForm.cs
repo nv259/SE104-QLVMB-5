@@ -16,11 +16,15 @@ namespace Service
 {
     public partial class DatVeForm : Form
     {
-        public DatVeForm()
+        private Account account;
+        public DatVeForm(Account account)
         {
             InitializeComponent();
+            this.account = account;
+            ID_txtBox.Text = account.DinhDanh;
+            phone_txtBox.Text = account.Sdt;
+            name_txtBox.Text = account.TenNguoiDung;
             list_flight();
-            //userName_txtBox.DataBindings.Add("Text", user_dtgv.DataSource, "Tên đăng nhập");
         }
 
         private string MaSanBayDi = "", MaSanBayDen = "";
