@@ -17,6 +17,7 @@ namespace Service
 {
     public partial class DatVeForm : Form
     {
+        private string maCB;
         private Account account;
         public DatVeForm(Account account)
         {
@@ -195,8 +196,12 @@ namespace Service
 
         private void bookingBtn_Click(object sender, EventArgs e)
         {
-            Bill f = new Bill(account);
-            f.ShowDialog();
+            try
+            {
+                Bill f = new Bill(account, maCB.Trim());
+                f.ShowDialog();
+            }
+            catch { }
         }
 
         private void resetBtn_Click(object sender, EventArgs e)
@@ -220,7 +225,7 @@ namespace Service
 
         private void flightDtgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string maCB = Convert.ToString(flightDtgv.Rows[flightDtgv.SelectedRows[0].Index].Cells[0].Value);
+            maCB = Convert.ToString(flightDtgv.Rows[flightDtgv.SelectedRows[0].Index].Cells[0].Value);
             string query = "SELECT sb.TenSanBay as 'Tên sân bay', tg.ThoiGianDung as 'Thời gian dừng' " +
                 "from [dbo].TRUNGGIAN  tg join [dbo].SANBAY sb on tg.MaSanBay = sb.MaSanBay " +
                 "where tg.MaChuyenBay = @MaChuyenBay ";

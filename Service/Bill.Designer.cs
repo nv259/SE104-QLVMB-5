@@ -208,11 +208,12 @@
             // 
             // ticket_cmbBox
             // 
-            this.ticket_cmbBox.FormattingEnabled = true;
             this.ticket_cmbBox.Location = new System.Drawing.Point(318, 25);
             this.ticket_cmbBox.Name = "ticket_cmbBox";
             this.ticket_cmbBox.Size = new System.Drawing.Size(104, 28);
             this.ticket_cmbBox.TabIndex = 24;
+            this.ticket_cmbBox.Text = "Hạng 1";
+            this.ticket_cmbBox.SelectedIndexChanged += new System.EventHandler(this.cb_cmbBox_SelectedIndexChanged);
             // 
             // textBox2
             // 
@@ -280,6 +281,7 @@
             this.button1.TabIndex = 35;
             this.button1.Text = "Đặt Vé";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox14
             // 
@@ -308,6 +310,7 @@
             this.button2.TabIndex = 37;
             this.button2.Text = "Hủy";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -321,6 +324,7 @@
             this.button3.TabIndex = 38;
             this.button3.Text = "Đóng";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Bill
             // 

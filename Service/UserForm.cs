@@ -100,12 +100,16 @@ namespace Service
 
         private void buyTicketBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            try
+            {
+                this.Hide();
 
-            DatVeForm f = new DatVeForm(this.account);
-            f.ShowDialog();
+                DatVeForm f = new DatVeForm(this.account);
+                f.ShowDialog();
 
-            this.Show();
+                this.Show();
+            }
+            catch { }
         }
 
         private void LookUpBtn_Click(object sender, EventArgs e)
