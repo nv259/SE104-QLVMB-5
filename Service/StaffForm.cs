@@ -27,6 +27,7 @@ namespace Service
 
         private void traCuuBtn_Click(object sender, EventArgs e)
         {
+            this.Hide();
 
         }
 
