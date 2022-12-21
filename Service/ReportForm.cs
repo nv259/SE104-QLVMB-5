@@ -67,7 +67,6 @@ namespace Service
             {
                 total += Convert.ToInt32(reportYearDgv.Rows[i].Cells[2].Value);
             }
-
             this.totalIncome.Text = total.ToString();
         }
 
@@ -75,8 +74,22 @@ namespace Service
         {
             string year = this.yearTxtBox.Text;
             string month = this.monthComboBox.Text;
-            string query = " ";
-            reportMonthDgv.DataSource = DataProvider.Instance.ExecuteQuery(query);
+            string query = "SELECT CT_DATVE.MaChuyenBay as 'Mã chuyến bay', " +
+                "COUNT(*) as 'Số vé', SUM(CHUYENBAY.GiaCoBan * HANGVE.TiLeGiaVe) as 'Doanh thu', " +
+                "SUM(CHUYENBAY.GiaCoBan * HANGVE.TiLeGiaVe) * 100 as 'Tỉ Lệ' " +
+                "FROM CT_DATVE JOIN CHUYENBAY on CT_DATVE.MaChuyenBay = CHUYENBAY.MaChuyenBay " +
+                "JOIN HANGVE on CT_DATVE.MaHangVe = HANGVE.MaHangVe " +
+                "where YEAR(CHUYENBAY.NgayGioBay) = @year AND MONTH(CHUYENBAY.NgayGioBay) = @month " +
+                "GROUP BY CT_DATVE.MaChuyenBay";
+            reportMonthDgv.DataSource = DataProvider.Instance.ExecuteQuery(query, new object[] { year, month });
+            int total = 0;
+            for (int i = 0; i < reportMonthDgv.Rows.Count; ++i)
+            {
+                total += Convert.ToInt32(reportMonthDgv.Rows[i].Cells[2].Value);
+            }
+            this.totalIncome.Text = total.ToString();
+            for (int i = 0; i < reportMonthDgv.Rows.Count; ++i)
+                reportMonthDgv.Rows[i].Cells[3].Value = Convert.ToInt32(reportMonthDgv.Rows[i].Cells[3].Value) / total;
         }
 
         private void makeReportBtn_Click(object sender, EventArgs e)
