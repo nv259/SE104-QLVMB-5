@@ -89,14 +89,14 @@ namespace Service
             Application.Exit();
         }
 
-        private void ticketBoughtDgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void buyTicketBtn_Click(object sender, EventArgs e)
         {
+            this.Hide();
 
-        }
+            DatVeForm f = new DatVeForm();
+            f.ShowDialog();
 
-        private void UserForm_Load(object sender, EventArgs e)
-        {
-
+            this.Show();
         }
     }
 }
