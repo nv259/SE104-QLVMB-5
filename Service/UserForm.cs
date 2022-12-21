@@ -112,9 +112,9 @@ namespace Service
         {
             this.Hide();
 
-            TraCuuVeMayBayForm tracuu = new TraCuuVeMayBayForm(this.account);
-            tracuu.ShowDialog();
-
+/*            TraCuuVeMayBayForm tracuu = new TraCuuVeMayBayForm(this.account);
+*//*            tracuu.ShowDialog();
+*/
             this.Show();
         }
     }
