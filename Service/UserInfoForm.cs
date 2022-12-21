@@ -159,14 +159,18 @@ namespace Service
                 {
                     this.alert_txtBox.Text = "Mật khẩu cũ không khớp!";
                     return false;
-                } else if (newPassword != confirmnewPassword)
+                }
+                else if (newPassword != confirmnewPassword)
                 {
                     this.alert_txtBox.Text = "Mật khẩu mới không khớp với xác nhận mật khẩu mới!";
                     return false;
-                } else
-                {
-                    this.alert_txtBox.Text = "";
                 }
+                else if (newPassword.Length < 8)
+                {
+                    this.alert_txtBox.Text = "Mật khẩu phải ít nhất 8 ký tự!";
+                    return false;
+                }
+                else this.alert_txtBox.Text = "";
             }
 
             return true;
