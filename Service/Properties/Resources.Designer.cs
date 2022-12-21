@@ -114,7 +114,7 @@ namespace Service.Properties {
         {
             get
             {
-                object obj = ResourceManager.GetObject("look-up", resourceCulture);
+                object obj = ResourceManager.GetObject("look-up1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
