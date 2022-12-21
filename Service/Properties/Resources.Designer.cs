@@ -109,5 +109,14 @@ namespace Service.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+
+        internal static System.Drawing.Bitmap look_up
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("look-up", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

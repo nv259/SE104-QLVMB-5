@@ -25,20 +25,18 @@ namespace Service
 
         private void Add_Binding()
         {
-            userName_txtBox.DataBindings.Add("Text", user_dtgv.DataSource, "MaDangNhap");
-            ID_txtBox.DataBindings.Add("Text", user_dtgv.DataSource, "DinhDanh");
-            Name_txtBox.DataBindings.Add("Text", user_dtgv.DataSource, "TenNguoiDung");
-            phone_txtBox.DataBindings.Add("Text", user_dtgv.DataSource, "SoDienThoai");
+            userName_txtBox.DataBindings.Add("Text", user_dtgv.DataSource, "Tên đăng nhập");
+            ID_txtBox.DataBindings.Add("Text", user_dtgv.DataSource, "Định danh");
+            Name_txtBox.DataBindings.Add("Text", user_dtgv.DataSource, "Họ và tên");
+            phone_txtBox.DataBindings.Add("Text", user_dtgv.DataSource, "Số điện thoại");
             email_txtBox.DataBindings.Add("Text", user_dtgv.DataSource, "Email");
-            userRole_comboBox.DataBindings.Add("Text", user_dtgv.DataSource, "MaNhom");
+            userRole_comboBox.DataBindings.Add("Text", user_dtgv.DataSource, "Role");
         }
 
         private void Load_dtgv()
         {
-            string query = "SELECT MaDangNhap, MaNhom, TenNguoiDung, DinhDanh, SoDienThoai, Email FROM [dbo].NGUOIDUNG WHERE MaDangNhap like " + "'%" + DataProvider.LocDau(this.searchTxtBox.Text) + "%' ";
+            string query = "SELECT MaDangNhap as 'Tên đăng nhập', MaNhom as 'Role', TenNguoiDung as 'Họ và tên', DinhDanh as 'Định danh', SoDienThoai as 'Số điện thoại', Email FROM [dbo].NGUOIDUNG WHERE MaDangNhap like " + "'%" + DataProvider.LocDau(this.searchTxtBox.Text) + "%' ";
             userList.DataSource = DataProvider.Instance.ExecuteQuery(query);
-
-            
         }
 
         private void findBtn_Click(object sender, EventArgs e)
@@ -78,7 +76,7 @@ namespace Service
 
                 // Account
                 string query = "INSERT INTO [dbo].NGUOIDUNG VALUES ( @MaDangNhap , @MatKhau , @MaNhom , @TenNguoiDung , @DinhDanh , @SoDienThoai , @Email ) ";
-                int i = DataProvider.Instance.ExecuteNonQuery(query, new object[] { MaDangNhap, "uit@123", MaNhom, this.userName_txtBox.Text, this.ID_txtBox.Text, this.phone_txtBox.Text, this.email_txtBox.Text });
+                int i = DataProvider.Instance.ExecuteNonQuery(query, new object[] { MaDangNhap, "1A8462AD95FC28007C67106DC6667AC2637FC1E9CAE30025EF5B46C5F6E9F9312FD48661626D85610A35844E5FC658DD1F5298630138D9F67EFE3074921C41B0", MaNhom, this.Name_txtBox.Text, this.ID_txtBox.Text, this.phone_txtBox.Text, this.email_txtBox.Text });
 
                 MessageBox.Show("Đã thêm user mới!");
                 Load_dtgv();

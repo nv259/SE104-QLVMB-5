@@ -77,7 +77,7 @@
             this.ngayBayDtp.Name = "ngayBayDtp";
             this.ngayBayDtp.Size = new System.Drawing.Size(459, 27);
             this.ngayBayDtp.TabIndex = 3;
-            this.ngayBayDtp.Value = new System.DateTime(2022, 12, 21, 11, 25, 7, 0);
+            this.ngayBayDtp.Value = new System.DateTime(2022, 12, 21, 12, 43, 4, 0);
             this.ngayBayDtp.ValueChanged += new System.EventHandler(this.ngayBayDtp_ValueChanged);
             // 
             // infoTicketLstBox
