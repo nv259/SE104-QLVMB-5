@@ -35,7 +35,7 @@ namespace Service
             {
                 SanBayDi1_listBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
                 SanBayDen1_listBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
-                TrungGian_comboBox.Items.Add(dr["MaSanBay"].ToString());
+                TrungGian_comboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
             }
 
             SanBayDi1_listBox.EndUpdate();
@@ -77,9 +77,22 @@ namespace Service
 
             query = "SELECT * FROM [dbo].THAMSO ";
             para = new Parameters(DataProvider.Instance.ExecuteQuery(query).Rows[0]);
+
+            TrungGian1_comboBox.Enabled = false;
+            DeleteTrungGian.Enabled = false;
         }
 
         Parameters para;
+
+        private string MASANBAY (string input)
+        {
+            if (input == null || input.Length == 0)
+            {
+                return "";
+            }
+
+            return input.Substring(0, input.IndexOf('|') - 1);
+        }
 
         private bool check_all()
         {
@@ -260,10 +273,8 @@ namespace Service
 
             string MaChuyenBay = MaChuyenBay1_txtBox.Text;
             Decimal GiaVe = Convert.ToDecimal(GiaVe1_txtBox.Text);
-            string MaSanBayDi = SanBayDen1_listBox.SelectedItem.ToString();
-            MaSanBayDi = MaSanBayDi.Substring(0, MaSanBayDi.IndexOf('|') - 1);
-            string MaSanBayDen = SanBayDen1_listBox.SelectedItem.ToString();
-            MaSanBayDen = MaSanBayDen.Substring(0, MaSanBayDen.IndexOf('|') - 1);
+            string MaSanBayDi = MASANBAY(SanBayDen1_listBox.SelectedItem.ToString());
+            string MaSanBayDen = MASANBAY(SanBayDen1_listBox.SelectedItem.ToString());
             string NgayGioBay = DateTime.ParseExact(NgayGioBay1_txtBox.Text.TrimEnd(), "dd-MM-yyyy HH:mm", null, DateTimeStyles.None).ToString("yyyy-MM-dd HH:mm");
             string ThoiGianBay = ThoiGianBay1_txtBox.Text.TrimEnd();
 
@@ -393,7 +404,7 @@ namespace Service
             {
                 bool Find = false;
                 foreach(DataGridViewRow row in TrungGian.Rows)
-                if (row.Cells["Sân bay trung gian"].Value.ToString() == dr["MaSanBay"].ToString())
+                if (MASANBAY(row.Cells["Sân bay trung gian"].Value.ToString()) == dr["MaSanBay"].ToString().TrimEnd())
                 {
                     Find = true;
                     break;
@@ -403,7 +414,7 @@ namespace Service
 
                 SanBayDi1_listBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
                 SanBayDen1_listBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
-                TrungGian_comboBox.Items.Add(dr["MaSanBay"].ToString());
+                TrungGian_comboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
             }
 
             SanBayDi1_listBox.EndUpdate();
@@ -430,15 +441,16 @@ namespace Service
                 ThoiGianDung_txtBox.Enabled = false;
                 GhiChu.Enabled = false;
                 AddTrungGian_txtBox.Enabled = false;
-            } 
+            }
 
             if (TrungGian1_comboBox.Items.Count > 0)
             {
                 TrungGian1_comboBox.Enabled = true;
+                DeleteTrungGian.Enabled = true;
             }
         }
 
-        private void DeteteTrungGian_Click(object sender, EventArgs e)
+        private void DeleteTrungGian_Click(object sender, EventArgs e)
         {
             if (TrungGian1_comboBox.SelectedItem == null)
             {
@@ -470,7 +482,7 @@ namespace Service
             {
                 bool Find = false;
                 foreach (DataGridViewRow row in TrungGian.Rows)
-                    if (row.Cells["Sân bay trung gian"].Value.ToString() == dr["MaSanBay"].ToString())
+                    if (MASANBAY(row.Cells["Sân bay trung gian"].Value.ToString()) == dr["MaSanBay"].ToString().TrimEnd())
                     {
                         Find = true;
                         break;
@@ -480,7 +492,7 @@ namespace Service
 
                 SanBayDi1_listBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
                 SanBayDen1_listBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
-                TrungGian_comboBox.Items.Add(dr["MaSanBay"].ToString());
+                TrungGian_comboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
             }
 
             SanBayDi1_listBox.EndUpdate();
@@ -513,6 +525,7 @@ namespace Service
             if (TrungGian1_comboBox.Items.Count == 0)
             {
                 TrungGian1_comboBox.Enabled = false;
+                DeleteTrungGian.Enabled = false;
             }
         }
 

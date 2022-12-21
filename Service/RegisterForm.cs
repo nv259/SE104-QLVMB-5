@@ -91,7 +91,7 @@ namespace Service
                 string Query = "SELECT * FROM [dbo].NGUOIDUNG WHERE Email = @email ";
                 if (DataProvider.Instance.ExecuteQuery(Query, new object[] { email }).Rows.Count > 0)
                 {
-                    this.alert_txtBox.Text = "Email  đã tồn tại!";
+                    this.alert_txtBox.Text = "Email đã tồn tại!";
                     return false;
                 }
                 else this.alert_txtBox.Text = "";
@@ -195,20 +195,7 @@ namespace Service
                 return false;
             }
 
-            if (phone_number.Length == 12 && phone_number.Substring(0, 3) == "+84")
-            {
-                phone_number = phone_number.Remove(0, 3);
-                if (!phone_number.All(char.IsDigit))
-                {
-                    this.alert_txtBox.Text = "Số điện thoại không đúng!";
-                    return false;
-                }
-                else
-                {
-                    this.alert_txtBox.Text = "";
-                }
-            }
-            else if (phone_number.Length != 10 || !phone_number.All(char.IsDigit) || phone_number[0] != '0')
+            if (phone_number.Length != 10 || !phone_number.All(char.IsDigit) || phone_number[0] != '0')
             {
                 this.alert_txtBox.Text = "Số điện thoại không đúng!";
                 return false;

@@ -58,7 +58,7 @@
             this.SoLuong_txtBox = new System.Windows.Forms.TextBox();
             this.Change_Btn = new System.Windows.Forms.Button();
             this.TrungGian1_comboBox = new System.Windows.Forms.ComboBox();
-            this.DeteteTrungGian = new System.Windows.Forms.Button();
+            this.DeleteTrungGian = new System.Windows.Forms.Button();
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.HangVe_comboBox = new System.Windows.Forms.ComboBox();
             this.TrungGian_comboBox = new System.Windows.Forms.ComboBox();
@@ -378,15 +378,15 @@
             this.TrungGian1_comboBox.TabIndex = 37;
             this.TrungGian1_comboBox.TabStop = false;
             // 
-            // DeteteTrungGian
+            // DeleteTrungGian
             // 
-            this.DeteteTrungGian.Location = new System.Drawing.Point(1126, 628);
-            this.DeteteTrungGian.Name = "DeteteTrungGian";
-            this.DeteteTrungGian.Size = new System.Drawing.Size(172, 35);
-            this.DeteteTrungGian.TabIndex = 38;
-            this.DeteteTrungGian.Text = "Xóa";
-            this.DeteteTrungGian.UseVisualStyleBackColor = true;
-            this.DeteteTrungGian.Click += new System.EventHandler(this.DeteteTrungGian_Click);
+            this.DeleteTrungGian.Location = new System.Drawing.Point(1126, 628);
+            this.DeleteTrungGian.Name = "DeleteTrungGian";
+            this.DeleteTrungGian.Size = new System.Drawing.Size(172, 35);
+            this.DeleteTrungGian.TabIndex = 38;
+            this.DeleteTrungGian.Text = "Xóa";
+            this.DeleteTrungGian.UseVisualStyleBackColor = true;
+            this.DeleteTrungGian.Click += new System.EventHandler(this.DeleteTrungGian_Click);
             // 
             // textBox18
             // 
@@ -425,7 +425,7 @@
             this.Controls.Add(this.TrungGian_comboBox);
             this.Controls.Add(this.HangVe_comboBox);
             this.Controls.Add(this.textBox18);
-            this.Controls.Add(this.DeteteTrungGian);
+            this.Controls.Add(this.DeleteTrungGian);
             this.Controls.Add(this.TrungGian1_comboBox);
             this.Controls.Add(this.Change_Btn);
             this.Controls.Add(this.SoLuong_txtBox);
@@ -504,5 +504,6 @@
         private ComboBox HangVe_comboBox;
         private TextBox SoLuong_txtBox;
         private ComboBox TrungGian_comboBox;
+        private Button DeleteTrungGian;
     }
 }
