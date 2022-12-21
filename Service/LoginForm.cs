@@ -113,5 +113,10 @@ namespace Service
         {
 
         }
+
+        private void ForgotPwd_Btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

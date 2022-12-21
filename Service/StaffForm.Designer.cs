@@ -47,12 +47,6 @@
             // 
             // sellTicketBtn
             // 
-            this.listTicketBtn.Location = new System.Drawing.Point(4, 18);
-            this.listTicketBtn.Name = "listTicketBtn";
-            this.listTicketBtn.Size = new System.Drawing.Size(151, 36);
-            this.listTicketBtn.TabIndex = 1;
-            this.listTicketBtn.Text = "Danh sách đặt vé";
-            this.listTicketBtn.UseVisualStyleBackColor = true;
             // 
             // makeReportBtn
             // 
@@ -89,7 +83,6 @@
             this.changeRuleBtn.TabIndex = 5;
             this.changeRuleBtn.Text = "Thay đổi quy định";
             this.changeRuleBtn.UseVisualStyleBackColor = true;
-            this.changeRuleBtn.Click += new System.EventHandler(this.changeRuleBtn_Click);
             // 
             // contentPnl
             // 
