@@ -176,6 +176,7 @@
             this.flightDtgv.Size = new System.Drawing.Size(556, 158);
             this.flightDtgv.TabIndex = 14;
             this.flightDtgv.TabStop = false;
+            this.flightDtgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.flightDtgv_CellClick);
             // 
             // textBox4
             // 
@@ -402,6 +403,7 @@
             this.intermediaryDtgv.Size = new System.Drawing.Size(365, 158);
             this.intermediaryDtgv.TabIndex = 14;
             this.intermediaryDtgv.TabStop = false;
+            this.intermediaryDtgv.MouseClick += new System.Windows.Forms.MouseEventHandler(this.intermediaryDtgv_MouseClick);
             // 
             // textBox6
             // 

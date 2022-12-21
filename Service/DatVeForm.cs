@@ -183,7 +183,7 @@ namespace Service
             timeGoTxtBox.DataBindings.Add("Text", flightDtgv.DataSource, "TimeGo");
             timeGoneTxtBox.DataBindings.Add("Text", flightDtgv.DataSource, "TimeGone");
             maChuyenBay_txtBox.DataBindings.Add("Text", flightDtgv.DataSource, "MaChuyenBay");
-            
+
         }
 
         private void ngayBayDtp_ValueChanged(object sender, EventArgs e)
@@ -211,6 +211,25 @@ namespace Service
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void intermediaryDtgv_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void flightDtgv_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string maCB = Convert.ToString(flightDtgv.Rows[flightDtgv.SelectedRows[0].Index].Cells[0].Value);
+            string query = "SELECT sb.TenSanBay as 'Tên sân bay', tg.ThoiGianDung as 'Thời gian dừng' " +
+                "from [dbo].TRUNGGIAN  tg join [dbo].SANBAY sb on tg.MaSanBay = sb.MaSanBay " +
+                "where tg.MaChuyenBay = @MaChuyenBay ";
+            intermediaryDtgv.DataSource = DataProvider.Instance.ExecuteQuery(query, new object[] { maCB });
+
+            query = "SELECT hv.TenHangVe as 'Tên hạng vé', hv.TiLeGiaVe as 'Tỉ lệ giá vé', cthv.SoLuong as 'Số Lượng' " +
+                "from [dbo].CT_HANGVE cthv join [dbo].HANGVE hv on cthv.MaHangVe = hv.MaHangVe " +
+                "where cthv.MaChuyenBay = @MaChuyenBay ";
+            ticketDtgv.DataSource = DataProvider.Instance.ExecuteQuery(query, new object[] { maCB });
         }
 
         private void Find_Btn_Click(object sender, EventArgs e)
