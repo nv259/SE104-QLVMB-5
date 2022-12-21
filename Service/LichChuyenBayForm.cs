@@ -273,7 +273,7 @@ namespace Service
 
             string MaChuyenBay = MaChuyenBay1_txtBox.Text;
             Decimal GiaVe = Convert.ToDecimal(GiaVe1_txtBox.Text);
-            string MaSanBayDi = MASANBAY(SanBayDen1_listBox.SelectedItem.ToString());
+            string MaSanBayDi = MASANBAY(SanBayDi1_listBox.SelectedItem.ToString());
             string MaSanBayDen = MASANBAY(SanBayDen1_listBox.SelectedItem.ToString());
             string NgayGioBay = DateTime.ParseExact(NgayGioBay1_txtBox.Text.TrimEnd(), "dd-MM-yyyy HH:mm", null, DateTimeStyles.None).ToString("yyyy-MM-dd HH:mm");
             string ThoiGianBay = ThoiGianBay1_txtBox.Text.TrimEnd();
