@@ -110,7 +110,12 @@ namespace Service
 
         private void LookUpBtn_Click(object sender, EventArgs e)
         {
+            this.Hide();
 
+            TraCuuVeMayBayForm tracuu = new TraCuuVeMayBayForm(this.account);
+            tracuu.ShowDialog();
+
+            this.Show();
         }
     }
 }
