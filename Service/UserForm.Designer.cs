@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.staffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.publicAnnoucementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,8 +58,6 @@
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(252)))), ((int)(((byte)(254)))));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.adminToolStripMenuItem,
-            this.staffToolStripMenuItem,
             this.publicAnnoucementToolStripMenuItem,
             this.logoutToolStripMenuItem,
             this.exitToolStripMenuItem});
@@ -70,18 +66,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(1099, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // adminToolStripMenuItem
-            // 
-            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
-            this.adminToolStripMenuItem.Text = "Admin";
-            // 
-            // staffToolStripMenuItem
-            // 
-            this.staffToolStripMenuItem.Name = "staffToolStripMenuItem";
-            this.staffToolStripMenuItem.Size = new System.Drawing.Size(54, 24);
-            this.staffToolStripMenuItem.Text = "Staff";
             // 
             // publicAnnoucementToolStripMenuItem
             // 
@@ -119,6 +103,7 @@
             this.changeInfoBtn.TabIndex = 6;
             this.changeInfoBtn.Text = "Chỉnh sửa";
             this.changeInfoBtn.UseVisualStyleBackColor = true;
+            this.changeInfoBtn.Click += new System.EventHandler(this.changeInfoBtn_Click);
             // 
             // buyTicketBtn
             // 

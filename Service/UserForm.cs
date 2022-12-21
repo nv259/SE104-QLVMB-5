@@ -14,12 +14,19 @@ namespace Service
 {
     public partial class UserForm : Form
     {
-        public UserForm(string MaDangNhap)
+        public UserForm(Account account = null)
         {
-            Account acc = AccountDAO.Instance.GetAccountByUserName(MaDangNhap);
-
             InitializeComponent();
+            this.account = account;
+
+            this.userName_txtBox.Text = account.MaDangNhap;
+            this.fullName_txtBox.Text = account.TenNguoiDung;
+            this.ID_txtBox.Text = account.DinhDanh;
+            this.email_txtBox.Text = account.Email;
+            this.phoneNumber_txtBox.Text = account.Sdt;
         }
+
+        Account account;
 
         private void userInfo_pnl_Paint(object sender, PaintEventArgs e)
         {
@@ -29,6 +36,16 @@ namespace Service
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void changeInfoBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            UserInfoForm userInfoForm = new UserInfoForm(this.account);
+            userInfoForm.ShowDialog();
+
+            this.Show();
         }
     }
 }
