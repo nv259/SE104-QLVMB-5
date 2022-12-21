@@ -17,13 +17,11 @@ namespace Service
             InitializeComponent();
         }
 
-        private void changeRuleBtn_Click(object sender, EventArgs e)
+        private void sellTicketBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-
-            ThayDoiQuyDinhForm tdqd = new ThayDoiQuyDinhForm();
-            tdqd.ShowDialog();
-
+            SellTicketForm f = new SellTicketForm();
+            f.ShowDialog();
             this.Show();
         }
     }
