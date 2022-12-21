@@ -195,7 +195,7 @@ namespace Service
 
         private void bookingBtn_Click(object sender, EventArgs e)
         {
-            Bill f = new Bill();
+            Bill f = new Bill(account);
             f.ShowDialog();
         }
 

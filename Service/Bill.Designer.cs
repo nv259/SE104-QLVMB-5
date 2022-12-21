@@ -83,6 +83,7 @@
             this.cb_cmbBox.Name = "cb_cmbBox";
             this.cb_cmbBox.Size = new System.Drawing.Size(104, 28);
             this.cb_cmbBox.TabIndex = 35;
+            this.cb_cmbBox.SelectedIndexChanged += new System.EventHandler(this.cb_cmbBox_SelectedIndexChanged);
             // 
             // Cost_txtBox
             // 
