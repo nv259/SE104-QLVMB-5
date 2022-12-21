@@ -335,6 +335,7 @@
             this.Controls.Add(this.updateUserInfoBtn);
             this.Controls.Add(this.panel2);
             this.Name = "UserInfoForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chỉnh sửa thông tin";
             this.Load += new System.EventHandler(this.UserInfoForm_Load);
             this.panel2.ResumeLayout(false);

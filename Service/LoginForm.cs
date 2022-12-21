@@ -76,7 +76,11 @@ namespace Service
                     userForm.ShowDialog();
                 }
 
-                this.Show();
+                try
+                {
+                    this.Show();
+                }
+                catch { }
             }
             else
             {
@@ -103,6 +107,11 @@ namespace Service
             f.ShowDialog();
 
             this.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

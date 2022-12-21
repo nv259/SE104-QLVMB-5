@@ -33,7 +33,6 @@
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelTicketBtn = new System.Windows.Forms.Button();
-            this.changeInfoBtn = new System.Windows.Forms.Button();
             this.buyTicketBtn = new System.Windows.Forms.Button();
             this.userInfo_pnl = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -80,12 +79,14 @@
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
             this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // cancelTicketBtn
             // 
@@ -96,16 +97,6 @@
             this.cancelTicketBtn.TabIndex = 5;
             this.cancelTicketBtn.Text = "Hủy vé";
             this.cancelTicketBtn.UseVisualStyleBackColor = false;
-            // 
-            // changeInfoBtn
-            // 
-            this.changeInfoBtn.Location = new System.Drawing.Point(995, 243);
-            this.changeInfoBtn.Name = "changeInfoBtn";
-            this.changeInfoBtn.Size = new System.Drawing.Size(99, 27);
-            this.changeInfoBtn.TabIndex = 6;
-            this.changeInfoBtn.Text = "Chỉnh sửa";
-            this.changeInfoBtn.UseVisualStyleBackColor = true;
-            this.changeInfoBtn.Click += new System.EventHandler(this.changeInfoBtn_Click);
             // 
             // buyTicketBtn
             // 
@@ -120,7 +111,7 @@
             // userInfo_pnl
             // 
             this.userInfo_pnl.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.userInfo_pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userInfo_pnl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.userInfo_pnl.Controls.Add(this.pictureBox1);
             this.userInfo_pnl.Controls.Add(this.phoneNumber_txtBox);
             this.userInfo_pnl.Controls.Add(this.ID_txtBox);
@@ -129,26 +120,29 @@
             this.userInfo_pnl.Controls.Add(this.userName_txtBox);
             this.userInfo_pnl.Controls.Add(this.fullName_txtBox);
             this.userInfo_pnl.Controls.Add(this.textBox1);
-            this.userInfo_pnl.Location = new System.Drawing.Point(812, 56);
+            this.userInfo_pnl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.userInfo_pnl.Location = new System.Drawing.Point(610, 56);
             this.userInfo_pnl.Name = "userInfo_pnl";
-            this.userInfo_pnl.Size = new System.Drawing.Size(475, 181);
+            this.userInfo_pnl.Size = new System.Drawing.Size(477, 181);
             this.userInfo_pnl.TabIndex = 9;
+            this.userInfo_pnl.Click += new System.EventHandler(this.userInfo_pnl_Paint_1);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::Service.Properties.Resources.user;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 43);
+            this.pictureBox1.Location = new System.Drawing.Point(17, 63);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(94, 87);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.userInfo_pnl_Paint_1);
             // 
             // phoneNumber_txtBox
             // 
             this.phoneNumber_txtBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.phoneNumber_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.phoneNumber_txtBox.Enabled = false;
             this.phoneNumber_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.phoneNumber_txtBox.Location = new System.Drawing.Point(287, 139);
             this.phoneNumber_txtBox.Name = "phoneNumber_txtBox";
@@ -161,6 +155,7 @@
             // 
             this.ID_txtBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.ID_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ID_txtBox.Enabled = false;
             this.ID_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ID_txtBox.Location = new System.Drawing.Point(160, 139);
             this.ID_txtBox.Name = "ID_txtBox";
@@ -173,6 +168,7 @@
             // 
             this.email_txtBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.email_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.email_txtBox.Enabled = false;
             this.email_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.email_txtBox.Location = new System.Drawing.Point(160, 95);
             this.email_txtBox.Name = "email_txtBox";
@@ -198,6 +194,7 @@
             // userName_txtBox
             // 
             this.userName_txtBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(244)))));
+            this.userName_txtBox.Enabled = false;
             this.userName_txtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.userName_txtBox.Location = new System.Drawing.Point(-1, -1);
             this.userName_txtBox.Multiline = true;
@@ -213,6 +210,7 @@
             // 
             this.fullName_txtBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.fullName_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fullName_txtBox.Enabled = false;
             this.fullName_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.fullName_txtBox.ForeColor = System.Drawing.Color.White;
             this.fullName_txtBox.Location = new System.Drawing.Point(160, 52);
@@ -239,11 +237,11 @@
             // ticketBoughtDgv
             // 
             this.ticketBoughtDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ticketBoughtDgv.Location = new System.Drawing.Point(812, 317);
+            this.ticketBoughtDgv.Location = new System.Drawing.Point(610, 262);
             this.ticketBoughtDgv.Name = "ticketBoughtDgv";
             this.ticketBoughtDgv.RowHeadersWidth = 51;
             this.ticketBoughtDgv.RowTemplate.Height = 29;
-            this.ticketBoughtDgv.Size = new System.Drawing.Size(471, 274);
+            this.ticketBoughtDgv.Size = new System.Drawing.Size(477, 308);
             this.ticketBoughtDgv.TabIndex = 10;
             this.ticketBoughtDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ticketBoughtDgv_CellContentClick);
             // 
@@ -292,17 +290,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(1340, 727);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1099, 689);
             this.Controls.Add(this.flightDgv);
             this.Controls.Add(this.ticketBoughtDgv);
             this.Controls.Add(this.userInfo_pnl);
             this.Controls.Add(this.buyTicketBtn);
-            this.Controls.Add(this.changeInfoBtn);
             this.Controls.Add(this.cancelTicketBtn);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "UserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang chủ";
@@ -327,7 +325,6 @@
         private ToolStripMenuItem logoutToolStripMenuItem;
         private ToolStripMenuItem exitToolStripMenuItem;
         private Button cancelTicketBtn;
-        private Button changeInfoBtn;
         private Button buyTicketBtn;
         private Panel userInfo_pnl;
         private TextBox phoneNumber_txtBox;

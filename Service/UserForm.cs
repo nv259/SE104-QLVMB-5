@@ -56,19 +56,10 @@ namespace Service
 
         }
 
-        Account account;
+        private Account account;
+        public bool IsLogout = false;
 
-        private void userInfo_pnl_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void changeInfoBtn_Click(object sender, EventArgs e)
+        private void userInfo_pnl_Paint_1(object sender, EventArgs e)
         {
             this.Hide();
 
@@ -76,6 +67,27 @@ namespace Service
             userInfoForm.ShowDialog();
 
             this.Show();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn đăng xuất?", "Notification", MessageBoxButtons.OKCancel) != DialogResult.OK)
+            {
+                return;
+            }
+
+            IsLogout = true;
+            this.Close();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn thoát?", "Notification", MessageBoxButtons.OKCancel) != DialogResult.OK)
+            {
+                return;
+            }
+
+            Application.Exit();
         }
 
         private void ticketBoughtDgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
