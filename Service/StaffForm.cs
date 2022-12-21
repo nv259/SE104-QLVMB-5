@@ -24,5 +24,29 @@ namespace Service
             f.ShowDialog();
             this.Show();
         }
+
+        private void traCuuBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+        }
+
+        private void RecordFlightBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            LichChuyenBayForm lichChuyenBayForm = new LichChuyenBayForm();
+            lichChuyenBayForm.ShowDialog();
+
+            this.Show();
+        }
+
+        private void changeRuleBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ThayDoiQuyDinhForm f = new ThayDoiQuyDinhForm();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }

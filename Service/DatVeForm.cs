@@ -20,6 +20,7 @@ namespace Service
         {
             InitializeComponent();
             list_flight();
+            //userName_txtBox.DataBindings.Add("Text", user_dtgv.DataSource, "Tên đăng nhập");
         }
 
         private string MaSanBayDi = "", MaSanBayDen = "";
@@ -141,7 +142,9 @@ namespace Service
         private void list_flight()
         {
             modify_masanbay();
-
+            maChuyenBay_txtBox.DataBindings.Clear();
+            timeGoTxtBox.DataBindings.Clear();
+            timeGoneTxtBox.DataBindings.Clear();
             string ngaybay = DateTime.Parse(ngayBayDtp.Value.ToString()).ToString("yyyy-MM-dd");
 
             // GET THAMSO
@@ -157,11 +160,22 @@ namespace Service
 
             DateTime ngaybaymin = Convert.ToDateTime(ngaybay + " 00:00:00.000");
 
-            query = "SELECT sb1.TenSanBay as 'Từ', sb2.TenSanBay as 'Đến', cb.ThoiGianBay as 'Thời gian khởi hành', cb.GiaCoBan as 'Giá cơ bản' " +
+            query = "SELECT cb.MaChuyenBay, sb1.TenSanBay as 'Từ', sb2.TenSanBay as 'Đến', " +
+                    "convert(char(5), cb.NgayGioBay, 108) as timeGo, " +
+                    "convert(char(5), cast(cb.NgayGioBay as datetime) + cast(cb.ThoiGianBay as datetime), 108) as timeGone, " +
+                    "CONVERT(VARCHAR(10), cb.NgayGioBay, 111) as 'Thời gian khởi hành', cb.GiaCoBan as 'Giá cơ bản' " +
                     "FROM [dbo].CHUYENBAY cb JOIN [dbo].SANBAY sb1 ON cb.MaSanBayDi = sb1.MaSanBay " +
                     "JOIN [dbo].SANBAY sb2 ON cb.MaSanBayDen = sb2.MaSanBay " +
-                    "WHERE cb.MaSanBayDi like '%" + MaSanBayDi + "%' AND cb.MaSanBayDen like '%" + MaSanBayDen + "%' AND NgayGioBay >= @ngaybaymin";
+                    "WHERE cb.MaSanBayDi like '%" + MaSanBayDi + "%' AND cb.MaSanBayDen like '%" + MaSanBayDen + "%' AND NgayGioBay >= @ngaybaymin ";
             flightDtgv.DataSource = DataProvider.Instance.ExecuteQuery(query, new object[] { ngaybaymin });
+            
+            flightDtgv.Columns["MaChuyenBay"].Visible = false;
+            flightDtgv.Columns["TimeGo"].Visible = false;
+            flightDtgv.Columns["TimeGone"].Visible = false;
+            timeGoTxtBox.DataBindings.Add("Text", flightDtgv.DataSource, "TimeGo");
+            timeGoneTxtBox.DataBindings.Add("Text", flightDtgv.DataSource, "TimeGone");
+            maChuyenBay_txtBox.DataBindings.Add("Text", flightDtgv.DataSource, "MaChuyenBay");
+            
         }
 
         private void ngayBayDtp_ValueChanged(object sender, EventArgs e)

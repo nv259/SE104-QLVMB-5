@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.flightListLstBox = new System.Windows.Forms.ListBox();
             this.fromComboBox = new System.Windows.Forms.ComboBox();
             this.toComboBox = new System.Windows.Forms.ComboBox();
@@ -49,38 +49,38 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.flightInfoPnl = new System.Windows.Forms.Panel();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.ticketDtgv = new System.Windows.Forms.DataGridView();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.maChuyenBay_txtBox = new System.Windows.Forms.TextBox();
             this.intermediaryDtgv = new System.Windows.Forms.DataGridView();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.flightTimeBox = new System.Windows.Forms.DateTimePicker();
-            this.maChuyenBay_txtBox = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.ticketDtgv = new System.Windows.Forms.DataGridView();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.customInfoPnl = new System.Windows.Forms.Panel();
+            this.ID_txtBox = new System.Windows.Forms.TextBox();
+            this.ngSinhBox = new System.Windows.Forms.DateTimePicker();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.phone_txtBox = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
             this.name_txtBox = new System.Windows.Forms.TextBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.textBox17 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.phone_txtBox = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.ngSinhBox = new System.Windows.Forms.DateTimePicker();
-            this.ID_txtBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bookingBtn = new System.Windows.Forms.Button();
-            this.resetBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.resetBtn = new System.Windows.Forms.Button();
+            this.bookingBtn = new System.Windows.Forms.Button();
             this.textBox13 = new System.Windows.Forms.TextBox();
+            this.timeGoTxtBox = new System.Windows.Forms.TextBox();
+            this.timeGoneTxtBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.airportBindingSource)).BeginInit();
             this.filterPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.flightDtgv)).BeginInit();
             this.panel2.SuspendLayout();
             this.flightInfoPnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.intermediaryDtgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketDtgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.intermediaryDtgv)).BeginInit();
             this.customInfoPnl.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -149,21 +149,21 @@
             this.flightDtgv.AllowUserToAddRows = false;
             this.flightDtgv.AllowUserToDeleteRows = false;
             this.flightDtgv.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(242)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle37.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.flightDtgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(242)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.flightDtgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.flightDtgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.flightDtgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.flightDtgv.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            dataGridViewCellStyle38.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle38.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.flightDtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.flightDtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.flightDtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.flightDtgv.Location = new System.Drawing.Point(3, 132);
             this.flightDtgv.Name = "flightDtgv";
@@ -260,7 +260,8 @@
             // flightInfoPnl
             // 
             this.flightInfoPnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flightInfoPnl.Controls.Add(this.dateTimePicker2);
+            this.flightInfoPnl.Controls.Add(this.timeGoneTxtBox);
+            this.flightInfoPnl.Controls.Add(this.timeGoTxtBox);
             this.flightInfoPnl.Controls.Add(this.textBox10);
             this.flightInfoPnl.Controls.Add(this.ticketDtgv);
             this.flightInfoPnl.Controls.Add(this.textBox9);
@@ -269,122 +270,10 @@
             this.flightInfoPnl.Controls.Add(this.textBox6);
             this.flightInfoPnl.Controls.Add(this.textBox7);
             this.flightInfoPnl.Controls.Add(this.textBox8);
-            this.flightInfoPnl.Controls.Add(this.flightTimeBox);
             this.flightInfoPnl.Location = new System.Drawing.Point(580, 31);
             this.flightInfoPnl.Name = "flightInfoPnl";
             this.flightInfoPnl.Size = new System.Drawing.Size(374, 508);
             this.flightInfoPnl.TabIndex = 11;
-            // 
-            // intermediaryDtgv
-            // 
-            this.intermediaryDtgv.AllowUserToAddRows = false;
-            this.intermediaryDtgv.AllowUserToDeleteRows = false;
-            this.intermediaryDtgv.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(242)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle39.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.intermediaryDtgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle39;
-            this.intermediaryDtgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.intermediaryDtgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.intermediaryDtgv.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            dataGridViewCellStyle40.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle40.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.intermediaryDtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle40;
-            this.intermediaryDtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.intermediaryDtgv.Location = new System.Drawing.Point(3, 132);
-            this.intermediaryDtgv.Name = "intermediaryDtgv";
-            this.intermediaryDtgv.ReadOnly = true;
-            this.intermediaryDtgv.RowHeadersVisible = false;
-            this.intermediaryDtgv.RowHeadersWidth = 51;
-            this.intermediaryDtgv.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.intermediaryDtgv.RowTemplate.Height = 29;
-            this.intermediaryDtgv.Size = new System.Drawing.Size(365, 158);
-            this.intermediaryDtgv.TabIndex = 14;
-            this.intermediaryDtgv.TabStop = false;
-            // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.Color.White;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.textBox6.Location = new System.Drawing.Point(12, 106);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(141, 20);
-            this.textBox6.TabIndex = 13;
-            this.textBox6.TabStop = false;
-            this.textBox6.Text = "Thời gian khởi hành:";
-            // 
-            // textBox7
-            // 
-            this.textBox7.BackColor = System.Drawing.Color.White;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.textBox7.Location = new System.Drawing.Point(159, 25);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(163, 20);
-            this.textBox7.TabIndex = 12;
-            this.textBox7.TabStop = false;
-            this.textBox7.Text = "Thời gian bay dự kiến:";
-            // 
-            // textBox8
-            // 
-            this.textBox8.BackColor = System.Drawing.Color.White;
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.textBox8.Location = new System.Drawing.Point(12, 25);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(121, 20);
-            this.textBox8.TabIndex = 11;
-            this.textBox8.TabStop = false;
-            this.textBox8.Text = "Chuyến bay:";
-            // 
-            // flightTimeBox
-            // 
-            this.flightTimeBox.CustomFormat = "MM/dd/yyyy hh:mm:ss";
-            this.flightTimeBox.Enabled = false;
-            this.flightTimeBox.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.flightTimeBox.Location = new System.Drawing.Point(159, 101);
-            this.flightTimeBox.MinDate = new System.DateTime(2022, 12, 21, 11, 25, 7, 0);
-            this.flightTimeBox.Name = "flightTimeBox";
-            this.flightTimeBox.Size = new System.Drawing.Size(209, 27);
-            this.flightTimeBox.TabIndex = 3;
-            this.flightTimeBox.Value = new System.DateTime(2022, 12, 21, 12, 43, 4, 0);
-            // 
-            // maChuyenBay_txtBox
-            // 
-            this.maChuyenBay_txtBox.BackColor = System.Drawing.Color.White;
-            this.maChuyenBay_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.maChuyenBay_txtBox.Location = new System.Drawing.Point(12, 51);
-            this.maChuyenBay_txtBox.Name = "maChuyenBay_txtBox";
-            this.maChuyenBay_txtBox.ReadOnly = true;
-            this.maChuyenBay_txtBox.Size = new System.Drawing.Size(141, 27);
-            this.maChuyenBay_txtBox.TabIndex = 15;
-            this.maChuyenBay_txtBox.TabStop = false;
-            // 
-            // textBox9
-            // 
-            this.textBox9.BackColor = System.Drawing.Color.White;
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.textBox9.Location = new System.Drawing.Point(3, 132);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(365, 27);
-            this.textBox9.TabIndex = 16;
-            this.textBox9.TabStop = false;
-            this.textBox9.Text = "Sân bay trung gian";
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox10
             // 
@@ -405,21 +294,21 @@
             this.ticketDtgv.AllowUserToAddRows = false;
             this.ticketDtgv.AllowUserToDeleteRows = false;
             this.ticketDtgv.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(242)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle41.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.ticketDtgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(242)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.ticketDtgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.ticketDtgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ticketDtgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.ticketDtgv.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ticketDtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ticketDtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.ticketDtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ticketDtgv.Location = new System.Drawing.Point(3, 296);
             this.ticketDtgv.Name = "ticketDtgv";
@@ -431,6 +320,105 @@
             this.ticketDtgv.Size = new System.Drawing.Size(365, 158);
             this.ticketDtgv.TabIndex = 17;
             this.ticketDtgv.TabStop = false;
+            // 
+            // textBox9
+            // 
+            this.textBox9.BackColor = System.Drawing.Color.White;
+            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.textBox9.Location = new System.Drawing.Point(3, 132);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(365, 27);
+            this.textBox9.TabIndex = 16;
+            this.textBox9.TabStop = false;
+            this.textBox9.Text = "Sân bay trung gian";
+            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // maChuyenBay_txtBox
+            // 
+            this.maChuyenBay_txtBox.BackColor = System.Drawing.Color.White;
+            this.maChuyenBay_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.maChuyenBay_txtBox.Location = new System.Drawing.Point(12, 44);
+            this.maChuyenBay_txtBox.Name = "maChuyenBay_txtBox";
+            this.maChuyenBay_txtBox.ReadOnly = true;
+            this.maChuyenBay_txtBox.Size = new System.Drawing.Size(141, 27);
+            this.maChuyenBay_txtBox.TabIndex = 15;
+            this.maChuyenBay_txtBox.TabStop = false;
+            // 
+            // intermediaryDtgv
+            // 
+            this.intermediaryDtgv.AllowUserToAddRows = false;
+            this.intermediaryDtgv.AllowUserToDeleteRows = false;
+            this.intermediaryDtgv.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(242)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.intermediaryDtgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.intermediaryDtgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.intermediaryDtgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.intermediaryDtgv.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.intermediaryDtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.intermediaryDtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.intermediaryDtgv.Location = new System.Drawing.Point(3, 132);
+            this.intermediaryDtgv.Name = "intermediaryDtgv";
+            this.intermediaryDtgv.ReadOnly = true;
+            this.intermediaryDtgv.RowHeadersVisible = false;
+            this.intermediaryDtgv.RowHeadersWidth = 51;
+            this.intermediaryDtgv.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.intermediaryDtgv.RowTemplate.Height = 29;
+            this.intermediaryDtgv.Size = new System.Drawing.Size(365, 158);
+            this.intermediaryDtgv.TabIndex = 14;
+            this.intermediaryDtgv.TabStop = false;
+            // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.Color.White;
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.textBox6.Location = new System.Drawing.Point(206, 18);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(141, 20);
+            this.textBox6.TabIndex = 13;
+            this.textBox6.TabStop = false;
+            this.textBox6.Text = "Giờ khởi hành";
+            // 
+            // textBox7
+            // 
+            this.textBox7.BackColor = System.Drawing.Color.White;
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.textBox7.Location = new System.Drawing.Point(206, 77);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
+            this.textBox7.Size = new System.Drawing.Size(121, 20);
+            this.textBox7.TabIndex = 12;
+            this.textBox7.TabStop = false;
+            this.textBox7.Text = "Giờ đến";
+            // 
+            // textBox8
+            // 
+            this.textBox8.BackColor = System.Drawing.Color.White;
+            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.textBox8.Location = new System.Drawing.Point(12, 18);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
+            this.textBox8.Size = new System.Drawing.Size(121, 20);
+            this.textBox8.TabIndex = 11;
+            this.textBox8.TabStop = false;
+            this.textBox8.Text = "Chuyến bay:";
             // 
             // textBox11
             // 
@@ -462,6 +450,68 @@
             this.customInfoPnl.Name = "customInfoPnl";
             this.customInfoPnl.Size = new System.Drawing.Size(394, 189);
             this.customInfoPnl.TabIndex = 13;
+            // 
+            // ID_txtBox
+            // 
+            this.ID_txtBox.BackColor = System.Drawing.Color.White;
+            this.ID_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ID_txtBox.Location = new System.Drawing.Point(226, 51);
+            this.ID_txtBox.Name = "ID_txtBox";
+            this.ID_txtBox.ReadOnly = true;
+            this.ID_txtBox.Size = new System.Drawing.Size(163, 27);
+            this.ID_txtBox.TabIndex = 20;
+            this.ID_txtBox.TabStop = false;
+            // 
+            // ngSinhBox
+            // 
+            this.ngSinhBox.CustomFormat = "MM/dd/yyyy";
+            this.ngSinhBox.Enabled = false;
+            this.ngSinhBox.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ngSinhBox.Location = new System.Drawing.Point(11, 125);
+            this.ngSinhBox.MinDate = new System.DateTime(2022, 12, 21, 11, 25, 7, 0);
+            this.ngSinhBox.Name = "ngSinhBox";
+            this.ngSinhBox.Size = new System.Drawing.Size(194, 27);
+            this.ngSinhBox.TabIndex = 19;
+            this.ngSinhBox.Value = new System.DateTime(2022, 12, 21, 12, 43, 4, 0);
+            // 
+            // textBox15
+            // 
+            this.textBox15.BackColor = System.Drawing.Color.White;
+            this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.textBox15.Location = new System.Drawing.Point(12, 99);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.ReadOnly = true;
+            this.textBox15.Size = new System.Drawing.Size(98, 20);
+            this.textBox15.TabIndex = 18;
+            this.textBox15.TabStop = false;
+            this.textBox15.Text = "Ngày sinh:";
+            // 
+            // phone_txtBox
+            // 
+            this.phone_txtBox.BackColor = System.Drawing.Color.White;
+            this.phone_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.phone_txtBox.Location = new System.Drawing.Point(226, 125);
+            this.phone_txtBox.Name = "phone_txtBox";
+            this.phone_txtBox.ReadOnly = true;
+            this.phone_txtBox.Size = new System.Drawing.Size(163, 27);
+            this.phone_txtBox.TabIndex = 17;
+            this.phone_txtBox.TabStop = false;
+            // 
+            // textBox12
+            // 
+            this.textBox12.BackColor = System.Drawing.Color.White;
+            this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.textBox12.Location = new System.Drawing.Point(226, 99);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.ReadOnly = true;
+            this.textBox12.Size = new System.Drawing.Size(121, 20);
+            this.textBox12.TabIndex = 16;
+            this.textBox12.TabStop = false;
+            this.textBox12.Text = "Số điện thoại:";
             // 
             // name_txtBox
             // 
@@ -502,80 +552,6 @@
             this.textBox17.TabStop = false;
             this.textBox17.Text = "Họ và tên:";
             // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CustomFormat = "MM/dd/yyyy hh:mm:ss";
-            this.dateTimePicker2.Enabled = false;
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(159, 51);
-            this.dateTimePicker2.MinDate = new System.DateTime(2022, 12, 21, 11, 25, 7, 0);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(209, 27);
-            this.dateTimePicker2.TabIndex = 19;
-            this.dateTimePicker2.Value = new System.DateTime(2022, 12, 21, 12, 43, 4, 0);
-            // 
-            // textBox12
-            // 
-            this.textBox12.BackColor = System.Drawing.Color.White;
-            this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.textBox12.Location = new System.Drawing.Point(226, 99);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.ReadOnly = true;
-            this.textBox12.Size = new System.Drawing.Size(121, 20);
-            this.textBox12.TabIndex = 16;
-            this.textBox12.TabStop = false;
-            this.textBox12.Text = "Số điện thoại:";
-            // 
-            // phone_txtBox
-            // 
-            this.phone_txtBox.BackColor = System.Drawing.Color.White;
-            this.phone_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.phone_txtBox.Location = new System.Drawing.Point(226, 125);
-            this.phone_txtBox.Name = "phone_txtBox";
-            this.phone_txtBox.ReadOnly = true;
-            this.phone_txtBox.Size = new System.Drawing.Size(163, 27);
-            this.phone_txtBox.TabIndex = 17;
-            this.phone_txtBox.TabStop = false;
-            // 
-            // textBox15
-            // 
-            this.textBox15.BackColor = System.Drawing.Color.White;
-            this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.textBox15.Location = new System.Drawing.Point(12, 99);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.ReadOnly = true;
-            this.textBox15.Size = new System.Drawing.Size(98, 20);
-            this.textBox15.TabIndex = 18;
-            this.textBox15.TabStop = false;
-            this.textBox15.Text = "Ngày sinh:";
-            // 
-            // ngSinhBox
-            // 
-            this.ngSinhBox.CustomFormat = "MM/dd/yyyy";
-            this.ngSinhBox.Enabled = false;
-            this.ngSinhBox.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ngSinhBox.Location = new System.Drawing.Point(11, 125);
-            this.ngSinhBox.MinDate = new System.DateTime(2022, 12, 21, 11, 25, 7, 0);
-            this.ngSinhBox.Name = "ngSinhBox";
-            this.ngSinhBox.Size = new System.Drawing.Size(194, 27);
-            this.ngSinhBox.TabIndex = 19;
-            this.ngSinhBox.Value = new System.DateTime(2022, 12, 21, 12, 43, 4, 0);
-            // 
-            // ID_txtBox
-            // 
-            this.ID_txtBox.BackColor = System.Drawing.Color.White;
-            this.ID_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ID_txtBox.Location = new System.Drawing.Point(226, 51);
-            this.ID_txtBox.Name = "ID_txtBox";
-            this.ID_txtBox.ReadOnly = true;
-            this.ID_txtBox.Size = new System.Drawing.Size(163, 27);
-            this.ID_txtBox.TabIndex = 20;
-            this.ID_txtBox.TabStop = false;
-            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -587,17 +563,17 @@
             this.panel1.Size = new System.Drawing.Size(164, 189);
             this.panel1.TabIndex = 15;
             // 
-            // bookingBtn
+            // button1
             // 
-            this.bookingBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.bookingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bookingBtn.ForeColor = System.Drawing.Color.White;
-            this.bookingBtn.Location = new System.Drawing.Point(12, 25);
-            this.bookingBtn.Name = "bookingBtn";
-            this.bookingBtn.Size = new System.Drawing.Size(137, 33);
-            this.bookingBtn.TabIndex = 0;
-            this.bookingBtn.Text = "Đặt Vé";
-            this.bookingBtn.UseVisualStyleBackColor = false;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.Location = new System.Drawing.Point(12, 114);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(137, 33);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Đóng";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // resetBtn
             // 
@@ -611,17 +587,17 @@
             this.resetBtn.Text = "Hủy";
             this.resetBtn.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // bookingBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Location = new System.Drawing.Point(12, 114);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 33);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Đóng";
-            this.button1.UseVisualStyleBackColor = false;
+            this.bookingBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.bookingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bookingBtn.ForeColor = System.Drawing.Color.White;
+            this.bookingBtn.Location = new System.Drawing.Point(12, 25);
+            this.bookingBtn.Name = "bookingBtn";
+            this.bookingBtn.Size = new System.Drawing.Size(137, 33);
+            this.bookingBtn.TabIndex = 0;
+            this.bookingBtn.Text = "Đặt Vé";
+            this.bookingBtn.UseVisualStyleBackColor = false;
             // 
             // textBox13
             // 
@@ -637,6 +613,28 @@
             this.textBox13.TabStop = false;
             this.textBox13.Text = "Chức năng";
             this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // timeGoTxtBox
+            // 
+            this.timeGoTxtBox.BackColor = System.Drawing.Color.White;
+            this.timeGoTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.timeGoTxtBox.Location = new System.Drawing.Point(206, 44);
+            this.timeGoTxtBox.Name = "timeGoTxtBox";
+            this.timeGoTxtBox.ReadOnly = true;
+            this.timeGoTxtBox.Size = new System.Drawing.Size(141, 27);
+            this.timeGoTxtBox.TabIndex = 19;
+            this.timeGoTxtBox.TabStop = false;
+            // 
+            // timeGoneTxtBox
+            // 
+            this.timeGoneTxtBox.BackColor = System.Drawing.Color.White;
+            this.timeGoneTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.timeGoneTxtBox.Location = new System.Drawing.Point(206, 99);
+            this.timeGoneTxtBox.Name = "timeGoneTxtBox";
+            this.timeGoneTxtBox.ReadOnly = true;
+            this.timeGoneTxtBox.Size = new System.Drawing.Size(141, 27);
+            this.timeGoneTxtBox.TabIndex = 20;
+            this.timeGoneTxtBox.TabStop = false;
             // 
             // DatVeForm
             // 
@@ -664,8 +662,8 @@
             this.panel2.PerformLayout();
             this.flightInfoPnl.ResumeLayout(false);
             this.flightInfoPnl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.intermediaryDtgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketDtgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.intermediaryDtgv)).EndInit();
             this.customInfoPnl.ResumeLayout(false);
             this.customInfoPnl.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -696,7 +694,6 @@
         private TextBox textBox8;
         private TextBox maChuyenBay_txtBox;
         private TextBox textBox9;
-        internal DateTimePicker flightTimeBox;
         private TextBox textBox10;
         private DataGridView ticketDtgv;
         private TextBox textBox11;
@@ -704,7 +701,6 @@
         private TextBox name_txtBox;
         private TextBox textBox16;
         private TextBox textBox17;
-        internal DateTimePicker dateTimePicker2;
         private TextBox textBox12;
         private TextBox phone_txtBox;
         private TextBox textBox15;
@@ -715,5 +711,7 @@
         private Button resetBtn;
         private Button button1;
         private TextBox textBox13;
+        private TextBox timeGoneTxtBox;
+        private TextBox timeGoTxtBox;
     }
 }

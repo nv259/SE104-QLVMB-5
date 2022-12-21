@@ -84,10 +84,15 @@ namespace Service
             {
                 this.alert_txtBox.Text = "Email không đúng!";
                 return false;
-            }
-            else
-            {
-                this.alert_txtBox.Text = "";
+            } else {
+                string email = this.email_txtBox.Text;
+                string Query = "SELECT * FROM [dbo].NGUOIDUNG WHERE Email = @email ";
+                if (DataProvider.Instance.ExecuteQuery(Query, new object[] { email }).Rows.Count > 0)
+                {
+                    this.alert_txtBox.Text = "Email  đã tồn tại!";
+                    return false;
+                }
+                else this.alert_txtBox.Text = "";
             }
 
             string MaDangNhap = this.username_txtBox.Text;
@@ -156,7 +161,17 @@ namespace Service
                 this.alert_txtBox.Text = "Mã định danh không hợp lệ!";
                 return false;
             }
-            else this.alert_txtBox.Text = "";
+            else
+            {
+                string id = this.ID_txtBox.Text;
+                string Query = "SELECT * FROM [dbo].NGUOIDUNG WHERE DinhDanh = @id ";
+                if (DataProvider.Instance.ExecuteQuery(Query, new object[] { id }).Rows.Count > 0)
+                {
+                    this.alert_txtBox.Text = "Mã định danh đã tồn tại!";
+                    return false;
+                }
+                else this.alert_txtBox.Text = "";
+            }
 
             string phone_number = this.PhoneNumber_txtBox.Text.Trim();
             if (phone_number.Length == 0)
@@ -185,7 +200,14 @@ namespace Service
             }
             else
             {
-                this.alert_txtBox.Text = "";
+                string phone = this.PhoneNumber_txtBox.Text;
+                string Query = "SELECT * FROM [dbo].NGUOIDUNG WHERE SoDienThoai = @phone ";
+                if (DataProvider.Instance.ExecuteQuery(Query, new object[] { phone }).Rows.Count > 0)
+                {
+                    this.alert_txtBox.Text = "Số điện thoại đã tồn tại!";
+                    return false;
+                }
+                else this.alert_txtBox.Text = "";
             }
 
             return true;

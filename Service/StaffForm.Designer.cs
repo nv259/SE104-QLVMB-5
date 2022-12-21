@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.sellTicketBtn = new System.Windows.Forms.Button();
+            this.RecordFlightBtn = new System.Windows.Forms.Button();
             this.makeReportBtn = new System.Windows.Forms.Button();
             this.changeRuleBtn = new System.Windows.Forms.Button();
             this.traCuuBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // sellTicketBtn
+            // RecordFlightBtn
             // 
-            this.sellTicketBtn.Location = new System.Drawing.Point(28, 19);
-            this.sellTicketBtn.Name = "sellTicketBtn";
-            this.sellTicketBtn.Size = new System.Drawing.Size(159, 42);
-            this.sellTicketBtn.TabIndex = 0;
-            this.sellTicketBtn.Text = "Bán Vé";
-            this.sellTicketBtn.UseVisualStyleBackColor = true;
+            this.RecordFlightBtn.Location = new System.Drawing.Point(28, 19);
+            this.RecordFlightBtn.Name = "RecordFlightBtn";
+            this.RecordFlightBtn.Size = new System.Drawing.Size(159, 42);
+            this.RecordFlightBtn.TabIndex = 0;
+            this.RecordFlightBtn.Text = "Ghi nhận chuyến bay";
+            this.RecordFlightBtn.UseVisualStyleBackColor = true;
+            this.RecordFlightBtn.Click += new System.EventHandler(this.RecordFlightBtn_Click);
             // 
             // makeReportBtn
             // 
@@ -61,6 +62,7 @@
             this.changeRuleBtn.TabIndex = 2;
             this.changeRuleBtn.Text = "Thay đổi quy định";
             this.changeRuleBtn.UseVisualStyleBackColor = true;
+            this.changeRuleBtn.Click += new System.EventHandler(this.changeRuleBtn_Click);
             // 
             // traCuuBtn
             // 
@@ -70,6 +72,7 @@
             this.traCuuBtn.TabIndex = 3;
             this.traCuuBtn.Text = "Tra cứu";
             this.traCuuBtn.UseVisualStyleBackColor = true;
+            this.traCuuBtn.Click += new System.EventHandler(this.traCuuBtn_Click);
             // 
             // StaffForm
             // 
@@ -79,7 +82,7 @@
             this.Controls.Add(this.traCuuBtn);
             this.Controls.Add(this.changeRuleBtn);
             this.Controls.Add(this.makeReportBtn);
-            this.Controls.Add(this.sellTicketBtn);
+            this.Controls.Add(this.RecordFlightBtn);
             this.Name = "StaffForm";
             this.Text = "StaffForm";
             this.ResumeLayout(false);
@@ -88,7 +91,7 @@
 
         #endregion
 
-        private Button sellTicketBtn;
+        private Button RecordFlightBtn;
         private Button makeReportBtn;
         private Button changeRuleBtn;
         private Button traCuuBtn;
