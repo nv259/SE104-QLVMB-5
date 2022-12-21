@@ -54,10 +54,10 @@
             this.PasswordtxtBox.Location = new System.Drawing.Point(12, 110);
             this.PasswordtxtBox.MaxLength = 255;
             this.PasswordtxtBox.Name = "PasswordtxtBox";
-            this.PasswordtxtBox.PasswordChar = '•';
             this.PasswordtxtBox.PlaceholderText = "  password";
             this.PasswordtxtBox.Size = new System.Drawing.Size(427, 27);
             this.PasswordtxtBox.TabIndex = 1;
+            this.PasswordtxtBox.UseSystemPasswordChar = true;
             // 
             // LoginBtn
             // 

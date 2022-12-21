@@ -1,6 +1,7 @@
 ﻿using DataAccess.DAO;
 using DataAccess.DTO;
-
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Service
 {
@@ -23,10 +24,21 @@ namespace Service
             }
         }
 
+        SHA512 sha512Hash = SHA512.Create();
+        
+        private string Convert_to_SHA512(string source)
+        {
+            byte[] sourceBytes = Encoding.UTF8.GetBytes(source);
+            byte[] hashBytes = sha512Hash.ComputeHash(sourceBytes);
+            string hash = BitConverter.ToString(hashBytes).Replace("-", String.Empty);
+
+            return hash.ToString();
+        }
+
         private void loginBtn_Click(object sender, EventArgs e)
         {
             string MaDangNhap = this.Username_txtBox.Text;
-            string MatKhau = this.PasswordtxtBox.Text;
+            string MatKhau = Convert_to_SHA512(this.PasswordtxtBox.Text);
 
             string query = "SELECT * FROM [dbo].NGUOIDUNG WHERE MaDangNhap = @MaDangNhap AND MatKhau = @MatKhau";
 
@@ -48,8 +60,21 @@ namespace Service
 
                 this.Hide();
 
-                UserForm user_form = new UserForm(MaDangNhap);
-                user_form.ShowDialog();
+                Account account = AccountDAO.Instance.GetAccountByUserName(MaDangNhap);
+
+                if (account.MaNhom == "0")
+                {
+                    AdminForm adminForm = new AdminForm();
+                    adminForm.ShowDialog();
+                } else if (account.MaNhom == "1")
+                {
+                    StaffForm staffForm = new StaffForm();
+                    staffForm.ShowDialog();
+                } else
+                {
+                    UserForm userForm = new UserForm(account);
+                    userForm.ShowDialog();
+                }
 
                 this.Show();
             }
@@ -57,6 +82,11 @@ namespace Service
             {
                 MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác");
                 this.PasswordtxtBox.Text = "";
+
+                Properties.Settings.Default.username = "";
+                Properties.Settings.Default.password = "";
+                Properties.Settings.Default.remember = false;
+                Properties.Settings.Default.Save();
             }
         }
 
