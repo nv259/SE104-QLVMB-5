@@ -75,8 +75,8 @@ namespace Service
                 string MaNhom = this.userRole_comboBox.Text;
 
                 // Account
-                string query = "INSERT INTO [dbo].NGUOIDUNG VALUES ( @MaDangNhap , @MatKhau , @MaNhom , @TenNguoiDung , @DinhDanh , @SoDienThoai , @Email ) ";
-                int i = DataProvider.Instance.ExecuteNonQuery(query, new object[] { MaDangNhap, "1A8462AD95FC28007C67106DC6667AC2637FC1E9CAE30025EF5B46C5F6E9F9312FD48661626D85610A35844E5FC658DD1F5298630138D9F67EFE3074921C41B0", MaNhom, this.Name_txtBox.Text, this.ID_txtBox.Text, this.phone_txtBox.Text, this.email_txtBox.Text });
+                string query = "INSERT INTO [dbo].NGUOIDUNG VALUES ( @MaDangNhap , @MatKhau , @MaNhom , @TenNguoiDung , @DinhDanh , @SoDienThoai , @Email ,  @NgaySinh )";
+                int i = DataProvider.Instance.ExecuteNonQuery(query, new object[] { MaDangNhap, "1A8462AD95FC28007C67106DC6667AC2637FC1E9CAE30025EF5B46C5F6E9F9312FD48661626D85610A35844E5FC658DD1F5298630138D9F67EFE3074921C41B0", MaNhom, this.Name_txtBox.Text, this.ID_txtBox.Text, this.phone_txtBox.Text, this.email_txtBox.Text, "01/01/2001" });
 
                 MessageBox.Show("Đã thêm user mới!");
                 Load_dtgv();
