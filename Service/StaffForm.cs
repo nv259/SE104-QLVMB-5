@@ -24,5 +24,20 @@ namespace Service
             f.ShowDialog();
             this.Show();
         }
+
+        private void traCuuBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RecordFlightBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            LichChuyenBayForm lichChuyenBayForm = new LichChuyenBayForm();
+            lichChuyenBayForm.ShowDialog();
+
+            this.Show();
+        }
     }
 }
