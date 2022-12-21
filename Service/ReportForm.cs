@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace Service
 {
@@ -20,8 +21,8 @@ namespace Service
             InitializeComponent();
             reportMonthDgv.DataSource = monthIncome;
             reportYearDgv.DataSource = yearIncome;
-            this.reportMonthBtn.Hide();
-            this.reportYearBtn.Hide();
+            //this.reportMonthBtn.Hide();
+            //this.reportYearBtn.Hide();
             this.reportMonthDgv.Hide();
             this.reportYearDgv.Hide();
             this.yearTxtBox.Show();
@@ -44,19 +45,30 @@ namespace Service
         private void Load_dtgv_reportYearDgv()
         {
             string year = this.yearTxtBox.Text;
-            string query = "SELECT MONTH(NgayGioBay) as 'Tháng', COUNT(MaChuyenBay) as 'Số chuyến bay, " +
-                "SUM(DoanhThu) as 'Doanh thu', 100*SUM(DoanhThu)/(SELECT SUM(DoanhThu) from temp where YEAR(NgayGioBay) = @year) " +
-                "as 'Tỉ lệ' " +
-                "from [dbo].ChuyenBay " +
-                "join (" +
-                    "select CHUYENBAY.MaChuyenBay, SUM(CHUYENBAY.GiaCoBan * HANGVE.TiLeGiaVe) as DoanhThu " +
-                    "from [dbo].CT_DATVE " +
-                    "join [dbo].CHUYENBAY on CT_DATVE.MaChuyenBay = CHUYENBAY.MaChuyenBay " +
-                    "join [dbo].HANGVE on CT_DATVE.MaHangVe = HANGVE.MaHangVe " +
-                    "GROUP BY CHUYENBAY.MaChuyenBay " +
-                    ") as temp on ChuyenBay.MaChuyenBay = temp.MaChuyenBay " +
-                "where YEAR(NgayGioBay) = @year";
-            reportYearDgv.DataSource = DataProvider.Instance.ExecuteQuery(query);
+            string query = "SELECT MONTH(NgayGioBay) as 'Tháng', COUNT(CHUYENBAY.MaChuyenBay) as 'Số chuyến bay', " +
+                "SUM(DoanhThu) as 'Doanh thu', 100 * SUM(DoanhThu)/(SELECT SUM(DoanhThu) " +
+                "from (select CHUYENBAY.MaChuyenBay, SUM(CHUYENBAY.GiaCoBan * HANGVE.TiLeGiaVe) as DoanhThu " +
+                "from [dbo].CT_DATVE " +
+                "join [dbo].CHUYENBAY on CT_DATVE.MaChuyenBay = CHUYENBAY.MaChuyenBay " +
+                "join [dbo].HANGVE on CT_DATVE.MaHangVe = HANGVE.MaHangVe " +
+                "where YEAR(NgayGioBay) = @year " +
+                "GROUP BY CHUYENBAY.MaChuyenBay) temp ) " +
+                "as 'Tỉ lệ' from [dbo].ChuyenBay " +
+                "join (select CHUYENBAY.MaChuyenBay, SUM(CHUYENBAY.GiaCoBan * HANGVE.TiLeGiaVe) as DoanhThu " +
+                "from [dbo].CT_DATVE join [dbo].CHUYENBAY on CT_DATVE.MaChuyenBay = CHUYENBAY.MaChuyenBay " +
+                "join [dbo].HANGVE on CT_DATVE.MaHangVe = HANGVE.MaHangVe " +
+                "GROUP BY CHUYENBAY.MaChuyenBay ) as temp2 on ChuyenBay.MaChuyenBay = temp2.MaChuyenBay " +
+                "where YEAR(NgayGioBay) = @year2 " +
+                "group by month(NgayGioBay) " +
+                "order by month(NgayGioBay)";
+            reportYearDgv.DataSource = DataProvider.Instance.ExecuteQuery(query, new object[] { year, year });
+            int total = 0;
+            for (int i = 0; i < reportYearDgv.Rows.Count; ++i)
+            {
+                total += Convert.ToInt32(reportYearDgv.Rows[i].Cells[2].Value);
+            }
+
+            this.totalIncome.Text = total.ToString();
         }
 
         private void Load_dtgv_reportMonthDgv()
