@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtBox4 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.showData_panel = new System.Windows.Forms.Panel();
             this.usernameTxtBox = new System.Windows.Forms.TextBox();
             this.fullNameTxtBox = new System.Windows.Forms.TextBox();
             this.idTxtBox = new System.Windows.Forms.TextBox();
             this.emailTxtBox = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.updateUserInfoBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -59,28 +59,54 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.txtBox4);
+            this.panel2.Controls.Add(this.textBox11);
+            this.panel2.Controls.Add(this.textBox10);
+            this.panel2.Controls.Add(this.textBox9);
             this.panel2.Controls.Add(this.showData_panel);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.textBox6);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.textBox7);
             this.panel2.Location = new System.Drawing.Point(21, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(455, 239);
             this.panel2.TabIndex = 2;
             // 
-            // txtBox4
+            // textBox11
             // 
-            this.txtBox4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBox4.Font = new System.Drawing.Font("Segoe UI", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.txtBox4.Location = new System.Drawing.Point(3, 5);
-            this.txtBox4.Name = "txtBox4";
-            this.txtBox4.ReadOnly = true;
-            this.txtBox4.Size = new System.Drawing.Size(133, 23);
-            this.txtBox4.TabIndex = 12;
-            this.txtBox4.TabStop = false;
-            this.txtBox4.Text = "Tên đăng nhập:";
+            this.textBox11.BackColor = System.Drawing.Color.White;
+            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox11.Font = new System.Drawing.Font("Segoe UI", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.textBox11.Location = new System.Drawing.Point(3, 10);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.ReadOnly = true;
+            this.textBox11.Size = new System.Drawing.Size(133, 23);
+            this.textBox11.TabIndex = 12;
+            this.textBox11.TabStop = false;
+            this.textBox11.Text = "Tên đăng nhập:";
+            // 
+            // textBox10
+            // 
+            this.textBox10.BackColor = System.Drawing.Color.White;
+            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox10.Location = new System.Drawing.Point(3, 106);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.ReadOnly = true;
+            this.textBox10.Size = new System.Drawing.Size(91, 23);
+            this.textBox10.TabIndex = 2;
+            this.textBox10.TabStop = false;
+            this.textBox10.Text = "Họ và tên:";
+            // 
+            // textBox9
+            // 
+            this.textBox9.BackColor = System.Drawing.Color.White;
+            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox9.Location = new System.Drawing.Point(3, 157);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(62, 23);
+            this.textBox9.TabIndex = 0;
+            this.textBox9.TabStop = false;
+            this.textBox9.Text = "Email:";
             // 
             // showData_panel
             // 
@@ -88,7 +114,7 @@
             this.showData_panel.Controls.Add(this.fullNameTxtBox);
             this.showData_panel.Controls.Add(this.idTxtBox);
             this.showData_panel.Controls.Add(this.emailTxtBox);
-            this.showData_panel.Location = new System.Drawing.Point(163, 0);
+            this.showData_panel.Location = new System.Drawing.Point(152, 0);
             this.showData_panel.Name = "showData_panel";
             this.showData_panel.Size = new System.Drawing.Size(288, 239);
             this.showData_panel.TabIndex = 3;
@@ -106,16 +132,15 @@
             // fullNameTxtBox
             // 
             this.fullNameTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.fullNameTxtBox.Location = new System.Drawing.Point(3, 106);
+            this.fullNameTxtBox.Location = new System.Drawing.Point(0, 102);
             this.fullNameTxtBox.Name = "fullNameTxtBox";
-            this.fullNameTxtBox.ReadOnly = true;
-            this.fullNameTxtBox.Size = new System.Drawing.Size(282, 27);
+            this.fullNameTxtBox.Size = new System.Drawing.Size(285, 27);
             this.fullNameTxtBox.TabIndex = 15;
             this.fullNameTxtBox.TextChanged += new System.EventHandler(this.fullNameTxtBox_TextChanged);
             // 
             // idTxtBox
             // 
-            this.idTxtBox.BackColor = System.Drawing.SystemColors.Control;
+            this.idTxtBox.BackColor = System.Drawing.Color.White;
             this.idTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.idTxtBox.Location = new System.Drawing.Point(3, 54);
             this.idTxtBox.Name = "idTxtBox";
@@ -125,52 +150,26 @@
             // 
             // emailTxtBox
             // 
-            this.emailTxtBox.BackColor = System.Drawing.SystemColors.Control;
+            this.emailTxtBox.BackColor = System.Drawing.Color.White;
             this.emailTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.emailTxtBox.Location = new System.Drawing.Point(3, 161);
+            this.emailTxtBox.Location = new System.Drawing.Point(3, 153);
             this.emailTxtBox.Name = "emailTxtBox";
             this.emailTxtBox.Size = new System.Drawing.Size(282, 27);
             this.emailTxtBox.TabIndex = 14;
             this.emailTxtBox.TextChanged += new System.EventHandler(this.emailTxtBox_TextChanged);
             // 
-            // textBox4
+            // textBox7
             // 
-            this.textBox4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(3, 106);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(91, 23);
-            this.textBox4.TabIndex = 2;
-            this.textBox4.TabStop = false;
-            this.textBox4.Text = "Họ và tên:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox6.Location = new System.Drawing.Point(3, 161);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(62, 23);
-            this.textBox6.TabIndex = 0;
-            this.textBox6.TabStop = false;
-            this.textBox6.Text = "Email:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(3, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(154, 23);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TabStop = false;
-            this.textBox1.Text = "Định danh / CCCD:";
+            this.textBox7.BackColor = System.Drawing.Color.White;
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.textBox7.Location = new System.Drawing.Point(3, 58);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
+            this.textBox7.Size = new System.Drawing.Size(154, 23);
+            this.textBox7.TabIndex = 0;
+            this.textBox7.TabStop = false;
+            this.textBox7.Text = "Định danh/CCCD:";
             // 
             // updateUserInfoBtn
             // 
@@ -190,13 +189,13 @@
             this.panel1.Controls.Add(this.textBox5);
             this.panel1.Location = new System.Drawing.Point(497, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(493, 239);
+            this.panel1.Size = new System.Drawing.Size(461, 239);
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // textBox8
             // 
-            this.textBox8.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox8.BackColor = System.Drawing.Color.White;
             this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox8.Location = new System.Drawing.Point(3, 161);
@@ -205,11 +204,11 @@
             this.textBox8.Size = new System.Drawing.Size(196, 23);
             this.textBox8.TabIndex = 13;
             this.textBox8.TabStop = false;
-            this.textBox8.Text = "Xác nhận mật khẩu mới:";
+            this.textBox8.Text = "Nhập lại mật khẩu:";
             // 
             // textBox2
             // 
-            this.textBox2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox2.BackColor = System.Drawing.Color.White;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox2.Location = new System.Drawing.Point(3, 6);
@@ -223,7 +222,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox3.BackColor = System.Drawing.Color.White;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox3.Location = new System.Drawing.Point(3, 106);
@@ -236,7 +235,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox5.BackColor = System.Drawing.Color.White;
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox5.Location = new System.Drawing.Point(3, 54);
@@ -254,7 +253,7 @@
             this.panel3.Controls.Add(this.phoneTxtBox);
             this.panel3.Controls.Add(this.newPasswordTxtBox);
             this.panel3.Controls.Add(this.oldPasswordTxtBox);
-            this.panel3.Location = new System.Drawing.Point(703, 12);
+            this.panel3.Location = new System.Drawing.Point(664, 12);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(284, 234);
             this.panel3.TabIndex = 5;
@@ -284,7 +283,7 @@
             // 
             // phoneTxtBox
             // 
-            this.phoneTxtBox.BackColor = System.Drawing.SystemColors.Control;
+            this.phoneTxtBox.BackColor = System.Drawing.Color.White;
             this.phoneTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.phoneTxtBox.Location = new System.Drawing.Point(3, 2);
             this.phoneTxtBox.Name = "phoneTxtBox";
@@ -316,19 +315,22 @@
             // 
             // alert_txtBox
             // 
-            this.alert_txtBox.BackColor = System.Drawing.SystemColors.Control;
+            this.alert_txtBox.BackColor = System.Drawing.Color.White;
             this.alert_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.alert_txtBox.Location = new System.Drawing.Point(173, 270);
             this.alert_txtBox.Name = "alert_txtBox";
+            this.alert_txtBox.ReadOnly = true;
             this.alert_txtBox.Size = new System.Drawing.Size(653, 20);
             this.alert_txtBox.TabIndex = 6;
+            this.alert_txtBox.TabStop = false;
             this.alert_txtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // UserInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 364);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(967, 364);
             this.Controls.Add(this.alert_txtBox);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -354,10 +356,7 @@
         #endregion
 
         private Panel panel2;
-        private TextBox txtBox4;
         private Button updateUserInfoBtn;
-        private TextBox textBox4;
-        private TextBox textBox1;
         private Panel showData_panel;
         private TextBox usernameTxtBox;
         private TextBox fullNameTxtBox;
@@ -366,7 +365,6 @@
         private TextBox textBox2;
         private TextBox textBox3;
         private TextBox textBox5;
-        private TextBox textBox6;
         private Panel panel3;
         private TextBox phoneTxtBox;
         private TextBox newPasswordTxtBox;
@@ -377,5 +375,8 @@
         private TextBox textBox7;
         private TextBox alert_txtBox;
         private TextBox confirmnewPasswordTxtBox;
+        private TextBox textBox9;
+        private TextBox textBox10;
+        private TextBox textBox11;
     }
 }
