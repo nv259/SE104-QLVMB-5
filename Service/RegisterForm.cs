@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Linq;
 using System.ComponentModel.Design;
 using System.Security.Cryptography;
+using System.Collections.Specialized;
 
 namespace Service
 {
@@ -64,7 +65,20 @@ namespace Service
 
         private bool CheckAll()
         {
+            this.alert_txtBox.Text = "";
+
+            if (this.fullName_txtBox.Text.Length == 0)
+            {
+                this.alert_txtBox.Text = "Cần nhập họ và tên!";
+                return false;
+            } 
+
             Regex validate_emailaddress = email_validation();
+            if (this.email_txtBox.Text.Length == 0)
+            {
+                this.alert_txtBox.Text = "Cần nhập Email!";
+                return false;
+            }
 
             if (validate_emailaddress.IsMatch(this.email_txtBox.Text.Trim()) != true)
             {
@@ -95,8 +109,10 @@ namespace Service
                     }
             } else
             {
+                this.alert_txtBox.Text = "Cần nhập tên đăng nhập!";
                 return false;
             }
+
             string query = "SELECT * FROM [dbo].NGUOIDUNG WHERE @MaDangNhap = MaDangNhap ";
 
             if (DataProvider.Instance.ExecuteQuery(query, new object[] { MaDangNhap }).Rows.Count > 0)
@@ -108,17 +124,47 @@ namespace Service
             string pwd = this.pwd_txtBox.Text;
             string confirm_pwd = this.confirmPwd_txtBox.Text;
 
+            if (pwd.Length == 0)
+            {
+                this.alert_txtBox.Text = "Cần nhập mật khẩu";
+                return false;
+            } else if (pwd.Length < 8)
+            {
+                this.alert_txtBox.Text = "Mật khẩu phải có ít nhất 8 ký tự!";
+                return false;
+            }
+
             if (pwd != confirm_pwd)
             {
                 this.alert_txtBox.Text = "Mật khẩu chưa khớp!";
                 return false;
             }
-            else
+            else this.alert_txtBox.Text = "";
+
+            if (this.ID_txtBox.Text.Length == 0)
             {
-                this.alert_txtBox.Text = "";
+                this.alert_txtBox.Text = "Cần nhập mã định danh!";
+                return false;
             }
+            else if (this.ID_txtBox.Text.Length != 0 && this.ID_txtBox.Text.Length != 12)
+            {
+                this.alert_txtBox.Text = "Mã định danh không hợp lệ!";
+                return false;
+            }
+            else if (ID_txtBox.Text.Length > 0 && !ID_txtBox.Text.All(char.IsDigit))
+            {
+                this.alert_txtBox.Text = "Mã định danh không hợp lệ!";
+                return false;
+            }
+            else this.alert_txtBox.Text = "";
 
             string phone_number = this.PhoneNumber_txtBox.Text.Trim();
+            if (phone_number.Length == 0)
+            { 
+                this.alert_txtBox.Text = "Cần nhập số điện thoại!";
+                return false;
+            }
+
             if (phone_number.Length == 12 && phone_number.Substring(0, 3) == "+84")
             {
                 phone_number = phone_number.Remove(0, 3);
@@ -180,7 +226,12 @@ namespace Service
 
         private void firstName_txtBox_TextChanged(object sender, EventArgs e)
         {
+            CheckAll();
+        }
 
+        private void ID_txtBox_TextChanged(object sender, EventArgs e)
+        {
+            CheckAll();
         }
     }
 }
