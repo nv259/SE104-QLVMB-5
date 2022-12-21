@@ -29,29 +29,31 @@
         private void InitializeComponent()
         {
             this.infoPnl = new System.Windows.Forms.Panel();
-            this.listTicketBtn = new System.Windows.Forms.Button();
+            this.sellTicketBtn = new System.Windows.Forms.Button();
             this.makeReportBtn = new System.Windows.Forms.Button();
             this.searchByCustomer = new System.Windows.Forms.Button();
             this.searchByFlightBtn = new System.Windows.Forms.Button();
             this.changeRuleBtn = new System.Windows.Forms.Button();
             this.contentPnl = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // infoPnl
             // 
-            this.infoPnl.Location = new System.Drawing.Point(12, 228);
+            this.infoPnl.Location = new System.Drawing.Point(12, 288);
             this.infoPnl.Name = "infoPnl";
-            this.infoPnl.Size = new System.Drawing.Size(199, 303);
+            this.infoPnl.Size = new System.Drawing.Size(199, 243);
             this.infoPnl.TabIndex = 0;
             // 
-            // listTicketBtn
+            // sellTicketBtn
             // 
-            this.listTicketBtn.Location = new System.Drawing.Point(4, 18);
-            this.listTicketBtn.Name = "listTicketBtn";
-            this.listTicketBtn.Size = new System.Drawing.Size(151, 36);
-            this.listTicketBtn.TabIndex = 1;
-            this.listTicketBtn.Text = "Danh sách đặt vé";
-            this.listTicketBtn.UseVisualStyleBackColor = true;
+            this.sellTicketBtn.Location = new System.Drawing.Point(4, 18);
+            this.sellTicketBtn.Name = "sellTicketBtn";
+            this.sellTicketBtn.Size = new System.Drawing.Size(151, 36);
+            this.sellTicketBtn.TabIndex = 1;
+            this.sellTicketBtn.Text = "Bán vé";
+            this.sellTicketBtn.UseVisualStyleBackColor = true;
+            this.sellTicketBtn.Click += new System.EventHandler(this.sellTicketBtn_Click);
             // 
             // makeReportBtn
             // 
@@ -96,17 +98,27 @@
             this.contentPnl.Size = new System.Drawing.Size(590, 511);
             this.contentPnl.TabIndex = 6;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(4, 228);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(151, 36);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Thay đổi quy định";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // StaffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(878, 543);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.contentPnl);
             this.Controls.Add(this.changeRuleBtn);
             this.Controls.Add(this.searchByFlightBtn);
             this.Controls.Add(this.searchByCustomer);
             this.Controls.Add(this.makeReportBtn);
-            this.Controls.Add(this.listTicketBtn);
+            this.Controls.Add(this.sellTicketBtn);
             this.Controls.Add(this.infoPnl);
             this.Name = "StaffForm";
             this.Text = "Nhân viên";
@@ -117,11 +129,12 @@
         #endregion
 
         private Panel infoPnl;
-        private Button listTicketBtn;
+        private Button sellTicketBtn;
         private Button makeReportBtn;
         private Button searchByCustomer;
         private Button searchByFlightBtn;
         private Button changeRuleBtn;
         private Panel contentPnl;
+        private Button button1;
     }
 }

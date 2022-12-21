@@ -16,5 +16,13 @@ namespace Service
         {
             InitializeComponent();
         }
+
+        private void sellTicketBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SellTicketForm f = new SellTicketForm();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }
