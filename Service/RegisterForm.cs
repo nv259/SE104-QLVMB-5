@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Linq;
 using System.ComponentModel.Design;
+using System.Security.Cryptography;
 
 namespace Service
 {
@@ -21,12 +22,21 @@ namespace Service
             InitializeComponent();
         }
 
+        SHA512 sha512Hash = SHA512.Create();
+        private string Convert_to_SHA512(string source)
+        {
+            byte[] sourceBytes = Encoding.UTF8.GetBytes(source);
+            byte[] hashBytes = sha512Hash.ComputeHash(sourceBytes);
+            string hash = BitConverter.ToString(hashBytes).Replace("-", String.Empty);
+
+            return hash.ToString();
+        }
         private void regBtn_Click(object sender, EventArgs e)
         {
             string MaDangNhap, MatKhau, TenNguoiDung, DinhDanh, SoDienThoai, Email;
             MaDangNhap = this.username_txtBox.Text;
             TenNguoiDung = this.fullName_txtBox.Text.Trim();
-            MatKhau = this.pwd_txtBox.Text;
+            MatKhau = Convert_to_SHA512(this.pwd_txtBox.Text);
             DinhDanh = this.ID_txtBox.Text;
             SoDienThoai = this.PhoneNumber_txtBox.Text.Trim();
             Email = this.email_txtBox.Text;
