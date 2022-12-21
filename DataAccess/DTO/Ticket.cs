@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.DTO
 {
-    internal class Ticket
+    public class Ticket
     {
         public Ticket(DataRow dr)
         {
