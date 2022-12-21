@@ -36,7 +36,7 @@ namespace Service
 
         private void cb_cmbBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.Cost_txtBox.Text = ().ToString();
+            this.Cost_txtBox.Text = (21520378).ToString();
         }
     }
 }
