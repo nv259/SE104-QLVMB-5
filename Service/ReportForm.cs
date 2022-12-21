@@ -45,9 +45,17 @@ namespace Service
         {
             string year = this.yearTxtBox.Text;
             string query = "SELECT MONTH(NgayGioBay) as 'Tháng', COUNT(MaChuyenBay) as 'Số chuyến bay, " +
-                "DoanhThu as 'Doanh thu', TiLe as 'Tỉ lệ' " +
+                "SUM(DoanhThu) as 'Doanh thu', 100*SUM(DoanhThu)/(SELECT SUM(DoanhThu) from temp where YEAR(NgayGioBay) = @year) " +
+                "as 'Tỉ lệ' " +
                 "from [dbo].ChuyenBay " +
-                "join ";
+                "join (" +
+                    "select CHUYENBAY.MaChuyenBay, SUM(CHUYENBAY.GiaCoBan * HANGVE.TiLeGiaVe) as DoanhThu " +
+                    "from [dbo].CT_DATVE " +
+                    "join [dbo].CHUYENBAY on CT_DATVE.MaChuyenBay = CHUYENBAY.MaChuyenBay " +
+                    "join [dbo].HANGVE on CT_DATVE.MaHangVe = HANGVE.MaHangVe " +
+                    "GROUP BY CHUYENBAY.MaChuyenBay " +
+                    ") as temp on ChuyenBay.MaChuyenBay = temp.MaChuyenBay " +
+                "where YEAR(NgayGioBay) = @year";
             reportYearDgv.DataSource = DataProvider.Instance.ExecuteQuery(query);
         }
 
