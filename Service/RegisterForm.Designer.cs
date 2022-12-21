@@ -87,9 +87,10 @@
             this.ID_txtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ID_txtBox.Location = new System.Drawing.Point(161, 373);
             this.ID_txtBox.Name = "ID_txtBox";
-            this.ID_txtBox.PlaceholderText = "   Định danh / CCCD";
+            this.ID_txtBox.PlaceholderText = "       Mã định danh";
             this.ID_txtBox.Size = new System.Drawing.Size(156, 27);
             this.ID_txtBox.TabIndex = 13;
+            this.ID_txtBox.TextChanged += new System.EventHandler(this.ID_txtBox_TextChanged);
             // 
             // alert_txtBox
             // 

@@ -35,18 +35,19 @@
             this.searchByFlightBtn = new System.Windows.Forms.Button();
             this.changeRuleBtn = new System.Windows.Forms.Button();
             this.contentPnl = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // infoPnl
             // 
-            this.infoPnl.Location = new System.Drawing.Point(12, 228);
+            this.infoPnl.Location = new System.Drawing.Point(12, 284);
             this.infoPnl.Name = "infoPnl";
-            this.infoPnl.Size = new System.Drawing.Size(199, 303);
+            this.infoPnl.Size = new System.Drawing.Size(199, 247);
             this.infoPnl.TabIndex = 0;
             // 
             // listTicketBtn
             // 
-            this.listTicketBtn.Location = new System.Drawing.Point(4, 18);
+            this.listTicketBtn.Location = new System.Drawing.Point(25, 20);
             this.listTicketBtn.Name = "listTicketBtn";
             this.listTicketBtn.Size = new System.Drawing.Size(151, 36);
             this.listTicketBtn.TabIndex = 1;
@@ -55,7 +56,7 @@
             // 
             // makeReportBtn
             // 
-            this.makeReportBtn.Location = new System.Drawing.Point(4, 60);
+            this.makeReportBtn.Location = new System.Drawing.Point(25, 106);
             this.makeReportBtn.Name = "makeReportBtn";
             this.makeReportBtn.Size = new System.Drawing.Size(151, 36);
             this.makeReportBtn.TabIndex = 2;
@@ -64,7 +65,7 @@
             // 
             // searchByCustomer
             // 
-            this.searchByCustomer.Location = new System.Drawing.Point(4, 102);
+            this.searchByCustomer.Location = new System.Drawing.Point(25, 148);
             this.searchByCustomer.Name = "searchByCustomer";
             this.searchByCustomer.Size = new System.Drawing.Size(151, 36);
             this.searchByCustomer.TabIndex = 3;
@@ -73,7 +74,7 @@
             // 
             // searchByFlightBtn
             // 
-            this.searchByFlightBtn.Location = new System.Drawing.Point(4, 144);
+            this.searchByFlightBtn.Location = new System.Drawing.Point(25, 190);
             this.searchByFlightBtn.Name = "searchByFlightBtn";
             this.searchByFlightBtn.Size = new System.Drawing.Size(151, 36);
             this.searchByFlightBtn.TabIndex = 4;
@@ -82,12 +83,13 @@
             // 
             // changeRuleBtn
             // 
-            this.changeRuleBtn.Location = new System.Drawing.Point(4, 186);
+            this.changeRuleBtn.Location = new System.Drawing.Point(25, 232);
             this.changeRuleBtn.Name = "changeRuleBtn";
             this.changeRuleBtn.Size = new System.Drawing.Size(151, 36);
             this.changeRuleBtn.TabIndex = 5;
             this.changeRuleBtn.Text = "Thay đổi quy định";
             this.changeRuleBtn.UseVisualStyleBackColor = true;
+            this.changeRuleBtn.Click += new System.EventHandler(this.changeRuleBtn_Click);
             // 
             // contentPnl
             // 
@@ -96,11 +98,21 @@
             this.contentPnl.Size = new System.Drawing.Size(590, 511);
             this.contentPnl.TabIndex = 6;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(25, 62);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(151, 36);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Bán vé";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // StaffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(878, 543);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.contentPnl);
             this.Controls.Add(this.changeRuleBtn);
             this.Controls.Add(this.searchByFlightBtn);
@@ -123,5 +135,6 @@
         private Button searchByFlightBtn;
         private Button changeRuleBtn;
         private Panel contentPnl;
+        private Button button1;
     }
 }
