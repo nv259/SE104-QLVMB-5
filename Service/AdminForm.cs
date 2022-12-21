@@ -35,8 +35,10 @@ namespace Service
 
         private void Load_dtgv()
         {
-            string query = "SELECT * FROM [dbo].NGUOIDUNG WHERE MaDangNhap like " + "'%" + DataProvider.LocDau(this.searchTxtBox.Text) + "%' ";
+            string query = "SELECT MaDangNhap, MaNhom, TenNguoiDung, DinhDanh, SoDienThoai, Email FROM [dbo].NGUOIDUNG WHERE MaDangNhap like " + "'%" + DataProvider.LocDau(this.searchTxtBox.Text) + "%' ";
             userList.DataSource = DataProvider.Instance.ExecuteQuery(query);
+
+            
         }
 
         private void findBtn_Click(object sender, EventArgs e)
@@ -48,14 +50,14 @@ namespace Service
         {
             string query = "UPDATE [dbo].NGUOIDUNG SET MatKhau = N'uit@123' WHERE MaDangNhap = @MaDangNhap ";
             int i = DataProvider.Instance.ExecuteNonQuery(query, new object[] { userName_txtBox.Text });
-            MessageBox.Show("Reset password successfully!");
+            MessageBox.Show("Đã đặt lại mật khẩu thành công!");
         }
 
         private void updateBtn_Click(object sender, EventArgs e)
         {
             string query = "UPDATE [dbo].NGUOIDUNG SET MaNhom = @role WHERE MaDangNhap = @MaDangNhap ";
             int i = DataProvider.Instance.ExecuteNonQuery(query, new object[] { this.userRole_comboBox.Text, this.userName_txtBox.Text });
-            MessageBox.Show("User role is updated successfully!");
+            MessageBox.Show("Quyền User đã được thay đổi!");
             Load_dtgv();
         }
 
@@ -63,7 +65,7 @@ namespace Service
         {
             string query = "DELETE FROM [dbo].NGUOIDUNG WHERE MaDangNhap = @MaDangNhap ";
             int i = DataProvider.Instance.ExecuteNonQuery(query, new object[] { this.userName_txtBox.Text });
-            MessageBox.Show("User deleted!");
+            MessageBox.Show("User đã được xóa!");
             Load_dtgv();
         }
 
@@ -84,12 +86,12 @@ namespace Service
                 string query = "INSERT INTO [dbo].NGUOIDUNG VALUES ( @MaDangNhap , @MatKhau , @MaNhom , @TenNguoiDung , @DinhDanh , @SoDienThoai , @Email ) ";
                 int i = DataProvider.Instance.ExecuteNonQuery(query, new object[] { MaDangNhap, "uit@123", this.Name_txtBox.Text, this.ID_txtBox.Text, this.phone_txtBox.Text, this.email_txtBox.Text });
 
-                MessageBox.Show("A new user is added Successfully!");
+                MessageBox.Show("Đã thêm user mới!");
                 Load_dtgv();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("User is already exist!");
+                MessageBox.Show("User đã tồn tại!");
             }
         }
 

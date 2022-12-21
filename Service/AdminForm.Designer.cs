@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.MainTab = new System.Windows.Forms.TabControl();
-            this.userInforTab = new System.Windows.Forms.TabPage();
             this.StatementTab = new System.Windows.Forms.TabPage();
             this.findBtn = new System.Windows.Forms.Button();
             this.searchTxtBox = new System.Windows.Forms.TextBox();
@@ -63,23 +62,12 @@
             // 
             // MainTab
             // 
-            this.MainTab.Controls.Add(this.userInforTab);
             this.MainTab.Controls.Add(this.StatementTab);
             this.MainTab.Location = new System.Drawing.Point(6, 6);
             this.MainTab.Name = "MainTab";
             this.MainTab.SelectedIndex = 0;
             this.MainTab.Size = new System.Drawing.Size(1032, 552);
             this.MainTab.TabIndex = 1;
-            // 
-            // userInforTab
-            // 
-            this.userInforTab.Location = new System.Drawing.Point(4, 29);
-            this.userInforTab.Name = "userInforTab";
-            this.userInforTab.Padding = new System.Windows.Forms.Padding(3);
-            this.userInforTab.Size = new System.Drawing.Size(1024, 519);
-            this.userInforTab.TabIndex = 0;
-            this.userInforTab.Text = "Portrait";
-            this.userInforTab.UseVisualStyleBackColor = true;
             // 
             // StatementTab
             // 
@@ -91,24 +79,24 @@
             this.StatementTab.Padding = new System.Windows.Forms.Padding(3);
             this.StatementTab.Size = new System.Drawing.Size(1024, 519);
             this.StatementTab.TabIndex = 1;
-            this.StatementTab.Text = "Account";
+            this.StatementTab.Text = "Tài khoản";
             this.StatementTab.UseVisualStyleBackColor = true;
             // 
             // findBtn
             // 
-            this.findBtn.Location = new System.Drawing.Point(131, 36);
+            this.findBtn.Location = new System.Drawing.Point(296, 36);
             this.findBtn.Name = "findBtn";
             this.findBtn.Size = new System.Drawing.Size(53, 27);
             this.findBtn.TabIndex = 2;
-            this.findBtn.Text = "Find";
+            this.findBtn.Text = "Tìm kiếm";
             this.findBtn.UseVisualStyleBackColor = true;
             // 
             // searchTxtBox
             // 
             this.searchTxtBox.Location = new System.Drawing.Point(3, 36);
             this.searchTxtBox.Name = "searchTxtBox";
-            this.searchTxtBox.PlaceholderText = "Search by Name";
-            this.searchTxtBox.Size = new System.Drawing.Size(122, 27);
+            this.searchTxtBox.PlaceholderText = "Tìm kiếm theo tên đăng nhập";
+            this.searchTxtBox.Size = new System.Drawing.Size(287, 27);
             this.searchTxtBox.TabIndex = 1;
             // 
             // panel1
@@ -191,28 +179,28 @@
             this.panel2.Controls.Add(this.textBox6);
             this.panel2.Controls.Add(this.textBox4);
             this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Location = new System.Drawing.Point(704, 9);
+            this.panel2.Location = new System.Drawing.Point(606, 9);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(321, 442);
+            this.panel2.Size = new System.Drawing.Size(419, 442);
             this.panel2.TabIndex = 1;
             // 
             // Add_btn
             // 
-            this.Add_btn.Location = new System.Drawing.Point(100, 344);
+            this.Add_btn.Location = new System.Drawing.Point(196, 344);
             this.Add_btn.Name = "Add_btn";
             this.Add_btn.Size = new System.Drawing.Size(94, 29);
             this.Add_btn.TabIndex = 21;
-            this.Add_btn.Text = "Add";
+            this.Add_btn.Text = "Thêm";
             this.Add_btn.UseVisualStyleBackColor = true;
             // 
             // userRole_comboBox
             // 
             this.userRole_comboBox.FormattingEnabled = true;
             this.userRole_comboBox.Items.AddRange(new object[] {
-            "User",
-            "Staff",
-            "Admin"});
-            this.userRole_comboBox.Location = new System.Drawing.Point(100, 294);
+            "0",
+            "1",
+            "2"});
+            this.userRole_comboBox.Location = new System.Drawing.Point(198, 293);
             this.userRole_comboBox.Name = "userRole_comboBox";
             this.userRole_comboBox.Size = new System.Drawing.Size(115, 28);
             this.userRole_comboBox.TabIndex = 20;
@@ -222,21 +210,21 @@
             this.textBox3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Segoe UI", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(7, 294);
+            this.textBox3.Location = new System.Drawing.Point(3, 294);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(66, 23);
+            this.textBox3.Size = new System.Drawing.Size(70, 23);
             this.textBox3.TabIndex = 19;
             this.textBox3.TabStop = false;
-            this.textBox3.Text = "Role:";
+            this.textBox3.Text = "Quyền:";
             // 
             // resetBtn
             // 
-            this.resetBtn.Location = new System.Drawing.Point(196, 344);
+            this.resetBtn.Location = new System.Drawing.Point(302, 344);
             this.resetBtn.Name = "resetBtn";
             this.resetBtn.Size = new System.Drawing.Size(94, 29);
             this.resetBtn.TabIndex = 13;
-            this.resetBtn.Text = "Reset";
+            this.resetBtn.Text = "Đặt lại";
             this.resetBtn.UseVisualStyleBackColor = true;
             // 
             // txtBox4
@@ -247,27 +235,27 @@
             this.txtBox4.Location = new System.Drawing.Point(3, 5);
             this.txtBox4.Name = "txtBox4";
             this.txtBox4.ReadOnly = true;
-            this.txtBox4.Size = new System.Drawing.Size(91, 23);
+            this.txtBox4.Size = new System.Drawing.Size(157, 23);
             this.txtBox4.TabIndex = 12;
             this.txtBox4.TabStop = false;
-            this.txtBox4.Text = "Username:";
+            this.txtBox4.Text = "Tên đăng nhập:";
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(100, 374);
+            this.deleteBtn.Location = new System.Drawing.Point(196, 379);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(94, 29);
             this.deleteBtn.TabIndex = 4;
-            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.Text = "Xóa";
             this.deleteBtn.UseVisualStyleBackColor = true;
             // 
             // updateBtn
             // 
-            this.updateBtn.Location = new System.Drawing.Point(196, 374);
+            this.updateBtn.Location = new System.Drawing.Point(302, 379);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(94, 29);
             this.updateBtn.TabIndex = 3;
-            this.updateBtn.Text = "Update";
+            this.updateBtn.Text = "Cập nhật";
             this.updateBtn.UseVisualStyleBackColor = true;
             // 
             // textBox10
@@ -275,10 +263,10 @@
             this.textBox10.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox10.Location = new System.Drawing.Point(7, 235);
+            this.textBox10.Location = new System.Drawing.Point(3, 235);
             this.textBox10.Name = "textBox10";
             this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(62, 23);
+            this.textBox10.Size = new System.Drawing.Size(66, 23);
             this.textBox10.TabIndex = 8;
             this.textBox10.TabStop = false;
             this.textBox10.Text = "Email:";
@@ -291,10 +279,10 @@
             this.textBox6.Location = new System.Drawing.Point(3, 175);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(62, 23);
+            this.textBox6.Size = new System.Drawing.Size(123, 23);
             this.textBox6.TabIndex = 6;
             this.textBox6.TabStop = false;
-            this.textBox6.Text = "Phone:";
+            this.textBox6.Text = "Số điện thoại:";
             // 
             // textBox4
             // 
@@ -307,7 +295,7 @@
             this.textBox4.Size = new System.Drawing.Size(91, 23);
             this.textBox4.TabIndex = 2;
             this.textBox4.TabStop = false;
-            this.textBox4.Text = "Name:";
+            this.textBox4.Text = "Họ và tên:";
             // 
             // textBox1
             // 
@@ -317,10 +305,10 @@
             this.textBox1.Location = new System.Drawing.Point(3, 60);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(62, 23);
+            this.textBox1.Size = new System.Drawing.Size(157, 23);
             this.textBox1.TabIndex = 0;
             this.textBox1.TabStop = false;
-            this.textBox1.Text = "ID:";
+            this.textBox1.Text = "Định danh / CCCD:";
             // 
             // user_dtgv
             // 
@@ -333,7 +321,7 @@
             this.user_dtgv.ReadOnly = true;
             this.user_dtgv.RowHeadersWidth = 51;
             this.user_dtgv.RowTemplate.Height = 29;
-            this.user_dtgv.Size = new System.Drawing.Size(695, 441);
+            this.user_dtgv.Size = new System.Drawing.Size(588, 441);
             this.user_dtgv.TabIndex = 0;
             // 
             // AdminForm
@@ -360,7 +348,6 @@
         #endregion
 
         private TabControl MainTab;
-        private TabPage userInforTab;
         private TabPage StatementTab;
         private Button findBtn;
         private TextBox searchTxtBox;
