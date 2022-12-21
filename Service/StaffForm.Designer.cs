@@ -62,6 +62,7 @@
             this.changeRuleBtn.TabIndex = 2;
             this.changeRuleBtn.Text = "Thay đổi quy định";
             this.changeRuleBtn.UseVisualStyleBackColor = true;
+            this.changeRuleBtn.Click += new System.EventHandler(this.changeRuleBtn_Click);
             // 
             // traCuuBtn
             // 

@@ -65,7 +65,7 @@ namespace Service
         private bool check_all()
         {
             string query = "SELECT * FROM [dbo].THAMSO ";
-            Parameter para = new Parameter(DataProvider.Instance.ExecuteQuery(query).Rows[0]);
+            Parameters para = new Parameters(DataProvider.Instance.ExecuteQuery(query).Rows[0]);
 
             this.alert_txtBox.Text = "";
 

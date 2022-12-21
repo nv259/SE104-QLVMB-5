@@ -147,7 +147,7 @@ namespace Service
             string query = "SELECT * FROM THAMSO";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
 
-            info = new Parameter(dt.Rows[0]);
+            info = new Parameters(dt.Rows[0]);
 
             SSBTGTD_txtBox.Text = info.SoSanBayTGToiDa.ToString();
             BayToiThieu_Gio.Text = info.TGBayToiThieu.Hours.ToString();
@@ -160,7 +160,7 @@ namespace Service
             HuyVeChamNhat_txtBox.Text = info.TGHuyChamNhat.ToString();
         }
 
-        Parameter info;
+        Parameters info;
 
         private bool check_all()
         {

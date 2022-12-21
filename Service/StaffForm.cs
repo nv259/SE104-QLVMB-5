@@ -39,5 +39,13 @@ namespace Service
 
             this.Show();
         }
+
+        private void changeRuleBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ThayDoiQuyDinhForm f = new ThayDoiQuyDinhForm();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }
