@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace DataAccess.DTO
 {
-    public class Parameter
+    public class Parameters
     {
-        public Parameter(DataRow dr) {
+        public Parameters(DataRow dr) {
             so_san_bay_tg_toi_da = Convert.ToInt32(dr["SoSanBayTGToiDa"]);
             tg_dat_ve_cham_nhat = Convert.ToInt32(dr["TGDatVeChamNhat"]);
             tg_huy_cham_nhat = Convert.ToInt32(dr["TGHuyChamNhat"]);
@@ -17,6 +17,8 @@ namespace DataAccess.DTO
             tg_dung_toi_thieu = TimeSpan.Parse(dr["TGDungToiThieu"].ToString());
             tg_dung_toi_da = TimeSpan.Parse(dr["TGDungToiDa"].ToString());
         }
+
+        public Parameters() { }
 
         private int so_san_bay_tg_toi_da, tg_dat_ve_cham_nhat, tg_huy_cham_nhat;
         private TimeSpan tg_bay_toi_thieu;

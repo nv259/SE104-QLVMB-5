@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +19,7 @@ namespace Service
         public DatVeForm()
         {
             InitializeComponent();
+            list_flight();
         }
 
         private string MaSanBayDi = "", MaSanBayDen = "";
@@ -55,8 +57,8 @@ namespace Service
         {
             modify_masanbay();
 
-            string query = "SELECT * FROM [dbo].SANBAY WHERE MaSanBay != @MaSanBayDi AND MaSanBay != @MaSanBayDen  ";
-            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { MaSanBayDi, MaSanBayDen });
+            string query = "SELECT * FROM [dbo].SANBAY WHERE MaSanBay != @MaSanBayDi ";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { MaSanBayDi });
 
             toComboBox.BeginUpdate();
             toComboBox.Items.Clear();
@@ -67,14 +69,16 @@ namespace Service
             }
 
             toComboBox.EndUpdate();
+
+            list_flight();
         }
 
         private void toComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             modify_masanbay();
 
-            string query = "SELECT * FROM [dbo].SANBAY WHERE MaSanBay != @MaSanBayDi AND MaSanBay != @MaSanBayDen  ";
-            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { MaSanBayDi, MaSanBayDen });
+            string query = "SELECT * FROM [dbo].SANBAY WHERE MaSanBay != @MaSanBayDen  ";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { MaSanBayDen });
 
             fromComboBox.BeginUpdate();
             fromComboBox.Items.Clear();
@@ -85,6 +89,7 @@ namespace Service
             }
 
             fromComboBox.EndUpdate();
+            list_flight();
         }
 
         private void DatVeForm_Load(object sender, EventArgs e)
@@ -137,46 +142,33 @@ namespace Service
         {
             modify_masanbay();
 
-            flightListLstBox.BeginUpdate();
-            flightListLstBox.Items.Clear();
-            
-            if (ngayBayDtp.Value == null)
-            {
-                flightListLstBox.EndUpdate();
-                return;
-            }
-
             string ngaybay = DateTime.Parse(ngayBayDtp.Value.ToString()).ToString("yyyy-MM-dd");
 
+            // GET THAMSO
             string query = "SELECT * FROM [dbo].THAMSO ";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
 
-            int tg_dat_ve_cham_nhat = int.MaxValue;
-
+            Parameters thamso = new Parameters();
             foreach (DataRow dr in dt.Rows)
             {
-                tg_dat_ve_cham_nhat = Convert.ToInt32(dr["TGDatVeChamNhat"]);
+                thamso = new Parameters(dr);
+                break;
             }
 
             DateTime ngaybaymin = Convert.ToDateTime(ngaybay + " 00:00:00.000");
-            DateTime ngaybaymax = Convert.ToDateTime(ngaybay + " 23:59:59.999");
 
-            query = "SELECT * FROM [dbo].CHUYENBAY WHERE NgayGioBay >= @ngaybaymin AND NgayGioBay <= @ngaybaymax AND MaSanBayDi = @MaSanBayDi AND MaSanBayDen = @MaSanBayDen ";
-            dt = DataProvider.Instance.ExecuteQuery(query, new object[] { ngaybaymin , ngaybaymax , MaSanBayDi, MaSanBayDen });
-
-            foreach (DataRow dr in dt.Rows)
-            {
-                DateTime NgayGioBay = Convert.ToDateTime(dr["NgayGioBay"]);
-                TimeSpan chk = NgayGioBay.Subtract(DateTime.Now);
-                if (chk.Days >= tg_dat_ve_cham_nhat) flightListLstBox.Items.Add(dr["MaChuyenBay"].ToString().TrimEnd() + " | " + dr["MaSanBayDi"].ToString().TrimEnd() + " | " + dr["MaSanBayDen"].ToString().TrimEnd() + " | " + dr["NgayGioBay"].ToString());
-            }
-
-            flightListLstBox.EndUpdate();
+            query = "SELECT sb1.TenSanBay as 'Từ', sb2.TenSanBay as 'Đến', cb.ThoiGianBay as 'Thời gian khởi hành', cb.GiaCoBan as 'Giá cơ bản' " +
+                    "FROM [dbo].CHUYENBAY cb JOIN [dbo].SANBAY sb1 ON cb.MaSanBayDi = sb1.MaSanBay " +
+                    "JOIN [dbo].SANBAY sb2 ON cb.MaSanBayDen = sb2.MaSanBay " +
+                    "WHERE cb.MaSanBayDi like '%" + MaSanBayDi + "%' AND cb.MaSanBayDen like '%" + MaSanBayDen + "%' AND NgayGioBay >= @ngaybaymin";
+            flightDtgv.DataSource = DataProvider.Instance.ExecuteQuery(query, new object[] { ngaybaymin });
         }
 
         private void ngayBayDtp_ValueChanged(object sender, EventArgs e)
         {
             modify_masanbay();
+
+            list_flight();
         }
 
         private void flightInfoLstBox_SelectedIndexChanged(object sender, EventArgs e)
