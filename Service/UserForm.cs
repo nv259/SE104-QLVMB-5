@@ -28,17 +28,7 @@ namespace Service
 
         Account account;
 
-        private void userInfo_pnl_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void changeInfoBtn_Click(object sender, EventArgs e)
+        private void userInfo_pnl_Paint_1(object sender, EventArgs e)
         {
             this.Hide();
 
