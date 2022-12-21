@@ -1,6 +1,7 @@
 ﻿using DataAccess.DAO;
 using DataAccess.DTO;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -162,6 +163,8 @@ namespace Service
                 break;
             }
 
+            /*try { MaSanBayDi = this.fromComboBox.Text; MaSanBayDen = this.toComboBox.Text; } catch { }*/
+
             DateTime ngaybaymin = Convert.ToDateTime(ngaybay + " 00:00:00.000");
 
             query = "SELECT cb.MaChuyenBay, sb1.TenSanBay as 'Từ', sb2.TenSanBay as 'Đến', " +
@@ -189,8 +192,24 @@ namespace Service
             list_flight();
         }
 
-        private void flightInfoLstBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void bookingBtn_Click(object sender, EventArgs e)
         {
+            Bill f = new Bill();
+            f.ShowDialog();
+        }
+
+        private void resetBtn_Click(object sender, EventArgs e)
+        {
+            this.toComboBox.Text = "";
+            this.fromComboBox.Text = "";
+
+            modify_masanbay();
+            list_flight();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void Find_Btn_Click(object sender, EventArgs e)

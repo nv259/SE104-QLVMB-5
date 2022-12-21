@@ -49,6 +49,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.flightInfoPnl = new System.Windows.Forms.Panel();
+            this.timeGoneTxtBox = new System.Windows.Forms.TextBox();
+            this.timeGoTxtBox = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.ticketDtgv = new System.Windows.Forms.DataGridView();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -72,8 +74,6 @@
             this.resetBtn = new System.Windows.Forms.Button();
             this.bookingBtn = new System.Windows.Forms.Button();
             this.textBox13 = new System.Windows.Forms.TextBox();
-            this.timeGoTxtBox = new System.Windows.Forms.TextBox();
-            this.timeGoneTxtBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.airportBindingSource)).BeginInit();
             this.filterPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.flightDtgv)).BeginInit();
@@ -172,6 +172,7 @@
             this.flightDtgv.RowHeadersWidth = 51;
             this.flightDtgv.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.flightDtgv.RowTemplate.Height = 29;
+            this.flightDtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.flightDtgv.Size = new System.Drawing.Size(556, 158);
             this.flightDtgv.TabIndex = 14;
             this.flightDtgv.TabStop = false;
@@ -275,6 +276,28 @@
             this.flightInfoPnl.Size = new System.Drawing.Size(374, 508);
             this.flightInfoPnl.TabIndex = 11;
             // 
+            // timeGoneTxtBox
+            // 
+            this.timeGoneTxtBox.BackColor = System.Drawing.Color.White;
+            this.timeGoneTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.timeGoneTxtBox.Location = new System.Drawing.Point(206, 99);
+            this.timeGoneTxtBox.Name = "timeGoneTxtBox";
+            this.timeGoneTxtBox.ReadOnly = true;
+            this.timeGoneTxtBox.Size = new System.Drawing.Size(141, 27);
+            this.timeGoneTxtBox.TabIndex = 20;
+            this.timeGoneTxtBox.TabStop = false;
+            // 
+            // timeGoTxtBox
+            // 
+            this.timeGoTxtBox.BackColor = System.Drawing.Color.White;
+            this.timeGoTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.timeGoTxtBox.Location = new System.Drawing.Point(206, 44);
+            this.timeGoTxtBox.Name = "timeGoTxtBox";
+            this.timeGoTxtBox.ReadOnly = true;
+            this.timeGoTxtBox.Size = new System.Drawing.Size(141, 27);
+            this.timeGoTxtBox.TabIndex = 19;
+            this.timeGoTxtBox.TabStop = false;
+            // 
             // textBox10
             // 
             this.textBox10.BackColor = System.Drawing.Color.White;
@@ -317,6 +340,7 @@
             this.ticketDtgv.RowHeadersWidth = 51;
             this.ticketDtgv.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ticketDtgv.RowTemplate.Height = 29;
+            this.ticketDtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ticketDtgv.Size = new System.Drawing.Size(365, 158);
             this.ticketDtgv.TabIndex = 17;
             this.ticketDtgv.TabStop = false;
@@ -374,6 +398,7 @@
             this.intermediaryDtgv.RowHeadersWidth = 51;
             this.intermediaryDtgv.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.intermediaryDtgv.RowTemplate.Height = 29;
+            this.intermediaryDtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.intermediaryDtgv.Size = new System.Drawing.Size(365, 158);
             this.intermediaryDtgv.TabIndex = 14;
             this.intermediaryDtgv.TabStop = false;
@@ -574,6 +599,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Đóng";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // resetBtn
             // 
@@ -586,6 +612,7 @@
             this.resetBtn.TabIndex = 1;
             this.resetBtn.Text = "Hủy";
             this.resetBtn.UseVisualStyleBackColor = false;
+            this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
             // 
             // bookingBtn
             // 
@@ -598,6 +625,7 @@
             this.bookingBtn.TabIndex = 0;
             this.bookingBtn.Text = "Đặt Vé";
             this.bookingBtn.UseVisualStyleBackColor = false;
+            this.bookingBtn.Click += new System.EventHandler(this.bookingBtn_Click);
             // 
             // textBox13
             // 
@@ -613,28 +641,6 @@
             this.textBox13.TabStop = false;
             this.textBox13.Text = "Chức năng";
             this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // timeGoTxtBox
-            // 
-            this.timeGoTxtBox.BackColor = System.Drawing.Color.White;
-            this.timeGoTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.timeGoTxtBox.Location = new System.Drawing.Point(206, 44);
-            this.timeGoTxtBox.Name = "timeGoTxtBox";
-            this.timeGoTxtBox.ReadOnly = true;
-            this.timeGoTxtBox.Size = new System.Drawing.Size(141, 27);
-            this.timeGoTxtBox.TabIndex = 19;
-            this.timeGoTxtBox.TabStop = false;
-            // 
-            // timeGoneTxtBox
-            // 
-            this.timeGoneTxtBox.BackColor = System.Drawing.Color.White;
-            this.timeGoneTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.timeGoneTxtBox.Location = new System.Drawing.Point(206, 99);
-            this.timeGoneTxtBox.Name = "timeGoneTxtBox";
-            this.timeGoneTxtBox.ReadOnly = true;
-            this.timeGoneTxtBox.Size = new System.Drawing.Size(141, 27);
-            this.timeGoneTxtBox.TabIndex = 20;
-            this.timeGoneTxtBox.TabStop = false;
             // 
             // DatVeForm
             // 
