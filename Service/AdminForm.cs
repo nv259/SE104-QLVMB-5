@@ -89,6 +89,17 @@ namespace Service
             }
         }
 
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+            LogoutForm logoutForm = new LogoutForm();
+            logoutForm.ShowDialog();
+            
+            if (logoutForm.Accept)
+            {
+                this.Close();
+            }
+        }
+
         /*        public void MonthlyUpdate()
                 {
                     DateTime dt = DateTime.Now;

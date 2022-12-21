@@ -59,5 +59,15 @@ namespace Service
 
             Application.Exit();
         }
+
+        private void buyTicketBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            DatVeForm datve = new DatVeForm();
+            datve.ShowDialog();
+
+            this.Show();
+        }
     }
 }

@@ -54,6 +54,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.user_dtgv = new System.Windows.Forms.DataGridView();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.MainTab.SuspendLayout();
             this.StatementTab.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -65,6 +66,7 @@
             // MainTab
             // 
             this.MainTab.Controls.Add(this.StatementTab);
+            this.MainTab.Controls.Add(this.tabPage1);
             this.MainTab.Location = new System.Drawing.Point(6, 6);
             this.MainTab.Name = "MainTab";
             this.MainTab.SelectedIndex = 0;
@@ -349,6 +351,17 @@
             this.user_dtgv.Size = new System.Drawing.Size(588, 441);
             this.user_dtgv.TabIndex = 0;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1024, 519);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Đăng xuất";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -396,5 +409,6 @@
         private TextBox textBox3;
         private ComboBox userRole_comboBox;
         private Button Add_btn;
+        private TabPage tabPage1;
     }
 }

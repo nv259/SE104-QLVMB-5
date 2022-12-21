@@ -98,13 +98,17 @@
             // 
             // buyTicketBtn
             // 
-            this.buyTicketBtn.BackColor = System.Drawing.Color.SpringGreen;
-            this.buyTicketBtn.Location = new System.Drawing.Point(153, 590);
+            this.buyTicketBtn.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.buyTicketBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buyTicketBtn.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buyTicketBtn.Location = new System.Drawing.Point(212, 428);
             this.buyTicketBtn.Name = "buyTicketBtn";
-            this.buyTicketBtn.Size = new System.Drawing.Size(241, 62);
+            this.buyTicketBtn.Size = new System.Drawing.Size(172, 179);
             this.buyTicketBtn.TabIndex = 7;
-            this.buyTicketBtn.Text = "Đặt vé";
+            this.buyTicketBtn.Text = "Đăng ký";
+            this.buyTicketBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buyTicketBtn.UseVisualStyleBackColor = false;
+            this.buyTicketBtn.Click += new System.EventHandler(this.buyTicketBtn_Click);
             // 
             // userInfo_pnl
             // 
@@ -250,7 +254,7 @@
             this.flightDgv.Name = "flightDgv";
             this.flightDgv.RowHeadersWidth = 51;
             this.flightDgv.RowTemplate.Height = 29;
-            this.flightDgv.Size = new System.Drawing.Size(558, 514);
+            this.flightDgv.Size = new System.Drawing.Size(558, 303);
             this.flightDgv.TabIndex = 11;
             // 
             // UserForm
