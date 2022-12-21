@@ -13,6 +13,7 @@ using System.Linq;
 using System.ComponentModel.Design;
 using System.Security.Cryptography;
 using System.Collections.Specialized;
+using System.Globalization;
 
 namespace Service
 {
@@ -34,18 +35,19 @@ namespace Service
         }
         private void regBtn_Click(object sender, EventArgs e)
         {
-            string MaDangNhap, MatKhau, TenNguoiDung, DinhDanh, SoDienThoai, Email;
+            string MaDangNhap, MatKhau, TenNguoiDung, DinhDanh, SoDienThoai, Email, NgaySinh;
             MaDangNhap = this.username_txtBox.Text;
             TenNguoiDung = this.fullName_txtBox.Text.Trim();
             MatKhau = Convert_to_SHA512(this.pwd_txtBox.Text);
             DinhDanh = this.ID_txtBox.Text;
             SoDienThoai = this.PhoneNumber_txtBox.Text.Trim();
             Email = this.email_txtBox.Text;
+            NgaySinh = Convert.ToDateTime(this.NgaySinh_txtBox.Text.TrimEnd().ToString()).ToString("yyyy-MM-dd");
 
             if (CheckAll() && this.checkBox2.Checked)
             {
-                string query = "INSERT INTO [dbo].NGUOIDUNG VALUES ( @MaDangNhap , @MatKhau , '2' , @TenNguoiDung , @DinhDanh , @SoDienThoai , @Email ) ";
-                object i = DataProvider.Instance.ExecuteScalar(query, new object[] { MaDangNhap, MatKhau, TenNguoiDung, DinhDanh, SoDienThoai , Email });
+                string query = "INSERT INTO [dbo].NGUOIDUNG VALUES ( @MaDangNhap , @MatKhau , '2' , @TenNguoiDung , @DinhDanh , @SoDienThoai , @Email , @NgaySinh ) ";
+                object i = DataProvider.Instance.ExecuteScalar(query, new object[] { MaDangNhap, MatKhau, TenNguoiDung, DinhDanh, SoDienThoai , Email , NgaySinh });
                 MessageBox.Show("Tạo tài khoản thành công!");
                 this.Close();
             }
@@ -123,6 +125,19 @@ namespace Service
             if (DataProvider.Instance.ExecuteQuery(query, new object[] { MaDangNhap }).Rows.Count > 0)
             {
                 this.alert_txtBox.Text = "Tên đăng nhập đã tồn tại!";
+                return false;
+            }
+
+            if (NgaySinh_txtBox.Text.Length == 0)
+            {
+                this.alert_txtBox.Text = "Chưa nhập ngày sinh!";
+                return false;
+            }
+
+            DateTime temp;
+            if (!DateTime.TryParseExact(NgaySinh_txtBox.Text.TrimEnd(), "dd-MM-yyyy", null, DateTimeStyles.None, out temp))
+            {
+                this.alert_txtBox.Text = "Ngày sinh không đúng định dạng!";
                 return false;
             }
 
@@ -252,6 +267,11 @@ namespace Service
         }
 
         private void ID_txtBox_TextChanged(object sender, EventArgs e)
+        {
+            CheckAll();
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
         {
             CheckAll();
         }
