@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MainTab = new System.Windows.Forms.TabControl();
             this.StatementTab = new System.Windows.Forms.TabPage();
             this.findBtn = new System.Windows.Forms.Button();
@@ -73,6 +74,7 @@
             // 
             // StatementTab
             // 
+            this.StatementTab.BackColor = System.Drawing.Color.White;
             this.StatementTab.Controls.Add(this.findBtn);
             this.StatementTab.Controls.Add(this.searchTxtBox);
             this.StatementTab.Controls.Add(this.panel1);
@@ -82,7 +84,6 @@
             this.StatementTab.Size = new System.Drawing.Size(1024, 519);
             this.StatementTab.TabIndex = 1;
             this.StatementTab.Text = "Tài khoản";
-            this.StatementTab.UseVisualStyleBackColor = true;
             // 
             // findBtn
             // 
@@ -129,9 +130,10 @@
             // 
             this.userName_txtBox.BackColor = System.Drawing.Color.LightGray;
             this.userName_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userName_txtBox.Location = new System.Drawing.Point(2, 9);
+            this.userName_txtBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.userName_txtBox.Location = new System.Drawing.Point(0, 6);
             this.userName_txtBox.Name = "userName_txtBox";
-            this.userName_txtBox.Size = new System.Drawing.Size(214, 27);
+            this.userName_txtBox.Size = new System.Drawing.Size(214, 30);
             this.userName_txtBox.TabIndex = 19;
             // 
             // email_txtBox
@@ -214,7 +216,8 @@
             // 
             this.textBox3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox3.ForeColor = System.Drawing.Color.Turquoise;
             this.textBox3.Location = new System.Drawing.Point(35, 292);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
@@ -237,7 +240,8 @@
             // 
             this.txtBox4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBox4.Font = new System.Drawing.Font("Segoe UI", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.txtBox4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtBox4.ForeColor = System.Drawing.Color.Turquoise;
             this.txtBox4.Location = new System.Drawing.Point(35, 3);
             this.txtBox4.Name = "txtBox4";
             this.txtBox4.ReadOnly = true;
@@ -309,14 +313,15 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.ForeColor = System.Drawing.Color.Turquoise;
             this.textBox1.Location = new System.Drawing.Point(35, 58);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(157, 23);
             this.textBox1.TabIndex = 0;
             this.textBox1.TabStop = false;
-            this.textBox1.Text = "Định danh / CCCD:";
+            this.textBox1.Text = "Mã định danh:";
             // 
             // user_dtgv
             // 
@@ -333,17 +338,25 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.user_dtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.user_dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.user_dtgv.DefaultCellStyle = dataGridViewCellStyle2;
             this.user_dtgv.Location = new System.Drawing.Point(3, 9);
             this.user_dtgv.Name = "user_dtgv";
             this.user_dtgv.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.user_dtgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.user_dtgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.user_dtgv.RowHeadersWidth = 51;
             this.user_dtgv.RowTemplate.Height = 29;
             this.user_dtgv.Size = new System.Drawing.Size(588, 441);

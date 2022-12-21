@@ -62,6 +62,7 @@
             // LoginBtn
             // 
             this.LoginBtn.BackColor = System.Drawing.Color.White;
+            this.LoginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LoginBtn.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
             this.LoginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoginBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -76,6 +77,7 @@
             // 
             // RegisterBtn
             // 
+            this.RegisterBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RegisterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RegisterBtn.ForeColor = System.Drawing.Color.RoyalBlue;
             this.RegisterBtn.Location = new System.Drawing.Point(12, 272);
@@ -91,6 +93,7 @@
             this.rmb_txtBox.AutoSize = true;
             this.rmb_txtBox.BackColor = System.Drawing.Color.Transparent;
             this.rmb_txtBox.BackgroundImage = global::Service.Properties.Resources.login_background_1;
+            this.rmb_txtBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rmb_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rmb_txtBox.ForeColor = System.Drawing.Color.RoyalBlue;
             this.rmb_txtBox.Location = new System.Drawing.Point(12, 160);
@@ -104,6 +107,7 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.textBox1.Location = new System.Drawing.Point(12, 321);
