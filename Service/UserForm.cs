@@ -49,5 +49,15 @@ namespace Service
             IsLogout = true;
             this.Close();
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn thoát?", "Notification", MessageBoxButtons.OKCancel) != DialogResult.OK)
+            {
+                return;
+            }
+
+            Application.Exit();
+        }
     }
 }

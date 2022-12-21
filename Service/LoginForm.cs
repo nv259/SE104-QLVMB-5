@@ -76,7 +76,11 @@ namespace Service
                     userForm.ShowDialog();
                 }
 
-                this.Show();
+                try
+                {
+                    this.Show();
+                }
+                catch { }
             }
             else
             {
