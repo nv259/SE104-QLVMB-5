@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MainTab = new System.Windows.Forms.TabControl();
             this.StatementTab = new System.Windows.Forms.TabPage();
             this.findBtn = new System.Windows.Forms.Button();
@@ -90,6 +92,7 @@
             this.findBtn.TabIndex = 2;
             this.findBtn.Text = "Tìm kiếm";
             this.findBtn.UseVisualStyleBackColor = true;
+            this.findBtn.Click += new System.EventHandler(this.findBtn_Click);
             // 
             // searchTxtBox
             // 
@@ -98,6 +101,7 @@
             this.searchTxtBox.PlaceholderText = "Tìm kiếm theo tên đăng nhập";
             this.searchTxtBox.Size = new System.Drawing.Size(287, 27);
             this.searchTxtBox.TabIndex = 1;
+            this.searchTxtBox.TextChanged += new System.EventHandler(this.findBtn_Click);
             // 
             // panel1
             // 
@@ -192,6 +196,7 @@
             this.Add_btn.TabIndex = 21;
             this.Add_btn.Text = "Thêm";
             this.Add_btn.UseVisualStyleBackColor = true;
+            this.Add_btn.Click += new System.EventHandler(this.Add_btn_Click);
             // 
             // userRole_comboBox
             // 
@@ -210,7 +215,7 @@
             this.textBox3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Segoe UI", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(3, 294);
+            this.textBox3.Location = new System.Drawing.Point(35, 292);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(70, 23);
@@ -226,13 +231,14 @@
             this.resetBtn.TabIndex = 13;
             this.resetBtn.Text = "Đặt lại";
             this.resetBtn.UseVisualStyleBackColor = true;
+            this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
             // 
             // txtBox4
             // 
             this.txtBox4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBox4.Font = new System.Drawing.Font("Segoe UI", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.txtBox4.Location = new System.Drawing.Point(3, 5);
+            this.txtBox4.Location = new System.Drawing.Point(35, 3);
             this.txtBox4.Name = "txtBox4";
             this.txtBox4.ReadOnly = true;
             this.txtBox4.Size = new System.Drawing.Size(157, 23);
@@ -248,6 +254,7 @@
             this.deleteBtn.TabIndex = 4;
             this.deleteBtn.Text = "Xóa";
             this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // updateBtn
             // 
@@ -257,13 +264,14 @@
             this.updateBtn.TabIndex = 3;
             this.updateBtn.Text = "Cập nhật";
             this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // textBox10
             // 
             this.textBox10.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox10.Location = new System.Drawing.Point(3, 235);
+            this.textBox10.Location = new System.Drawing.Point(35, 233);
             this.textBox10.Name = "textBox10";
             this.textBox10.ReadOnly = true;
             this.textBox10.Size = new System.Drawing.Size(66, 23);
@@ -276,7 +284,7 @@
             this.textBox6.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox6.Location = new System.Drawing.Point(3, 175);
+            this.textBox6.Location = new System.Drawing.Point(35, 173);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(123, 23);
@@ -289,7 +297,7 @@
             this.textBox4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(3, 117);
+            this.textBox4.Location = new System.Drawing.Point(35, 115);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(91, 23);
@@ -302,7 +310,7 @@
             this.textBox1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(3, 60);
+            this.textBox1.Location = new System.Drawing.Point(35, 58);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(157, 23);
@@ -314,11 +322,28 @@
             // 
             this.user_dtgv.AllowUserToAddRows = false;
             this.user_dtgv.AllowUserToDeleteRows = false;
+            this.user_dtgv.AllowUserToOrderColumns = true;
             this.user_dtgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.user_dtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.user_dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.user_dtgv.Location = new System.Drawing.Point(3, 9);
             this.user_dtgv.Name = "user_dtgv";
             this.user_dtgv.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.user_dtgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.user_dtgv.RowHeadersWidth = 51;
             this.user_dtgv.RowTemplate.Height = 29;
             this.user_dtgv.Size = new System.Drawing.Size(588, 441);
