@@ -93,7 +93,7 @@ namespace Service
         {
             this.Hide();
 
-            DatVeForm f = new DatVeForm();
+            DatVeForm f = new DatVeForm(this.account);
             f.ShowDialog();
 
             this.Show();

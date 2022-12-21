@@ -75,6 +75,7 @@
             this.exportToExcelBtn.TabIndex = 14;
             this.exportToExcelBtn.Text = "Export to excel";
             this.exportToExcelBtn.UseVisualStyleBackColor = true;
+            this.exportToExcelBtn.Click += new System.EventHandler(this.exportToExcelBtn_Click);
             // 
             // reportMonthDgv
             // 

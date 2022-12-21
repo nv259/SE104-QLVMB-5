@@ -27,6 +27,7 @@ namespace Service
 
         private void traCuuBtn_Click(object sender, EventArgs e)
         {
+            this.Hide();
 
         }
 
@@ -37,6 +38,14 @@ namespace Service
             LichChuyenBayForm lichChuyenBayForm = new LichChuyenBayForm();
             lichChuyenBayForm.ShowDialog();
 
+            this.Show();
+        }
+
+        private void changeRuleBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ThayDoiQuyDinhForm f = new ThayDoiQuyDinhForm();
+            f.ShowDialog();
             this.Show();
         }
     }
