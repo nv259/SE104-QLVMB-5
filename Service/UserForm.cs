@@ -26,7 +26,8 @@ namespace Service
             this.phoneNumber_txtBox.Text = account.Sdt;
         }
 
-        Account account;
+        private Account account;
+        public bool IsLogout = false;
 
         private void userInfo_pnl_Paint_1(object sender, EventArgs e)
         {
@@ -36,6 +37,17 @@ namespace Service
             userInfoForm.ShowDialog();
 
             this.Show();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn đăng xuất?", "Notification", MessageBoxButtons.OKCancel) != DialogResult.OK)
+            {
+                return;
+            }
+
+            IsLogout = true;
+            this.Close();
         }
     }
 }
