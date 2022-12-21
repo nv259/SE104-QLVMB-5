@@ -105,6 +105,32 @@ namespace Service
 
             fromComboBox.EndUpdate();
             toComboBox.EndUpdate();
+
+            query = "SELECT * FROM [dbo].THAMSO ";
+            dt = DataProvider.Instance.ExecuteQuery(query);
+
+            int tg_dat_ve_cham_nhat = int.MaxValue;
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                tg_dat_ve_cham_nhat = Convert.ToInt32(dr["TGDatVeChamNhat"]);
+            }
+
+
+            query = "SELECT * FROM [dbo].CHUYENBAY ";
+            dt = DataProvider.Instance.ExecuteQuery(query);
+
+            flightListLstBox.BeginUpdate();
+            flightListLstBox.Items.Clear();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                DateTime NgayGioBay = Convert.ToDateTime(dr["NgayGioBay"]);
+                TimeSpan chk = NgayGioBay.Subtract(DateTime.Now);
+                if (chk.Days >= tg_dat_ve_cham_nhat) flightListLstBox.Items.Add(dr["MaChuyenBay"].ToString().TrimEnd() + " | " + dr["MaSanBayDi"].ToString().TrimEnd() + " | " + dr["MaSanBayDen"].ToString().TrimEnd() + " | " + dr["NgayGioBay"].ToString());
+            }
+
+            flightListLstBox.EndUpdate();
         }
 
         private void list_flight()
