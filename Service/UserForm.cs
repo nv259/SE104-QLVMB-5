@@ -27,7 +27,6 @@ namespace Service
             this.email_txtBox.Text = account.Email;
             this.phoneNumber_txtBox.Text = account.Sdt;
             flightDgv.DataSource = flightList;
-            ticketBoughtDgv.DataSource = ticketList;
             Load_dtgv_flightDgv();
             Load_dtgv_ticketDgv();
             
@@ -91,6 +90,11 @@ namespace Service
         }
 
         private void ticketBoughtDgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void UserForm_Load(object sender, EventArgs e)
         {
 
         }
