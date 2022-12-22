@@ -26,7 +26,7 @@ namespace Service
             Email_txtBox.Text = account.Email;
             SoDienThoai_txtBox.Text = account.Sdt;
 
-            string query = "SELECT * FROM [dbo].CT_DATVE WHERE MaChuyenBay = @MaChuyenBay ";
+            string query = "SELECT * FROM [dbo].CT_DATVE WHERE MaNguoiDat = @MaDangNhap ";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { account.MaDangNhap });
             
             ChuyenBay_comboBox.BeginUpdate();
@@ -79,19 +79,16 @@ namespace Service
             if (ChuyenBay_comboBox.SelectedItem != null) MaChuyenBay = ChuyenBay_comboBox.SelectedItem.ToString();
             if (SanBayDi_comboBox.SelectedItem != null) SanBayDi = MASANBAY(SanBayDi_comboBox.SelectedItem.ToString());
             if (SanBayDen_comboBox.SelectedItem != null) SanBayDen = MASANBAY(SanBayDen_comboBox.SelectedItem.ToString());
-            string NgayBay = Convert.ToDateTime(NgayBay_datetime.Value.ToString()).ToString("yyyy-MM-dd");
-
-            string NgayBayMin = NgayBay + " 00:00:00.000";
-            string NgayBayMax = NgayBay + " 23:59:59.999";
 
             string MaChuyenBay1 = MaChuyenBay, SanBayDi1 = SanBayDi, SanBayDen1 = SanBayDen;
 
             string query = "SELECT * FROM [dbo].CT_DATVE JOIN CHUYENBAY ON CHUYENBAY.MaChuyenBay = CT_DATVE.MaChuyenBay JOIN [dbo].HANGVE ON HANGVE.MaHangVe = CT_DATVE.MaHangVe " +
-                " WHERE ( @MaChuyenBay = 'None' OR @MaChuyenBay1 = CT_DATVE.MaChuyenBay ) AND ( @SanBayDi = 'None' OR @SanBayDi1 = CHUYENBAY.MaSanBayDi ) AND " +
-                "( @SanBayDen = 'None' OR @SanBayDen1 = CHUYENBAY.MaSanBayDen ) AND @NgayBayMin <= CHUYENBAY.NgayGioBay AND CHUYENBAY.NgayGioBay <= @NgayBayMax ";
+                " WHERE ( @MaChuyenBay = 'None' OR @MaChuyenBay1 = CT_DATVE.MaChuyenBay ) AND ( @SanBayDi = 'None' OR @SanBayDi1 = CHUYENBAY.MaSanBayDi ) AND ( @SanBayDen = 'None' OR @SanBayDen1 = CHUYENBAY.MaSanBayDen ) ";
 
-            dt = DataProvider.Instance.ExecuteQuery(query, new object[] { MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1, NgayBayMin, NgayBayMax });
+            dt = DataProvider.Instance.ExecuteQuery(query, new object[] { MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1 });
 
+
+            FullInfo.Rows.Clear();
             FullInfo.ColumnCount = 8;
             FullInfo.Columns[0].Name = "Mã chuyến bay";
             FullInfo.Columns[1].Name = "Bay từ";
@@ -104,7 +101,7 @@ namespace Service
 
             foreach(DataRow dr in dt.Rows)
             {
-                FullInfo.Rows.Add(dr["MaChuyenBay"].ToString(), dr["SanBayDi"].ToString(), dr["SanBayDen"].ToString(), dr["NgayGioBay"].ToString(), dr["ThoiGianBay"].ToString(), dr["TenHangVe"].ToString(), dr["NgayLap"].ToString(), dr["TinhTrang"].ToString());
+                FullInfo.Rows.Add(dr["MaChuyenBay"].ToString(), dr["MaSanBayDi"].ToString(), dr["MaSanBayDen"].ToString(), dr["NgayGioBay"].ToString(), dr["ThoiGianBay"].ToString(), dr["TenHangVe"].ToString(), dr["NgayLap"].ToString(), dr["TinhTrang"].ToString());
             }
         }
 
