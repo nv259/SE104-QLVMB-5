@@ -23,7 +23,7 @@ namespace Service
             reportYearDgv.DataSource = yearIncome;
             //this.reportMonthBtn.Hide();
             //this.reportYearBtn.Hide();
-            this.reportMonthDgv.Hide();
+            //this.reportMonthDgv.Hide();
             this.reportYearDgv.Hide();
             this.yearTxtBox.Show();
             this.monthComboBox.Hide();
@@ -88,6 +88,7 @@ namespace Service
                 total += Convert.ToInt32(reportMonthDgv.Rows[i].Cells[2].Value);
             }
             this.totalIncome.Text = total.ToString();
+            if (total > 0) 
             for (int i = 0; i < reportMonthDgv.Rows.Count; ++i)
                 reportMonthDgv.Rows[i].Cells[3].Value = Convert.ToInt32(reportMonthDgv.Rows[i].Cells[3].Value) / total;
         }

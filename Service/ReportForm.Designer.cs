@@ -44,7 +44,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(604, 488);
+            this.textBox1.Location = new System.Drawing.Point(574, 456);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(113, 27);
             this.textBox1.TabIndex = 17;
@@ -52,7 +52,7 @@
             // 
             // totalIncome
             // 
-            this.totalIncome.Location = new System.Drawing.Point(732, 488);
+            this.totalIncome.Location = new System.Drawing.Point(702, 456);
             this.totalIncome.Name = "totalIncome";
             this.totalIncome.Size = new System.Drawing.Size(169, 27);
             this.totalIncome.TabIndex = 16;
@@ -60,7 +60,7 @@
             // reportYearDgv
             // 
             this.reportYearDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.reportYearDgv.Location = new System.Drawing.Point(290, 95);
+            this.reportYearDgv.Location = new System.Drawing.Point(260, 63);
             this.reportYearDgv.Name = "reportYearDgv";
             this.reportYearDgv.RowHeadersWidth = 51;
             this.reportYearDgv.RowTemplate.Height = 29;
@@ -69,7 +69,7 @@
             // 
             // exportToExcelBtn
             // 
-            this.exportToExcelBtn.Location = new System.Drawing.Point(479, 578);
+            this.exportToExcelBtn.Location = new System.Drawing.Point(454, 513);
             this.exportToExcelBtn.Name = "exportToExcelBtn";
             this.exportToExcelBtn.Size = new System.Drawing.Size(187, 61);
             this.exportToExcelBtn.TabIndex = 14;
@@ -80,7 +80,7 @@
             // reportMonthDgv
             // 
             this.reportMonthDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.reportMonthDgv.Location = new System.Drawing.Point(290, 95);
+            this.reportMonthDgv.Location = new System.Drawing.Point(260, 63);
             this.reportMonthDgv.Name = "reportMonthDgv";
             this.reportMonthDgv.RowHeadersWidth = 51;
             this.reportMonthDgv.RowTemplate.Height = 29;
@@ -103,7 +103,7 @@
             "10",
             "11",
             "12"});
-            this.monthComboBox.Location = new System.Drawing.Point(62, 230);
+            this.monthComboBox.Location = new System.Drawing.Point(131, 209);
             this.monthComboBox.Name = "monthComboBox";
             this.monthComboBox.Size = new System.Drawing.Size(88, 28);
             this.monthComboBox.TabIndex = 11;
@@ -111,7 +111,7 @@
             // 
             // reportYearBtn
             // 
-            this.reportYearBtn.Location = new System.Drawing.Point(62, 141);
+            this.reportYearBtn.Location = new System.Drawing.Point(32, 140);
             this.reportYearBtn.Name = "reportYearBtn";
             this.reportYearBtn.Size = new System.Drawing.Size(159, 40);
             this.reportYearBtn.TabIndex = 10;
@@ -121,7 +121,7 @@
             // 
             // reportMonthBtn
             // 
-            this.reportMonthBtn.Location = new System.Drawing.Point(62, 95);
+            this.reportMonthBtn.Location = new System.Drawing.Point(32, 94);
             this.reportMonthBtn.Name = "reportMonthBtn";
             this.reportMonthBtn.Size = new System.Drawing.Size(159, 40);
             this.reportMonthBtn.TabIndex = 9;
@@ -131,7 +131,7 @@
             // 
             // makeReportBtn
             // 
-            this.makeReportBtn.Location = new System.Drawing.Point(62, 297);
+            this.makeReportBtn.Location = new System.Drawing.Point(32, 265);
             this.makeReportBtn.Name = "makeReportBtn";
             this.makeReportBtn.Size = new System.Drawing.Size(187, 61);
             this.makeReportBtn.TabIndex = 18;
@@ -141,7 +141,7 @@
             // 
             // yearTxtBox
             // 
-            this.yearTxtBox.Location = new System.Drawing.Point(166, 230);
+            this.yearTxtBox.Location = new System.Drawing.Point(32, 210);
             this.yearTxtBox.Name = "yearTxtBox";
             this.yearTxtBox.PlaceholderText = "Năm";
             this.yearTxtBox.Size = new System.Drawing.Size(93, 27);
@@ -151,7 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 692);
+            this.ClientSize = new System.Drawing.Size(1008, 617);
             this.Controls.Add(this.yearTxtBox);
             this.Controls.Add(this.makeReportBtn);
             this.Controls.Add(this.textBox1);
