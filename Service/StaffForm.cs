@@ -48,5 +48,17 @@ namespace Service
             f.ShowDialog();
             this.Show();
         }
+
+        private void saleBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            try
+            {
+                Bill f = new Bill();
+                f.ShowDialog();
+            }
+            catch { }
+            this.Show();
+        }
     }
 }

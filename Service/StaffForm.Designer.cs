@@ -32,6 +32,7 @@
             this.makeReportBtn = new System.Windows.Forms.Button();
             this.changeRuleBtn = new System.Windows.Forms.Button();
             this.traCuuBtn = new System.Windows.Forms.Button();
+            this.saleBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // RecordFlightBtn
@@ -74,11 +75,22 @@
             this.traCuuBtn.UseVisualStyleBackColor = true;
             this.traCuuBtn.Click += new System.EventHandler(this.traCuuBtn_Click);
             // 
+            // saleBtn
+            // 
+            this.saleBtn.Location = new System.Drawing.Point(28, 211);
+            this.saleBtn.Name = "saleBtn";
+            this.saleBtn.Size = new System.Drawing.Size(159, 42);
+            this.saleBtn.TabIndex = 4;
+            this.saleBtn.Text = "Bán vé";
+            this.saleBtn.UseVisualStyleBackColor = true;
+            this.saleBtn.Click += new System.EventHandler(this.saleBtn_Click);
+            // 
             // StaffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(211, 224);
+            this.ClientSize = new System.Drawing.Size(211, 262);
+            this.Controls.Add(this.saleBtn);
             this.Controls.Add(this.traCuuBtn);
             this.Controls.Add(this.changeRuleBtn);
             this.Controls.Add(this.makeReportBtn);
@@ -97,5 +109,6 @@
         private Button makeReportBtn;
         private Button changeRuleBtn;
         private Button traCuuBtn;
+        private Button saleBtn;
     }
 }

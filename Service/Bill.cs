@@ -20,10 +20,19 @@ namespace Service
             this.acc = acc;
             InitializeComponent();
 
-            this.name_txtBox.Text = this.acc.TenNguoiDung;
-            this.ID_txtBox.Text = this.acc.DinhDanh;
-            this.phone_txtBox.Text = this.acc.Sdt;
-            this.email_txtBox.Text = this.acc.Email;
+            if (acc != null) 
+            {
+                this.name_txtBox.Text = this.acc.TenNguoiDung;
+                this.ID_txtBox.Text = this.acc.DinhDanh;
+                this.phone_txtBox.Text = this.acc.Sdt;
+                this.email_txtBox.Text = this.acc.Email;
+            }
+            else {
+                this.name_txtBox.Text = string.Empty;
+                this.ID_txtBox.Text = string.Empty;
+                this.phone_txtBox.Text = string.Empty;
+                this.email_txtBox.Text = string.Empty;
+            }
 
             string query = "SELECT TenHangVe FROM [dbo].HANGVE";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);

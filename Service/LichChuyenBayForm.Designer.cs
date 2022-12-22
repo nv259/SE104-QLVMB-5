@@ -220,7 +220,7 @@
             // 
             // RecordBtn
             // 
-            this.RecordBtn.Location = new System.Drawing.Point(486, 697);
+            this.RecordBtn.Location = new System.Drawing.Point(441, 702);
             this.RecordBtn.Name = "RecordBtn";
             this.RecordBtn.Size = new System.Drawing.Size(216, 43);
             this.RecordBtn.TabIndex = 16;
