@@ -42,8 +42,8 @@ namespace Service
                 MaChuyenBay = MaChuyenBay.Substring(0, MaChuyenBay.IndexOf('|') - 1);
             }
 
-            string query = "SELECT * FROM [dbo].CHUYENBAY WHERE MaChuyenBay = @MaChuyenBay ";
-            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { MaChuyenBay });
+            string query = "SELECT * FROM [dbo].CHUYENBAY ";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
         }
 
         private void modify_masanbay()
@@ -65,8 +65,8 @@ namespace Service
         {
             modify_masanbay();
 
-            string query = "SELECT * FROM [dbo].SANBAY WHERE MaSanBay != @MaSanBayDi ";
-            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { MaSanBayDi });
+            string query = "SELECT * FROM [dbo].SANBAY ";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
 
             toComboBox.BeginUpdate();
             toComboBox.Items.Clear();
@@ -85,7 +85,7 @@ namespace Service
         {
             modify_masanbay();
 
-            string query = "SELECT * FROM [dbo].SANBAY WHERE MaSanBay != @MaSanBayDen  ";
+            string query = "SELECT * FROM [dbo].SANBAY ";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { MaSanBayDen });
 
             fromComboBox.BeginUpdate();
