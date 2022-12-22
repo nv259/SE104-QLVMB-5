@@ -35,7 +35,7 @@ namespace Service
 
             foreach(DataRow dr in dt.Rows)
             {
-                ChuyenBay_comboBox.Items.Add(dr["MaSanBay"].ToString());
+                ChuyenBay_comboBox.Items.Add(dr["MaChuyenBay"].ToString());
             }
             ChuyenBay_comboBox.EndUpdate();
 
