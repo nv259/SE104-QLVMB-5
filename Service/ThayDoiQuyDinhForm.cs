@@ -340,5 +340,10 @@ namespace Service
             MessageBox.Show("Đã thay đổi thành công!");
             this.Close();
         }
+
+        private void TGBayToiThieu_txtBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
