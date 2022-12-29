@@ -23,22 +23,28 @@ namespace Service
             InitializeComponent();
             reportMonthDgv.DataSource = monthIncome;
             reportYearDgv.DataSource = yearIncome;
-            //this.reportMonthBtn.Hide();
-            //this.reportYearBtn.Hide();
-            //this.reportMonthDgv.Hide();
             this.reportYearDgv.Hide();
             this.yearTxtBox.Show();
             this.monthComboBox.Hide();
+
+            this.reportMonthDgv.ReadOnly = true;
+            this.reportYearDgv.ReadOnly = true;
+            this.totalIncome.ReadOnly = true;
+            this.reportMonthDgv.TabStop = false;
+            this.reportYearDgv.TabStop = false;
+            this.totalIncome.TabStop = false;
         }
 
         private void reportMonthBtn_Click(object sender, EventArgs e)
         {
+            type = "";
             this.monthComboBox.Show();
             this.reportYearDgv.Hide();
             this.reportMonthDgv.Show();
         }
         private void reportYearBtn_Click(object sender, EventArgs e)
         {
+            type = "";
             this.monthComboBox.Hide();
             this.reportYearDgv.Show();
             this.reportMonthDgv.Hide();
@@ -101,11 +107,45 @@ namespace Service
         {
             if (this.reportYearDgv.Visible)
             {
+                string year = yearTxtBox.Text.ToString().TrimEnd();
+
+                if (year.Length == 0)
+                {
+                    MessageBox.Show("Chưa nhập năm báo cáo!");
+                    return;
+                }
+
+                if (!year.All(char.IsDigit) || (year.Length > 1 && year[0] == '0'))
+                {
+                    MessageBox.Show("Năm báo cáo không đúng định dạng!");
+                    return;
+                }
+
                 type = "Year";
                 Load_dtgv_reportYearDgv();
             }
             else if (this.reportMonthDgv.Visible)
             {
+                string year = yearTxtBox.Text.ToString().TrimEnd();
+
+                if (year.Length == 0)
+                {
+                    MessageBox.Show("Chưa nhập năm báo cáo!");
+                    return;
+                }
+
+                if (!year.All(char.IsDigit) || (year.Length > 1 && year[0] == '0'))
+                {
+                    MessageBox.Show("Năm báo cáo không đúng định dạng!");
+                    return;
+                }
+
+                if (monthComboBox.SelectedItem == null)
+                {
+                    MessageBox.Show("Chưa chọn tháng báo cáo!");
+                    return;
+                }
+
                 type = "Month";
                 Load_dtgv_reportMonthDgv();
             }
@@ -115,6 +155,12 @@ namespace Service
 
         private void exportToExcelBtn_Click(object sender, EventArgs e)
         {
+            if (type == "")
+            {
+                MessageBox.Show("Chưa lập báo cáo!");
+                return;
+            }
+
             Excel._Application app = new Excel.Application();
             Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
             Excel._Worksheet worksheet = null;
