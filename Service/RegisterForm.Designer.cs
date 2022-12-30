@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.NgaySinh_txtBox = new System.Windows.Forms.TextBox();
+            this.NgaySinh = new System.Windows.Forms.DateTimePicker();
             this.fullName_txtBox = new System.Windows.Forms.TextBox();
             this.regBtn = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -55,7 +55,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.NgaySinh_txtBox);
+            this.panel1.Controls.Add(this.NgaySinh);
             this.panel1.Controls.Add(this.fullName_txtBox);
             this.panel1.Controls.Add(this.regBtn);
             this.panel1.Controls.Add(this.textBox4);
@@ -79,21 +79,18 @@
             this.panel1.Size = new System.Drawing.Size(571, 585);
             this.panel1.TabIndex = 1;
             // 
-            // NgaySinh_txtBox
+            // NgaySinh
             // 
-            this.NgaySinh_txtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.NgaySinh_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NgaySinh_txtBox.Location = new System.Drawing.Point(201, 121);
-            this.NgaySinh_txtBox.Name = "NgaySinh_txtBox";
-            this.NgaySinh_txtBox.PlaceholderText = "     31-12-1999";
-            this.NgaySinh_txtBox.Size = new System.Drawing.Size(307, 27);
-            this.NgaySinh_txtBox.TabIndex = 2;
+            this.NgaySinh.Location = new System.Drawing.Point(199, 122);
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.Size = new System.Drawing.Size(307, 27);
+            this.NgaySinh.TabIndex = 2;
             // 
             // fullName_txtBox
             // 
             this.fullName_txtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.fullName_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.fullName_txtBox.Location = new System.Drawing.Point(201, 78);
+            this.fullName_txtBox.Location = new System.Drawing.Point(199, 78);
             this.fullName_txtBox.Name = "fullName_txtBox";
             this.fullName_txtBox.PlaceholderText = "     Nguyễn Văn A";
             this.fullName_txtBox.Size = new System.Drawing.Size(307, 27);
@@ -354,6 +351,6 @@
         private Button regBtn;
         private TextBox textBox4;
         private TextBox textBox3;
-        private TextBox NgaySinh_txtBox;
+        private DateTimePicker NgaySinh;
     }
 }

@@ -128,6 +128,7 @@
             this.SanBayDen_comboBox.Name = "SanBayDen_comboBox";
             this.SanBayDen_comboBox.Size = new System.Drawing.Size(263, 28);
             this.SanBayDen_comboBox.TabIndex = 7;
+            this.SanBayDen_comboBox.TabStop = false;
             this.SanBayDen_comboBox.SelectedIndexChanged += new System.EventHandler(this.SanBayDen_comboBox_SelectedIndexChanged);
             // 
             // NgayBay_datetime

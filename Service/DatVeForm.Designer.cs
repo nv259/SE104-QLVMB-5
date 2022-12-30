@@ -499,6 +499,7 @@
             this.ngSinhBox.Name = "ngSinhBox";
             this.ngSinhBox.Size = new System.Drawing.Size(194, 27);
             this.ngSinhBox.TabIndex = 19;
+            this.ngSinhBox.TabStop = false;
             this.ngSinhBox.Value = new System.DateTime(2022, 12, 21, 12, 43, 4, 0);
             // 
             // textBox15

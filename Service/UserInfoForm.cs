@@ -28,7 +28,7 @@ namespace Service
             this.idTxtBox.Text = account.DinhDanh;
             this.emailTxtBox.Text = account.Email;
             this.phoneTxtBox.Text = account.Sdt;
-            this.NgaySinh_txtBox.Text = account.NgaySinh.ToString("dd-MM-yyyy");
+            this.NgaySinh.Value = account.NgaySinh;
 
             this.oldPasswordTxtBox.ReadOnly = true;
             this.oldPasswordTxtBox.Enabled = false;
@@ -71,6 +71,16 @@ namespace Service
         {
             if ('0' <= ch && ch <= '9') return true;
             return false;
+        }
+
+        public int CalculateAge(DateTime birthDate, DateTime now)
+        {
+            int age = now.Year - birthDate.Year;
+
+            if (now.Month < birthDate.Month || (now.Month == birthDate.Month && now.Day < birthDate.Day))
+                age--;
+
+            return age;
         }
 
         private bool CheckAll()
@@ -162,16 +172,9 @@ namespace Service
                 return false;
             }
 
-            if (NgaySinh_txtBox.Text.Length == 0)
+            if (CalculateAge(NgaySinh.Value, DateTime.Now) < 18)
             {
-                MessageBox.Show("Ngày sinh không được để trống!");
-                return false;
-            }
-
-            DateTime temp;
-            if (!DateTime.TryParseExact(NgaySinh_txtBox.Text.TrimEnd(), "dd-MM-yyyy", null, DateTimeStyles.None, out temp))
-            {
-                MessageBox.Show("Ngày sinh không đúng định dạng!");
+                MessageBox.Show("Ngày sinh không hợp lệ (Phải đủ 18 tuổi trở lên)!");
                 return false;
             }
 
@@ -224,10 +227,10 @@ namespace Service
             DinhDanh = this.idTxtBox.Text;
             SoDienThoai = this.phoneTxtBox.Text.Trim();
             Email = this.emailTxtBox.Text;
-            DateTime NgaySinh = Convert.ToDateTime(NgaySinh_txtBox.Text); 
+            DateTime NgaySinh1 = NgaySinh.Value; 
             
             string query = "UPDATE [dbo].NGUOIDUNG SET MatKhau = @MatKhau , TenNguoiDung = @TenNguoiDung , DinhDanh = @DinhDanh , SoDienThoai = @SoDienThoai , Email = @Email , NgaySinh = @NgaySinh WHERE MaDangNhap = @MaDangNhap ";
-            object i = DataProvider.Instance.ExecuteNonQuery(query, new object[] { MatKhau, TenNguoiDung, DinhDanh, SoDienThoai, Email , NgaySinh.ToString("yyyy-MM-dd") , MaDangNhap });
+            object i = DataProvider.Instance.ExecuteNonQuery(query, new object[] { MatKhau, TenNguoiDung, DinhDanh, SoDienThoai, Email , NgaySinh1.ToString("yyyy-MM-dd") , MaDangNhap });
             MessageBox.Show("Cập nhật thông tin thành công!");
             this.Close();
         }

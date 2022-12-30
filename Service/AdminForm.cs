@@ -75,17 +75,6 @@ namespace Service
             Load_dtgv();
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-            LogoutForm logoutForm = new LogoutForm();
-            logoutForm.ShowDialog();
-            
-            if (logoutForm.Accept)
-            {
-                this.Close();
-            }
-        }
-
         private void userName_txtBox_TextChanged(object sender, EventArgs e)
         {
             //Load_dtgv();

@@ -30,10 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserInfoForm));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.showData_panel = new System.Windows.Forms.Panel();
+            this.NgaySinh = new System.Windows.Forms.DateTimePicker();
             this.usernameTxtBox = new System.Windows.Forms.TextBox();
             this.fullNameTxtBox = new System.Windows.Forms.TextBox();
             this.idTxtBox = new System.Windows.Forms.TextBox();
@@ -51,8 +53,6 @@
             this.phoneTxtBox = new System.Windows.Forms.TextBox();
             this.newPasswordTxtBox = new System.Windows.Forms.TextBox();
             this.oldPasswordTxtBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.NgaySinh_txtBox = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.showData_panel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -71,6 +71,19 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(465, 239);
             this.panel2.TabIndex = 2;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(3, 206);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(91, 23);
+            this.textBox1.TabIndex = 13;
+            this.textBox1.TabStop = false;
+            this.textBox1.Text = "Ngày sinh:";
             // 
             // textBox11
             // 
@@ -113,7 +126,7 @@
             // 
             // showData_panel
             // 
-            this.showData_panel.Controls.Add(this.NgaySinh_txtBox);
+            this.showData_panel.Controls.Add(this.NgaySinh);
             this.showData_panel.Controls.Add(this.usernameTxtBox);
             this.showData_panel.Controls.Add(this.fullNameTxtBox);
             this.showData_panel.Controls.Add(this.idTxtBox);
@@ -122,6 +135,13 @@
             this.showData_panel.Name = "showData_panel";
             this.showData_panel.Size = new System.Drawing.Size(288, 239);
             this.showData_panel.TabIndex = 3;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.Location = new System.Drawing.Point(3, 202);
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.Size = new System.Drawing.Size(285, 27);
+            this.NgaySinh.TabIndex = 20;
             // 
             // usernameTxtBox
             // 
@@ -309,28 +329,6 @@
             this.oldPasswordTxtBox.TabIndex = 5;
             this.oldPasswordTxtBox.UseSystemPasswordChar = true;
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(3, 206);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(91, 23);
-            this.textBox1.TabIndex = 13;
-            this.textBox1.TabStop = false;
-            this.textBox1.Text = "Ngày sinh:";
-            // 
-            // NgaySinh_txtBox
-            // 
-            this.NgaySinh_txtBox.BackColor = System.Drawing.Color.White;
-            this.NgaySinh_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NgaySinh_txtBox.Location = new System.Drawing.Point(3, 202);
-            this.NgaySinh_txtBox.Name = "NgaySinh_txtBox";
-            this.NgaySinh_txtBox.Size = new System.Drawing.Size(285, 27);
-            this.NgaySinh_txtBox.TabIndex = 20;
-            // 
             // UserInfoForm
             // 
             this.AcceptButton = this.updateUserInfoBtn;
@@ -385,5 +383,7 @@
         private TextBox textBox11;
         private TextBox textBox1;
         private TextBox NgaySinh_txtBox;
+        private DateTimePicker dateTimePicker1;
+        private DateTimePicker NgaySinh;
     }
 }

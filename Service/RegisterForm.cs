@@ -46,6 +46,16 @@ namespace Service
             return false;
         }
 
+        public int CalculateAge(DateTime birthDate, DateTime now)
+        {
+            int age = now.Year - birthDate.Year;
+
+            if (now.Month < birthDate.Month || (now.Month == birthDate.Month && now.Day < birthDate.Day))
+                age--;
+
+            return age;
+        }
+
         private bool CheckAll()
         {
             if (this.fullName_txtBox.Text.Length == 0)
@@ -116,16 +126,9 @@ namespace Service
                 return false;
             }
 
-            if (NgaySinh_txtBox.Text.Length == 0)
+            if (CalculateAge(NgaySinh.Value, DateTime.Now) < 18)
             {
-                MessageBox.Show("Ngày sinh không được để trống!");
-                return false;
-            }
-
-            DateTime temp;
-            if (!DateTime.TryParseExact(NgaySinh_txtBox.Text.TrimEnd(), "dd-MM-yyyy", null, DateTimeStyles.None, out temp))
-            {
-                MessageBox.Show("Ngày sinh không đúng định dạng!");
+                MessageBox.Show("Ngày sinh không hợp lệ (Phải đủ 18 tuổi trở lên)!");
                 return false;
             }
 
@@ -224,7 +227,7 @@ namespace Service
             DinhDanh = this.ID_txtBox.Text;
             SoDienThoai = this.PhoneNumber_txtBox.Text.Trim();
             Email = this.email_txtBox.Text;
-            NgaySinh = Convert.ToDateTime(this.NgaySinh_txtBox.Text.TrimEnd().ToString()).ToString("yyyy-MM-dd");
+            NgaySinh = Convert.ToDateTime(this.NgaySinh.Value).ToString("yyyy-MM-dd");
 
             if (CheckAll())
             {
