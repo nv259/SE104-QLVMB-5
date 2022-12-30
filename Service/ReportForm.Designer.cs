@@ -65,13 +65,14 @@
             // exportToExcelBtn
             // 
             this.exportToExcelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.exportToExcelBtn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.exportToExcelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exportToExcelBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.exportToExcelBtn.ForeColor = System.Drawing.Color.White;
-            this.exportToExcelBtn.Location = new System.Drawing.Point(681, 650);
+            this.exportToExcelBtn.Location = new System.Drawing.Point(791, 353);
             this.exportToExcelBtn.Name = "exportToExcelBtn";
-            this.exportToExcelBtn.Size = new System.Drawing.Size(216, 61);
+            this.exportToExcelBtn.Size = new System.Drawing.Size(93, 31);
             this.exportToExcelBtn.TabIndex = 14;
-            this.exportToExcelBtn.Text = "Chuyển sang file Excel";
+            this.exportToExcelBtn.Text = "To Excel";
             this.exportToExcelBtn.UseVisualStyleBackColor = false;
             this.exportToExcelBtn.Click += new System.EventHandler(this.exportToExcelBtn_Click);
             // 
@@ -91,7 +92,7 @@
             "10",
             "11",
             "12"});
-            this.monthComboBox.Location = new System.Drawing.Point(144, 329);
+            this.monthComboBox.Location = new System.Drawing.Point(189, 160);
             this.monthComboBox.Name = "monthComboBox";
             this.monthComboBox.Size = new System.Drawing.Size(88, 28);
             this.monthComboBox.TabIndex = 11;
@@ -101,9 +102,9 @@
             // 
             this.reportYearBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
             this.reportYearBtn.ForeColor = System.Drawing.Color.White;
-            this.reportYearBtn.Location = new System.Drawing.Point(32, 263);
+            this.reportYearBtn.Location = new System.Drawing.Point(142, 114);
             this.reportYearBtn.Name = "reportYearBtn";
-            this.reportYearBtn.Size = new System.Drawing.Size(200, 40);
+            this.reportYearBtn.Size = new System.Drawing.Size(135, 40);
             this.reportYearBtn.TabIndex = 10;
             this.reportYearBtn.Text = "Báo cáo năm";
             this.reportYearBtn.UseVisualStyleBackColor = false;
@@ -113,9 +114,9 @@
             // 
             this.reportMonthBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
             this.reportMonthBtn.ForeColor = System.Drawing.Color.White;
-            this.reportMonthBtn.Location = new System.Drawing.Point(32, 198);
+            this.reportMonthBtn.Location = new System.Drawing.Point(1, 114);
             this.reportMonthBtn.Name = "reportMonthBtn";
-            this.reportMonthBtn.Size = new System.Drawing.Size(200, 40);
+            this.reportMonthBtn.Size = new System.Drawing.Size(135, 40);
             this.reportMonthBtn.TabIndex = 9;
             this.reportMonthBtn.Text = "Báo cáo tháng";
             this.reportMonthBtn.UseVisualStyleBackColor = false;
@@ -126,9 +127,9 @@
             this.makeReportBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
             this.makeReportBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.makeReportBtn.ForeColor = System.Drawing.Color.White;
-            this.makeReportBtn.Location = new System.Drawing.Point(32, 387);
+            this.makeReportBtn.Location = new System.Drawing.Point(1, 194);
             this.makeReportBtn.Name = "makeReportBtn";
-            this.makeReportBtn.Size = new System.Drawing.Size(200, 61);
+            this.makeReportBtn.Size = new System.Drawing.Size(276, 39);
             this.makeReportBtn.TabIndex = 18;
             this.makeReportBtn.Text = "Lập báo cáo";
             this.makeReportBtn.UseVisualStyleBackColor = false;
@@ -137,7 +138,7 @@
             // yearTxtBox
             // 
             this.yearTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.yearTxtBox.Location = new System.Drawing.Point(32, 329);
+            this.yearTxtBox.Location = new System.Drawing.Point(90, 161);
             this.yearTxtBox.Name = "yearTxtBox";
             this.yearTxtBox.PlaceholderText = "  Năm";
             this.yearTxtBox.Size = new System.Drawing.Size(93, 27);
@@ -154,13 +155,13 @@
             this.reportMonthDgv.BackgroundColor = System.Drawing.Color.White;
             this.reportMonthDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.reportMonthDgv.EnableHeadersVisualStyles = false;
-            this.reportMonthDgv.Location = new System.Drawing.Point(267, 114);
+            this.reportMonthDgv.Location = new System.Drawing.Point(283, 114);
             this.reportMonthDgv.MultiSelect = false;
             this.reportMonthDgv.Name = "reportMonthDgv";
             this.reportMonthDgv.ReadOnly = true;
             this.reportMonthDgv.RowHeadersWidth = 51;
             this.reportMonthDgv.RowTemplate.Height = 29;
-            this.reportMonthDgv.Size = new System.Drawing.Size(1004, 469);
+            this.reportMonthDgv.Size = new System.Drawing.Size(601, 270);
             this.reportMonthDgv.TabIndex = 20;
             this.reportMonthDgv.TabStop = false;
             // 
@@ -175,13 +176,13 @@
             this.reportYearDgv.BackgroundColor = System.Drawing.Color.White;
             this.reportYearDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.reportYearDgv.EnableHeadersVisualStyles = false;
-            this.reportYearDgv.Location = new System.Drawing.Point(267, 114);
+            this.reportYearDgv.Location = new System.Drawing.Point(283, 114);
             this.reportYearDgv.MultiSelect = false;
             this.reportYearDgv.Name = "reportYearDgv";
             this.reportYearDgv.ReadOnly = true;
             this.reportYearDgv.RowHeadersWidth = 51;
             this.reportYearDgv.RowTemplate.Height = 29;
-            this.reportYearDgv.Size = new System.Drawing.Size(1004, 469);
+            this.reportYearDgv.Size = new System.Drawing.Size(601, 270);
             this.reportYearDgv.TabIndex = 21;
             this.reportYearDgv.TabStop = false;
             // 
@@ -190,7 +191,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.label1.Location = new System.Drawing.Point(525, 25);
+            this.label1.Location = new System.Drawing.Point(314, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(265, 50);
             this.label1.TabIndex = 22;
@@ -198,10 +199,12 @@
             // 
             // ReportForm
             // 
+            this.AcceptButton = this.makeReportBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1299, 755);
+            this.ClientSize = new System.Drawing.Size(891, 396);
+            this.Controls.Add(this.exportToExcelBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.reportYearDgv);
             this.Controls.Add(this.reportMonthDgv);
@@ -209,7 +212,6 @@
             this.Controls.Add(this.makeReportBtn);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.totalIncome);
-            this.Controls.Add(this.exportToExcelBtn);
             this.Controls.Add(this.monthComboBox);
             this.Controls.Add(this.reportYearBtn);
             this.Controls.Add(this.reportMonthBtn);
