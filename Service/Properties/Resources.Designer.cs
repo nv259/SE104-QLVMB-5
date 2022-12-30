@@ -163,5 +163,14 @@ namespace Service.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+
+        internal static System.Drawing.Bitmap staff
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("staff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
