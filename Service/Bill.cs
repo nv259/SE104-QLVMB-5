@@ -109,6 +109,23 @@ namespace Service
                     break;
                 }
 
+                if (acc.MaNhom == "1") // is staff
+                {
+                    try
+                    {
+                        query = "INSERT INTO [dbo].BANVE VALUES( @maCB, @MaHangVe, @NgLap, @TenKhachHang, @DinhDanh, @SoDienThoai, @Email)";
+                        dt = DataProvider.Instance.ExecuteQuery(query, new object[] { maCB, MaHangVe, this.ngDatVeBox.Text, fName, id, phone, email });
+                        query = "INSERT INTO [dbo].CT_DATVE (MaChuyenBay, MaHangVe, NgayLap, TinhTrang" +
+                            "VALUES( @maCB , @MaHangVe , @NgLap , @TinhTrang )";
+                        dt = DataProvider.Instance.ExecuteQuery(query, new object[] { maCB, MaHangVe, this.ngDatVeBox.Text, "Done" });
+                        MessageBox.Show("Vé đã được đặt thành công!");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error: Mỗi hành khách chỉ được đặt một vé. Hãy hủy vé cũ trước khi đặt vé mới.");
+                    }
+
+                } else // is user
                 try
                 {
                     query = "INSERT INTO [dbo].CT_DATVE VALUES( @maCB , @MaNgDat , @MaHangVe , @NgLap , @TinhTrang )";
