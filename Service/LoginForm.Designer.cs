@@ -35,7 +35,7 @@
             this.RegisterBtn = new System.Windows.Forms.Button();
             this.rmb_txtBox = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ForgotPwd_Btn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,22 +110,19 @@
             this.pictureBox1.Image = global::Service.Properties.Resources.login_background_1;
             this.pictureBox1.Location = new System.Drawing.Point(-6, -4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(669, 378);
+            this.pictureBox1.Size = new System.Drawing.Size(667, 378);
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // ForgotPwd_Btn
+            // label1
             // 
-            this.ForgotPwd_Btn.AutoSize = true;
-            this.ForgotPwd_Btn.BackColor = System.Drawing.Color.Transparent;
-            this.ForgotPwd_Btn.Location = new System.Drawing.Point(250, 320);
-            this.ForgotPwd_Btn.Name = "ForgotPwd_Btn";
-            this.ForgotPwd_Btn.Size = new System.Drawing.Size(126, 32);
-            this.ForgotPwd_Btn.TabIndex = 15;
-            this.ForgotPwd_Btn.Text = "Quên mật khẩu?";
-            this.ForgotPwd_Btn.UseVisualStyleBackColor = false;
-            this.ForgotPwd_Btn.Click += new System.EventHandler(this.ForgotPwd_Btn_Click);
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(136, 344);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(362, 20);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Nếu quên mật khẩu, liên hệ với admin để được hỗ trợ";
             // 
             // LoginForm
             // 
@@ -135,7 +132,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(658, 373);
-            this.Controls.Add(this.ForgotPwd_Btn);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.rmb_txtBox);
             this.Controls.Add(this.RegisterBtn);
             this.Controls.Add(this.LoginBtn);
@@ -147,7 +144,6 @@
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -162,6 +158,6 @@
         private Button RegisterBtn;
         private CheckBox rmb_txtBox;
         private PictureBox pictureBox1;
-        private Button ForgotPwd_Btn;
+        private Label label1;
     }
 }

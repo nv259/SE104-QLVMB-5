@@ -74,12 +74,8 @@ namespace Service
         private void saleBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            try
-            {
-                Bill f = new Bill();
-                f.ShowDialog();
-            }
-            catch { }
+            Bill f = new Bill();
+            f.ShowDialog();
             this.Show();
         }
 

@@ -94,11 +94,6 @@ namespace Service
             }
         }
 
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void regBtn_click(object sender, EventArgs e)
         {
             this.Hide();
@@ -107,16 +102,6 @@ namespace Service
             f.ShowDialog();
 
             this.Show();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ForgotPwd_Btn_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
