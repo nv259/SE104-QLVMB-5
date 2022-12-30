@@ -341,7 +341,6 @@
             this.Name = "Bill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "BillForm";
-            //this.Load += new System.EventHandler(this.Bill_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

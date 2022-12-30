@@ -22,7 +22,7 @@ namespace Service
             TenDangNhap_txtBox.Text = account.MaDangNhap;
             HoVaTen_txtBox.Text = account.TenNguoiDung;
             MaDinhDanh_txtBox.Text = account.DinhDanh;
-            NgaySinh_txtBox.Text = account.NgaySinh.ToString();
+            NgaySinh_txtBox.Text = DateOnly.FromDateTime(account.NgaySinh).ToString("dd-MM-yyyy");
             Email_txtBox.Text = account.Email;
             SoDienThoai_txtBox.Text = account.Sdt;
 
@@ -62,6 +62,8 @@ namespace Service
             SanBayDen_comboBox.SelectedItem = "None";
             SanBayDi_comboBox.SelectedItem = "None";
             ChuyenBay_comboBox.SelectedItem = "None";
+
+            ListAll();
         }
 
         Account account;

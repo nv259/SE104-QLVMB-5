@@ -23,8 +23,8 @@ namespace Service
             InitializeComponent();
             reportMonthDgv.DataSource = monthIncome;
             reportYearDgv.DataSource = yearIncome;
-            this.reportYearDgv.Hide();
-            this.yearTxtBox.Show();
+            this.reportMonthDgv.Hide();
+            this.reportYearDgv.Show();
             this.monthComboBox.Hide();
 
             this.reportMonthDgv.ReadOnly = true;
@@ -33,6 +33,8 @@ namespace Service
             this.reportMonthDgv.TabStop = false;
             this.reportYearDgv.TabStop = false;
             this.totalIncome.TabStop = false;
+
+            this.yearTxtBox.Width = 200;
         }
 
         private void reportMonthBtn_Click(object sender, EventArgs e)
@@ -41,6 +43,7 @@ namespace Service
             this.monthComboBox.Show();
             this.reportYearDgv.Hide();
             this.reportMonthDgv.Show();
+            this.yearTxtBox.Width = 93;
         }
         private void reportYearBtn_Click(object sender, EventArgs e)
         {
@@ -48,6 +51,7 @@ namespace Service
             this.monthComboBox.Hide();
             this.reportYearDgv.Show();
             this.reportMonthDgv.Hide();
+            this.yearTxtBox.Width = 200;
         }
 
         private void Load_dtgv_reportYearDgv()
@@ -204,7 +208,7 @@ namespace Service
                 worksheet.Columns[4].ColumnWidth = 15;
                 worksheet.Columns[5].ColumnWidth = 15;
 
-                for(int row = 0; row < reportMonthDgv.Rows.Count - 1; ++row)
+                for(int row = 0; row < reportMonthDgv.Rows.Count; ++row)
                 {
                     worksheet.Cells[row + 4, 1] = (row + 1).ToString();
                     for(int column = 0; column < Math.Min(reportMonthDgv.Columns.Count, 4); ++column)
@@ -217,7 +221,7 @@ namespace Service
                     worksheet.Range[worksheet.Cells[row + 4, 1], worksheet.Cells[row + 4, 5]].Cells.Borders.Weight = XlBorderWeight.xlMedium;
                 }
 
-                range = worksheet.Range[worksheet.Cells[reportMonthDgv.Rows.Count + 3, 1], worksheet.Cells[reportMonthDgv.Rows.Count + 3, 5]];
+                range = worksheet.Range[worksheet.Cells[reportMonthDgv.Rows.Count + 4, 1], worksheet.Cells[reportMonthDgv.Rows.Count + 4, 5]];
                 range.Merge();
 
                 range.Value = "Tổng doanh thu: " + totalIncome.Text.ToString();
@@ -255,7 +259,7 @@ namespace Service
                 worksheet.Columns[4].ColumnWidth = 22.5;
                 worksheet.Columns[5].ColumnWidth = 22.5;
 
-                for (int row = 0; row < reportYearDgv.Rows.Count - 1; ++row)
+                for (int row = 0; row < reportYearDgv.Rows.Count; ++row)
                 {
                     worksheet.Cells[row + 4, 1] = (row + 1).ToString();
                     for (int column = 0; column < Math.Min(reportYearDgv.Columns.Count, 4); ++column)
@@ -268,7 +272,7 @@ namespace Service
                     worksheet.Range[worksheet.Cells[row + 4, 1], worksheet.Cells[row + 4, 5]].Cells.Borders.Weight = XlBorderWeight.xlMedium;
                 }
 
-                range = worksheet.Range[worksheet.Cells[reportYearDgv.Rows.Count + 3, 1], worksheet.Cells[reportYearDgv.Rows.Count + 3, 5]];
+                range = worksheet.Range[worksheet.Cells[reportYearDgv.Rows.Count + 4, 1], worksheet.Cells[reportYearDgv.Rows.Count + 4, 5]];
                 range.Merge();
 
                 range.Value = "Tổng doanh thu: " + totalIncome.Text.ToString();

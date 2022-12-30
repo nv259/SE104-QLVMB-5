@@ -435,13 +435,6 @@ namespace Service
 
             MessageBox.Show("Thêm sân bay thành công!");
         }
-
-        public static string get_Ma(string input)
-        {
-            if (input == null || input == string.Empty) return "";
-            return input.Substring(0, input.IndexOf('|') - 1);
-        }
-
         private void ThayDoiTTSB_Btn_Click(object sender, EventArgs e)
         {
             if (MaSB_TD_comboBox.SelectedItem == null)
