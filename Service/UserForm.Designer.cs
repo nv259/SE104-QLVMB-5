@@ -38,30 +38,30 @@
             this.publicAnnoucementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buyTicketBtn = new System.Windows.Forms.Button();
+            this.bookingTicket_Btn = new System.Windows.Forms.Button();
             this.userInfo_pnl = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.phoneNumber_txtBox = new System.Windows.Forms.TextBox();
+            this.phonenumber_txtBox = new System.Windows.Forms.TextBox();
             this.ID_txtBox = new System.Windows.Forms.TextBox();
             this.email_txtBox = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.userName_txtBox = new System.Windows.Forms.TextBox();
-            this.fullName_txtBox = new System.Windows.Forms.TextBox();
+            this.username_txtBox = new System.Windows.Forms.TextBox();
+            this.fullname_txtBox = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.flightDgv = new System.Windows.Forms.DataGridView();
+            this.flights_Dgv = new System.Windows.Forms.DataGridView();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.LookUpBtn = new System.Windows.Forms.Button();
-            this.settingBtn = new System.Windows.Forms.Button();
+            this.LookUp_Btn = new System.Windows.Forms.Button();
+            this.setting_Btn = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.UpcomingFlights_lable = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.userInfo_pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flightDgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flights_Dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -101,32 +101,32 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // buyTicketBtn
+            // bookingTicket_Btn
             // 
-            this.buyTicketBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.buyTicketBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buyTicketBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buyTicketBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.buyTicketBtn.Location = new System.Drawing.Point(752, 237);
-            this.buyTicketBtn.Name = "buyTicketBtn";
-            this.buyTicketBtn.Size = new System.Drawing.Size(168, 295);
-            this.buyTicketBtn.TabIndex = 7;
-            this.buyTicketBtn.Text = "    Đặt vé";
-            this.buyTicketBtn.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.buyTicketBtn.UseVisualStyleBackColor = false;
-            this.buyTicketBtn.Click += new System.EventHandler(this.buyTicketBtn_Click);
+            this.bookingTicket_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.bookingTicket_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bookingTicket_Btn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bookingTicket_Btn.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.bookingTicket_Btn.Location = new System.Drawing.Point(752, 237);
+            this.bookingTicket_Btn.Name = "bookingTicket_Btn";
+            this.bookingTicket_Btn.Size = new System.Drawing.Size(168, 295);
+            this.bookingTicket_Btn.TabIndex = 7;
+            this.bookingTicket_Btn.Text = "    Đặt vé";
+            this.bookingTicket_Btn.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.bookingTicket_Btn.UseVisualStyleBackColor = false;
+            this.bookingTicket_Btn.Click += new System.EventHandler(this.bookingTicket_Btn_Click);
             // 
             // userInfo_pnl
             // 
             this.userInfo_pnl.BackColor = System.Drawing.Color.White;
             this.userInfo_pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.userInfo_pnl.Controls.Add(this.pictureBox1);
-            this.userInfo_pnl.Controls.Add(this.phoneNumber_txtBox);
+            this.userInfo_pnl.Controls.Add(this.phonenumber_txtBox);
             this.userInfo_pnl.Controls.Add(this.ID_txtBox);
             this.userInfo_pnl.Controls.Add(this.email_txtBox);
             this.userInfo_pnl.Controls.Add(this.textBox4);
-            this.userInfo_pnl.Controls.Add(this.userName_txtBox);
-            this.userInfo_pnl.Controls.Add(this.fullName_txtBox);
+            this.userInfo_pnl.Controls.Add(this.username_txtBox);
+            this.userInfo_pnl.Controls.Add(this.fullname_txtBox);
             this.userInfo_pnl.Controls.Add(this.textBox1);
             this.userInfo_pnl.ForeColor = System.Drawing.Color.RoyalBlue;
             this.userInfo_pnl.Location = new System.Drawing.Point(752, 37);
@@ -145,18 +145,18 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // phoneNumber_txtBox
+            // phonenumber_txtBox
             // 
-            this.phoneNumber_txtBox.BackColor = System.Drawing.Color.White;
-            this.phoneNumber_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.phoneNumber_txtBox.Enabled = false;
-            this.phoneNumber_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.phoneNumber_txtBox.Location = new System.Drawing.Point(287, 139);
-            this.phoneNumber_txtBox.Name = "phoneNumber_txtBox";
-            this.phoneNumber_txtBox.ReadOnly = true;
-            this.phoneNumber_txtBox.Size = new System.Drawing.Size(183, 27);
-            this.phoneNumber_txtBox.TabIndex = 8;
-            this.phoneNumber_txtBox.TabStop = false;
+            this.phonenumber_txtBox.BackColor = System.Drawing.Color.White;
+            this.phonenumber_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.phonenumber_txtBox.Enabled = false;
+            this.phonenumber_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.phonenumber_txtBox.Location = new System.Drawing.Point(287, 139);
+            this.phonenumber_txtBox.Name = "phonenumber_txtBox";
+            this.phonenumber_txtBox.ReadOnly = true;
+            this.phonenumber_txtBox.Size = new System.Drawing.Size(183, 27);
+            this.phonenumber_txtBox.TabIndex = 8;
+            this.phonenumber_txtBox.TabStop = false;
             // 
             // ID_txtBox
             // 
@@ -198,35 +198,35 @@
             this.textBox4.Text = "Email";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // userName_txtBox
+            // username_txtBox
             // 
-            this.userName_txtBox.BackColor = System.Drawing.Color.White;
-            this.userName_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.userName_txtBox.Enabled = false;
-            this.userName_txtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.userName_txtBox.Location = new System.Drawing.Point(13, 10);
-            this.userName_txtBox.Multiline = true;
-            this.userName_txtBox.Name = "userName_txtBox";
-            this.userName_txtBox.PlaceholderText = "display_name";
-            this.userName_txtBox.ReadOnly = true;
-            this.userName_txtBox.Size = new System.Drawing.Size(475, 36);
-            this.userName_txtBox.TabIndex = 2;
-            this.userName_txtBox.TabStop = false;
-            this.userName_txtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.username_txtBox.BackColor = System.Drawing.Color.White;
+            this.username_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.username_txtBox.Enabled = false;
+            this.username_txtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.username_txtBox.Location = new System.Drawing.Point(13, 10);
+            this.username_txtBox.Multiline = true;
+            this.username_txtBox.Name = "username_txtBox";
+            this.username_txtBox.PlaceholderText = "display_name";
+            this.username_txtBox.ReadOnly = true;
+            this.username_txtBox.Size = new System.Drawing.Size(475, 36);
+            this.username_txtBox.TabIndex = 2;
+            this.username_txtBox.TabStop = false;
+            this.username_txtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // fullName_txtBox
+            // fullname_txtBox
             // 
-            this.fullName_txtBox.BackColor = System.Drawing.Color.White;
-            this.fullName_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.fullName_txtBox.Enabled = false;
-            this.fullName_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.fullName_txtBox.ForeColor = System.Drawing.Color.White;
-            this.fullName_txtBox.Location = new System.Drawing.Point(160, 52);
-            this.fullName_txtBox.Name = "fullName_txtBox";
-            this.fullName_txtBox.ReadOnly = true;
-            this.fullName_txtBox.Size = new System.Drawing.Size(310, 27);
-            this.fullName_txtBox.TabIndex = 3;
-            this.fullName_txtBox.TabStop = false;
+            this.fullname_txtBox.BackColor = System.Drawing.Color.White;
+            this.fullname_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fullname_txtBox.Enabled = false;
+            this.fullname_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.fullname_txtBox.ForeColor = System.Drawing.Color.White;
+            this.fullname_txtBox.Location = new System.Drawing.Point(160, 52);
+            this.fullname_txtBox.Name = "fullname_txtBox";
+            this.fullname_txtBox.ReadOnly = true;
+            this.fullname_txtBox.Size = new System.Drawing.Size(310, 27);
+            this.fullname_txtBox.TabIndex = 3;
+            this.fullname_txtBox.TabStop = false;
             // 
             // textBox1
             // 
@@ -242,18 +242,18 @@
             this.textBox1.Text = "Name";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // flightDgv
+            // flights_Dgv
             // 
-            this.flightDgv.AllowUserToAddRows = false;
-            this.flightDgv.AllowUserToDeleteRows = false;
+            this.flights_Dgv.AllowUserToAddRows = false;
+            this.flights_Dgv.AllowUserToDeleteRows = false;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(242)))), ((int)(((byte)(235)))));
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.flightDgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.flightDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.flightDgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.flightDgv.BackgroundColor = System.Drawing.Color.White;
-            this.flightDgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.flights_Dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.flights_Dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.flights_Dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.flights_Dgv.BackgroundColor = System.Drawing.Color.White;
+            this.flights_Dgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -261,8 +261,8 @@
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.flightDgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.flightDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.flights_Dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.flights_Dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -270,11 +270,11 @@
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.flightDgv.DefaultCellStyle = dataGridViewCellStyle8;
-            this.flightDgv.GridColor = System.Drawing.Color.DimGray;
-            this.flightDgv.Location = new System.Drawing.Point(21, 70);
-            this.flightDgv.Name = "flightDgv";
-            this.flightDgv.ReadOnly = true;
+            this.flights_Dgv.DefaultCellStyle = dataGridViewCellStyle8;
+            this.flights_Dgv.GridColor = System.Drawing.Color.DimGray;
+            this.flights_Dgv.Location = new System.Drawing.Point(21, 70);
+            this.flights_Dgv.Name = "flights_Dgv";
+            this.flights_Dgv.ReadOnly = true;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -282,15 +282,15 @@
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.flightDgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.flightDgv.RowHeadersVisible = false;
-            this.flightDgv.RowHeadersWidth = 51;
+            this.flights_Dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.flights_Dgv.RowHeadersVisible = false;
+            this.flights_Dgv.RowHeadersWidth = 51;
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.flightDgv.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.flightDgv.RowTemplate.Height = 29;
-            this.flightDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.flightDgv.Size = new System.Drawing.Size(674, 462);
-            this.flightDgv.TabIndex = 11;
+            this.flights_Dgv.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.flights_Dgv.RowTemplate.Height = 29;
+            this.flights_Dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.flights_Dgv.Size = new System.Drawing.Size(674, 462);
+            this.flights_Dgv.TabIndex = 11;
             // 
             // textBox2
             // 
@@ -322,35 +322,35 @@
             this.textBox3.Text = "Danh sách vé đã đặt";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // LookUpBtn
+            // LookUp_Btn
             // 
-            this.LookUpBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.LookUpBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LookUpBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LookUpBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LookUpBtn.Location = new System.Drawing.Point(926, 237);
-            this.LookUpBtn.Name = "LookUpBtn";
-            this.LookUpBtn.Size = new System.Drawing.Size(168, 295);
-            this.LookUpBtn.TabIndex = 12;
-            this.LookUpBtn.Text = "    Tra cứu";
-            this.LookUpBtn.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.LookUpBtn.UseVisualStyleBackColor = false;
-            this.LookUpBtn.Click += new System.EventHandler(this.LookUpBtn_Click);
+            this.LookUp_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.LookUp_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LookUp_Btn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LookUp_Btn.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.LookUp_Btn.Location = new System.Drawing.Point(926, 237);
+            this.LookUp_Btn.Name = "LookUp_Btn";
+            this.LookUp_Btn.Size = new System.Drawing.Size(168, 295);
+            this.LookUp_Btn.TabIndex = 12;
+            this.LookUp_Btn.Text = "    Tra cứu";
+            this.LookUp_Btn.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.LookUp_Btn.UseVisualStyleBackColor = false;
+            this.LookUp_Btn.Click += new System.EventHandler(this.LookUp_Btn_Click);
             // 
-            // settingBtn
+            // setting_Btn
             // 
-            this.settingBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.settingBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.settingBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.settingBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.settingBtn.Location = new System.Drawing.Point(1100, 237);
-            this.settingBtn.Name = "settingBtn";
-            this.settingBtn.Size = new System.Drawing.Size(168, 295);
-            this.settingBtn.TabIndex = 13;
-            this.settingBtn.Text = "    Cài đặt";
-            this.settingBtn.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.settingBtn.UseVisualStyleBackColor = false;
-            this.settingBtn.Click += new System.EventHandler(this.settingBtn_Click);
+            this.setting_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.setting_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.setting_Btn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.setting_Btn.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.setting_Btn.Location = new System.Drawing.Point(1100, 237);
+            this.setting_Btn.Name = "setting_Btn";
+            this.setting_Btn.Size = new System.Drawing.Size(168, 295);
+            this.setting_Btn.TabIndex = 13;
+            this.setting_Btn.Text = "    Cài đặt";
+            this.setting_Btn.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.setting_Btn.UseVisualStyleBackColor = false;
+            this.setting_Btn.Click += new System.EventHandler(this.setting_Btn_Click);
             // 
             // pictureBox2
             // 
@@ -378,7 +378,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 15;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.LookUpBtn_Click);
+            this.pictureBox3.Click += new System.EventHandler(this.LookUp_Btn_Click);
             // 
             // pictureBox4
             // 
@@ -401,20 +401,20 @@
             this.panel1.Size = new System.Drawing.Size(686, 495);
             this.panel1.TabIndex = 17;
             // 
-            // textBox5
+            // UpcomingFlights_lable
             // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.textBox5.Location = new System.Drawing.Point(328, 21);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(302, 27);
-            this.textBox5.TabIndex = 18;
-            this.textBox5.TabStop = false;
-            this.textBox5.Text = "Danh sách các chuyến bay sắp tới";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.UpcomingFlights_lable.BackColor = System.Drawing.Color.White;
+            this.UpcomingFlights_lable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.UpcomingFlights_lable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.UpcomingFlights_lable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.UpcomingFlights_lable.Location = new System.Drawing.Point(328, 21);
+            this.UpcomingFlights_lable.Name = "UpcomingFlights_lable";
+            this.UpcomingFlights_lable.ReadOnly = true;
+            this.UpcomingFlights_lable.Size = new System.Drawing.Size(302, 27);
+            this.UpcomingFlights_lable.TabIndex = 18;
+            this.UpcomingFlights_lable.TabStop = false;
+            this.UpcomingFlights_lable.Text = "Danh sách các chuyến bay sắp tới";
+            this.UpcomingFlights_lable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // UserForm
             // 
@@ -423,15 +423,15 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1277, 540);
-            this.Controls.Add(this.flightDgv);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.flights_Dgv);
+            this.Controls.Add(this.UpcomingFlights_lable);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.settingBtn);
-            this.Controls.Add(this.LookUpBtn);
+            this.Controls.Add(this.setting_Btn);
+            this.Controls.Add(this.LookUp_Btn);
             this.Controls.Add(this.userInfo_pnl);
-            this.Controls.Add(this.buyTicketBtn);
+            this.Controls.Add(this.bookingTicket_Btn);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
@@ -445,7 +445,7 @@
             this.userInfo_pnl.ResumeLayout(false);
             this.userInfo_pnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flightDgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flights_Dgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -462,25 +462,27 @@
         private ToolStripMenuItem publicAnnoucementToolStripMenuItem;
         private ToolStripMenuItem logoutToolStripMenuItem;
         private ToolStripMenuItem exitToolStripMenuItem;
-        private Button buyTicketBtn;
+        private Button bookingTicket_Btn;
         private Panel userInfo_pnl;
-        private TextBox phoneNumber_txtBox;
+        private TextBox phonenumber_txtBox;
         private TextBox ID_txtBox;
         private TextBox email_txtBox;
         private TextBox textBox4;
-        private TextBox userName_txtBox;
-        private TextBox fullName_txtBox;
+        private TextBox username_txtBox;
+        private TextBox fullname_txtBox;
         private TextBox textBox1;
         private DataGridView flightDgv;
         private PictureBox pictureBox1;
         private TextBox textBox2;
         private TextBox textBox3;
-        private Button LookUpBtn;
-        private Button settingBtn;
+        private Button LookUp_Btn;
+        private Button setting_Btn;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
         private Panel panel1;
         private TextBox textBox5;
+        private DataGridView flights_Dgv;
+        private TextBox UpcomingFlights_lable;
     }
 }

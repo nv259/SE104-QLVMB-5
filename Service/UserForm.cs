@@ -21,12 +21,12 @@ namespace Service
             InitializeComponent();
             this.account = account;
 
-            this.userName_txtBox.Text = account.MaDangNhap;
-            this.fullName_txtBox.Text = account.TenNguoiDung;
+            this.username_txtBox.Text = account.MaDangNhap;
+            this.fullname_txtBox.Text = account.TenNguoiDung;
             this.ID_txtBox.Text = account.DinhDanh;
             this.email_txtBox.Text = account.Email;
-            this.phoneNumber_txtBox.Text = account.Sdt;
-            flightDgv.DataSource = flightList;
+            this.phonenumber_txtBox.Text = account.Sdt;
+            flights_Dgv.DataSource = flightList;
             Load_dtgv_flightDgv();
             Load_dtgv_ticketDgv();
             
@@ -79,7 +79,7 @@ namespace Service
             Application.Exit();
         }
 
-        private void buyTicketBtn_Click(object sender, EventArgs e)
+        private void bookingTicket_Btn_Click(object sender, EventArgs e)
         {
             try
             {
@@ -93,7 +93,7 @@ namespace Service
             catch { }
         }
 
-        private void LookUpBtn_Click(object sender, EventArgs e)
+        private void LookUp_Btn_Click(object sender, EventArgs e)
         {
             this.Hide();
 
@@ -103,7 +103,7 @@ namespace Service
             this.Show();
         }
 
-        private void settingBtn_Click(object sender, EventArgs e)
+        private void setting_Btn_Click(object sender, EventArgs e)
         {
 
             this.Hide();
@@ -113,11 +113,11 @@ namespace Service
 
             this.account = AccountDAO.Instance.GetAccountByUserName(this.account.MaDangNhap);
 
-            this.userName_txtBox.Text = account.MaDangNhap;
-            this.fullName_txtBox.Text = account.TenNguoiDung;
+            this.username_txtBox.Text = account.MaDangNhap;
+            this.fullname_txtBox.Text = account.TenNguoiDung;
             this.ID_txtBox.Text = account.DinhDanh;
             this.email_txtBox.Text = account.Email;
-            this.phoneNumber_txtBox.Text = account.Sdt;
+            this.phonenumber_txtBox.Text = account.Sdt;
             flightDgv.DataSource = flightList;
 
             this.Show();
