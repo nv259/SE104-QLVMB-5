@@ -32,7 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.BirthDay_Dtp = new System.Windows.Forms.DateTimePicker();
             this.fullName_txtBox = new System.Windows.Forms.TextBox();
-            this.regBtn = new System.Windows.Forms.Button();
+            this.Register_Btn = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.tmp = new System.Windows.Forms.TextBox();
@@ -57,7 +57,7 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.BirthDay_Dtp);
             this.panel1.Controls.Add(this.fullName_txtBox);
-            this.panel1.Controls.Add(this.regBtn);
+            this.panel1.Controls.Add(this.Register_Btn);
             this.panel1.Controls.Add(this.textBox4);
             this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.tmp);
@@ -96,18 +96,18 @@
             this.fullName_txtBox.Size = new System.Drawing.Size(307, 27);
             this.fullName_txtBox.TabIndex = 1;
             // 
-            // regBtn
+            // Register_Btn
             // 
-            this.regBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.regBtn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.regBtn.ForeColor = System.Drawing.Color.White;
-            this.regBtn.Location = new System.Drawing.Point(201, 509);
-            this.regBtn.Name = "regBtn";
-            this.regBtn.Size = new System.Drawing.Size(180, 50);
-            this.regBtn.TabIndex = 21;
-            this.regBtn.Text = "Đăng ký";
-            this.regBtn.UseVisualStyleBackColor = false;
-            this.regBtn.Click += new System.EventHandler(this.regBtn_Click_1);
+            this.Register_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.Register_Btn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Register_Btn.ForeColor = System.Drawing.Color.White;
+            this.Register_Btn.Location = new System.Drawing.Point(201, 509);
+            this.Register_Btn.Name = "Register_Btn";
+            this.Register_Btn.Size = new System.Drawing.Size(180, 50);
+            this.Register_Btn.TabIndex = 21;
+            this.Register_Btn.Text = "Đăng ký";
+            this.Register_Btn.UseVisualStyleBackColor = false;
+            this.Register_Btn.Click += new System.EventHandler(this.Register_Btn_Click);
             // 
             // textBox4
             // 
@@ -348,7 +348,7 @@
         private TextBox textBox2;
         private TextBox Register_label;
         private TextBox tmp;
-        private Button regBtn;
+        private Button Register_Btn;
         private TextBox textBox4;
         private TextBox textBox3;
         private DateTimePicker NgaySinh;

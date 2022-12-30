@@ -247,7 +247,7 @@ namespace Service
             return new Regex(pattern, RegexOptions.IgnoreCase);
         }
 
-        private void regBtn_Click_1(object sender, EventArgs e)
+        private void Register_Btn_Click(object sender, EventArgs e)
         {
             string MaDangNhap, MatKhau, TenNguoiDung, DinhDanh, SoDienThoai, Email, NgaySinh;
             MaDangNhap = this.username_txtBox.Text;
