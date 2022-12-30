@@ -34,7 +34,7 @@ namespace Service
 
         private void Load_dtgv_flightDgv()
         {
-            string query = "SELECT SB1.TenSanBay as 'Đi từ', SB2.TenSanBay as 'Đi đến', NgayGioBay as 'Thời gian' FROM [dbo].CHUYENBAY " +
+            string query = "SELECT SB1.TenSanBay as 'Đi từ', SB2.TenSanBay as 'Đi đến', NgayGioBay as 'Thời gian khởi hành' FROM [dbo].CHUYENBAY " +
                 "join [dbo].SANBAY as SB1 on CHUYENBAY.MaSanBayDi = SB1.MaSanBay " +
                 "join [dbo].SANBAY as SB2 on CHUYENBAY.MaSanBayDen = SB2.MaSanBay " +
                 "WHERE NgayGioBay >= GETDATE()";
