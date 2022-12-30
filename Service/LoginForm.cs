@@ -14,12 +14,12 @@ namespace Service
             if (Properties.Settings.Default.remember)
             {
                 Username_txtBox.Text = Properties.Settings.Default.username;
-                PasswordtxtBox.Text = Properties.Settings.Default.password;
+                Password_txtBox.Text = Properties.Settings.Default.password;
                 rmb_txtBox.Checked = true;
             } else
             {
                 Username_txtBox.Text = "";
-                PasswordtxtBox.Text = "";
+                Password_txtBox.Text = "";
                 rmb_txtBox.Checked = false;
             }
         }
@@ -35,10 +35,10 @@ namespace Service
             return hash.ToString();
         }
 
-        private void loginBtn_Click(object sender, EventArgs e)
+        private void login_Btn_Click(object sender, EventArgs e)
         {
             string MaDangNhap = this.Username_txtBox.Text;
-            string MatKhau = Convert_to_SHA512(this.PasswordtxtBox.Text);
+            string MatKhau = Convert_to_SHA512(this.Password_txtBox.Text);
 
             string query = "SELECT * FROM [dbo].NGUOIDUNG WHERE MaDangNhap = @MaDangNhap AND MatKhau = @MatKhau";
 
@@ -47,7 +47,7 @@ namespace Service
                 if (this.rmb_txtBox.Checked)
                 {
                     Properties.Settings.Default.username = Username_txtBox.Text;
-                    Properties.Settings.Default.password = PasswordtxtBox.Text;
+                    Properties.Settings.Default.password = Password_txtBox.Text;
                     Properties.Settings.Default.remember = true;
                     Properties.Settings.Default.Save();
                 } else
@@ -85,7 +85,7 @@ namespace Service
             else
             {
                 MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác");
-                this.PasswordtxtBox.Text = "";
+                this.Password_txtBox.Text = "";
 
                 Properties.Settings.Default.username = "";
                 Properties.Settings.Default.password = "";
@@ -94,7 +94,7 @@ namespace Service
             }
         }
 
-        private void regBtn_click(object sender, EventArgs e)
+        private void Register_Btn_Click(object sender, EventArgs e)
         {
             this.Hide();
 

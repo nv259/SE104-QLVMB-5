@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.Username_txtBox = new System.Windows.Forms.TextBox();
-            this.PasswordtxtBox = new System.Windows.Forms.TextBox();
-            this.LoginBtn = new System.Windows.Forms.Button();
-            this.RegisterBtn = new System.Windows.Forms.Button();
+            this.Password_txtBox = new System.Windows.Forms.TextBox();
+            this.Login_Btn = new System.Windows.Forms.Button();
+            this.Register_Btn = new System.Windows.Forms.Button();
             this.rmb_txtBox = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.ForgetPassword_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,44 +48,44 @@
             this.Username_txtBox.Size = new System.Drawing.Size(427, 27);
             this.Username_txtBox.TabIndex = 0;
             // 
-            // PasswordtxtBox
+            // Password_txtBox
             // 
-            this.PasswordtxtBox.Location = new System.Drawing.Point(105, 99);
-            this.PasswordtxtBox.MaxLength = 255;
-            this.PasswordtxtBox.Name = "PasswordtxtBox";
-            this.PasswordtxtBox.PlaceholderText = "  password";
-            this.PasswordtxtBox.Size = new System.Drawing.Size(427, 27);
-            this.PasswordtxtBox.TabIndex = 1;
-            this.PasswordtxtBox.UseSystemPasswordChar = true;
+            this.Password_txtBox.Location = new System.Drawing.Point(105, 99);
+            this.Password_txtBox.MaxLength = 255;
+            this.Password_txtBox.Name = "Password_txtBox";
+            this.Password_txtBox.PlaceholderText = "  password";
+            this.Password_txtBox.Size = new System.Drawing.Size(427, 27);
+            this.Password_txtBox.TabIndex = 1;
+            this.Password_txtBox.UseSystemPasswordChar = true;
             // 
-            // LoginBtn
+            // Login_Btn
             // 
-            this.LoginBtn.BackColor = System.Drawing.Color.White;
-            this.LoginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LoginBtn.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
-            this.LoginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LoginBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LoginBtn.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.LoginBtn.Location = new System.Drawing.Point(105, 186);
-            this.LoginBtn.Name = "LoginBtn";
-            this.LoginBtn.Size = new System.Drawing.Size(427, 63);
-            this.LoginBtn.TabIndex = 2;
-            this.LoginBtn.Text = "Đăng Nhập";
-            this.LoginBtn.UseVisualStyleBackColor = false;
-            this.LoginBtn.Click += new System.EventHandler(this.loginBtn_Click);
+            this.Login_Btn.BackColor = System.Drawing.Color.White;
+            this.Login_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Login_Btn.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
+            this.Login_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Login_Btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Login_Btn.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.Login_Btn.Location = new System.Drawing.Point(105, 186);
+            this.Login_Btn.Name = "Login_Btn";
+            this.Login_Btn.Size = new System.Drawing.Size(427, 63);
+            this.Login_Btn.TabIndex = 2;
+            this.Login_Btn.Text = "Đăng Nhập";
+            this.Login_Btn.UseVisualStyleBackColor = false;
+            this.Login_Btn.Click += new System.EventHandler(this.login_Btn_Click);
             // 
-            // RegisterBtn
+            // Register_Btn
             // 
-            this.RegisterBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RegisterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RegisterBtn.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.RegisterBtn.Location = new System.Drawing.Point(105, 272);
-            this.RegisterBtn.Name = "RegisterBtn";
-            this.RegisterBtn.Size = new System.Drawing.Size(427, 30);
-            this.RegisterBtn.TabIndex = 3;
-            this.RegisterBtn.Text = "Đăng Ký";
-            this.RegisterBtn.UseVisualStyleBackColor = true;
-            this.RegisterBtn.Click += new System.EventHandler(this.regBtn_click);
+            this.Register_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Register_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Register_Btn.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.Register_Btn.Location = new System.Drawing.Point(105, 272);
+            this.Register_Btn.Name = "Register_Btn";
+            this.Register_Btn.Size = new System.Drawing.Size(427, 30);
+            this.Register_Btn.TabIndex = 3;
+            this.Register_Btn.Text = "Đăng Ký";
+            this.Register_Btn.UseVisualStyleBackColor = true;
+            this.Register_Btn.Click += new System.EventHandler(this.Register_Btn_Click);
             // 
             // rmb_txtBox
             // 
@@ -114,29 +114,29 @@
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // ForgetPassword_label
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(136, 344);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(362, 20);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Nếu quên mật khẩu, liên hệ với admin để được hỗ trợ";
+            this.ForgetPassword_label.AutoSize = true;
+            this.ForgetPassword_label.BackColor = System.Drawing.Color.Transparent;
+            this.ForgetPassword_label.Location = new System.Drawing.Point(136, 344);
+            this.ForgetPassword_label.Name = "ForgetPassword_label";
+            this.ForgetPassword_label.Size = new System.Drawing.Size(362, 20);
+            this.ForgetPassword_label.TabIndex = 15;
+            this.ForgetPassword_label.Text = "Nếu quên mật khẩu, liên hệ với admin để được hỗ trợ";
             // 
             // LoginForm
             // 
-            this.AcceptButton = this.LoginBtn;
+            this.AcceptButton = this.Login_Btn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(658, 373);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ForgetPassword_label);
             this.Controls.Add(this.rmb_txtBox);
-            this.Controls.Add(this.RegisterBtn);
-            this.Controls.Add(this.LoginBtn);
-            this.Controls.Add(this.PasswordtxtBox);
+            this.Controls.Add(this.Register_Btn);
+            this.Controls.Add(this.Login_Btn);
+            this.Controls.Add(this.Password_txtBox);
             this.Controls.Add(this.Username_txtBox);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -153,11 +153,11 @@
         #endregion
 
         private TextBox Username_txtBox;
-        private TextBox PasswordtxtBox;
-        private Button LoginBtn;
-        private Button RegisterBtn;
+        private TextBox Password_txtBox;
+        private Button Login_Btn;
+        private Button Register_Btn;
         private CheckBox rmb_txtBox;
         private PictureBox pictureBox1;
-        private Label label1;
+        private Label ForgetPassword_label;
     }
 }
