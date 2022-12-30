@@ -134,7 +134,6 @@
             this.userInfo_pnl.Name = "userInfo_pnl";
             this.userInfo_pnl.Size = new System.Drawing.Size(516, 194);
             this.userInfo_pnl.TabIndex = 9;
-            this.userInfo_pnl.Click += new System.EventHandler(this.userInfo_pnl_Paint_1);
             // 
             // pictureBox1
             // 
@@ -146,7 +145,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(94, 87);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.userInfo_pnl_Paint_1);
             // 
             // phoneNumber_txtBox
             // 
@@ -351,6 +349,7 @@
             this.settingBtn.Text = "    Cài đặt";
             this.settingBtn.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.settingBtn.UseVisualStyleBackColor = false;
+            this.settingBtn.Click += new System.EventHandler(this.settingBtn_Click);
             // 
             // pictureBox2
             // 
@@ -418,7 +417,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1430, 674);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.pictureBox4);
@@ -431,7 +430,8 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "UserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang chủ";

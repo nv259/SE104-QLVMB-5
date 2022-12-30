@@ -58,25 +58,6 @@ namespace Service
         private Account account;
         public bool IsLogout = false;
 
-        private void userInfo_pnl_Paint_1(object sender, EventArgs e)
-        {
-            this.Hide();
-
-            UserInfoForm userInfoForm = new UserInfoForm(this.account);
-            userInfoForm.ShowDialog();
-
-            this.account = AccountDAO.Instance.GetAccountByUserName(this.account.MaDangNhap);
-
-            this.userName_txtBox.Text = account.MaDangNhap;
-            this.fullName_txtBox.Text = account.TenNguoiDung;
-            this.ID_txtBox.Text = account.DinhDanh;
-            this.email_txtBox.Text = account.Email;
-            this.phoneNumber_txtBox.Text = account.Sdt;
-            flightDgv.DataSource = flightList;
-
-            this.Show();
-        }
-
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn đăng xuất?", "Notification", MessageBoxButtons.OKCancel) != DialogResult.OK)
@@ -118,6 +99,26 @@ namespace Service
 
             TraCuuVeMayBayForm tracuu = new TraCuuVeMayBayForm(this.account);
             tracuu.ShowDialog();
+
+            this.Show();
+        }
+
+        private void settingBtn_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+
+            UserInfoForm userInfoForm = new UserInfoForm(this.account);
+            userInfoForm.ShowDialog();
+
+            this.account = AccountDAO.Instance.GetAccountByUserName(this.account.MaDangNhap);
+
+            this.userName_txtBox.Text = account.MaDangNhap;
+            this.fullName_txtBox.Text = account.TenNguoiDung;
+            this.ID_txtBox.Text = account.DinhDanh;
+            this.email_txtBox.Text = account.Email;
+            this.phoneNumber_txtBox.Text = account.Sdt;
+            flightDgv.DataSource = flightList;
 
             this.Show();
         }

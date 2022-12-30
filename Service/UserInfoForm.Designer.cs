@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserInfoForm));
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
@@ -50,7 +51,8 @@
             this.phoneTxtBox = new System.Windows.Forms.TextBox();
             this.newPasswordTxtBox = new System.Windows.Forms.TextBox();
             this.oldPasswordTxtBox = new System.Windows.Forms.TextBox();
-            this.alert_txtBox = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NgaySinh_txtBox = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.showData_panel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -59,6 +61,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.textBox11);
             this.panel2.Controls.Add(this.textBox10);
             this.panel2.Controls.Add(this.textBox9);
@@ -66,7 +69,7 @@
             this.panel2.Controls.Add(this.textBox7);
             this.panel2.Location = new System.Drawing.Point(21, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(455, 239);
+            this.panel2.Size = new System.Drawing.Size(465, 239);
             this.panel2.TabIndex = 2;
             // 
             // textBox11
@@ -110,11 +113,12 @@
             // 
             // showData_panel
             // 
+            this.showData_panel.Controls.Add(this.NgaySinh_txtBox);
             this.showData_panel.Controls.Add(this.usernameTxtBox);
             this.showData_panel.Controls.Add(this.fullNameTxtBox);
             this.showData_panel.Controls.Add(this.idTxtBox);
             this.showData_panel.Controls.Add(this.emailTxtBox);
-            this.showData_panel.Location = new System.Drawing.Point(152, 0);
+            this.showData_panel.Location = new System.Drawing.Point(177, 0);
             this.showData_panel.Name = "showData_panel";
             this.showData_panel.Size = new System.Drawing.Size(288, 239);
             this.showData_panel.TabIndex = 3;
@@ -126,18 +130,17 @@
             this.usernameTxtBox.Location = new System.Drawing.Point(3, 6);
             this.usernameTxtBox.Name = "usernameTxtBox";
             this.usernameTxtBox.ReadOnly = true;
-            this.usernameTxtBox.Size = new System.Drawing.Size(282, 27);
+            this.usernameTxtBox.Size = new System.Drawing.Size(285, 27);
             this.usernameTxtBox.TabIndex = 19;
             this.usernameTxtBox.TabStop = false;
             // 
             // fullNameTxtBox
             // 
             this.fullNameTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.fullNameTxtBox.Location = new System.Drawing.Point(0, 102);
+            this.fullNameTxtBox.Location = new System.Drawing.Point(3, 102);
             this.fullNameTxtBox.Name = "fullNameTxtBox";
             this.fullNameTxtBox.Size = new System.Drawing.Size(285, 27);
             this.fullNameTxtBox.TabIndex = 1;
-            this.fullNameTxtBox.TextChanged += new System.EventHandler(this.fullNameTxtBox_TextChanged);
             // 
             // idTxtBox
             // 
@@ -145,9 +148,8 @@
             this.idTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.idTxtBox.Location = new System.Drawing.Point(3, 54);
             this.idTxtBox.Name = "idTxtBox";
-            this.idTxtBox.Size = new System.Drawing.Size(282, 27);
+            this.idTxtBox.Size = new System.Drawing.Size(285, 27);
             this.idTxtBox.TabIndex = 0;
-            this.idTxtBox.TextChanged += new System.EventHandler(this.idTxtBox_TextChanged);
             // 
             // emailTxtBox
             // 
@@ -155,31 +157,31 @@
             this.emailTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.emailTxtBox.Location = new System.Drawing.Point(3, 153);
             this.emailTxtBox.Name = "emailTxtBox";
-            this.emailTxtBox.Size = new System.Drawing.Size(282, 27);
+            this.emailTxtBox.Size = new System.Drawing.Size(285, 27);
             this.emailTxtBox.TabIndex = 2;
-            this.emailTxtBox.TextChanged += new System.EventHandler(this.emailTxtBox_TextChanged);
             // 
             // textBox7
             // 
             this.textBox7.BackColor = System.Drawing.Color.White;
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox7.Location = new System.Drawing.Point(3, 58);
             this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(154, 23);
+            this.textBox7.Size = new System.Drawing.Size(168, 23);
             this.textBox7.TabIndex = 0;
             this.textBox7.TabStop = false;
-            this.textBox7.Text = "Định danh/CCCD:";
+            this.textBox7.Text = "Mã định danh/CCCD:";
             // 
             // updateUserInfoBtn
             // 
-            this.updateUserInfoBtn.Location = new System.Drawing.Point(423, 308);
+            this.updateUserInfoBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.updateUserInfoBtn.ForeColor = System.Drawing.Color.White;
+            this.updateUserInfoBtn.Location = new System.Drawing.Point(420, 286);
             this.updateUserInfoBtn.Name = "updateUserInfoBtn";
             this.updateUserInfoBtn.Size = new System.Drawing.Size(133, 44);
             this.updateUserInfoBtn.TabIndex = 8;
             this.updateUserInfoBtn.Text = "Cập nhật";
-            this.updateUserInfoBtn.UseVisualStyleBackColor = true;
+            this.updateUserInfoBtn.UseVisualStyleBackColor = false;
             this.updateUserInfoBtn.Click += new System.EventHandler(this.updateUserInfoBtn_Click);
             // 
             // panel1
@@ -188,11 +190,10 @@
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Location = new System.Drawing.Point(497, 12);
+            this.panel1.Location = new System.Drawing.Point(503, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(461, 239);
+            this.panel1.Size = new System.Drawing.Size(455, 239);
             this.panel1.TabIndex = 4;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // textBox8
             // 
@@ -219,7 +220,6 @@
             this.textBox2.TabIndex = 12;
             this.textBox2.TabStop = false;
             this.textBox2.Text = "Số điện thoại:";
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
@@ -254,11 +254,10 @@
             this.panel3.Controls.Add(this.phoneTxtBox);
             this.panel3.Controls.Add(this.newPasswordTxtBox);
             this.panel3.Controls.Add(this.oldPasswordTxtBox);
-            this.panel3.Location = new System.Drawing.Point(664, 12);
+            this.panel3.Location = new System.Drawing.Point(687, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(284, 234);
+            this.panel3.Size = new System.Drawing.Size(271, 234);
             this.panel3.TabIndex = 5;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // confirmnewPasswordTxtBox
             // 
@@ -266,10 +265,9 @@
             this.confirmnewPasswordTxtBox.Location = new System.Drawing.Point(3, 157);
             this.confirmnewPasswordTxtBox.Name = "confirmnewPasswordTxtBox";
             this.confirmnewPasswordTxtBox.ReadOnly = true;
-            this.confirmnewPasswordTxtBox.Size = new System.Drawing.Size(281, 27);
+            this.confirmnewPasswordTxtBox.Size = new System.Drawing.Size(268, 27);
             this.confirmnewPasswordTxtBox.TabIndex = 7;
             this.confirmnewPasswordTxtBox.UseSystemPasswordChar = true;
-            this.confirmnewPasswordTxtBox.TextChanged += new System.EventHandler(this.textBox7_TextChanged_1);
             // 
             // changePasswordCkBox
             // 
@@ -288,9 +286,8 @@
             this.phoneTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.phoneTxtBox.Location = new System.Drawing.Point(3, 2);
             this.phoneTxtBox.Name = "phoneTxtBox";
-            this.phoneTxtBox.Size = new System.Drawing.Size(281, 27);
+            this.phoneTxtBox.Size = new System.Drawing.Size(268, 27);
             this.phoneTxtBox.TabIndex = 3;
-            this.phoneTxtBox.TextChanged += new System.EventHandler(this.phoneTxtBox_TextChanged);
             // 
             // newPasswordTxtBox
             // 
@@ -298,10 +295,9 @@
             this.newPasswordTxtBox.Location = new System.Drawing.Point(3, 102);
             this.newPasswordTxtBox.Name = "newPasswordTxtBox";
             this.newPasswordTxtBox.ReadOnly = true;
-            this.newPasswordTxtBox.Size = new System.Drawing.Size(281, 27);
+            this.newPasswordTxtBox.Size = new System.Drawing.Size(268, 27);
             this.newPasswordTxtBox.TabIndex = 6;
             this.newPasswordTxtBox.UseSystemPasswordChar = true;
-            this.newPasswordTxtBox.TextChanged += new System.EventHandler(this.newPasswordTxtBox_TextChanged);
             // 
             // oldPasswordTxtBox
             // 
@@ -309,22 +305,31 @@
             this.oldPasswordTxtBox.Location = new System.Drawing.Point(3, 50);
             this.oldPasswordTxtBox.Name = "oldPasswordTxtBox";
             this.oldPasswordTxtBox.ReadOnly = true;
-            this.oldPasswordTxtBox.Size = new System.Drawing.Size(281, 27);
+            this.oldPasswordTxtBox.Size = new System.Drawing.Size(268, 27);
             this.oldPasswordTxtBox.TabIndex = 5;
             this.oldPasswordTxtBox.UseSystemPasswordChar = true;
-            this.oldPasswordTxtBox.TextChanged += new System.EventHandler(this.oldPasswordTxtBox_TextChanged);
             // 
-            // alert_txtBox
+            // textBox1
             // 
-            this.alert_txtBox.BackColor = System.Drawing.Color.White;
-            this.alert_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.alert_txtBox.Location = new System.Drawing.Point(173, 270);
-            this.alert_txtBox.Name = "alert_txtBox";
-            this.alert_txtBox.ReadOnly = true;
-            this.alert_txtBox.Size = new System.Drawing.Size(653, 20);
-            this.alert_txtBox.TabIndex = 6;
-            this.alert_txtBox.TabStop = false;
-            this.alert_txtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(3, 206);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(91, 23);
+            this.textBox1.TabIndex = 13;
+            this.textBox1.TabStop = false;
+            this.textBox1.Text = "Ngày sinh:";
+            // 
+            // NgaySinh_txtBox
+            // 
+            this.NgaySinh_txtBox.BackColor = System.Drawing.Color.White;
+            this.NgaySinh_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.NgaySinh_txtBox.Location = new System.Drawing.Point(3, 202);
+            this.NgaySinh_txtBox.Name = "NgaySinh_txtBox";
+            this.NgaySinh_txtBox.Size = new System.Drawing.Size(285, 27);
+            this.NgaySinh_txtBox.TabIndex = 20;
             // 
             // UserInfoForm
             // 
@@ -333,16 +338,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(967, 364);
-            this.Controls.Add(this.alert_txtBox);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.updateUserInfoBtn);
             this.Controls.Add(this.panel2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "UserInfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chỉnh sửa thông tin";
-            this.Load += new System.EventHandler(this.UserInfoForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.showData_panel.ResumeLayout(false);
@@ -352,7 +356,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -376,10 +379,11 @@
         private CheckBox changePasswordCkBox;
         private TextBox textBox8;
         private TextBox textBox7;
-        private TextBox alert_txtBox;
         private TextBox confirmnewPasswordTxtBox;
         private TextBox textBox9;
         private TextBox textBox10;
         private TextBox textBox11;
+        private TextBox textBox1;
+        private TextBox NgaySinh_txtBox;
     }
 }

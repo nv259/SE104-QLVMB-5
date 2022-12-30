@@ -119,7 +119,7 @@
             // 
             this.ForgotPwd_Btn.AutoSize = true;
             this.ForgotPwd_Btn.BackColor = System.Drawing.Color.Transparent;
-            this.ForgotPwd_Btn.Location = new System.Drawing.Point(251, 308);
+            this.ForgotPwd_Btn.Location = new System.Drawing.Point(250, 320);
             this.ForgotPwd_Btn.Name = "ForgotPwd_Btn";
             this.ForgotPwd_Btn.Size = new System.Drawing.Size(126, 32);
             this.ForgotPwd_Btn.TabIndex = 15;
@@ -142,8 +142,8 @@
             this.Controls.Add(this.PasswordtxtBox);
             this.Controls.Add(this.Username_txtBox);
             this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";

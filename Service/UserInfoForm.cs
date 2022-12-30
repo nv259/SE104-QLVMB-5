@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -14,7 +15,6 @@ using System.Windows.Forms;
 
 namespace Service
 {
-
 
     public partial class UserInfoForm : Form
     {
@@ -28,6 +28,7 @@ namespace Service
             this.idTxtBox.Text = account.DinhDanh;
             this.emailTxtBox.Text = account.Email;
             this.phoneTxtBox.Text = account.Sdt;
+            this.NgaySinh_txtBox.Text = account.NgaySinh.ToString("dd-MM-yyyy");
 
             this.oldPasswordTxtBox.ReadOnly = true;
             this.oldPasswordTxtBox.Enabled = false;
@@ -41,46 +42,6 @@ namespace Service
         }
 
         Account account;
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox9_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UserInfoForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void idTxtBox_TextChanged(object sender, EventArgs e)
-        {
-            CheckAll();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         SHA512 sha512Hash = SHA512.Create();
         private string Convert_to_SHA512(string source)
@@ -114,40 +75,63 @@ namespace Service
 
         private bool CheckAll()
         {
-            Regex validate_emailaddress = email_validation();
-
-            if (validate_emailaddress.IsMatch(this.emailTxtBox.Text.Trim()) != true)
+            string national_id = idTxtBox.Text.ToString();
+            if (national_id.Length == 0)
             {
-                this.alert_txtBox.Text = "Email không đúng!";
+                MessageBox.Show("Mã định danh / CCCD không được để trống!");
+                return false;
+            }
+            else if (national_id.Length != 12 || !national_id.All(char.IsDigit))
+            {
+                MessageBox.Show("Mã định danh / CCCD không đúng định dạng!");
                 return false;
             }
             else
             {
-                this.alert_txtBox.Text = "";
-            }
-
-            string phone_number = this.phoneTxtBox.Text.Trim();
-            if (phone_number.Length == 12 && phone_number.Substring(0, 3) == "+84")
-            {
-                phone_number = phone_number.Remove(0, 3);
-                if (!phone_number.All(char.IsDigit))
+                string query = "SELECT * FROM [dbo].NGUOIDUNG WHERE MaDangNhap != @MaDangNhap AND DinhDanh = @DinhDanh ";
+                if (DataProvider.Instance.ExecuteQuery(query, new object[] { usernameTxtBox.Text.ToString().TrimEnd(), national_id }).Rows.Count > 0)
                 {
-                    this.alert_txtBox.Text = "Số điện thoại không đúng!";
+                    MessageBox.Show("Mã định danh / CCCD bạn nhập đã được đăng ký bởi người dùng khác!");
                     return false;
                 }
-                else
+            }
+            Regex validate_emailaddress = email_validation();
+
+            if (emailTxtBox.Text.Length == 0)
+            {
+                MessageBox.Show("Email không được để trống!");
+                return false;
+            } else if (validate_emailaddress.IsMatch(emailTxtBox.Text.Trim()) != true)
+            {
+                MessageBox.Show("Email không đúng định dạng!");
+                return false;
+            } else
+            {
+                string query = "SELECT * FROM [dbo].NGUOIDUNG WHERE MaDangNhap != @MaDangNhap AND Email = @Email ";
+                if (DataProvider.Instance.ExecuteQuery(query, new object[] { usernameTxtBox.Text.ToString().TrimEnd() , emailTxtBox.Text.ToString() }).Rows.Count > 0)
                 {
-                    this.alert_txtBox.Text = "";
+                    MessageBox.Show("Email bạn nhập đã được đăng ký bởi người dùng khác!");
+                    return false;
                 }
             }
-            else if (phone_number.Length != 10 || !phone_number.All(char.IsDigit) || phone_number[0] != '0')
+
+            string phone_number = phoneTxtBox.Text.ToString();
+            if (phone_number.Length == 0)
             {
-                this.alert_txtBox.Text = "Số điện thoại không đúng!";
+                MessageBox.Show("Số điện thoại không được để trống!");
                 return false;
-            }
-            else
+            } else if (phone_number.Length != 10 || !phone_number.All(char.IsDigit) || phone_number[0] != '0')
             {
-                this.alert_txtBox.Text = "";
+                MessageBox.Show("Số điện thoại không đúng định dạng!");
+                return false;
+            } else
+            {
+                string query = "SELECT * FROM [dbo].NGUOIDUNG WHERE MaDangNhap != @MaDangNhap AND SoDienThoai = @SoDienThoai ";
+                if (DataProvider.Instance.ExecuteQuery(query, new object[] { usernameTxtBox.Text.ToString().TrimEnd(), phone_number }).Rows.Count > 0)
+                {
+                    MessageBox.Show("Số điện thoại bạn nhập đã được đăng ký bởi người dùng khác!");
+                    return false;
+                }
             }
 
             if (changePasswordCkBox.Checked)
@@ -157,28 +141,41 @@ namespace Service
                 string confirmnewPassword = this.confirmnewPasswordTxtBox.Text;
                 if (oldPassword != account.MatKhau)
                 {
-                    this.alert_txtBox.Text = "Mật khẩu cũ không khớp!";
+                    MessageBox.Show("Mật khẩu cũ không khớp!");
                     return false;
                 }
                 else if (newPassword != confirmnewPassword)
                 {
-                    this.alert_txtBox.Text = "Mật khẩu mới không khớp với xác nhận mật khẩu mới!";
+                    MessageBox.Show("Mật khẩu mới không khớp với xác nhận mật khẩu mới!");
                     return false;
                 }
                 else if (newPassword.Length < 8)
                 {
-                    this.alert_txtBox.Text = "Mật khẩu phải ít nhất 8 ký tự!";
+                    MessageBox.Show("Mật khẩu phải ít nhất 8 ký tự!");
                     return false;
                 }
-                else this.alert_txtBox.Text = "";
+            }
+
+            if (fullNameTxtBox.Text.Length == 0)
+            {
+                MessageBox.Show("Tên người dùng không được để trống!");
+                return false;
+            }
+
+            if (NgaySinh_txtBox.Text.Length == 0)
+            {
+                MessageBox.Show("Ngày sinh không được để trống!");
+                return false;
+            }
+
+            DateTime temp;
+            if (!DateTime.TryParseExact(NgaySinh_txtBox.Text.TrimEnd(), "dd-MM-yyyy", null, DateTimeStyles.None, out temp))
+            {
+                MessageBox.Show("Ngày sinh không đúng định dạng!");
+                return false;
             }
 
             return true;
-        }
-
-        private void textBox7_TextChanged_1(object sender, EventArgs e)
-        {
-            CheckAll();
         }
 
         private void changePasswordCkBox_CheckedChanged(object sender, EventArgs e)
@@ -194,7 +191,6 @@ namespace Service
                 this.confirmnewPasswordTxtBox.ReadOnly = false;
                 this.confirmnewPasswordTxtBox.Enabled = true;
                 this.confirmnewPasswordTxtBox.BackColor = SystemColors.Control;
-                CheckAll();
             } else
             {
                 this.oldPasswordTxtBox.ReadOnly = true;
@@ -206,37 +202,13 @@ namespace Service
                 this.confirmnewPasswordTxtBox.ReadOnly = true;
                 this.confirmnewPasswordTxtBox.Enabled = false;
                 this.confirmnewPasswordTxtBox.BackColor = Color.LightGray;
-                CheckAll();
             }
-        }
-
-        private void fullNameTxtBox_TextChanged(object sender, EventArgs e)
-        {
-            CheckAll();
-        }
-
-        private void emailTxtBox_TextChanged(object sender, EventArgs e)
-        {
-            CheckAll();
-        }
-
-        private void phoneTxtBox_TextChanged(object sender, EventArgs e)
-        {
-            CheckAll();
-        }
-
-        private void oldPasswordTxtBox_TextChanged(object sender, EventArgs e)
-        {
-            CheckAll();
-        }
-
-        private void newPasswordTxtBox_TextChanged(object sender, EventArgs e)
-        {
-            CheckAll();
         }
 
         private void updateUserInfoBtn_Click(object sender, EventArgs e)
         {
+            if (!CheckAll()) return;
+
             string MaDangNhap, MatKhau, TenNguoiDung, DinhDanh, SoDienThoai, Email;
             MaDangNhap = this.usernameTxtBox.Text;
             TenNguoiDung = this.fullNameTxtBox.Text.Trim();
@@ -252,14 +224,12 @@ namespace Service
             DinhDanh = this.idTxtBox.Text;
             SoDienThoai = this.phoneTxtBox.Text.Trim();
             Email = this.emailTxtBox.Text;
-             
-            if (CheckAll())
-            {
-                string query = "UPDATE [dbo].NGUOIDUNG SET MatKhau = @MatKhau , TenNguoiDung = @TenNguoiDung , DinhDanh = @DinhDanh , SoDienThoai = @SoDienThoai , Email = @Email WHERE MaDangNhap = @MaDangNhap ";
-                object i = DataProvider.Instance.ExecuteNonQuery(query, new object[] { MatKhau, TenNguoiDung, DinhDanh, SoDienThoai, Email , MaDangNhap });
-                MessageBox.Show("Chỉnh sửa thông tin thành công!");
-                this.Close();
-            }
+            DateTime NgaySinh = Convert.ToDateTime(NgaySinh_txtBox.Text); 
+            
+            string query = "UPDATE [dbo].NGUOIDUNG SET MatKhau = @MatKhau , TenNguoiDung = @TenNguoiDung , DinhDanh = @DinhDanh , SoDienThoai = @SoDienThoai , Email = @Email , NgaySinh = @NgaySinh WHERE MaDangNhap = @MaDangNhap ";
+            object i = DataProvider.Instance.ExecuteNonQuery(query, new object[] { MatKhau, TenNguoiDung, DinhDanh, SoDienThoai, Email , NgaySinh.ToString("yyyy-MM-dd") , MaDangNhap });
+            MessageBox.Show("Cập nhật thông tin thành công!");
+            this.Close();
         }
     }
 }

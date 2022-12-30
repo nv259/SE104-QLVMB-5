@@ -44,7 +44,7 @@ namespace Service
             Email = this.email_txtBox.Text;
             NgaySinh = Convert.ToDateTime(this.NgaySinh_txtBox.Text.TrimEnd().ToString()).ToString("yyyy-MM-dd");
 
-            if (CheckAll() && this.checkBox2.Checked)
+            if (CheckAll())
             {
                 string query = "INSERT INTO [dbo].NGUOIDUNG VALUES ( @MaDangNhap , @MatKhau , '2' , @TenNguoiDung , @DinhDanh , @SoDienThoai , @Email , @NgaySinh ) ";
                 object i = DataProvider.Instance.ExecuteScalar(query, new object[] { MaDangNhap, MatKhau, TenNguoiDung, DinhDanh, SoDienThoai , Email , NgaySinh });
@@ -67,34 +67,31 @@ namespace Service
 
         private bool CheckAll()
         {
-            this.alert_txtBox.Text = "";
-
             if (this.fullName_txtBox.Text.Length == 0)
             {
-                this.alert_txtBox.Text = "Cần nhập họ và tên!";
+                MessageBox.Show("Họ và tên không được để trống!");
                 return false;
             } 
 
             Regex validate_emailaddress = email_validation();
             if (this.email_txtBox.Text.Length == 0)
             {
-                this.alert_txtBox.Text = "Cần nhập Email!";
+                MessageBox.Show("Email không được để trống!");
                 return false;
             }
 
             if (validate_emailaddress.IsMatch(this.email_txtBox.Text.Trim()) != true)
             {
-                this.alert_txtBox.Text = "Email không đúng!";
+                MessageBox.Show("Email không đúng định dạng!");
                 return false;
             } else {
                 string email = this.email_txtBox.Text;
                 string Query = "SELECT * FROM [dbo].NGUOIDUNG WHERE Email = @email ";
                 if (DataProvider.Instance.ExecuteQuery(Query, new object[] { email }).Rows.Count > 0)
                 {
-                    this.alert_txtBox.Text = "Email đã tồn tại!";
+                    MessageBox.Show("Email đã tồn tại!");
                     return false;
                 }
-                else this.alert_txtBox.Text = "";
             }
 
             string MaDangNhap = this.username_txtBox.Text;
@@ -102,21 +99,31 @@ namespace Service
             {
                 if (!IsLowerChar(MaDangNhap[0]))
                 {
-                    this.alert_txtBox.Text = "Tên đăng nhập không hợp lệ";
+                    MessageBox.Show("Tên đăng nhập không đúng định dạng!");
                     return false;
                 }
-
-                this.alert_txtBox.Text = "";
 
                 for (int i = 0; i < MaDangNhap.Length; ++i)
                     if (!IsDigit(MaDangNhap[i]) && !IsLowerChar(MaDangNhap[i]))
                     {
-                        this.alert_txtBox.Text = "Tên đăng nhập không hợp lệ";
+                        MessageBox.Show("Tên đăng nhập không đúng định dạng!");
                         return false;
                     }
+
+                if (MaDangNhap.Length < 3)
+                {
+                    MessageBox.Show("Tên đăng nhập cần ít nhất 3 kí tự!");
+                    return false;
+                } 
+
+                if (MaDangNhap.Length > 15)
+                {
+                    MessageBox.Show("Tên đăng nhập chỉ được tối đa 15 kí tự!");
+                    return false;
+                }
             } else
             {
-                this.alert_txtBox.Text = "Cần nhập tên đăng nhập!";
+                MessageBox.Show("Tên đăng nhập không được bỏ trống!");
                 return false;
             }
 
@@ -124,20 +131,20 @@ namespace Service
 
             if (DataProvider.Instance.ExecuteQuery(query, new object[] { MaDangNhap }).Rows.Count > 0)
             {
-                this.alert_txtBox.Text = "Tên đăng nhập đã tồn tại!";
+                MessageBox.Show("Tên đăng nhập đã tồn tại!");
                 return false;
             }
 
             if (NgaySinh_txtBox.Text.Length == 0)
             {
-                this.alert_txtBox.Text = "Chưa nhập ngày sinh!";
+                MessageBox.Show("Ngày sinh không được để trống!");
                 return false;
             }
 
             DateTime temp;
             if (!DateTime.TryParseExact(NgaySinh_txtBox.Text.TrimEnd(), "dd-MM-yyyy", null, DateTimeStyles.None, out temp))
             {
-                this.alert_txtBox.Text = "Ngày sinh không đúng định dạng!";
+                MessageBox.Show("Ngày sinh không đúng định dạng!");
                 return false;
             }
 
@@ -146,34 +153,33 @@ namespace Service
 
             if (pwd.Length == 0)
             {
-                this.alert_txtBox.Text = "Cần nhập mật khẩu";
+                MessageBox.Show("Mật khẩu không được bỏ trống");
                 return false;
             } else if (pwd.Length < 8)
             {
-                this.alert_txtBox.Text = "Mật khẩu phải có ít nhất 8 ký tự!";
+                MessageBox.Show("Mật khẩu phải có ít nhất 8 ký tự!");
                 return false;
             }
 
             if (pwd != confirm_pwd)
             {
-                this.alert_txtBox.Text = "Mật khẩu chưa khớp!";
+                MessageBox.Show("Mật khẩu chưa khớp!");
                 return false;
             }
-            else this.alert_txtBox.Text = "";
 
             if (this.ID_txtBox.Text.Length == 0)
             {
-                this.alert_txtBox.Text = "Cần nhập mã định danh!";
+                MessageBox.Show("Cần nhập mã định danh / CCCD!");
                 return false;
             }
             else if (this.ID_txtBox.Text.Length != 0 && this.ID_txtBox.Text.Length != 12)
             {
-                this.alert_txtBox.Text = "Mã định danh không hợp lệ!";
+                MessageBox.Show("Mã định danh / CCCD không hợp lệ!");
                 return false;
             }
             else if (ID_txtBox.Text.Length > 0 && !ID_txtBox.Text.All(char.IsDigit))
             {
-                this.alert_txtBox.Text = "Mã định danh không hợp lệ!";
+                MessageBox.Show("Mã định danh / CCCD không hợp lệ!");
                 return false;
             }
             else
@@ -182,22 +188,21 @@ namespace Service
                 string Query = "SELECT * FROM [dbo].NGUOIDUNG WHERE DinhDanh = @id ";
                 if (DataProvider.Instance.ExecuteQuery(Query, new object[] { id }).Rows.Count > 0)
                 {
-                    this.alert_txtBox.Text = "Mã định danh đã tồn tại!";
+                    MessageBox.Show("Mã định danh đã tồn tại!");
                     return false;
                 }
-                else this.alert_txtBox.Text = "";
             }
 
             string phone_number = this.PhoneNumber_txtBox.Text.Trim();
             if (phone_number.Length == 0)
-            { 
-                this.alert_txtBox.Text = "Cần nhập số điện thoại!";
+            {
+                MessageBox.Show("Số điện thoại không được để trống!");
                 return false;
             }
 
             if (phone_number.Length != 10 || !phone_number.All(char.IsDigit) || phone_number[0] != '0')
             {
-                this.alert_txtBox.Text = "Số điện thoại không đúng!";
+                MessageBox.Show("Số điện thoại không đúng định dạng!");
                 return false;
             }
             else
@@ -206,29 +211,20 @@ namespace Service
                 string Query = "SELECT * FROM [dbo].NGUOIDUNG WHERE SoDienThoai = @phone ";
                 if (DataProvider.Instance.ExecuteQuery(Query, new object[] { phone }).Rows.Count > 0)
                 {
-                    this.alert_txtBox.Text = "Số điện thoại đã tồn tại!";
+                    MessageBox.Show("Số điện thoại đã tồn tại!");
                     return false;
                 }
-                else this.alert_txtBox.Text = "";
+            }
+
+            if (!checkBox2.Checked)
+            {
+                MessageBox.Show("Bạn chưa đồng ý với các điều khoản dịch vụ!");
+                return false;
             }
 
             return true;
         }
 
-        private void username_txtBox_TextChanged(object sender, EventArgs e)
-        {
-            CheckAll();
-        }
-
-        private void pwd_txtBox_TextChanged(object sender, EventArgs e)
-        {
-            CheckAll();
-        }
-
-        private void confirmPwd_txtBox_TextChanged(object sender, EventArgs e)
-        {
-            CheckAll();
-        }
         private static Regex email_validation()
         {
             string pattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|"
@@ -236,31 +232,6 @@ namespace Service
                 + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
 
             return new Regex(pattern, RegexOptions.IgnoreCase);
-        }
-
-        private void email_txtBox_TextChanged(object sender, EventArgs e)
-        {
-            CheckAll();
-        }
-
-        private void PhoneNumber_txtBox_TextChanged(object sender, EventArgs e)
-        {
-            CheckAll();
-        }
-
-        private void firstName_txtBox_TextChanged(object sender, EventArgs e)
-        {
-            CheckAll();
-        }
-
-        private void ID_txtBox_TextChanged(object sender, EventArgs e)
-        {
-            CheckAll();
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-            CheckAll();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using DataAccess.DAO;
 using DataAccess.DTO;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -47,6 +48,48 @@ namespace Service
             TGHVCN_chkBox.Checked = false;
             HuyVeChamNhat_txtBox.Enabled = false;
             HuyVeChamNhat_txtBox.BackColor = Color.LightGray;
+             
+            string query = "SELECT * FROM [dbo].SANBAY ";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+
+            MaSB_TD_comboBox.BeginUpdate();
+            MaSB_TD_comboBox.Items.Clear();
+            MaSB_Xoa_comboBox.BeginUpdate();
+            MaSB_Xoa_comboBox.Items.Clear();
+            SanBay_listView.BeginUpdate();
+            SanBay_listView.Items.Clear();
+
+            foreach(DataRow dr in dt.Rows)
+            {
+                MaSB_TD_comboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd());
+                MaSB_Xoa_comboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd());
+                SanBay_listView.Items.Add(new ListViewItem(new string[]{ dr["MaSanBay"].ToString() , dr["TenSanBay"].ToString() }));
+            }
+
+            MaSB_TD_comboBox.EndUpdate();
+            MaSB_Xoa_comboBox.EndUpdate();
+            SanBay_listView.EndUpdate();
+
+            query = "SELECT * FROM [dbo].HANGVE ";
+            dt = DataProvider.Instance.ExecuteQuery(query);
+
+            MaHV_TD_comboBox.BeginUpdate();
+            MaHV_TD_comboBox.Items.Clear();
+            MaHV_Xoa_comboBox.BeginUpdate();
+            MaHV_Xoa_comboBox.Items.Clear();
+            HangVe_listView.BeginUpdate();
+            HangVe_listView.Items.Clear();
+
+            foreach(DataRow dr in dt.Rows)
+            {
+                MaHV_TD_comboBox.Items.Add(dr["MaHangVe"].ToString().TrimEnd());
+                MaHV_Xoa_comboBox.Items.Add(dr["MaHangVe"].ToString().TrimEnd());
+                HangVe_listView.Items.Add(new ListViewItem(new string[] { dr["MaHangVe"].ToString() , dr["TenHangVe"].ToString() , dr["TiLeGiaVe"].ToString() }));
+            }
+
+            MaHV_TD_comboBox.EndUpdate();
+            MaHV_Xoa_comboBox.EndUpdate();
+            HangVe_listView.EndUpdate();
         }
 
         private void SoSBTGToiDa_chkBox_CheckedChanged(object sender, EventArgs e)
@@ -165,155 +208,133 @@ namespace Service
         private bool check_all()
         {
             string input = SSBTGTD_txtBox.Text;
-            alert_txtBox.Text = "";
 
-            if (input.Length == 0 || !input.All(char.IsDigit) || (input.Length > 1 && input[0] == '0'))
+            if (SoSBTGToiDa_chkBox.Checked )
             {
-                alert_txtBox.Text = "Số sân bay trung gian bạn vừa nhập không hợp lệ!";
-                return false;
-            }
-
-            input = BayToiThieu_Gio.Text;
-            if (input.Length == 0 || !input.All(char.IsDigit) || (input.Length > 1 && input[0] == '0'))
-            {
-                alert_txtBox.Text = "Thời gian bay tối thiểu bạn vừa nhập không hợp lệ!";
-                return false;
-            } else if (0 > Convert.ToInt32(input) || 23 < Convert.ToInt32(input)) {
-                alert_txtBox.Text = "Thời gian bay tối thiểu bạn vừa nhập không hợp lệ!";
-                return false;
+                if (input.Length == 0 || !input.All(char.IsDigit) || (input.Length > 1 && input[0] == '0'))
+                {
+                    MessageBox.Show("Số sân bay trung gian bạn vừa nhập không hợp lệ!");
+                    return false;
+                }
             }
 
-            input = BayToiThieu_Phut.Text;
-            if (input.Length == 0 || !input.All(char.IsDigit) || (input.Length > 1 && input[0] == '0'))
+            if (TGBTT_chkBox.Checked)
             {
-                alert_txtBox.Text = "Thời gian bay tối thiểu bạn vừa nhập không hợp lệ!";
-                return false;
-            }
-            else if (0 > Convert.ToInt32(input) || 59 < Convert.ToInt32(input))
-            {
-                alert_txtBox.Text = "Thời gian bay tối thiểu bạn vừa nhập không hợp lệ!";
-                return false;
+                input = BayToiThieu_Gio.Text;
+                if (input.Length == 0 || !input.All(char.IsDigit) || (input.Length > 1 && input[0] == '0'))
+                {
+                    MessageBox.Show("Thời gian bay tối thiểu bạn vừa nhập không hợp lệ!");
+                    return false;
+                }
+                else if (0 > Convert.ToInt32(input) || 23 < Convert.ToInt32(input))
+                {
+                    MessageBox.Show("Thời gian bay tối thiểu bạn vừa nhập không hợp lệ!");
+                    return false;
+                }
+
+                input = BayToiThieu_Phut.Text;
+                if (input.Length == 0 || !input.All(char.IsDigit) || (input.Length > 1 && input[0] == '0'))
+                {
+                    MessageBox.Show("Thời gian bay tối thiểu bạn vừa nhập không hợp lệ!");
+                    return false;
+                }
+                else if (0 > Convert.ToInt32(input) || 59 < Convert.ToInt32(input))
+                {
+                    MessageBox.Show("Thời gian bay tối thiểu bạn vừa nhập không hợp lệ!");
+                    return false;
+                }
             }
 
-            input = DungToiThieu_Gio.Text;
-            if (input.Length == 0 || !input.All(char.IsDigit) || (input.Length > 1 && input[0] == '0'))
+            if (TGDTT_chkBox.Checked)
             {
-                alert_txtBox.Text = "Thời gian dừng tối thiểu bạn vừa nhập không hợp lệ!";
-                return false;
-            }
-            else if (0 > Convert.ToInt32(input) || 23 < Convert.ToInt32(input))
-            {
-                alert_txtBox.Text = "Thời gian dừng tối thiểu bạn vừa nhập không hợp lệ!";
-                return false;
+                input = DungToiThieu_Gio.Text;
+                if (input.Length == 0 || !input.All(char.IsDigit) || (input.Length > 1 && input[0] == '0'))
+                {
+                    MessageBox.Show("Thời gian dừng tối thiểu bạn vừa nhập không hợp lệ!");
+                    return false;
+                }
+                else if (0 > Convert.ToInt32(input) || 23 < Convert.ToInt32(input))
+                {
+                    MessageBox.Show("Thời gian dừng tối thiểu bạn vừa nhập không hợp lệ!");
+                    return false;
+                }
+
+                input = DungToiThieu_Phut.Text;
+                if (input.Length == 0 || !input.All(char.IsDigit) || (input.Length > 1 && input[0] == '0'))
+                {
+                    MessageBox.Show("Thời gian dừng tối thiểu bạn vừa nhập không hợp lệ!");
+                    return false;
+                }
+                else if (0 > Convert.ToInt32(input) || 59 < Convert.ToInt32(input))
+                {
+                    MessageBox.Show("Thời gian dừng tối thiểu bạn vừa nhập không hợp lệ!");
+                    return false;
+                }
             }
 
-            input = DungToiThieu_Phut.Text;
-            if (input.Length == 0 || !input.All(char.IsDigit) || (input.Length > 1 && input[0] == '0'))
+            if (TGDTD_chkBox.Checked)
             {
-                alert_txtBox.Text = "Thời gian dừng tối thiểu bạn vừa nhập không hợp lệ!";
-                return false;
-            }
-            else if (0 > Convert.ToInt32(input) || 59 < Convert.ToInt32(input))
-            {
-                alert_txtBox.Text = "Thời gian dừng tối thiểu bạn vừa nhập không hợp lệ!";
-                return false;
+                input = DungToiDa_Gio.Text;
+                if (input.Length == 0 || !input.All(char.IsDigit) || (input.Length > 1 && input[0] == '0'))
+                {
+                    MessageBox.Show("Thời gian dừng tối đa bạn vừa nhập không hợp lệ!");
+                    return false;
+                }
+                else if (0 > Convert.ToInt32(input) || 23 < Convert.ToInt32(input))
+                {
+                    MessageBox.Show("Thời gian dừng tối đa bạn vừa nhập không hợp lệ!");
+                    return false;
+                }
+
+                input = DungToiDa_Phut.Text;
+                if (input.Length == 0 || !input.All(char.IsDigit) || (input.Length > 1 && input[0] == '0'))
+                {
+                    MessageBox.Show("Thời gian dừng tối đa bạn vừa nhập không hợp lệ!");
+                    return false;
+                }
+                else if (0 > Convert.ToInt32(input) || 59 < Convert.ToInt32(input))
+                {
+                    MessageBox.Show("Thời gian dừng tối đa bạn vừa nhập không hợp lệ!");
+                    return false;
+                }
             }
 
-            input = DungToiDa_Gio.Text;
-            if (input.Length == 0 || !input.All(char.IsDigit) || (input.Length > 1 && input[0] == '0'))
-            {
-                alert_txtBox.Text = "Thời gian dừng tối đa bạn vừa nhập không hợp lệ!";
-                return false;
-            }
-            else if (0 > Convert.ToInt32(input) || 23 < Convert.ToInt32(input))
-            {
-                alert_txtBox.Text = "Thời gian dừng tối đa bạn vừa nhập không hợp lệ!";
-                return false;
+            if (TGDTT_chkBox.Checked || TGDTD_chkBox.Checked) {
+                input = DungToiThieu_Gio.Text + ":" + DungToiThieu_Phut.Text + ":00";
+                TimeSpan Min = info.TGDungToiThieu;
+                if (TGDTT_chkBox.Checked) Min = TimeSpan.Parse(input);
+                input = DungToiDa_Gio.Text + ":" + DungToiDa_Phut.Text + ":00";
+                TimeSpan Max = info.TGDungToiDa;
+                if (TGDTD_chkBox.Checked) Max = TimeSpan.Parse(input);
+
+                if (Min > Max)
+                {
+                    MessageBox.Show("Thời gian dừng tối đa phải không nhỏ hơn thời gian dừng tối thiểu!");
+                    return false;
+                }
             }
 
-            input = DungToiDa_Phut.Text;
-            if (input.Length == 0 || !input.All(char.IsDigit) || (input.Length > 1 && input[0] == '0'))
+            if (TGDVCN_chkBox.Checked)
             {
-                alert_txtBox.Text = "Thời gian dừng tối đa bạn vừa nhập không hợp lệ!";
-                return false;
-            }
-            else if (0 > Convert.ToInt32(input) || 59 < Convert.ToInt32(input))
-            {
-                alert_txtBox.Text = "Thời gian dừng tối đa bạn vừa nhập không hợp lệ!";
-                return false;
+                input = DatVeChamNhat_txtBox.Text;
+                if (input.Length == 0 || !input.All(char.IsDigit) || (input.Length > 1 && input[0] == '0'))
+                {
+                    MessageBox.Show("Thời gian đặt vé chậm nhất bạn vừa nhập không hợp lệ!");
+                    return false;
+                }
             }
 
-            input = DungToiThieu_Gio.Text + ":" + DungToiThieu_Phut.Text + ":00";
-            TimeSpan Min = TimeSpan.Parse(input);
-            input = DungToiDa_Gio.Text + ":" + DungToiDa_Phut.Text + ":00";
-            TimeSpan Max = TimeSpan.Parse(input);
-
-            if (Min > Max)
+            if (TGHVCN_chkBox.Checked)
             {
-                alert_txtBox.Text = "Thời gian dừng tối đa phải không nhỏ hơn thời gian dừng tối thiểu!";
-                return false;
-            }
-
-            input = DatVeChamNhat_txtBox.Text;
-            if (input.Length == 0 || !input.All(char.IsDigit) || (input.Length > 1 && input[0] == '0'))
-            {
-                alert_txtBox.Text = "Thời gian đặt vé chậm nhất bạn vừa nhập không hợp lệ!";
-                return false;
-            }
-
-            input = HuyVeChamNhat_txtBox.Text;
-            if (input.Length == 0 || !input.All(char.IsDigit) || (input.Length > 1 && input[0] == '0'))
-            {
-                alert_txtBox.Text = "Thời gian hủy vé chậm nhất bạn vừa nhập không hợp lệ!";
-                return false;
+                input = HuyVeChamNhat_txtBox.Text;
+                if (input.Length == 0 || !input.All(char.IsDigit) || (input.Length > 1 && input[0] == '0'))
+                {
+                    MessageBox.Show("Thời gian hủy vé chậm nhất bạn vừa nhập không hợp lệ!");
+                    return false;
+                }
             }
 
             return true;
-        }
-        
-        private void SSBTGTD_txtBox_TextChanged(object sender, EventArgs e)
-        {
-            check_all();
-        }
-
-        private void BayToiThieu_Gio_TextChanged(object sender, EventArgs e)
-        {
-            check_all();
-        }
-
-        private void BayToiThieu_Phut_TextChanged(object sender, EventArgs e)
-        {
-            check_all();
-        }
-
-        private void DungToiThieu_Gio_TextChanged(object sender, EventArgs e)
-        {
-            check_all();
-        }
-
-        private void DungToiThieu_Phut_TextChanged(object sender, EventArgs e)
-        {
-            check_all();
-        }
-
-        private void DungToiDa_Gio_TextChanged(object sender, EventArgs e)
-        {
-            check_all();
-        }
-
-        private void DungToiDa_Phut_TextChanged(object sender, EventArgs e)
-        {
-            check_all();
-        }
-
-        private void DatVeChamNhat_txtBox_TextChanged(object sender, EventArgs e)
-        {
-            check_all();
-        }
-
-        private void HuyVeChamNhat_txtBox_TextChanged(object sender, EventArgs e)
-        {
-            check_all();
         }
 
         private void change_Btn_Click(object sender, EventArgs e)
@@ -337,8 +358,344 @@ namespace Service
             string query = "UPDATE [dbo].THAMSO SET SoSanBayTGToiDa = @SoSanBayTGToiDa , TGBayToiThieu = @TGBayToiThieu , TGDungToiThieu = @TGDungToiThieu , TGDungToiDa = @TGDungToiDa , TGDatVeChamNhat = @TGDatVeChamNhat , TGHuyChamNhat = @TGHuyVeChamNhat ";
             DataProvider.Instance.ExecuteNonQuery(query, new object[] { SoSanBayTGToiDa , TGBayToiThieu , TGDungToiThieu , TGDungToiDa , TGDatVeChamNhat , TGHuyVeChamNhat });
 
-            MessageBox.Show("Đã thay đổi thành công!");
-            this.Close();
+            MessageBox.Show("Đã thay đổi các tham số khác thành công!");
+        }
+        
+        public static bool IsUnicode(string input)
+        {
+            var asciiBytesCount = Encoding.ASCII.GetByteCount(input);
+            var unicodBytesCount = Encoding.UTF8.GetByteCount(input);
+            return asciiBytesCount != unicodBytesCount;
+        }
+
+        private void ThemSanBay_Btn_Click(object sender, EventArgs e)
+        {
+            string chk = MaSB_Them_txtBox.Text;
+            if (chk.Length == 0 )
+            {
+                MessageBox.Show("Thêm sân bay: Chưa nhập mã sân bay!");
+                return;
+            }
+
+            if (!chk.All(char.IsLetterOrDigit) || IsUnicode(chk))
+            {
+                MessageBox.Show("Thêm sân bay: Mã sân bay không đúng định dạng!");
+                return;
+            }
+
+            if (chk.Length > 10)
+            {
+                MessageBox.Show("Thêm sân bay: Mã sân bay quá dài (tối đa 10 ký tự)!");
+                return;
+            }
+
+            if (chk.Length < 3)
+            {
+                MessageBox.Show("Thêm sân bay: Mã sân bay quá ngắn (tối thiểu 3 ký tự)!");
+                return;
+            }
+
+            string query = "SELECT * FROM [dbo].SANBAY WHERE MaSanBay = @MaSanBay ";
+            if (DataProvider.Instance.ExecuteQuery(query, new object[] { chk }).Rows.Count > 0)
+            {
+                MessageBox.Show("Thêm sân bay: Mã sân bay đã tồn tại!");
+                return;
+            }
+
+            chk = TenSB_Them_txtBox.Text;
+            if (chk.Length == 0)
+            {
+                MessageBox.Show("Thêm sân bay: Tên sân bay không được để trống!");
+                return;
+            }
+
+            string insert = "INSERT INTO [dbo].SANBAY VALUES ( @MaSanBay , @TenSanBay )";
+            DataProvider.Instance.ExecuteNonQuery(insert, new object[] { MaSB_Them_txtBox.Text.ToString(), TenSB_Them_txtBox.Text.ToString() });
+
+            query = "SELECT * FROM [dbo].SANBAY";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+
+            MaSB_TD_comboBox.BeginUpdate();
+            MaSB_TD_comboBox.Items.Clear();
+            MaSB_Xoa_comboBox.BeginUpdate();
+            MaSB_Xoa_comboBox.Items.Clear();
+            SanBay_listView.BeginUpdate();
+            SanBay_listView.Items.Clear();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                MaSB_TD_comboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd());
+                MaSB_Xoa_comboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd());
+                SanBay_listView.Items.Add(new ListViewItem(new string[] { dr["MaSanBay"].ToString(), dr["TenSanBay"].ToString() }));
+            }
+
+            MaSB_TD_comboBox.EndUpdate();
+            MaSB_Xoa_comboBox.EndUpdate();
+            SanBay_listView.EndUpdate();
+
+            MessageBox.Show("Thêm sân bay thành công!");
+        }
+        private void ThayDoiTTSB_Btn_Click(object sender, EventArgs e)
+        {
+            if (MaSB_TD_comboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Thay đổi thông tin sân bay: Vui lòng chọn mã sân bay!");
+                return;
+            }
+
+            if (TenSB_TD_txtBox.Text.Length == 0)
+            {
+                MessageBox.Show("Thay đổi thông tin sân bay: Tên sân bay không được để trống!");
+                return;
+            }
+
+            string update = "UPDATE [dbo].SANBAY SET TenSanBay = @TenSanBay WHERE MaSanBay = @MaSanBay ";
+            DataProvider.Instance.ExecuteNonQuery(update, new object[] { TenSB_TD_txtBox.Text.ToString(), MaSB_TD_comboBox.SelectedItem.ToString() });
+
+            string query = "SELECT * FROM [dbo].SANBAY";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+
+            SanBay_listView.BeginUpdate();
+            SanBay_listView.Items.Clear();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                MaSB_TD_comboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd());
+                MaSB_Xoa_comboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd());
+                SanBay_listView.Items.Add(new ListViewItem(new string[] { dr["MaSanBay"].ToString(), dr["TenSanBay"].ToString() }));
+            }
+
+            SanBay_listView.EndUpdate();
+
+            MessageBox.Show("Thay đổi thông tin sân bay thành công!");
+        }
+
+        private void MaSB_TD_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (MaSB_TD_comboBox.SelectedItem == null)
+            {
+                TenSB_TD_txtBox.Text = string.Empty;
+                return;     
+            }
+
+            string query = "SELECT TenSanBay FROM [dbo].SANBAY WHERE MaSanBay = @MaSanBay ";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { MaSB_TD_comboBox.SelectedItem.ToString() });
+
+            TenSB_TD_txtBox.Text = dt.Rows[0]["TenSanBay"].ToString();
+        }
+
+        private void XoaSanBay_Btn_Click(object sender, EventArgs e)
+        {
+            if (MaSB_Xoa_comboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Xóa sân bay: Vui lòng chọn mã sân bay!");
+                return;
+            }
+
+            string delete = "DELETE FROM [dbo].SANBAY WHERE MaSanBay = @MaSanBay ";
+            DataProvider.Instance.ExecuteNonQuery(delete, new object[] { MaSB_Xoa_comboBox.SelectedItem.ToString() });
+
+            string query = "SELECT * FROM [dbo].SANBAY";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+
+            MaSB_TD_comboBox.BeginUpdate();
+            MaSB_TD_comboBox.Items.Clear();
+            MaSB_Xoa_comboBox.BeginUpdate();
+            MaSB_Xoa_comboBox.Items.Clear();
+            SanBay_listView.BeginUpdate();
+            SanBay_listView.Items.Clear();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                MaSB_TD_comboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd());
+                MaSB_Xoa_comboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd());
+                SanBay_listView.Items.Add(new ListViewItem(new string[] { dr["MaSanBay"].ToString(), dr["TenSanBay"].ToString() }));
+            }
+
+            MaSB_TD_comboBox.EndUpdate();
+            MaSB_Xoa_comboBox.EndUpdate();
+            SanBay_listView.EndUpdate();
+
+            MessageBox.Show("Xóa sân bay thành công!");
+        }
+
+        private void ThemHangVe_Btn_Click(object sender, EventArgs e)
+        {
+            string chk = MaHV_Them_txtBox.Text;
+            if (chk.Length == 0)
+            {
+                MessageBox.Show("Thêm hạng vé: Chưa nhập mã hạng vé!");
+                return;
+            }
+
+            if (!chk.All(char.IsLetterOrDigit) || IsUnicode(chk))
+            {
+                MessageBox.Show("Thêm hạng vé: Mã hạng vé không đúng định dạng!");
+                return;
+            }
+
+            if (chk.Length > 10)
+            {
+                MessageBox.Show("Thêm hạng vé: Mã hạng vé quá dài (tối đa 10 ký tự)!");
+                return;
+            }
+
+            if (chk.Length < 3)
+            {
+                MessageBox.Show("Thêm hạng vé: Mã hạng vé quá ngắn (tối thiểu 3 ký tự)!");
+                return;
+            }
+
+            string query = "SELECT * FROM [dbo].HANGVE WHERE MaHangVe = @MaHangVe ";
+            if (DataProvider.Instance.ExecuteQuery(query, new object[] { chk }).Rows.Count > 0)
+            {
+                MessageBox.Show("Thêm hạng vé: Mã hạng vé đã tồn tại!");
+                return;
+            }
+
+            chk = TenHV_Them_txtBox.Text;
+            if (chk.Length == 0)
+            {
+                MessageBox.Show("Thêm hạng vé: Tên hạng vé không được để trống!");
+                return;
+            }
+
+            chk = TLGV_Them_txtBox.Text;
+            if (chk.Length == 0)
+            {
+                MessageBox.Show("Thêm hạng vé: Tỉ lệ giá vé không được để trống!");
+                return;
+            }
+
+            Decimal TiLe;
+            if (!Decimal.TryParse(chk, out TiLe))
+            {
+                MessageBox.Show("Thêm hạng vé: Tỉ lệ giá vé không đúng định dạng!");
+                return;
+            }
+
+            string insert = "INSERT INTO [dbo].HANGVE VALUES ( @MaHangVe , @TenHangVe , @TiLeGiaVe )";
+            DataProvider.Instance.ExecuteNonQuery(insert, new object[] { MaHV_Them_txtBox.Text.ToString(), TenHV_Them_txtBox.Text.ToString() , TiLe });
+
+            query = "SELECT * FROM [dbo].HANGVE ";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+
+            MaHV_TD_comboBox.BeginUpdate();
+            MaHV_TD_comboBox.Items.Clear();
+            MaHV_Xoa_comboBox.BeginUpdate();
+            MaHV_Xoa_comboBox.Items.Clear();
+            HangVe_listView.BeginUpdate();
+            HangVe_listView.Items.Clear();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                MaHV_TD_comboBox.Items.Add(dr["MaHangVe"].ToString().TrimEnd());
+                MaHV_Xoa_comboBox.Items.Add(dr["MaHangVe"].ToString().TrimEnd());
+                HangVe_listView.Items.Add(new ListViewItem(new string[] { dr["MaHangVe"].ToString(), dr["TenHangVe"].ToString(), dr["TiLeGiaVe"].ToString() }));
+            }
+
+            MaHV_TD_comboBox.EndUpdate();
+            MaHV_Xoa_comboBox.EndUpdate();
+            HangVe_listView.EndUpdate();
+
+            MessageBox.Show("Thêm hạng vé thành công!");
+        }
+
+        private void MaHV_TD_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (MaHV_TD_comboBox.SelectedItem == null)
+            {
+                TenHV_TD_txtBox.Text = string.Empty;
+                return;
+            }
+
+            string query = "SELECT TenHangVe, TiLeGiaVe FROM [dbo].HANGVE WHERE MaHangVe = @MaHangVe ";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { MaHV_TD_comboBox.SelectedItem.ToString() });
+
+            TenHV_TD_txtBox.Text = dt.Rows[0]["TenHangVe"].ToString();
+            TLGV_TD_txtBox.Text = dt.Rows[0]["TiLeGiaVe"].ToString();
+        }
+
+        private void ThayDoiTTHV_Btn_Click(object sender, EventArgs e)
+        {
+            if (MaHV_TD_comboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Thay đổi thông tin hạng vé: Vui lòng chọn mã hạng vé!");
+                return;
+            }
+
+            if (TenHV_TD_txtBox.Text.Length == 0)
+            {
+                MessageBox.Show("Thay đổi thông tin hạng vé: Tên hạng vé không được để trống!");
+                return;
+            }
+
+            string chk = TLGV_TD_txtBox.Text;
+            if (chk.Length == 0)
+            {
+                MessageBox.Show("Thay đổi thông tin hạng vé: Tỉ lệ giá vé không được để trống!");
+                return;
+            }
+
+            Decimal TiLe;
+            if (!Decimal.TryParse(chk, out TiLe))
+            {
+                MessageBox.Show("Thay đổi thông tin hạng vé: Tỉ lệ giá vé không đúng định dạng!");
+                return;
+            }
+
+            string update = "UPDATE [dbo].HANGVE SET TenHangVe = @TenHangVe , TiLeGiaVe = @TiLeGiaVe WHERE MaHangVe = @MaHangVe ";
+            DataProvider.Instance.ExecuteNonQuery(update, new object[] { TenHV_TD_txtBox.Text.ToString(), TiLe , MaHV_TD_comboBox.SelectedItem.ToString() });
+
+            string query = "SELECT * FROM [dbo].HANGVE ";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+
+            HangVe_listView.BeginUpdate();
+            HangVe_listView.Items.Clear();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                HangVe_listView.Items.Add(new ListViewItem(new string[] { dr["MaHangVe"].ToString(), dr["TenHangVe"].ToString(), dr["TiLeGiaVe"].ToString() }));
+            }
+
+            HangVe_listView.EndUpdate();
+
+            MessageBox.Show("Thay đổi thông tin hạng vé thành công!");
+        }
+
+        private void XoaHangVe_Btn_Click(object sender, EventArgs e)
+        {
+            if (MaHV_Xoa_comboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Xóa hạng vé: Vui lòng chọn mã hạng vé!");
+                return;
+            }
+
+            string delete = "DELETE FROM [dbo].HANGVE WHERE MaHangVe = @MaHangVe ";
+            DataProvider.Instance.ExecuteNonQuery(delete, new object[] { MaHV_Xoa_comboBox.SelectedItem.ToString() });
+
+            string query = "SELECT * FROM [dbo].HANGVE ";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+
+            MaHV_TD_comboBox.BeginUpdate();
+            MaHV_TD_comboBox.Items.Clear();
+            MaHV_Xoa_comboBox.BeginUpdate();
+            MaHV_Xoa_comboBox.Items.Clear();
+            HangVe_listView.BeginUpdate();
+            HangVe_listView.Items.Clear();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                MaHV_TD_comboBox.Items.Add(dr["MaHangVe"].ToString().TrimEnd());
+                MaHV_Xoa_comboBox.Items.Add(dr["MaHangVe"].ToString().TrimEnd());
+                HangVe_listView.Items.Add(new ListViewItem(new string[] { dr["MaHangVe"].ToString(), dr["TenHangVe"].ToString(), dr["TiLeGiaVe"].ToString() }));
+            }
+
+            MaHV_TD_comboBox.EndUpdate();
+            MaHV_Xoa_comboBox.EndUpdate();
+            HangVe_listView.EndUpdate();
+
+            MessageBox.Show("Xóa hạng vé thành công!");
         }
     }
 }

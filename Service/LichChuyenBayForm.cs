@@ -58,7 +58,7 @@ namespace Service
             HangVe_grid.Columns.Clear();
             HangVe_grid.ColumnCount = 3;
             HangVe_grid.Columns[0].Name = "Mã hạng vé";
-            HangVe_grid.Columns[1].Name = "Tên Hạng vé";
+            HangVe_grid.Columns[1].Name = "Tên hạng vé";
             HangVe_grid.Columns[2].Name = "Số lượng";
             HangVe_grid.Columns[0].ReadOnly = true;
             HangVe_grid.Columns[1].ReadOnly = true;
@@ -94,6 +94,13 @@ namespace Service
             return input.Substring(0, input.IndexOf('|') - 1);
         }
 
+        public static bool IsUnicode(string input)
+        {
+            var asciiBytesCount = Encoding.ASCII.GetByteCount(input);
+            var unicodBytesCount = Encoding.UTF8.GetByteCount(input);
+            return asciiBytesCount != unicodBytesCount;
+        }
+
         private bool check_all()
         {
             if (MaChuyenBay1_txtBox.Text.Length == 0)
@@ -102,7 +109,7 @@ namespace Service
                 return false;
             } else
             {
-                if (!MaChuyenBay1_txtBox.Text.All(char.IsLetterOrDigit))
+                if (!MaChuyenBay1_txtBox.Text.All(char.IsLetterOrDigit) || IsUnicode(MaChuyenBay1_txtBox.Text.ToString()))
                 {
                     MessageBox.Show("Mã chuyến bay không đúng định dạng!");
                     return false;
@@ -116,6 +123,18 @@ namespace Service
                         return false;
                     }
                 }   
+
+                if (MaChuyenBay1_txtBox.Text.Length < 6)
+                {
+                    MessageBox.Show("Mã chuyến bay quá ngắn (tối thiểu 6 kí tự)!");
+                    return false;
+                }
+
+                if (MaChuyenBay1_txtBox.Text.Length > 10)
+                {
+                    MessageBox.Show("Mã chuyến bay quá dài (tối đa 10 kí tự)!");
+                    return false;
+                }
             }
 
             if (GiaVe1_txtBox.Text.Length == 0)
@@ -232,39 +251,6 @@ namespace Service
             }
 
             return true;
-        }
-
-        private void MaChuyenBay1_txtBox_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void LichChuyenBayForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NgayGioBay1_txtBox_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void ThoiGianBay1_txtBox_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void GiaVe1_txtBox_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void SanBayDi1_listBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void SanBayDen1_listBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void HangVe_grid_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
         }
 
         private void RecordBtn_Click(object sender, EventArgs e)
@@ -530,6 +516,11 @@ namespace Service
         }
 
         private void TrungGian_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void LichChuyenBayForm_Load(object sender, EventArgs e)
         {
 
         }

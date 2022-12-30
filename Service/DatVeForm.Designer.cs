@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatVeForm));
             this.flightListLstBox = new System.Windows.Forms.ListBox();
             this.fromComboBox = new System.Windows.Forms.ComboBox();
             this.toComboBox = new System.Windows.Forms.ComboBox();
@@ -658,6 +659,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.filterPnl);
             this.Controls.Add(this.flightListLstBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DatVeForm";
             this.Text = "Đặt vé";
             this.Load += new System.EventHandler(this.DatVeForm_Load);
