@@ -81,6 +81,7 @@
             // 
             // BirthDay_Dtp
             // 
+            this.BirthDay_Dtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.BirthDay_Dtp.Location = new System.Drawing.Point(199, 122);
             this.BirthDay_Dtp.Name = "BirthDay_Dtp";
             this.BirthDay_Dtp.Size = new System.Drawing.Size(307, 27);
