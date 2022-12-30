@@ -27,7 +27,7 @@ namespace Service
             phone_txtBox.Text = account.Sdt;
             name_txtBox.Text = account.TenNguoiDung;
             ngSinhBox.Text = account.NgaySinh.ToString();
-
+                
             string query = "SELECT * FROM [dbo].THAMSO ";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
 
@@ -38,7 +38,7 @@ namespace Service
                 tg_dat_ve_cham_nhat = Convert.ToInt32(dr["TGDatVeChamNhat"]);
             }
 
-            ngayBayDtp.MinDate = DateTime.Now.AddDays(tg_dat_ve_cham_nhat);
+            //ngayBayDtp.MinDate = DateTime.Now.AddDays(tg_dat_ve_cham_nhat);
             ngayBayDtp.Value = DateTime.Now.AddDays(tg_dat_ve_cham_nhat);
 
             query = "SELECT * FROM [dbo].SANBAY ";

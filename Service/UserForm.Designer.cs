@@ -65,7 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -78,7 +77,7 @@
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1430, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1277, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -107,9 +106,9 @@
             this.buyTicketBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
             this.buyTicketBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buyTicketBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.buyTicketBtn.Location = new System.Drawing.Point(902, 252);
+            this.buyTicketBtn.Location = new System.Drawing.Point(752, 237);
             this.buyTicketBtn.Name = "buyTicketBtn";
-            this.buyTicketBtn.Size = new System.Drawing.Size(168, 280);
+            this.buyTicketBtn.Size = new System.Drawing.Size(168, 295);
             this.buyTicketBtn.TabIndex = 7;
             this.buyTicketBtn.Text = "    Đặt Vé";
             this.buyTicketBtn.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -130,7 +129,7 @@
             this.userInfo_pnl.Controls.Add(this.textBox1);
             this.userInfo_pnl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.userInfo_pnl.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.userInfo_pnl.Location = new System.Drawing.Point(902, 37);
+            this.userInfo_pnl.Location = new System.Drawing.Point(752, 37);
             this.userInfo_pnl.Name = "userInfo_pnl";
             this.userInfo_pnl.Size = new System.Drawing.Size(516, 194);
             this.userInfo_pnl.TabIndex = 9;
@@ -273,7 +272,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.flightDgv.DefaultCellStyle = dataGridViewCellStyle3;
             this.flightDgv.GridColor = System.Drawing.Color.DimGray;
-            this.flightDgv.Location = new System.Drawing.Point(3, 32);
+            this.flightDgv.Location = new System.Drawing.Point(21, 70);
             this.flightDgv.Name = "flightDgv";
             this.flightDgv.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -290,7 +289,7 @@
             this.flightDgv.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.flightDgv.RowTemplate.Height = 29;
             this.flightDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.flightDgv.Size = new System.Drawing.Size(850, 462);
+            this.flightDgv.Size = new System.Drawing.Size(674, 462);
             this.flightDgv.TabIndex = 11;
             // 
             // textBox2
@@ -328,9 +327,9 @@
             this.LookUpBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
             this.LookUpBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LookUpBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LookUpBtn.Location = new System.Drawing.Point(1076, 252);
+            this.LookUpBtn.Location = new System.Drawing.Point(926, 237);
             this.LookUpBtn.Name = "LookUpBtn";
-            this.LookUpBtn.Size = new System.Drawing.Size(168, 280);
+            this.LookUpBtn.Size = new System.Drawing.Size(168, 295);
             this.LookUpBtn.TabIndex = 12;
             this.LookUpBtn.Text = "    Tra cứu";
             this.LookUpBtn.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -342,9 +341,9 @@
             this.settingBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
             this.settingBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.settingBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.settingBtn.Location = new System.Drawing.Point(1250, 252);
+            this.settingBtn.Location = new System.Drawing.Point(1100, 237);
             this.settingBtn.Name = "settingBtn";
-            this.settingBtn.Size = new System.Drawing.Size(168, 280);
+            this.settingBtn.Size = new System.Drawing.Size(168, 295);
             this.settingBtn.TabIndex = 13;
             this.settingBtn.Text = "    Cài đặt";
             this.settingBtn.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -357,7 +356,7 @@
             this.pictureBox2.BackgroundImage = global::Service.Properties.Resources.booking;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Enabled = false;
-            this.pictureBox2.Location = new System.Drawing.Point(936, 334);
+            this.pictureBox2.Location = new System.Drawing.Point(786, 334);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(103, 92);
             this.pictureBox2.TabIndex = 14;
@@ -366,10 +365,10 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.pictureBox3.BackgroundImage = global::Service.Properties.Resources.look_up;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Enabled = false;
-            this.pictureBox3.Location = new System.Drawing.Point(1110, 334);
+            this.pictureBox3.ErrorImage = global::Service.Properties.Resources.look_up1;
+            this.pictureBox3.Location = new System.Drawing.Point(960, 334);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(103, 92);
             this.pictureBox3.TabIndex = 15;
@@ -382,7 +381,7 @@
             this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox4.Enabled = false;
-            this.pictureBox4.Location = new System.Drawing.Point(1288, 334);
+            this.pictureBox4.Location = new System.Drawing.Point(1138, 334);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(103, 92);
             this.pictureBox4.TabIndex = 16;
@@ -391,10 +390,9 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.flightDgv);
             this.panel1.Location = new System.Drawing.Point(13, 37);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(858, 495);
+            this.panel1.Size = new System.Drawing.Size(686, 495);
             this.panel1.TabIndex = 17;
             // 
             // textBox5
@@ -403,7 +401,7 @@
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.textBox5.Location = new System.Drawing.Point(430, 21);
+            this.textBox5.Location = new System.Drawing.Point(328, 21);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(302, 27);
@@ -418,7 +416,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1430, 674);
+            this.ClientSize = new System.Drawing.Size(1277, 537);
+            this.Controls.Add(this.flightDgv);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
@@ -444,7 +443,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

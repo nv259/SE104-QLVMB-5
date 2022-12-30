@@ -33,8 +33,8 @@ namespace Service
                     return;
                 }
 
-                query = "INSERT INTO [dbo].NGUOIDUNG VALUES ( @MaDangNhap , @MatKhau , @MaNhom , @TenNguoiDung , @DinhDanh , @SoDienThoai , @Email ,  @NgaySinh )";
-                int i = DataProvider.Instance.ExecuteNonQuery(query, new object[] { MaDangNhap, "1A8462AD95FC28007C67106DC6667AC2637FC1E9CAE30025EF5B46C5F6E9F9312FD48661626D85610A35844E5FC658DD1F5298630138D9F67EFE3074921C41B0", MaNhom, "default", "default", "0000000000", "default@gmail.com", "01/01/2001" });
+                query = "INSERT INTO [dbo].NGUOIDUNG VALUES ( @MaDangNhap , @MatKhau , @MaNhom , @TenNguoiDung , NULL , @SoDienThoai , NULL ,  @NgaySinh )";
+                int i = DataProvider.Instance.ExecuteNonQuery(query, new object[] { MaDangNhap, "1A8462AD95FC28007C67106DC6667AC2637FC1E9CAE30025EF5B46C5F6E9F9312FD48661626D85610A35844E5FC658DD1F5298630138D9F67EFE3074921C41B0", MaNhom, "default", "0000000000", "01/01/2001" });
 
                 MessageBox.Show("Đã thêm user mới!");
             }

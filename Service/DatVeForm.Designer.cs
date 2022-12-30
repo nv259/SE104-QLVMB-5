@@ -118,11 +118,11 @@
             // ngayBayDtp
             // 
             this.ngayBayDtp.Location = new System.Drawing.Point(159, 101);
-            this.ngayBayDtp.MinDate = new System.DateTime(2022, 12, 30, 0, 0, 0, 0);
+            //this.ngayBayDtp.MinDate = new System.DateTime(2022, 12, 30, 0, 0, 0, 0);
             this.ngayBayDtp.Name = "ngayBayDtp";
             this.ngayBayDtp.Size = new System.Drawing.Size(400, 27);
             this.ngayBayDtp.TabIndex = 3;
-            this.ngayBayDtp.Value = new System.DateTime(2022, 12, 30, 0, 0, 0, 0);
+            this.ngayBayDtp.Value = System.DateTime.Now;
             this.ngayBayDtp.ValueChanged += new System.EventHandler(this.ngayBayDtp_ValueChanged);
             // 
             // airportBindingSource
