@@ -51,6 +51,7 @@
             this.SanBayDi_comboBox = new System.Windows.Forms.ComboBox();
             this.FullInfo = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.NgayBay_chkBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.FullInfo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,9 +131,9 @@
             // 
             // NgayBay_datetime
             // 
-            this.NgayBay_datetime.Location = new System.Drawing.Point(879, 246);
+            this.NgayBay_datetime.Location = new System.Drawing.Point(901, 246);
             this.NgayBay_datetime.Name = "NgayBay_datetime";
-            this.NgayBay_datetime.Size = new System.Drawing.Size(263, 27);
+            this.NgayBay_datetime.Size = new System.Drawing.Size(228, 27);
             this.NgayBay_datetime.TabIndex = 9;
             this.NgayBay_datetime.ValueChanged += new System.EventHandler(this.NgayBay_datetime_ValueChanged);
             // 
@@ -285,12 +286,23 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "TRA CỨU VÉ MÁY BAY";
             // 
+            // NgayBay_chkBox
+            // 
+            this.NgayBay_chkBox.AutoSize = true;
+            this.NgayBay_chkBox.Location = new System.Drawing.Point(877, 252);
+            this.NgayBay_chkBox.Name = "NgayBay_chkBox";
+            this.NgayBay_chkBox.Size = new System.Drawing.Size(18, 17);
+            this.NgayBay_chkBox.TabIndex = 46;
+            this.NgayBay_chkBox.UseVisualStyleBackColor = true;
+            this.NgayBay_chkBox.CheckedChanged += new System.EventHandler(this.NgayBay_chkBox_CheckedChanged);
+            // 
             // TraCuuVeMayBayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1157, 962);
+            this.Controls.Add(this.NgayBay_chkBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FullInfo);
             this.Controls.Add(this.SanBayDi_comboBox);
@@ -346,5 +358,6 @@
         private ComboBox SanBayDi_comboBox;
         private DataGridView FullInfo;
         private Label label1;
+        private CheckBox NgayBay_chkBox;
     }
 }

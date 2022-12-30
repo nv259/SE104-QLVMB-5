@@ -38,6 +38,7 @@
             this.SanBayDen_comboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.FullInfo = new System.Windows.Forms.DataGridView();
+            this.NgayBay_chkBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.FullInfo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,6 +49,7 @@
             this.ChuyenBay_comboBox.Name = "ChuyenBay_comboBox";
             this.ChuyenBay_comboBox.Size = new System.Drawing.Size(250, 28);
             this.ChuyenBay_comboBox.TabIndex = 44;
+            this.ChuyenBay_comboBox.SelectedIndexChanged += new System.EventHandler(this.ChuyenBay_comboBox_SelectedIndexChanged);
             // 
             // SanBayDi_comboBox
             // 
@@ -56,6 +58,7 @@
             this.SanBayDi_comboBox.Name = "SanBayDi_comboBox";
             this.SanBayDi_comboBox.Size = new System.Drawing.Size(250, 28);
             this.SanBayDi_comboBox.TabIndex = 43;
+            this.SanBayDi_comboBox.SelectedIndexChanged += new System.EventHandler(this.SanBayDi_comboBox_SelectedIndexChanged);
             // 
             // textBox16
             // 
@@ -103,10 +106,11 @@
             // 
             // NgayBay_datetime
             // 
-            this.NgayBay_datetime.Location = new System.Drawing.Point(896, 103);
+            this.NgayBay_datetime.Location = new System.Drawing.Point(920, 103);
             this.NgayBay_datetime.Name = "NgayBay_datetime";
-            this.NgayBay_datetime.Size = new System.Drawing.Size(250, 27);
+            this.NgayBay_datetime.Size = new System.Drawing.Size(226, 27);
             this.NgayBay_datetime.TabIndex = 38;
+            this.NgayBay_datetime.ValueChanged += new System.EventHandler(this.NgayBay_datetime_ValueChanged);
             // 
             // SanBayDen_comboBox
             // 
@@ -115,6 +119,7 @@
             this.SanBayDen_comboBox.Name = "SanBayDen_comboBox";
             this.SanBayDen_comboBox.Size = new System.Drawing.Size(250, 28);
             this.SanBayDen_comboBox.TabIndex = 37;
+            this.SanBayDen_comboBox.SelectedIndexChanged += new System.EventHandler(this.SanBayDen_comboBox_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -148,12 +153,23 @@
             this.FullInfo.TabIndex = 35;
             this.FullInfo.TabStop = false;
             // 
+            // NgayBay_chkBox
+            // 
+            this.NgayBay_chkBox.AutoSize = true;
+            this.NgayBay_chkBox.Location = new System.Drawing.Point(896, 108);
+            this.NgayBay_chkBox.Name = "NgayBay_chkBox";
+            this.NgayBay_chkBox.Size = new System.Drawing.Size(18, 17);
+            this.NgayBay_chkBox.TabIndex = 45;
+            this.NgayBay_chkBox.UseVisualStyleBackColor = true;
+            this.NgayBay_chkBox.CheckedChanged += new System.EventHandler(this.NgayBay_chkBox_CheckedChanged);
+            // 
             // TraCuuChuyenBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1183, 711);
+            this.Controls.Add(this.NgayBay_chkBox);
             this.Controls.Add(this.ChuyenBay_comboBox);
             this.Controls.Add(this.SanBayDi_comboBox);
             this.Controls.Add(this.textBox16);
@@ -184,5 +200,6 @@
         private ComboBox SanBayDen_comboBox;
         private Label label1;
         private DataGridView FullInfo;
+        private CheckBox NgayBay_chkBox;
     }
 }

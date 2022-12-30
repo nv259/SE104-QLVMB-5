@@ -117,8 +117,8 @@ namespace Service
 
                 try
                 {
-                    query = "INSERT INTO [dbo].CT_DATVE VALUES( @maCB , @MaNgDat , @ID , @MaHangVe , @NgLap , @TinhTrang )";
-                    dt = DataProvider.Instance.ExecuteQuery(query, new object[] { maCB, acc.MaDangNhap, id, MaHangVe, this.ngDatVeBox.Text, "Done", });
+                    query = "INSERT INTO [dbo].CT_DATVE VALUES( @maCB , @MaNgDat , @MaHangVe , @NgLap , @TinhTrang )";
+                    dt = DataProvider.Instance.ExecuteQuery(query, new object[] { maCB, acc.MaDangNhap, MaHangVe, this.ngDatVeBox.Text, "Done", });
                     MessageBox.Show("Vé đã được đặt thành công!");
                 }
                 catch
