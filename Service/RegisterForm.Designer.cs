@@ -48,7 +48,7 @@
             this.email_txtBox = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Register_label = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +73,7 @@
             this.panel1.Controls.Add(this.email_txtBox);
             this.panel1.Controls.Add(this.textBox5);
             this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.Register_label);
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(571, 585);
@@ -296,21 +296,21 @@
             this.textBox2.Text = "Họ và tên";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox1
+            // Register_label
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.textBox1.Location = new System.Drawing.Point(173, 11);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(251, 52);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TabStop = false;
-            this.textBox1.Text = "ĐĂNG KÝ";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Register_label.BackColor = System.Drawing.Color.White;
+            this.Register_label.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Register_label.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Register_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.Register_label.Location = new System.Drawing.Point(173, 11);
+            this.Register_label.Multiline = true;
+            this.Register_label.Name = "Register_label";
+            this.Register_label.ReadOnly = true;
+            this.Register_label.Size = new System.Drawing.Size(251, 52);
+            this.Register_label.TabIndex = 0;
+            this.Register_label.TabStop = false;
+            this.Register_label.Text = "ĐĂNG KÝ";
+            this.Register_label.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // RegisterForm
             // 
@@ -346,7 +346,7 @@
         private TextBox textBox5;
         private TextBox fullName_txtBox;
         private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox Register_label;
         private TextBox tmp;
         private Button regBtn;
         private TextBox textBox4;
