@@ -96,7 +96,6 @@
             this.flightListLstBox.Size = new System.Drawing.Size(473, 384);
             this.flightListLstBox.TabIndex = 0;
             this.flightListLstBox.Visible = false;
-            this.flightListLstBox.SelectedIndexChanged += new System.EventHandler(this.flightListLstBox_SelectedIndexChanged);
             // 
             // fromComboBox
             // 
@@ -142,7 +141,7 @@
             this.filterPnl.Controls.Add(this.ngayBayDtp);
             this.filterPnl.Location = new System.Drawing.Point(10, 31);
             this.filterPnl.Name = "filterPnl";
-            this.filterPnl.Size = new System.Drawing.Size(564, 295);
+            this.filterPnl.Size = new System.Drawing.Size(564, 347);
             this.filterPnl.TabIndex = 8;
             // 
             // flightDtgv
@@ -174,7 +173,7 @@
             this.flightDtgv.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.flightDtgv.RowTemplate.Height = 29;
             this.flightDtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.flightDtgv.Size = new System.Drawing.Size(556, 158);
+            this.flightDtgv.Size = new System.Drawing.Size(556, 210);
             this.flightDtgv.TabIndex = 14;
             this.flightDtgv.TabStop = false;
             this.flightDtgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.flightDtgv_CellClick);
@@ -275,17 +274,17 @@
             this.flightInfoPnl.Controls.Add(this.textBox8);
             this.flightInfoPnl.Location = new System.Drawing.Point(580, 31);
             this.flightInfoPnl.Name = "flightInfoPnl";
-            this.flightInfoPnl.Size = new System.Drawing.Size(374, 508);
+            this.flightInfoPnl.Size = new System.Drawing.Size(374, 562);
             this.flightInfoPnl.TabIndex = 11;
             // 
             // timeGoneTxtBox
             // 
             this.timeGoneTxtBox.BackColor = System.Drawing.Color.White;
             this.timeGoneTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.timeGoneTxtBox.Location = new System.Drawing.Point(206, 99);
+            this.timeGoneTxtBox.Location = new System.Drawing.Point(195, 99);
             this.timeGoneTxtBox.Name = "timeGoneTxtBox";
             this.timeGoneTxtBox.ReadOnly = true;
-            this.timeGoneTxtBox.Size = new System.Drawing.Size(141, 27);
+            this.timeGoneTxtBox.Size = new System.Drawing.Size(173, 27);
             this.timeGoneTxtBox.TabIndex = 20;
             this.timeGoneTxtBox.TabStop = false;
             // 
@@ -293,10 +292,10 @@
             // 
             this.timeGoTxtBox.BackColor = System.Drawing.Color.White;
             this.timeGoTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.timeGoTxtBox.Location = new System.Drawing.Point(206, 44);
+            this.timeGoTxtBox.Location = new System.Drawing.Point(195, 44);
             this.timeGoTxtBox.Name = "timeGoTxtBox";
             this.timeGoTxtBox.ReadOnly = true;
-            this.timeGoTxtBox.Size = new System.Drawing.Size(141, 27);
+            this.timeGoTxtBox.Size = new System.Drawing.Size(173, 27);
             this.timeGoTxtBox.TabIndex = 19;
             this.timeGoTxtBox.TabStop = false;
             // 
@@ -305,7 +304,7 @@
             this.textBox10.BackColor = System.Drawing.Color.White;
             this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.textBox10.Location = new System.Drawing.Point(3, 296);
+            this.textBox10.Location = new System.Drawing.Point(4, 372);
             this.textBox10.Name = "textBox10";
             this.textBox10.ReadOnly = true;
             this.textBox10.Size = new System.Drawing.Size(365, 27);
@@ -335,7 +334,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ticketDtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.ticketDtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ticketDtgv.Location = new System.Drawing.Point(3, 296);
+            this.ticketDtgv.Location = new System.Drawing.Point(4, 398);
             this.ticketDtgv.Name = "ticketDtgv";
             this.ticketDtgv.ReadOnly = true;
             this.ticketDtgv.RowHeadersVisible = false;
@@ -346,13 +345,14 @@
             this.ticketDtgv.Size = new System.Drawing.Size(365, 158);
             this.ticketDtgv.TabIndex = 17;
             this.ticketDtgv.TabStop = false;
+            this.ticketDtgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ticketDtgv_CellContentClick);
             // 
             // textBox9
             // 
             this.textBox9.BackColor = System.Drawing.Color.White;
             this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.textBox9.Location = new System.Drawing.Point(3, 132);
+            this.textBox9.Location = new System.Drawing.Point(4, 162);
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
             this.textBox9.Size = new System.Drawing.Size(365, 27);
@@ -368,7 +368,7 @@
             this.maChuyenBay_txtBox.Location = new System.Drawing.Point(12, 44);
             this.maChuyenBay_txtBox.Name = "maChuyenBay_txtBox";
             this.maChuyenBay_txtBox.ReadOnly = true;
-            this.maChuyenBay_txtBox.Size = new System.Drawing.Size(141, 27);
+            this.maChuyenBay_txtBox.Size = new System.Drawing.Size(150, 27);
             this.maChuyenBay_txtBox.TabIndex = 15;
             this.maChuyenBay_txtBox.TabStop = false;
             // 
@@ -393,7 +393,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.intermediaryDtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.intermediaryDtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.intermediaryDtgv.Location = new System.Drawing.Point(3, 132);
+            this.intermediaryDtgv.Location = new System.Drawing.Point(4, 188);
             this.intermediaryDtgv.Name = "intermediaryDtgv";
             this.intermediaryDtgv.ReadOnly = true;
             this.intermediaryDtgv.RowHeadersVisible = false;
@@ -412,7 +412,7 @@
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.textBox6.Location = new System.Drawing.Point(206, 18);
+            this.textBox6.Location = new System.Drawing.Point(195, 18);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(141, 20);
@@ -426,7 +426,7 @@
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.textBox7.Location = new System.Drawing.Point(206, 77);
+            this.textBox7.Location = new System.Drawing.Point(195, 77);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(121, 20);
@@ -454,7 +454,7 @@
             this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.textBox11.Location = new System.Drawing.Point(33, 332);
+            this.textBox11.Location = new System.Drawing.Point(24, 389);
             this.textBox11.Name = "textBox11";
             this.textBox11.ReadOnly = true;
             this.textBox11.Size = new System.Drawing.Size(209, 27);
@@ -474,7 +474,7 @@
             this.customInfoPnl.Controls.Add(this.name_txtBox);
             this.customInfoPnl.Controls.Add(this.textBox16);
             this.customInfoPnl.Controls.Add(this.textBox17);
-            this.customInfoPnl.Location = new System.Drawing.Point(10, 350);
+            this.customInfoPnl.Location = new System.Drawing.Point(10, 404);
             this.customInfoPnl.Name = "customInfoPnl";
             this.customInfoPnl.Size = new System.Drawing.Size(394, 189);
             this.customInfoPnl.TabIndex = 13;
@@ -585,7 +585,7 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.resetBtn);
             this.panel1.Controls.Add(this.bookingBtn);
-            this.panel1.Location = new System.Drawing.Point(410, 350);
+            this.panel1.Location = new System.Drawing.Point(406, 404);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(164, 189);
             this.panel1.TabIndex = 15;
@@ -635,7 +635,7 @@
             this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.textBox13.Location = new System.Drawing.Point(423, 332);
+            this.textBox13.Location = new System.Drawing.Point(419, 389);
             this.textBox13.Name = "textBox13";
             this.textBox13.ReadOnly = true;
             this.textBox13.Size = new System.Drawing.Size(100, 27);
@@ -649,7 +649,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(962, 548);
+            this.ClientSize = new System.Drawing.Size(962, 605);
             this.Controls.Add(this.textBox13);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBox11);

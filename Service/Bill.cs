@@ -41,19 +41,13 @@ namespace Service
                 ticket_cmbBox.Items.Add(dr["TenHangVe"].ToString());
             }
 
-            query = "SELECT MaChuyenBay FROM [dbo].CHUYENBAY";
-            dt = DataProvider.Instance.ExecuteQuery(query);
-            foreach (DataRow dr in dt.Rows)
-            {
-                cb_cmbBox.Items.Add(dr["MaChuyenBay"].ToString());
-            }
-            this.cb_cmbBox.Text = maCB;
+            this.cb_txtBox.Text = maCB;
         }
 
         private void cb_cmbBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string query = "SELECT GiaCoBan FROM [dbo].CHUYENBAY WHERE MaChuyenBay = @MaChuyenBay";
-            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { this.cb_cmbBox.Text.Trim() });
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { this.cb_txtBox.Text.Trim() });
             decimal GiaCoBan = 1;
             foreach (DataRow dr in dt.Rows)
             {
@@ -75,7 +69,7 @@ namespace Service
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string maCB = this.cb_cmbBox.Text.Trim();
+            string maCB = this.cb_txtBox.Text.Trim();
             string ticket_type = this.ticket_cmbBox.Text.Trim();
             string fName = this.name_txtBox.Text;
             string id = this.ID_txtBox.Text;
@@ -126,16 +120,6 @@ namespace Service
                     MessageBox.Show("Error: Mỗi hành khách chỉ được đặt một vé. Hãy hủy vé cũ trước khi đặt vé mới.");
                 }
              }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void ngDatVeBox_ValueChanged(object sender, EventArgs e)
