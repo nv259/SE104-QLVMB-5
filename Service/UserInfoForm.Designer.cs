@@ -284,7 +284,6 @@
             this.confirmnewPasswordTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.confirmnewPasswordTxtBox.Location = new System.Drawing.Point(3, 157);
             this.confirmnewPasswordTxtBox.Name = "confirmnewPasswordTxtBox";
-            this.confirmnewPasswordTxtBox.ReadOnly = true;
             this.confirmnewPasswordTxtBox.Size = new System.Drawing.Size(268, 27);
             this.confirmnewPasswordTxtBox.TabIndex = 7;
             this.confirmnewPasswordTxtBox.UseSystemPasswordChar = true;
@@ -314,7 +313,6 @@
             this.newPasswordTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.newPasswordTxtBox.Location = new System.Drawing.Point(3, 102);
             this.newPasswordTxtBox.Name = "newPasswordTxtBox";
-            this.newPasswordTxtBox.ReadOnly = true;
             this.newPasswordTxtBox.Size = new System.Drawing.Size(268, 27);
             this.newPasswordTxtBox.TabIndex = 6;
             this.newPasswordTxtBox.UseSystemPasswordChar = true;
@@ -324,7 +322,6 @@
             this.oldPasswordTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.oldPasswordTxtBox.Location = new System.Drawing.Point(3, 50);
             this.oldPasswordTxtBox.Name = "oldPasswordTxtBox";
-            this.oldPasswordTxtBox.ReadOnly = true;
             this.oldPasswordTxtBox.Size = new System.Drawing.Size(268, 27);
             this.oldPasswordTxtBox.TabIndex = 5;
             this.oldPasswordTxtBox.UseSystemPasswordChar = true;

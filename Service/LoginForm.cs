@@ -68,7 +68,7 @@ namespace Service
                     adminForm.ShowDialog();
                 } else if (account.MaNhom == "1")
                 {
-                    StaffForm staffForm = new StaffForm();
+                    StaffForm staffForm = new StaffForm(account);
                     staffForm.ShowDialog();
                 } else
                 {

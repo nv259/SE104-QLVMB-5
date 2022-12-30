@@ -30,13 +30,10 @@ namespace Service
             this.phoneTxtBox.Text = account.Sdt;
             this.NgaySinh.Value = account.NgaySinh;
 
-            this.oldPasswordTxtBox.ReadOnly = true;
             this.oldPasswordTxtBox.Enabled = false;
             this.oldPasswordTxtBox.BackColor = Color.LightGray;
-            this.newPasswordTxtBox.ReadOnly = true;
             this.newPasswordTxtBox.Enabled = false;
             this.newPasswordTxtBox.BackColor = Color.LightGray;
-            this.confirmnewPasswordTxtBox.ReadOnly = true;
             this.confirmnewPasswordTxtBox.Enabled = false;
             this.confirmnewPasswordTxtBox.BackColor = Color.LightGray;
         }
@@ -185,24 +182,18 @@ namespace Service
         {
             if (changePasswordCkBox.Checked)
             {
-                this.oldPasswordTxtBox.ReadOnly = false;
                 this.oldPasswordTxtBox.Enabled = true;
                 this.oldPasswordTxtBox.BackColor = SystemColors.Control;
-                this.newPasswordTxtBox.ReadOnly = false;
                 this.newPasswordTxtBox.Enabled = true;
                 this.newPasswordTxtBox.BackColor = SystemColors.Control;
-                this.confirmnewPasswordTxtBox.ReadOnly = false;
                 this.confirmnewPasswordTxtBox.Enabled = true;
                 this.confirmnewPasswordTxtBox.BackColor = SystemColors.Control;
             } else
             {
-                this.oldPasswordTxtBox.ReadOnly = true;
                 this.oldPasswordTxtBox.Enabled = false;
                 this.oldPasswordTxtBox.BackColor = Color.LightGray;
-                this.newPasswordTxtBox.ReadOnly = true;
                 this.newPasswordTxtBox.Enabled = false;
                 this.newPasswordTxtBox.BackColor = Color.LightGray;
-                this.confirmnewPasswordTxtBox.ReadOnly = true;
                 this.confirmnewPasswordTxtBox.Enabled = false;
                 this.confirmnewPasswordTxtBox.BackColor = Color.LightGray;
             }

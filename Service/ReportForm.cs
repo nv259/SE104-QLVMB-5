@@ -34,7 +34,7 @@ namespace Service
             this.reportYearDgv.TabStop = false;
             this.totalIncome.TabStop = false;
 
-            this.yearTxtBox.Width = 200;
+            this.yearTxtBox.Width = 265;
         }
 
         private void reportMonthBtn_Click(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace Service
             this.monthComboBox.Show();
             this.reportYearDgv.Hide();
             this.reportMonthDgv.Show();
-            this.yearTxtBox.Width = 93;
+            this.yearTxtBox.Width = 171;
         }
         private void reportYearBtn_Click(object sender, EventArgs e)
         {
@@ -51,7 +51,7 @@ namespace Service
             this.monthComboBox.Hide();
             this.reportYearDgv.Show();
             this.reportMonthDgv.Hide();
-            this.yearTxtBox.Width = 200;
+            this.yearTxtBox.Width = 265;
         }
 
         private void Load_dtgv_reportYearDgv()

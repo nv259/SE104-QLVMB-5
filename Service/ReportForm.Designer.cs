@@ -48,7 +48,7 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(865, 606);
+            this.textBox1.Location = new System.Drawing.Point(566, 365);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(113, 20);
             this.textBox1.TabIndex = 17;
@@ -57,9 +57,9 @@
             // totalIncome
             // 
             this.totalIncome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.totalIncome.Location = new System.Drawing.Point(1004, 604);
+            this.totalIncome.Location = new System.Drawing.Point(690, 363);
             this.totalIncome.Name = "totalIncome";
-            this.totalIncome.Size = new System.Drawing.Size(267, 27);
+            this.totalIncome.Size = new System.Drawing.Size(194, 27);
             this.totalIncome.TabIndex = 16;
             // 
             // exportToExcelBtn
@@ -68,11 +68,11 @@
             this.exportToExcelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exportToExcelBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.exportToExcelBtn.ForeColor = System.Drawing.Color.White;
-            this.exportToExcelBtn.Location = new System.Drawing.Point(791, 353);
+            this.exportToExcelBtn.Location = new System.Drawing.Point(713, 406);
             this.exportToExcelBtn.Name = "exportToExcelBtn";
-            this.exportToExcelBtn.Size = new System.Drawing.Size(93, 31);
+            this.exportToExcelBtn.Size = new System.Drawing.Size(171, 31);
             this.exportToExcelBtn.TabIndex = 14;
-            this.exportToExcelBtn.Text = "To Excel";
+            this.exportToExcelBtn.Text = "Chuyển sang file Excel";
             this.exportToExcelBtn.UseVisualStyleBackColor = false;
             this.exportToExcelBtn.Click += new System.EventHandler(this.exportToExcelBtn_Click);
             // 
@@ -114,9 +114,9 @@
             // 
             this.reportMonthBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
             this.reportMonthBtn.ForeColor = System.Drawing.Color.White;
-            this.reportMonthBtn.Location = new System.Drawing.Point(1, 114);
+            this.reportMonthBtn.Location = new System.Drawing.Point(12, 114);
             this.reportMonthBtn.Name = "reportMonthBtn";
-            this.reportMonthBtn.Size = new System.Drawing.Size(135, 40);
+            this.reportMonthBtn.Size = new System.Drawing.Size(124, 40);
             this.reportMonthBtn.TabIndex = 9;
             this.reportMonthBtn.Text = "Báo cáo tháng";
             this.reportMonthBtn.UseVisualStyleBackColor = false;
@@ -127,9 +127,9 @@
             this.makeReportBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
             this.makeReportBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.makeReportBtn.ForeColor = System.Drawing.Color.White;
-            this.makeReportBtn.Location = new System.Drawing.Point(1, 194);
+            this.makeReportBtn.Location = new System.Drawing.Point(12, 194);
             this.makeReportBtn.Name = "makeReportBtn";
-            this.makeReportBtn.Size = new System.Drawing.Size(276, 39);
+            this.makeReportBtn.Size = new System.Drawing.Size(265, 39);
             this.makeReportBtn.TabIndex = 18;
             this.makeReportBtn.Text = "Lập báo cáo";
             this.makeReportBtn.UseVisualStyleBackColor = false;
@@ -138,10 +138,10 @@
             // yearTxtBox
             // 
             this.yearTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.yearTxtBox.Location = new System.Drawing.Point(90, 161);
+            this.yearTxtBox.Location = new System.Drawing.Point(12, 161);
             this.yearTxtBox.Name = "yearTxtBox";
             this.yearTxtBox.PlaceholderText = "  Năm";
-            this.yearTxtBox.Size = new System.Drawing.Size(93, 27);
+            this.yearTxtBox.Size = new System.Drawing.Size(171, 27);
             this.yearTxtBox.TabIndex = 19;
             // 
             // reportMonthDgv
@@ -161,7 +161,7 @@
             this.reportMonthDgv.ReadOnly = true;
             this.reportMonthDgv.RowHeadersWidth = 51;
             this.reportMonthDgv.RowTemplate.Height = 29;
-            this.reportMonthDgv.Size = new System.Drawing.Size(601, 270);
+            this.reportMonthDgv.Size = new System.Drawing.Size(601, 236);
             this.reportMonthDgv.TabIndex = 20;
             this.reportMonthDgv.TabStop = false;
             // 
@@ -182,7 +182,7 @@
             this.reportYearDgv.ReadOnly = true;
             this.reportYearDgv.RowHeadersWidth = 51;
             this.reportYearDgv.RowTemplate.Height = 29;
-            this.reportYearDgv.Size = new System.Drawing.Size(601, 270);
+            this.reportYearDgv.Size = new System.Drawing.Size(601, 236);
             this.reportYearDgv.TabIndex = 21;
             this.reportYearDgv.TabStop = false;
             // 
@@ -191,7 +191,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.label1.Location = new System.Drawing.Point(314, 9);
+            this.label1.Location = new System.Drawing.Point(308, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(265, 50);
             this.label1.TabIndex = 22;
@@ -203,7 +203,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(891, 396);
+            this.ClientSize = new System.Drawing.Size(899, 452);
             this.Controls.Add(this.exportToExcelBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.reportYearDgv);
