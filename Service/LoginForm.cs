@@ -15,12 +15,12 @@ namespace Service
             {
                 Username_txtBox.Text = Properties.Settings.Default.username;
                 Password_txtBox.Text = Properties.Settings.Default.password;
-                rmb_txtBox.Checked = true;
+                rmb_chkBox.Checked = true;
             } else
             {
                 Username_txtBox.Text = "";
                 Password_txtBox.Text = "";
-                rmb_txtBox.Checked = false;
+                rmb_chkBox.Checked = false;
             }
         }
 
@@ -44,7 +44,7 @@ namespace Service
 
             if (DataProvider.Instance.ExecuteQuery(query, new object[] { MaDangNhap, MatKhau }).Rows.Count > 0)
             {
-                if (this.rmb_txtBox.Checked)
+                if (this.rmb_chkBox.Checked)
                 {
                     Properties.Settings.Default.username = Username_txtBox.Text;
                     Properties.Settings.Default.password = Password_txtBox.Text;

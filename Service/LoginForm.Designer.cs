@@ -33,7 +33,7 @@
             this.Password_txtBox = new System.Windows.Forms.TextBox();
             this.Login_Btn = new System.Windows.Forms.Button();
             this.Register_Btn = new System.Windows.Forms.Button();
-            this.rmb_txtBox = new System.Windows.Forms.CheckBox();
+            this.rmb_chkBox = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ForgetPassword_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -87,20 +87,20 @@
             this.Register_Btn.UseVisualStyleBackColor = true;
             this.Register_Btn.Click += new System.EventHandler(this.Register_Btn_Click);
             // 
-            // rmb_txtBox
+            // rmb_chkBox
             // 
-            this.rmb_txtBox.AutoSize = true;
-            this.rmb_txtBox.BackColor = System.Drawing.Color.Transparent;
-            this.rmb_txtBox.BackgroundImage = global::Service.Properties.Resources.login_background_1;
-            this.rmb_txtBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rmb_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rmb_txtBox.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.rmb_txtBox.Location = new System.Drawing.Point(105, 142);
-            this.rmb_txtBox.Name = "rmb_txtBox";
-            this.rmb_txtBox.Size = new System.Drawing.Size(82, 24);
-            this.rmb_txtBox.TabIndex = 4;
-            this.rmb_txtBox.Text = "Ghi nhớ";
-            this.rmb_txtBox.UseVisualStyleBackColor = false;
+            this.rmb_chkBox.AutoSize = true;
+            this.rmb_chkBox.BackColor = System.Drawing.Color.Transparent;
+            this.rmb_chkBox.BackgroundImage = global::Service.Properties.Resources.login_background_1;
+            this.rmb_chkBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rmb_chkBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rmb_chkBox.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.rmb_chkBox.Location = new System.Drawing.Point(105, 142);
+            this.rmb_chkBox.Name = "rmb_chkBox";
+            this.rmb_chkBox.Size = new System.Drawing.Size(82, 24);
+            this.rmb_chkBox.TabIndex = 4;
+            this.rmb_chkBox.Text = "Ghi nhớ";
+            this.rmb_chkBox.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -133,7 +133,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(658, 373);
             this.Controls.Add(this.ForgetPassword_label);
-            this.Controls.Add(this.rmb_txtBox);
+            this.Controls.Add(this.rmb_chkBox);
             this.Controls.Add(this.Register_Btn);
             this.Controls.Add(this.Login_Btn);
             this.Controls.Add(this.Password_txtBox);
@@ -156,7 +156,7 @@
         private TextBox Password_txtBox;
         private Button Login_Btn;
         private Button Register_Btn;
-        private CheckBox rmb_txtBox;
+        private CheckBox rmb_chkBox;
         private PictureBox pictureBox1;
         private Label ForgetPassword_label;
     }
