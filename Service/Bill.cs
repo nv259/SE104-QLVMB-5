@@ -18,8 +18,23 @@ namespace Service
         public Bill(Account acc = null, string maCB = null)
         {
             this.acc = acc;
+            string query;
+            DataTable dt;
             InitializeComponent();
-
+            if (acc == null) // is staff
+            {
+                cb_txtBox.Hide();
+                query = "SELECT MaChuyenBay FROM [dbo].CHUYENBAY";
+                dt = DataProvider.Instance.ExecuteQuery(query);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    chuyenBayComboBox.Items.Add(dr["MaChuyenBay"].ToString());
+                }
+            }
+            else // is user
+            {
+                chuyenBayComboBox.Hide();
+            }
             if (acc != null) 
             {
                 this.name_txtBox.Text = this.acc.TenNguoiDung;
@@ -34,8 +49,8 @@ namespace Service
                 this.email_txtBox.Text = string.Empty;
             }
 
-            string query = "SELECT TenHangVe FROM [dbo].HANGVE";
-            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            query = "SELECT TenHangVe FROM [dbo].HANGVE";
+            dt = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow dr in dt.Rows)
             {
                 ticket_cmbBox.Items.Add(dr["TenHangVe"].ToString());
@@ -109,7 +124,7 @@ namespace Service
                     break;
                 }
 
-                if (acc.MaNhom == "1") // is staff
+                if (acc == null) // is staff
                 {
                     try
                     {

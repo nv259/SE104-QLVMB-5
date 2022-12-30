@@ -48,12 +48,14 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox14 = new System.Windows.Forms.TextBox();
+            this.chuyenBayComboBox = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.chuyenBayComboBox);
             this.panel1.Controls.Add(this.cb_txtBox);
             this.panel1.Controls.Add(this.Cost_txtBox);
             this.panel1.Controls.Add(this.textBox12);
@@ -300,6 +302,13 @@
             this.textBox14.Text = "Vé chuyến bay";
             this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // chuyenBayComboBox
+            // 
+            this.chuyenBayComboBox.Location = new System.Drawing.Point(200, 25);
+            this.chuyenBayComboBox.Name = "chuyenBayComboBox";
+            this.chuyenBayComboBox.Size = new System.Drawing.Size(104, 28);
+            this.chuyenBayComboBox.TabIndex = 36;
+            // 
             // Bill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -344,5 +353,6 @@
         private TextBox textBox14;
         private Button button2;
         private TextBox cb_txtBox;
+        private ComboBox chuyenBayComboBox;
     }
 }
