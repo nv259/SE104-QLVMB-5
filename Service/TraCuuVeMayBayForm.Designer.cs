@@ -59,7 +59,8 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(22, 99);
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(39, 15);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(125, 20);
             this.textBox1.TabIndex = 1;
@@ -124,7 +125,7 @@
             this.SanBayDen_comboBox.FormattingEnabled = true;
             this.SanBayDen_comboBox.Location = new System.Drawing.Point(879, 301);
             this.SanBayDen_comboBox.Name = "SanBayDen_comboBox";
-            this.SanBayDen_comboBox.Size = new System.Drawing.Size(250, 28);
+            this.SanBayDen_comboBox.Size = new System.Drawing.Size(263, 28);
             this.SanBayDen_comboBox.TabIndex = 7;
             this.SanBayDen_comboBox.SelectedIndexChanged += new System.EventHandler(this.SanBayDen_comboBox_SelectedIndexChanged);
             // 

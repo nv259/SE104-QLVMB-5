@@ -50,11 +50,6 @@ namespace Service
             this.cb_cmbBox.Text = maCB;
         }
 
-        private void Bill_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void cb_cmbBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string query = "SELECT GiaCoBan FROM [dbo].CHUYENBAY WHERE MaChuyenBay = @MaChuyenBay";
@@ -141,6 +136,11 @@ namespace Service
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ngDatVeBox_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

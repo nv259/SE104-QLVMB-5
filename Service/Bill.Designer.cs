@@ -253,7 +253,8 @@
             this.ngDatVeBox.Name = "ngDatVeBox";
             this.ngDatVeBox.Size = new System.Drawing.Size(170, 27);
             this.ngDatVeBox.TabIndex = 20;
-            this.ngDatVeBox.Value = new System.DateTime(2022, 12, 21, 12, 43, 4, 0);
+            this.ngDatVeBox.Value = System.DateTime.Now;
+            this.ngDatVeBox.ValueChanged += new System.EventHandler(this.ngDatVeBox_ValueChanged);
             // 
             // textBox8
             // 
@@ -341,6 +342,7 @@
             this.Name = "Bill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "BillForm";
+            this.Load += new System.EventHandler(this.cb_cmbBox_SelectedIndexChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

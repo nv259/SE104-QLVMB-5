@@ -49,6 +49,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.resetBtn = new System.Windows.Forms.Button();
             this.txtBox4 = new System.Windows.Forms.TextBox();
+            this.deleteBtn = new System.Windows.Forms.Button();
             this.updateBtn = new System.Windows.Forms.Button();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -56,13 +57,14 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.user_dtgv = new System.Windows.Forms.DataGridView();
             this.MainTab = new System.Windows.Forms.TabControl();
-            this.deleteBtn = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.StatementTab.SuspendLayout();
             this.panel1.SuspendLayout();
             this.showData_panel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.user_dtgv)).BeginInit();
             this.MainTab.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // StatementTab
@@ -126,8 +128,10 @@
             this.userName_txtBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.userName_txtBox.Location = new System.Drawing.Point(0, 6);
             this.userName_txtBox.Name = "userName_txtBox";
+            this.userName_txtBox.ReadOnly = true;
             this.userName_txtBox.Size = new System.Drawing.Size(209, 30);
             this.userName_txtBox.TabIndex = 19;
+            this.userName_txtBox.TextChanged += new System.EventHandler(this.userName_txtBox_TextChanged);
             // 
             // email_txtBox
             // 
@@ -165,19 +169,17 @@
             this.ID_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ID_txtBox.Location = new System.Drawing.Point(2, 64);
             this.ID_txtBox.Name = "ID_txtBox";
+            this.ID_txtBox.ReadOnly = true;
             this.ID_txtBox.Size = new System.Drawing.Size(209, 27);
             this.ID_txtBox.TabIndex = 14;
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.Add_btn);
+            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.userRole_comboBox);
             this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.resetBtn);
             this.panel2.Controls.Add(this.txtBox4);
-            this.panel2.Controls.Add(this.deleteBtn);
-            this.panel2.Controls.Add(this.updateBtn);
             this.panel2.Controls.Add(this.textBox10);
             this.panel2.Controls.Add(this.textBox6);
             this.panel2.Controls.Add(this.textBox4);
@@ -192,7 +194,7 @@
             this.Add_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
             this.Add_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Add_btn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.Add_btn.Location = new System.Drawing.Point(133, 349);
+            this.Add_btn.Location = new System.Drawing.Point(4, 6);
             this.Add_btn.Name = "Add_btn";
             this.Add_btn.Size = new System.Drawing.Size(106, 29);
             this.Add_btn.TabIndex = 21;
@@ -232,7 +234,7 @@
             this.resetBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
             this.resetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.resetBtn.ForeColor = System.Drawing.Color.White;
-            this.resetBtn.Location = new System.Drawing.Point(245, 349);
+            this.resetBtn.Location = new System.Drawing.Point(116, 6);
             this.resetBtn.Name = "resetBtn";
             this.resetBtn.Size = new System.Drawing.Size(101, 29);
             this.resetBtn.TabIndex = 13;
@@ -255,12 +257,25 @@
             this.txtBox4.Text = "Tên đăng nhập:";
             this.txtBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // deleteBtn
+            // 
+            this.deleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteBtn.ForeColor = System.Drawing.Color.White;
+            this.deleteBtn.Location = new System.Drawing.Point(4, 41);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(106, 29);
+            this.deleteBtn.TabIndex = 4;
+            this.deleteBtn.Text = "Xóa";
+            this.deleteBtn.UseVisualStyleBackColor = false;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
             // updateBtn
             // 
             this.updateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
             this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateBtn.ForeColor = System.Drawing.Color.White;
-            this.updateBtn.Location = new System.Drawing.Point(245, 384);
+            this.updateBtn.Location = new System.Drawing.Point(116, 41);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(101, 29);
             this.updateBtn.TabIndex = 3;
@@ -380,18 +395,17 @@
             this.MainTab.Size = new System.Drawing.Size(1032, 552);
             this.MainTab.TabIndex = 1;
             // 
-            // deleteBtn
+            // panel3
             // 
-            this.deleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteBtn.ForeColor = System.Drawing.Color.White;
-            this.deleteBtn.Location = new System.Drawing.Point(133, 384);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(106, 29);
-            this.deleteBtn.TabIndex = 4;
-            this.deleteBtn.Text = "Xóa";
-            this.deleteBtn.UseVisualStyleBackColor = false;
-            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.Add_btn);
+            this.panel3.Controls.Add(this.resetBtn);
+            this.panel3.Controls.Add(this.deleteBtn);
+            this.panel3.Controls.Add(this.updateBtn);
+            this.panel3.Location = new System.Drawing.Point(133, 359);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(223, 78);
+            this.panel3.TabIndex = 22;
             // 
             // AdminForm
             // 
@@ -412,6 +426,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.user_dtgv)).EndInit();
             this.MainTab.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -442,5 +457,6 @@
         private DataGridView user_dtgv;
         private TabControl MainTab;
         private Button deleteBtn;
+        private Panel panel3;
     }
 }

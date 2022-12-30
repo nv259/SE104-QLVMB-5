@@ -366,6 +366,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.pictureBox3.BackgroundImage = global::Service.Properties.Resources.look_up;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Enabled = false;
             this.pictureBox3.Location = new System.Drawing.Point(1110, 334);
