@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.totalIncome = new System.Windows.Forms.TextBox();
             this.reportYearDgv = new System.Windows.Forms.DataGridView();
@@ -44,7 +46,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(574, 456);
+            this.textBox1.Location = new System.Drawing.Point(549, 409);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(113, 27);
             this.textBox1.TabIndex = 17;
@@ -52,26 +54,39 @@
             // 
             // totalIncome
             // 
-            this.totalIncome.Location = new System.Drawing.Point(702, 456);
+            this.totalIncome.Location = new System.Drawing.Point(668, 409);
             this.totalIncome.Name = "totalIncome";
             this.totalIncome.Size = new System.Drawing.Size(169, 27);
             this.totalIncome.TabIndex = 16;
             // 
             // reportYearDgv
             // 
+            this.reportYearDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.reportYearDgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.reportYearDgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.reportYearDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.reportYearDgv.Location = new System.Drawing.Point(260, 63);
+            this.reportYearDgv.Location = new System.Drawing.Point(226, 12);
             this.reportYearDgv.Name = "reportYearDgv";
+            this.reportYearDgv.RowHeadersVisible = false;
             this.reportYearDgv.RowHeadersWidth = 51;
             this.reportYearDgv.RowTemplate.Height = 29;
+            this.reportYearDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.reportYearDgv.Size = new System.Drawing.Size(611, 391);
+            this.reportYearDgv.StandardTab = true;
             this.reportYearDgv.TabIndex = 15;
             // 
             // exportToExcelBtn
             // 
-            this.exportToExcelBtn.Location = new System.Drawing.Point(454, 513);
+            this.exportToExcelBtn.Location = new System.Drawing.Point(226, 409);
             this.exportToExcelBtn.Name = "exportToExcelBtn";
-            this.exportToExcelBtn.Size = new System.Drawing.Size(187, 61);
+            this.exportToExcelBtn.Size = new System.Drawing.Size(138, 27);
             this.exportToExcelBtn.TabIndex = 14;
             this.exportToExcelBtn.Text = "Export to excel";
             this.exportToExcelBtn.UseVisualStyleBackColor = true;
@@ -79,11 +94,23 @@
             // 
             // reportMonthDgv
             // 
+            this.reportMonthDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.reportMonthDgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.reportMonthDgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.reportMonthDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.reportMonthDgv.Location = new System.Drawing.Point(260, 63);
+            this.reportMonthDgv.Location = new System.Drawing.Point(226, 12);
             this.reportMonthDgv.Name = "reportMonthDgv";
+            this.reportMonthDgv.RowHeadersVisible = false;
             this.reportMonthDgv.RowHeadersWidth = 51;
             this.reportMonthDgv.RowTemplate.Height = 29;
+            this.reportMonthDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.reportMonthDgv.Size = new System.Drawing.Size(611, 391);
             this.reportMonthDgv.TabIndex = 13;
             // 
@@ -103,7 +130,7 @@
             "10",
             "11",
             "12"});
-            this.monthComboBox.Location = new System.Drawing.Point(131, 209);
+            this.monthComboBox.Location = new System.Drawing.Point(12, 127);
             this.monthComboBox.Name = "monthComboBox";
             this.monthComboBox.Size = new System.Drawing.Size(88, 28);
             this.monthComboBox.TabIndex = 11;
@@ -111,9 +138,9 @@
             // 
             // reportYearBtn
             // 
-            this.reportYearBtn.Location = new System.Drawing.Point(32, 140);
+            this.reportYearBtn.Location = new System.Drawing.Point(12, 58);
             this.reportYearBtn.Name = "reportYearBtn";
-            this.reportYearBtn.Size = new System.Drawing.Size(159, 40);
+            this.reportYearBtn.Size = new System.Drawing.Size(187, 40);
             this.reportYearBtn.TabIndex = 10;
             this.reportYearBtn.Text = "Báo cáo năm";
             this.reportYearBtn.UseVisualStyleBackColor = true;
@@ -121,9 +148,9 @@
             // 
             // reportMonthBtn
             // 
-            this.reportMonthBtn.Location = new System.Drawing.Point(32, 94);
+            this.reportMonthBtn.Location = new System.Drawing.Point(12, 12);
             this.reportMonthBtn.Name = "reportMonthBtn";
-            this.reportMonthBtn.Size = new System.Drawing.Size(159, 40);
+            this.reportMonthBtn.Size = new System.Drawing.Size(187, 40);
             this.reportMonthBtn.TabIndex = 9;
             this.reportMonthBtn.Text = "Báo cáo tháng";
             this.reportMonthBtn.UseVisualStyleBackColor = true;
@@ -131,7 +158,7 @@
             // 
             // makeReportBtn
             // 
-            this.makeReportBtn.Location = new System.Drawing.Point(32, 265);
+            this.makeReportBtn.Location = new System.Drawing.Point(12, 183);
             this.makeReportBtn.Name = "makeReportBtn";
             this.makeReportBtn.Size = new System.Drawing.Size(187, 61);
             this.makeReportBtn.TabIndex = 18;
@@ -141,7 +168,7 @@
             // 
             // yearTxtBox
             // 
-            this.yearTxtBox.Location = new System.Drawing.Point(32, 210);
+            this.yearTxtBox.Location = new System.Drawing.Point(106, 128);
             this.yearTxtBox.Name = "yearTxtBox";
             this.yearTxtBox.PlaceholderText = "Năm";
             this.yearTxtBox.Size = new System.Drawing.Size(93, 27);
@@ -151,7 +178,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 617);
+            this.ClientSize = new System.Drawing.Size(848, 448);
             this.Controls.Add(this.yearTxtBox);
             this.Controls.Add(this.makeReportBtn);
             this.Controls.Add(this.textBox1);

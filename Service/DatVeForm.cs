@@ -17,7 +17,7 @@ namespace Service
 {
     public partial class DatVeForm : Form
     {
-        private string maCB;
+        private string maCB = "";
         private Account account;
         public DatVeForm(Account account)
         {
