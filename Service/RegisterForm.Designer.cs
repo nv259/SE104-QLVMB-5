@@ -30,8 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tmp = new System.Windows.Forms.TextBox();
             this.NgaySinh_txtBox = new System.Windows.Forms.TextBox();
+            this.fullName_txtBox = new System.Windows.Forms.TextBox();
+            this.regBtn = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tmp = new System.Windows.Forms.TextBox();
             this.PhoneNumber_txtBox = new System.Windows.Forms.TextBox();
             this.ID_txtBox = new System.Windows.Forms.TextBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -43,23 +47,20 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.email_txtBox = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.fullName_txtBox = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.regBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.NgaySinh_txtBox);
+            this.panel1.Controls.Add(this.fullName_txtBox);
             this.panel1.Controls.Add(this.regBtn);
             this.panel1.Controls.Add(this.textBox4);
             this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.tmp);
-            this.panel1.Controls.Add(this.NgaySinh_txtBox);
             this.panel1.Controls.Add(this.PhoneNumber_txtBox);
             this.panel1.Controls.Add(this.ID_txtBox);
             this.panel1.Controls.Add(this.checkBox2);
@@ -71,13 +72,75 @@
             this.panel1.Controls.Add(this.textBox7);
             this.panel1.Controls.Add(this.email_txtBox);
             this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.fullName_txtBox);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(571, 585);
             this.panel1.TabIndex = 1;
+            // 
+            // NgaySinh_txtBox
+            // 
+            this.NgaySinh_txtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.NgaySinh_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.NgaySinh_txtBox.Location = new System.Drawing.Point(201, 121);
+            this.NgaySinh_txtBox.Name = "NgaySinh_txtBox";
+            this.NgaySinh_txtBox.PlaceholderText = "     31-12-1999";
+            this.NgaySinh_txtBox.Size = new System.Drawing.Size(307, 27);
+            this.NgaySinh_txtBox.TabIndex = 2;
+            // 
+            // fullName_txtBox
+            // 
+            this.fullName_txtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.fullName_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.fullName_txtBox.Location = new System.Drawing.Point(201, 78);
+            this.fullName_txtBox.Name = "fullName_txtBox";
+            this.fullName_txtBox.PlaceholderText = "     Nguyễn Văn A";
+            this.fullName_txtBox.Size = new System.Drawing.Size(307, 27);
+            this.fullName_txtBox.TabIndex = 1;
+            // 
+            // regBtn
+            // 
+            this.regBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.regBtn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.regBtn.ForeColor = System.Drawing.Color.White;
+            this.regBtn.Location = new System.Drawing.Point(201, 509);
+            this.regBtn.Name = "regBtn";
+            this.regBtn.Size = new System.Drawing.Size(180, 50);
+            this.regBtn.TabIndex = 21;
+            this.regBtn.Text = "Đăng ký";
+            this.regBtn.UseVisualStyleBackColor = false;
+            this.regBtn.Click += new System.EventHandler(this.regBtn_Click_1);
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.White;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.textBox4.Location = new System.Drawing.Point(16, 412);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(149, 20);
+            this.textBox4.TabIndex = 20;
+            this.textBox4.TabStop = false;
+            this.textBox4.Text = "Số điện thoại";
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.White;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.textBox3.Location = new System.Drawing.Point(16, 363);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(149, 20);
+            this.textBox3.TabIndex = 19;
+            this.textBox3.TabStop = false;
+            this.textBox3.Text = "Mã định danh / CCCD";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tmp
             // 
@@ -93,16 +156,6 @@
             this.tmp.TabStop = false;
             this.tmp.Text = "Ngày sinh";
             this.tmp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // NgaySinh_txtBox
-            // 
-            this.NgaySinh_txtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.NgaySinh_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NgaySinh_txtBox.Location = new System.Drawing.Point(199, 121);
-            this.NgaySinh_txtBox.Name = "NgaySinh_txtBox";
-            this.NgaySinh_txtBox.PlaceholderText = "     dd-MM-yyyy";
-            this.NgaySinh_txtBox.Size = new System.Drawing.Size(307, 27);
-            this.NgaySinh_txtBox.TabIndex = 17;
             // 
             // PhoneNumber_txtBox
             // 
@@ -231,16 +284,6 @@
             this.textBox5.Text = "Email";
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // fullName_txtBox
-            // 
-            this.fullName_txtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.fullName_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.fullName_txtBox.Location = new System.Drawing.Point(199, 78);
-            this.fullName_txtBox.Name = "fullName_txtBox";
-            this.fullName_txtBox.PlaceholderText = "     Nguyễn Văn A";
-            this.fullName_txtBox.Size = new System.Drawing.Size(307, 27);
-            this.fullName_txtBox.TabIndex = 2;
-            // 
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.Color.White;
@@ -271,48 +314,6 @@
             this.textBox1.TabStop = false;
             this.textBox1.Text = "ĐĂNG KÝ";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.textBox3.Location = new System.Drawing.Point(16, 363);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(149, 20);
-            this.textBox3.TabIndex = 19;
-            this.textBox3.TabStop = false;
-            this.textBox3.Text = "Mã định danh / CCCD";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.textBox4.Location = new System.Drawing.Point(16, 412);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(149, 20);
-            this.textBox4.TabIndex = 20;
-            this.textBox4.TabStop = false;
-            this.textBox4.Text = "Số điện thoại";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // regBtn
-            // 
-            this.regBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.regBtn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.regBtn.ForeColor = System.Drawing.Color.White;
-            this.regBtn.Location = new System.Drawing.Point(201, 509);
-            this.regBtn.Name = "regBtn";
-            this.regBtn.Size = new System.Drawing.Size(180, 50);
-            this.regBtn.TabIndex = 21;
-            this.regBtn.Text = "Đăng ký";
-            this.regBtn.UseVisualStyleBackColor = false;
             // 
             // RegisterForm
             // 
@@ -350,9 +351,9 @@
         private TextBox textBox2;
         private TextBox textBox1;
         private TextBox tmp;
-        private TextBox NgaySinh_txtBox;
         private Button regBtn;
         private TextBox textBox4;
         private TextBox textBox3;
+        private TextBox NgaySinh_txtBox;
     }
 }

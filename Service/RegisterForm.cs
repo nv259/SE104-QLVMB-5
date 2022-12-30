@@ -33,25 +33,6 @@ namespace Service
 
             return hash.ToString();
         }
-        private void regBtn_Click(object sender, EventArgs e)
-        {
-            string MaDangNhap, MatKhau, TenNguoiDung, DinhDanh, SoDienThoai, Email, NgaySinh;
-            MaDangNhap = this.username_txtBox.Text;
-            TenNguoiDung = this.fullName_txtBox.Text.Trim();
-            MatKhau = Convert_to_SHA512(this.pwd_txtBox.Text);
-            DinhDanh = this.ID_txtBox.Text;
-            SoDienThoai = this.PhoneNumber_txtBox.Text.Trim();
-            Email = this.email_txtBox.Text;
-            NgaySinh = Convert.ToDateTime(this.NgaySinh_txtBox.Text.TrimEnd().ToString()).ToString("yyyy-MM-dd");
-
-            if (CheckAll())
-            {
-                string query = "INSERT INTO [dbo].NGUOIDUNG VALUES ( @MaDangNhap , @MatKhau , '2' , @TenNguoiDung , @DinhDanh , @SoDienThoai , @Email , @NgaySinh ) ";
-                object i = DataProvider.Instance.ExecuteScalar(query, new object[] { MaDangNhap, MatKhau, TenNguoiDung, DinhDanh, SoDienThoai , Email , NgaySinh });
-                MessageBox.Show("Tạo tài khoản thành công!");
-                this.Close();
-            }
-        }
 
         private bool IsLowerChar(char ch)
         {
@@ -232,6 +213,26 @@ namespace Service
                 + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
 
             return new Regex(pattern, RegexOptions.IgnoreCase);
+        }
+
+        private void regBtn_Click_1(object sender, EventArgs e)
+        {
+            string MaDangNhap, MatKhau, TenNguoiDung, DinhDanh, SoDienThoai, Email, NgaySinh;
+            MaDangNhap = this.username_txtBox.Text;
+            TenNguoiDung = this.fullName_txtBox.Text.Trim();
+            MatKhau = Convert_to_SHA512(this.pwd_txtBox.Text);
+            DinhDanh = this.ID_txtBox.Text;
+            SoDienThoai = this.PhoneNumber_txtBox.Text.Trim();
+            Email = this.email_txtBox.Text;
+            NgaySinh = Convert.ToDateTime(this.NgaySinh_txtBox.Text.TrimEnd().ToString()).ToString("yyyy-MM-dd");
+
+            if (CheckAll())
+            {
+                string query = "INSERT INTO [dbo].NGUOIDUNG VALUES ( @MaDangNhap , @MatKhau , '2' , @TenNguoiDung , @DinhDanh , @SoDienThoai , @Email , @NgaySinh ) ";
+                object i = DataProvider.Instance.ExecuteScalar(query, new object[] { MaDangNhap, MatKhau, TenNguoiDung, DinhDanh, SoDienThoai, Email, NgaySinh });
+                MessageBox.Show("Tạo tài khoản thành công!");
+                this.Close();
+            }
         }
     }
 }

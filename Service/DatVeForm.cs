@@ -27,6 +27,20 @@ namespace Service
             phone_txtBox.Text = account.Sdt;
             name_txtBox.Text = account.TenNguoiDung;
             ngSinhBox.Text = account.NgaySinh.ToString();
+
+            string query = "SELECT * FROM [dbo].THAMSO ";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+
+            int tg_dat_ve_cham_nhat = int.MaxValue;
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                tg_dat_ve_cham_nhat = Convert.ToInt32(dr["TGDatVeChamNhat"]);
+            }
+
+            ngayBayDtp.MinDate = DateTime.Now.AddDays(tg_dat_ve_cham_nhat);
+            ngayBayDtp.Value = DateTime.Now.AddDays(tg_dat_ve_cham_nhat);
+
             list_flight();
         }
 
@@ -102,25 +116,8 @@ namespace Service
 
         private void DatVeForm_Load(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM [dbo].SANBAY ";
+            string query = "SELECT * FROM [dbo].THAMSO ";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
-
-            fromComboBox.BeginUpdate();
-            toComboBox.BeginUpdate();
-            fromComboBox.Items.Clear();
-            toComboBox.Items.Clear();
-
-            foreach (DataRow dr in dt.Rows)
-            {
-                toComboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"]);
-                fromComboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"]);
-            }
-
-            fromComboBox.EndUpdate();
-            toComboBox.EndUpdate();
-
-            query = "SELECT * FROM [dbo].THAMSO ";
-            dt = DataProvider.Instance.ExecuteQuery(query);
 
             int tg_dat_ve_cham_nhat = int.MaxValue;
 
@@ -129,21 +126,10 @@ namespace Service
                 tg_dat_ve_cham_nhat = Convert.ToInt32(dr["TGDatVeChamNhat"]);
             }
 
+            ngayBayDtp.MinDate = DateTime.Now.AddDays(tg_dat_ve_cham_nhat);
+            ngayBayDtp.Value = DateTime.Now.AddDays(tg_dat_ve_cham_nhat);
 
-            query = "SELECT * FROM [dbo].CHUYENBAY ";
-            dt = DataProvider.Instance.ExecuteQuery(query);
-
-            flightListLstBox.BeginUpdate();
-            flightListLstBox.Items.Clear();
-
-            foreach (DataRow dr in dt.Rows)
-            {
-                DateTime NgayGioBay = Convert.ToDateTime(dr["NgayGioBay"]);
-                TimeSpan chk = NgayGioBay.Subtract(DateTime.Now);
-                if (chk.Days >= tg_dat_ve_cham_nhat) flightListLstBox.Items.Add(dr["MaChuyenBay"].ToString().TrimEnd() + " | " + dr["MaSanBayDi"].ToString().TrimEnd() + " | " + dr["MaSanBayDen"].ToString().TrimEnd() + " | " + dr["NgayGioBay"].ToString());
-            }
-
-            flightListLstBox.EndUpdate();
+            list_flight();
         }
 
         private void list_flight()
@@ -168,6 +154,8 @@ namespace Service
             /*try { MaSanBayDi = this.fromComboBox.Text; MaSanBayDen = this.toComboBox.Text; } catch { }*/
 
             DateTime ngaybaymin = Convert.ToDateTime(ngaybay + " 00:00:00.000");
+            if (Convert.ToDateTime(ngaybay + " 00:00:00.000") < DateTime.Now) ngaybaymin = DateTime.Now;
+            ngaybaymin = ngaybaymin.AddDays(thamso.TGDatVeChamNhat);
 
             query = "SELECT cb.MaChuyenBay, sb1.TenSanBay as 'Từ', sb2.TenSanBay as 'Đến', " +
                     "convert(char(5), cb.NgayGioBay, 108) as timeGo, " +
@@ -190,12 +178,17 @@ namespace Service
         private void ngayBayDtp_ValueChanged(object sender, EventArgs e)
         {
             modify_masanbay();
-
             list_flight();
         }
 
         private void bookingBtn_Click(object sender, EventArgs e)
         {
+            if (maCB == null)
+            {
+                MessageBox.Show("Vui lòng chọn chuyến bay!");
+                return;
+            }
+            
             try
             {
                 Bill f = new Bill(account, maCB.Trim());

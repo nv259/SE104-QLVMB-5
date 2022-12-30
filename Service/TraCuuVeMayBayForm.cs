@@ -47,6 +47,7 @@ namespace Service
             query = "SELECT * FROM [dbo].SANBAY ";
             dt = DataProvider.Instance.ExecuteQuery(query);
 
+            ChuyenBay_comboBox.Items.Add("None");
             SanBayDi_comboBox.Items.Add("None");
             SanBayDen_comboBox.Items.Add("None");
 
@@ -63,13 +64,16 @@ namespace Service
             SanBayDi_comboBox.SelectedItem = "None";
             ChuyenBay_comboBox.SelectedItem = "None";
 
+            NgayBay_chkBox.Checked = false;
+            NgayBay_datetime.Enabled = false;
+
             ListAll();
         }
 
         Account account;
         DataTable dt;
 
-        private string MASANBAY(string inp)
+        private string get_Ma(string inp)
         {
             if (inp.Length == 0 || inp == "None") return inp;
             return inp.Substring(0, inp.IndexOf('|') - 1);
@@ -78,17 +82,24 @@ namespace Service
         private void ListAll ()
         {
             string MaChuyenBay = "None", SanBayDi = "None", SanBayDen = "None";
-            if (ChuyenBay_comboBox.SelectedItem != null) MaChuyenBay = ChuyenBay_comboBox.SelectedItem.ToString();
-            if (SanBayDi_comboBox.SelectedItem != null) SanBayDi = MASANBAY(SanBayDi_comboBox.SelectedItem.ToString());
-            if (SanBayDen_comboBox.SelectedItem != null) SanBayDen = MASANBAY(SanBayDen_comboBox.SelectedItem.ToString());
+            if (ChuyenBay_comboBox.SelectedItem != null && ChuyenBay_comboBox.SelectedItem != "None") MaChuyenBay = ChuyenBay_comboBox.SelectedItem.ToString();
+            if (SanBayDi_comboBox.SelectedItem != null && SanBayDi_comboBox.SelectedItem != "None") SanBayDi = get_Ma(SanBayDi_comboBox.SelectedItem.ToString());
+            if (SanBayDi_comboBox.SelectedItem != null && SanBayDen_comboBox.SelectedItem != "None") SanBayDen = get_Ma(SanBayDen_comboBox.SelectedItem.ToString());
 
             string MaChuyenBay1 = MaChuyenBay, SanBayDi1 = SanBayDi, SanBayDen1 = SanBayDen;
 
             string query = "SELECT * FROM [dbo].CT_DATVE JOIN CHUYENBAY ON CHUYENBAY.MaChuyenBay = CT_DATVE.MaChuyenBay JOIN [dbo].HANGVE ON HANGVE.MaHangVe = CT_DATVE.MaHangVe " +
                 " WHERE ( @MaChuyenBay = 'None' OR @MaChuyenBay1 = CT_DATVE.MaChuyenBay ) AND ( @SanBayDi = 'None' OR @SanBayDi1 = CHUYENBAY.MaSanBayDi ) AND ( @SanBayDen = 'None' OR @SanBayDen1 = CHUYENBAY.MaSanBayDen ) ";
+            if (!NgayBay_chkBox.Checked)
+                dt = DataProvider.Instance.ExecuteQuery(query, new object[] { MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1 });
+            else
+            {
+                string NgayBayMin = NgayBay_datetime.Value.Date.ToString("yyyy-MM-dd") + " 00:00:00.000";
+                string NgayBayMax = NgayBay_datetime.Value.Date.ToString("yyyy-MM-dd") + " 23:59:59.999";
 
-            dt = DataProvider.Instance.ExecuteQuery(query, new object[] { MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1 });
-
+                query = query + " AND ( @NgayBayMin <= NgayGioBay ) AND ( NgayGioBay <= @NgayBayMax ) ";
+                dt = DataProvider.Instance.ExecuteQuery(query, new object[] { MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1, NgayBayMin, NgayBayMax });
+            }
 
             FullInfo.Rows.Clear();
             FullInfo.ColumnCount = 8;
@@ -125,6 +136,12 @@ namespace Service
         private void NgayBay_datetime_ValueChanged(object sender, EventArgs e)
         {
             ListAll();
+        }
+
+        private void NgayBay_chkBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (NgayBay_chkBox.Checked) NgayBay_datetime.Enabled = true;
+            else NgayBay_datetime.Enabled = false;
         }
     }
 }
