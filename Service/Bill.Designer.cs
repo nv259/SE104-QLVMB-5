@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bill));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cb_cmbBox = new System.Windows.Forms.ComboBox();
+            this.cb_txtBox = new System.Windows.Forms.TextBox();
             this.Cost_txtBox = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.email_txtBox = new System.Windows.Forms.TextBox();
@@ -47,15 +48,13 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox14 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.cb_cmbBox);
+            this.panel1.Controls.Add(this.cb_txtBox);
             this.panel1.Controls.Add(this.Cost_txtBox);
             this.panel1.Controls.Add(this.textBox12);
             this.panel1.Controls.Add(this.email_txtBox);
@@ -76,14 +75,16 @@
             this.panel1.Size = new System.Drawing.Size(427, 281);
             this.panel1.TabIndex = 0;
             // 
-            // cb_cmbBox
+            // cb_txtBox
             // 
-            this.cb_cmbBox.FormattingEnabled = true;
-            this.cb_cmbBox.Location = new System.Drawing.Point(203, 25);
-            this.cb_cmbBox.Name = "cb_cmbBox";
-            this.cb_cmbBox.Size = new System.Drawing.Size(104, 28);
-            this.cb_cmbBox.TabIndex = 35;
-            this.cb_cmbBox.SelectedIndexChanged += new System.EventHandler(this.cb_cmbBox_SelectedIndexChanged);
+            this.cb_txtBox.BackColor = System.Drawing.Color.White;
+            this.cb_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cb_txtBox.Location = new System.Drawing.Point(203, 26);
+            this.cb_txtBox.Name = "cb_txtBox";
+            this.cb_txtBox.ReadOnly = true;
+            this.cb_txtBox.Size = new System.Drawing.Size(101, 27);
+            this.cb_txtBox.TabIndex = 35;
+            this.cb_txtBox.TabStop = false;
             // 
             // Cost_txtBox
             // 
@@ -253,7 +254,7 @@
             this.ngDatVeBox.Name = "ngDatVeBox";
             this.ngDatVeBox.Size = new System.Drawing.Size(170, 27);
             this.ngDatVeBox.TabIndex = 20;
-            this.ngDatVeBox.Value = System.DateTime.Now;
+            this.ngDatVeBox.Value = new System.DateTime(2022, 12, 30, 13, 4, 10, 587);
             this.ngDatVeBox.ValueChanged += new System.EventHandler(this.ngDatVeBox_ValueChanged);
             // 
             // textBox8
@@ -299,46 +300,17 @@
             this.textBox14.Text = "Vé chuyến bay";
             this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.IndianRed;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(288, 359);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 29);
-            this.button2.TabIndex = 37;
-            this.button2.Text = "Hủy";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.IndianRed;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(50, 359);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(95, 29);
-            this.button3.TabIndex = 38;
-            this.button3.Text = "Đóng";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // Bill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(427, 419);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(427, 411);
             this.Controls.Add(this.textBox14);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Bill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "BillForm";
@@ -369,9 +341,8 @@
         private TextBox textBox12;
         private TextBox Cost_txtBox;
         private Button button1;
-        private ComboBox cb_cmbBox;
         private TextBox textBox14;
         private Button button2;
-        private Button button3;
+        private TextBox cb_txtBox;
     }
 }

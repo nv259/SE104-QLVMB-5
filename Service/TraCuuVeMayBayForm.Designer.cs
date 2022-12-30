@@ -59,8 +59,7 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(39, 15);
+            this.textBox1.Location = new System.Drawing.Point(22, 99);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(125, 20);
             this.textBox1.TabIndex = 1;
@@ -86,6 +85,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(82, 20);
             this.textBox3.TabIndex = 3;
+            this.textBox3.TabStop = false;
             this.textBox3.Text = "Họ và tên:";
             // 
             // textBox4
@@ -107,6 +107,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(125, 20);
             this.textBox5.TabIndex = 5;
+            this.textBox5.TabStop = false;
             this.textBox5.Text = "Ngày sinh:";
             // 
             // textBox6
@@ -271,7 +272,7 @@
             this.FullInfo.ReadOnly = true;
             this.FullInfo.RowHeadersWidth = 51;
             this.FullInfo.RowTemplate.Height = 29;
-            this.FullInfo.Size = new System.Drawing.Size(1107, 560);
+            this.FullInfo.Size = new System.Drawing.Size(1107, 519);
             this.FullInfo.TabIndex = 23;
             this.FullInfo.TabStop = false;
             // 
@@ -328,6 +329,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "TraCuuVeMayBayForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tra cứu vé máy bay";
             ((System.ComponentModel.ISupportInitialize)(this.FullInfo)).EndInit();
             this.ResumeLayout(false);
