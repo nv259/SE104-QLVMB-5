@@ -137,5 +137,10 @@ namespace Service
         {
             this.Close();
         }
+
+        private void ngDatVeBox_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
