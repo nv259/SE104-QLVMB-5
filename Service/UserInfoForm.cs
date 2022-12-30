@@ -169,6 +169,35 @@ namespace Service
                 return false;
             }
 
+            string[] chk = fullNameTxtBox.Text.Trim().Split(' ');
+            foreach (string s in chk)
+            {
+                if (s.Length < 2)
+                {
+                    MessageBox.Show("Họ và tên không đúng định dạng!");
+                    return false;
+                }
+
+                if (!s.All(char.IsLetter))
+                {
+                    MessageBox.Show("Họ và tên không đúng định dạng!");
+                    return false;
+                }
+
+                if (!char.IsUpper(s[0]))
+                {
+                    MessageBox.Show("Họ và tên không đúng định dạng!");
+                    return false;
+                }
+
+                for (int i = 1; i < s.Length; ++i)
+                    if (!char.IsLower(s[i]))
+                    {
+                        MessageBox.Show("Họ và tên không đúng định dạng!");
+                        return false;
+                    }
+            }
+
             if (CalculateAge(NgaySinh.Value, DateTime.Now) < 18)
             {
                 MessageBox.Show("Ngày sinh không hợp lệ (Phải đủ 18 tuổi trở lên)!");
