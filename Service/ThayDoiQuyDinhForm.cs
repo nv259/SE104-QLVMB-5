@@ -493,7 +493,7 @@ namespace Service
             }
 
             string delete = "DELETE FROM [dbo].SANBAY WHERE MaSanBay = @MaSanBay ";
-            DataProvider.Instance.ExecuteNonQuery(delete, new object[] { get_Ma(MaSB_Xoa_comboBox.SelectedItem.ToString()) });
+            DataProvider.Instance.ExecuteNonQuery(delete, new object[] { MaSB_Xoa_comboBox.SelectedItem.ToString() });
 
             string query = "SELECT * FROM [dbo].SANBAY";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
