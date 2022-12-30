@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.NgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.BirthDay_Dtp = new System.Windows.Forms.DateTimePicker();
             this.fullName_txtBox = new System.Windows.Forms.TextBox();
             this.regBtn = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -38,7 +38,7 @@
             this.tmp = new System.Windows.Forms.TextBox();
             this.PhoneNumber_txtBox = new System.Windows.Forms.TextBox();
             this.ID_txtBox = new System.Windows.Forms.TextBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.Agree_chkBox = new System.Windows.Forms.CheckBox();
             this.confirmPwd_txtBox = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.pwd_txtBox = new System.Windows.Forms.TextBox();
@@ -55,7 +55,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.NgaySinh);
+            this.panel1.Controls.Add(this.BirthDay_Dtp);
             this.panel1.Controls.Add(this.fullName_txtBox);
             this.panel1.Controls.Add(this.regBtn);
             this.panel1.Controls.Add(this.textBox4);
@@ -63,7 +63,7 @@
             this.panel1.Controls.Add(this.tmp);
             this.panel1.Controls.Add(this.PhoneNumber_txtBox);
             this.panel1.Controls.Add(this.ID_txtBox);
-            this.panel1.Controls.Add(this.checkBox2);
+            this.panel1.Controls.Add(this.Agree_chkBox);
             this.panel1.Controls.Add(this.confirmPwd_txtBox);
             this.panel1.Controls.Add(this.textBox11);
             this.panel1.Controls.Add(this.pwd_txtBox);
@@ -79,12 +79,12 @@
             this.panel1.Size = new System.Drawing.Size(571, 585);
             this.panel1.TabIndex = 1;
             // 
-            // NgaySinh
+            // BirthDay_Dtp
             // 
-            this.NgaySinh.Location = new System.Drawing.Point(199, 122);
-            this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.Size = new System.Drawing.Size(307, 27);
-            this.NgaySinh.TabIndex = 2;
+            this.BirthDay_Dtp.Location = new System.Drawing.Point(199, 122);
+            this.BirthDay_Dtp.Name = "BirthDay_Dtp";
+            this.BirthDay_Dtp.Size = new System.Drawing.Size(307, 27);
+            this.BirthDay_Dtp.TabIndex = 2;
             // 
             // fullName_txtBox
             // 
@@ -170,18 +170,18 @@
             this.ID_txtBox.Size = new System.Drawing.Size(307, 27);
             this.ID_txtBox.TabIndex = 13;
             // 
-            // checkBox2
+            // Agree_chkBox
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.BackColor = System.Drawing.Color.White;
-            this.checkBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.checkBox2.Location = new System.Drawing.Point(158, 466);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(348, 24);
-            this.checkBox2.TabIndex = 15;
-            this.checkBox2.Text = "Tôi đã đọc và đồng ý với các điều khoản dịch vụ";
-            this.checkBox2.UseVisualStyleBackColor = false;
+            this.Agree_chkBox.AutoSize = true;
+            this.Agree_chkBox.BackColor = System.Drawing.Color.White;
+            this.Agree_chkBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Agree_chkBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.Agree_chkBox.Location = new System.Drawing.Point(158, 466);
+            this.Agree_chkBox.Name = "Agree_chkBox";
+            this.Agree_chkBox.Size = new System.Drawing.Size(348, 24);
+            this.Agree_chkBox.TabIndex = 15;
+            this.Agree_chkBox.Text = "Tôi đã đọc và đồng ý với các điều khoản dịch vụ";
+            this.Agree_chkBox.UseVisualStyleBackColor = false;
             // 
             // confirmPwd_txtBox
             // 
@@ -352,5 +352,7 @@
         private TextBox textBox4;
         private TextBox textBox3;
         private DateTimePicker NgaySinh;
+        private DateTimePicker BirthDay_Dtp;
+        private CheckBox Agree_chkBox;
     }
 }

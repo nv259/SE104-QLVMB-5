@@ -62,7 +62,36 @@ namespace Service
             {
                 MessageBox.Show("Họ và tên không được để trống!");
                 return false;
-            } 
+            }
+
+            string[] chk = fullName_txtBox.Text.Trim().Split(' ');
+            foreach(string s in chk)
+            {
+                if (s.Length < 2)
+                {
+                    MessageBox.Show("Họ và tên không đúng định dạng!");
+                    return false;
+                }
+
+                if (!s.All(char.IsLetter)) {
+                    MessageBox.Show("Họ và tên không đúng định dạng!");
+                    return false;
+                }
+
+                if (!char.IsUpper(s[0]))
+                {
+                    MessageBox.Show("Họ và tên không đúng định dạng!");
+                    return false;
+                }
+
+                for(int i = 1; i < s.Length; ++i)
+                if (!char.IsLower(s[i]))
+                    {
+                        MessageBox.Show("Họ và tên không đúng định dạng!");
+                        return false;
+                    }
+            }
+
 
             Regex validate_emailaddress = email_validation();
             if (this.email_txtBox.Text.Length == 0)
@@ -126,7 +155,7 @@ namespace Service
                 return false;
             }
 
-            if (CalculateAge(NgaySinh.Value, DateTime.Now) < 18)
+            if (CalculateAge(BirthDay_Dtp.Value, DateTime.Now) < 18)
             {
                 MessageBox.Show("Ngày sinh không hợp lệ (Phải đủ 18 tuổi trở lên)!");
                 return false;
@@ -200,7 +229,7 @@ namespace Service
                 }
             }
 
-            if (!checkBox2.Checked)
+            if (!Agree_chkBox.Checked)
             {
                 MessageBox.Show("Bạn chưa đồng ý với các điều khoản dịch vụ!");
                 return false;
@@ -227,7 +256,7 @@ namespace Service
             DinhDanh = this.ID_txtBox.Text;
             SoDienThoai = this.PhoneNumber_txtBox.Text.Trim();
             Email = this.email_txtBox.Text;
-            NgaySinh = Convert.ToDateTime(this.NgaySinh.Value).ToString("yyyy-MM-dd");
+            NgaySinh = Convert.ToDateTime(this.BirthDay_Dtp.Value).ToString("yyyy-MM-dd");
 
             if (CheckAll())
             {
