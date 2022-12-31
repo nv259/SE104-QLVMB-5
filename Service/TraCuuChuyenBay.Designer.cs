@@ -106,6 +106,7 @@
             // 
             // NgayBay_datetime
             // 
+            this.NgayBay_datetime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.NgayBay_datetime.Location = new System.Drawing.Point(920, 103);
             this.NgayBay_datetime.Name = "NgayBay_datetime";
             this.NgayBay_datetime.Size = new System.Drawing.Size(226, 27);

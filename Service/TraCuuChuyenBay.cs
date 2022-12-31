@@ -24,7 +24,7 @@ namespace Service
 
             ChuyenBay_comboBox.BeginUpdate();
             ChuyenBay_comboBox.Items.Clear();
-            ChuyenBay_comboBox.Items.Add("None");
+            ChuyenBay_comboBox.Items.Add("All");
 
             foreach (DataRow dr in dt.Rows)
             {
@@ -40,9 +40,9 @@ namespace Service
             query = "SELECT * FROM [dbo].SANBAY ";
             dt = DataProvider.Instance.ExecuteQuery(query);
 
-            ChuyenBay_comboBox.Items.Add("None");
-            SanBayDi_comboBox.Items.Add("None");
-            SanBayDen_comboBox.Items.Add("None");
+            ChuyenBay_comboBox.Items.Add("All");
+            SanBayDi_comboBox.Items.Add("All");
+            SanBayDen_comboBox.Items.Add("All");
 
             foreach (DataRow dr in dt.Rows)
             {
@@ -53,9 +53,9 @@ namespace Service
             SanBayDi_comboBox.EndUpdate();
             SanBayDen_comboBox.EndUpdate();
 
-            SanBayDen_comboBox.SelectedItem = "None";
-            SanBayDi_comboBox.SelectedItem = "None";
-            ChuyenBay_comboBox.SelectedItem = "None";
+            SanBayDen_comboBox.SelectedItem = "All";
+            SanBayDi_comboBox.SelectedItem = "All";
+            ChuyenBay_comboBox.SelectedItem = "All";
 
             NgayBay_chkBox.Checked = false;
             NgayBay_datetime.Enabled = false;
@@ -71,10 +71,10 @@ namespace Service
 
         public void ListAll()
         {
-            string MaChuyenBay = "None", SanBayDi = "None", SanBayDen = "None";
-            if (ChuyenBay_comboBox.SelectedItem != null && ChuyenBay_comboBox.SelectedItem != "None") MaChuyenBay = ChuyenBay_comboBox.SelectedItem.ToString();
-            if (SanBayDi_comboBox.SelectedItem != null && SanBayDi_comboBox.SelectedItem != "None") SanBayDi = get_Ma(SanBayDi_comboBox.SelectedItem.ToString());
-            if (SanBayDi_comboBox.SelectedItem != null && SanBayDen_comboBox.SelectedItem != "None") SanBayDen = get_Ma(SanBayDen_comboBox.SelectedItem.ToString());
+            string MaChuyenBay = "All", SanBayDi = "All", SanBayDen = "All";
+            if (ChuyenBay_comboBox.SelectedItem != null && ChuyenBay_comboBox.SelectedItem != "All") MaChuyenBay = ChuyenBay_comboBox.SelectedItem.ToString();
+            if (SanBayDi_comboBox.SelectedItem != null && SanBayDi_comboBox.SelectedItem != "All") SanBayDi = get_Ma(SanBayDi_comboBox.SelectedItem.ToString());
+            if (SanBayDi_comboBox.SelectedItem != null && SanBayDen_comboBox.SelectedItem != "All") SanBayDen = get_Ma(SanBayDen_comboBox.SelectedItem.ToString());
 
             string MaChuyenBay1 = MaChuyenBay, SanBayDi1 = SanBayDi, SanBayDen1 = SanBayDen;
 
@@ -84,7 +84,7 @@ namespace Service
                                + "WHERE cb.MaChuyenBay = ctdv.MaChuyenBay)) SoGheTrong, (SELECT COUNT(*) FROM[dbo].CT_DATVE ctdv "
                                + "WHERE cb.MaChuyenBay = ctdv.MaChuyenBay) SoGheDaDat "
                                + "FROM[dbo].CHUYENBAY cb "
-                               + "WHERE ( @MaChuyenBay = 'None' OR @MaChuyenBay1 = cb.MaChuyenBay ) AND ( @SanBayDi = 'None' OR @SanBayDi1 = cb.MaSanBayDi ) AND ( @SanBayDen = 'None' OR @SanBayDen1 = cb.MaSanBayDen ) ";
+                               + "WHERE ( @MaChuyenBay = 'All' OR @MaChuyenBay1 = cb.MaChuyenBay ) AND ( @SanBayDi = 'All' OR @SanBayDi1 = cb.MaSanBayDi ) AND ( @SanBayDen = 'All' OR @SanBayDen1 = cb.MaSanBayDen ) ";
             DataTable dt;
 
             if (!NgayBay_chkBox.Checked)
