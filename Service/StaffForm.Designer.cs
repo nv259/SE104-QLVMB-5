@@ -252,6 +252,7 @@
             // 
             // BirthDay
             // 
+            this.BirthDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.BirthDay.Location = new System.Drawing.Point(121, 192);
             this.BirthDay.Name = "BirthDay";
             this.BirthDay.Size = new System.Drawing.Size(268, 27);

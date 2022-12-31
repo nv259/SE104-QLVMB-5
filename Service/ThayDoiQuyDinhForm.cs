@@ -484,6 +484,13 @@ namespace Service
             MaSB_TD_comboBox.EndUpdate();
             MaSB_Xoa_comboBox.EndUpdate();
             SanBay_listView.EndUpdate();
+            MaSB_TD_comboBox.SelectedItem = null;
+            MaSB_Xoa_comboBox.SelectedItem = null;
+            MaSB_TD_comboBox.Text = "";
+            MaSB_Xoa_comboBox.Text = "";
+            TenSB_TD_txtBox.Text = "";
+            TenSB_Them_txtBox.Text = "";
+            MaSB_Them_txtBox.Text = "";
 
             MessageBox.Show("Thêm sân bay thành công!");
 
@@ -547,6 +554,10 @@ namespace Service
             }
 
             SanBay_listView.EndUpdate();
+            MaSB_Xoa_comboBox.SelectedItem = null;
+            MaSB_Xoa_comboBox.Text = "";
+            TenSB_Them_txtBox.Text = "";
+            MaSB_Them_txtBox.Text = "";
 
             MessageBox.Show("Thay đổi thông tin sân bay thành công!");
         }
@@ -610,6 +621,13 @@ namespace Service
             MaSB_TD_comboBox.EndUpdate();
             MaSB_Xoa_comboBox.EndUpdate();
             SanBay_listView.EndUpdate();
+            MaSB_TD_comboBox.SelectedItem = null;
+            MaSB_Xoa_comboBox.SelectedItem = null;
+            MaSB_TD_comboBox.Text = "";
+            MaSB_Xoa_comboBox.Text = "";
+            TenSB_TD_txtBox.Text = "";
+            TenSB_Them_txtBox.Text = "";
+            MaSB_Them_txtBox.Text = "";
 
             MessageBox.Show("Xóa sân bay thành công!");
 
@@ -727,6 +745,15 @@ namespace Service
             MaHV_TD_comboBox.EndUpdate();
             MaHV_Xoa_comboBox.EndUpdate();
             HangVe_listView.EndUpdate();
+            MaHV_TD_comboBox.SelectedItem = null;
+            MaHV_Xoa_comboBox.SelectedItem = null;
+            MaHV_TD_comboBox.Text = "";
+            TenHV_TD_txtBox.Text = "";
+            TLGV_TD_txtBox.Text = "";
+            MaHV_Xoa_comboBox.Text = "";
+            TenHV_Them_txtBox.Text = "";
+            MaHV_Them_txtBox.Text = "";
+            TLGV_Them_txtBox.Text = "";
 
             MessageBox.Show("Thêm hạng vé thành công!");
 
@@ -831,6 +858,11 @@ namespace Service
             }
 
             HangVe_listView.EndUpdate();
+            MaHV_Xoa_comboBox.SelectedItem = null;
+            MaHV_Xoa_comboBox.Text = "";
+            TenHV_Them_txtBox.Text = "";
+            MaHV_Them_txtBox.Text = "";
+            TLGV_Them_txtBox.Text = "";
 
             MessageBox.Show("Thay đổi thông tin hạng vé thành công!");
         }
@@ -873,6 +905,15 @@ namespace Service
             MaHV_TD_comboBox.EndUpdate();
             MaHV_Xoa_comboBox.EndUpdate();
             HangVe_listView.EndUpdate();
+            MaHV_TD_comboBox.SelectedItem = null;
+            MaHV_Xoa_comboBox.SelectedItem = null;
+            MaHV_TD_comboBox.Text = "";
+            TenHV_TD_txtBox.Text = "";
+            TLGV_TD_txtBox.Text = "";
+            MaHV_Xoa_comboBox.Text = "";
+            TenHV_Them_txtBox.Text = "";
+            MaHV_Them_txtBox.Text = "";
+            TLGV_Them_txtBox.Text = "";
 
             MessageBox.Show("Xóa hạng vé thành công!");
 
