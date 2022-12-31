@@ -49,10 +49,10 @@ namespace Service
             fromComboBox.Items.Clear();
             toComboBox.Items.Clear();
 
-            fromComboBox.Items.Add("None");
-            fromComboBox.SelectedItem = "None";
-            toComboBox.Items.Add("None");
-            toComboBox.SelectedItem = "None";
+            fromComboBox.Items.Add("All");
+            fromComboBox.SelectedItem = "All";
+            toComboBox.Items.Add("All");
+            toComboBox.SelectedItem = "All";
 
             foreach (DataRow dr in dt.Rows)
             {
@@ -102,9 +102,9 @@ namespace Service
 
         private void list_flight()
         {
-            string MaChuyenBay = "None", SanBayDi = "None", SanBayDen = "None";
-            if (fromComboBox.SelectedItem != null && fromComboBox.SelectedItem != "None") SanBayDi = get_Ma(fromComboBox.SelectedItem.ToString());
-            if (toComboBox.SelectedItem != null && toComboBox.SelectedItem != "None") SanBayDen = get_Ma(toComboBox.SelectedItem.ToString());
+            string MaChuyenBay = "All", SanBayDi = "All", SanBayDen = "All";
+            if (fromComboBox.SelectedItem != null && fromComboBox.SelectedItem != "All") SanBayDi = get_Ma(fromComboBox.SelectedItem.ToString());
+            if (toComboBox.SelectedItem != null && toComboBox.SelectedItem != "All") SanBayDen = get_Ma(toComboBox.SelectedItem.ToString());
             string ngaybay = DateTime.Parse(ngayBayDtp.Value.ToString()).ToString("dd-MM-yyyy");
 
             string query = "SELECT * FROM [dbo].THAMSO ";
@@ -124,7 +124,7 @@ namespace Service
 
             query = "SELECT cb.MaChuyenBay, MaSanBayDi, MaSanBayDen, NgayGioBay, GiaCoBan "
                     + "FROM[dbo].CHUYENBAY cb "
-                     + "WHERE ( @MaChuyenBay = 'None' OR @MaChuyenBay1 = cb.MaChuyenBay ) AND ( @SanBayDi = 'None' OR @SanBayDi1 = cb.MaSanBayDi ) AND ( @SanBayDen = 'None' OR @SanBayDen1 = cb.MaSanBayDen ) AND NgayGioBay >= @NgayGioBay";
+                     + "WHERE ( @MaChuyenBay = 'All' OR @MaChuyenBay1 = cb.MaChuyenBay ) AND ( @SanBayDi = 'All' OR @SanBayDi1 = cb.MaSanBayDi ) AND ( @SanBayDen = 'All' OR @SanBayDen1 = cb.MaSanBayDen ) AND NgayGioBay >= @NgayGioBay";
             
             dt = DataProvider.Instance.ExecuteQuery(query, new object[] { MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1, ngaybaymin.ToString("yyyy-MM-dd HH:mm:ss")});
 
@@ -164,8 +164,8 @@ namespace Service
         private void resetBtn_Click(object sender, EventArgs e)
         {
             maCB = "None";
-            toComboBox.SelectedItem = "None";
-            fromComboBox.SelectedItem = "None";
+            toComboBox.SelectedItem = "All";
+            fromComboBox.SelectedItem = "All";
 
             string query = "SELECT * FROM [dbo].THAMSO ";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
@@ -220,11 +220,6 @@ namespace Service
                 "where cthv.MaChuyenBay = @MaChuyenBay ";
 
             ticketDtgv.DataSource = DataProvider.Instance.ExecuteQuery(query, new object[] { maCB });
-        }
-
-        private void ticketDtgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void Find_Btn_Click(object sender, EventArgs e)

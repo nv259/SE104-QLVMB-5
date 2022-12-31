@@ -117,12 +117,12 @@
             // 
             // ngayBayDtp
             // 
+            this.ngayBayDtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.ngayBayDtp.Location = new System.Drawing.Point(159, 101);
-            //this.ngayBayDtp.MinDate = new System.DateTime(2022, 12, 30, 0, 0, 0, 0);
             this.ngayBayDtp.Name = "ngayBayDtp";
             this.ngayBayDtp.Size = new System.Drawing.Size(400, 27);
             this.ngayBayDtp.TabIndex = 3;
-            this.ngayBayDtp.Value = System.DateTime.Now;
+            this.ngayBayDtp.Value = new System.DateTime(2022, 12, 31, 15, 0, 6, 969);
             this.ngayBayDtp.ValueChanged += new System.EventHandler(this.ngayBayDtp_ValueChanged);
             // 
             // airportBindingSource
@@ -345,7 +345,6 @@
             this.ticketDtgv.Size = new System.Drawing.Size(365, 158);
             this.ticketDtgv.TabIndex = 17;
             this.ticketDtgv.TabStop = false;
-            this.ticketDtgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ticketDtgv_CellContentClick);
             // 
             // textBox9
             // 
