@@ -44,13 +44,16 @@
             this.LookUp_label = new System.Windows.Forms.Label();
             this.flightdate_chkBox = new System.Windows.Forms.CheckBox();
             this.delete_Btn = new System.Windows.Forms.Button();
+            this.BookingDate_txtBox = new System.Windows.Forms.TextBox();
+            this.bookingdate_Dtp = new System.Windows.Forms.DateTimePicker();
+            this.bookingdate_chkBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.FullInfo)).BeginInit();
             this.SuspendLayout();
             // 
             // to_comboBox
             // 
             this.to_comboBox.FormattingEnabled = true;
-            this.to_comboBox.Location = new System.Drawing.Point(818, 139);
+            this.to_comboBox.Location = new System.Drawing.Point(139, 168);
             this.to_comboBox.Name = "to_comboBox";
             this.to_comboBox.Size = new System.Drawing.Size(250, 28);
             this.to_comboBox.TabIndex = 7;
@@ -71,7 +74,7 @@
             // 
             this.textBox7.BackColor = System.Drawing.Color.White;
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Location = new System.Drawing.Point(699, 142);
+            this.textBox7.Location = new System.Drawing.Point(26, 171);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(82, 20);
             this.textBox7.TabIndex = 10;
@@ -82,7 +85,7 @@
             // 
             this.textBox8.BackColor = System.Drawing.Color.White;
             this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Location = new System.Drawing.Point(26, 142);
+            this.textBox8.Location = new System.Drawing.Point(26, 128);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(82, 20);
             this.textBox8.TabIndex = 11;
@@ -93,7 +96,7 @@
             // 
             this.textBox9.BackColor = System.Drawing.Color.White;
             this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox9.Location = new System.Drawing.Point(699, 87);
+            this.textBox9.Location = new System.Drawing.Point(719, 87);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(82, 20);
             this.textBox9.TabIndex = 12;
@@ -124,7 +127,7 @@
             // from_comboBox
             // 
             this.from_comboBox.FormattingEnabled = true;
-            this.from_comboBox.Location = new System.Drawing.Point(139, 139);
+            this.from_comboBox.Location = new System.Drawing.Point(139, 125);
             this.from_comboBox.Name = "from_comboBox";
             this.from_comboBox.Size = new System.Drawing.Size(250, 28);
             this.from_comboBox.TabIndex = 22;
@@ -159,7 +162,7 @@
             this.FullInfo.DefaultCellStyle = dataGridViewCellStyle2;
             this.FullInfo.EnableHeadersVisualStyles = false;
             this.FullInfo.GridColor = System.Drawing.Color.White;
-            this.FullInfo.Location = new System.Drawing.Point(38, 186);
+            this.FullInfo.Location = new System.Drawing.Point(26, 222);
             this.FullInfo.MultiSelect = false;
             this.FullInfo.Name = "FullInfo";
             this.FullInfo.ReadOnly = true;
@@ -175,7 +178,7 @@
             this.FullInfo.RowHeadersWidth = 51;
             this.FullInfo.RowTemplate.Height = 29;
             this.FullInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.FullInfo.Size = new System.Drawing.Size(1030, 506);
+            this.FullInfo.Size = new System.Drawing.Size(1042, 470);
             this.FullInfo.TabIndex = 23;
             this.FullInfo.TabStop = false;
             // 
@@ -214,12 +217,46 @@
             this.delete_Btn.UseVisualStyleBackColor = false;
             this.delete_Btn.Click += new System.EventHandler(this.delete_Btn_Click);
             // 
+            // BookingDate_txtBox
+            // 
+            this.BookingDate_txtBox.BackColor = System.Drawing.Color.White;
+            this.BookingDate_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.BookingDate_txtBox.Location = new System.Drawing.Point(719, 128);
+            this.BookingDate_txtBox.Name = "BookingDate_txtBox";
+            this.BookingDate_txtBox.Size = new System.Drawing.Size(82, 20);
+            this.BookingDate_txtBox.TabIndex = 48;
+            this.BookingDate_txtBox.TabStop = false;
+            this.BookingDate_txtBox.Text = "Ngày đặt vé:";
+            // 
+            // bookingdate_Dtp
+            // 
+            this.bookingdate_Dtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.bookingdate_Dtp.Location = new System.Drawing.Point(840, 123);
+            this.bookingdate_Dtp.Name = "bookingdate_Dtp";
+            this.bookingdate_Dtp.Size = new System.Drawing.Size(228, 27);
+            this.bookingdate_Dtp.TabIndex = 49;
+            this.bookingdate_Dtp.TabStop = false;
+            this.bookingdate_Dtp.ValueChanged += new System.EventHandler(this.bookingdate_Dtp_ValueChanged);
+            // 
+            // bookingdate_chkBox
+            // 
+            this.bookingdate_chkBox.AutoSize = true;
+            this.bookingdate_chkBox.Location = new System.Drawing.Point(816, 131);
+            this.bookingdate_chkBox.Name = "bookingdate_chkBox";
+            this.bookingdate_chkBox.Size = new System.Drawing.Size(18, 17);
+            this.bookingdate_chkBox.TabIndex = 50;
+            this.bookingdate_chkBox.UseVisualStyleBackColor = true;
+            this.bookingdate_chkBox.CheckedChanged += new System.EventHandler(this.bookingdate_chkBox_CheckedChanged);
+            // 
             // TraCuuVeMayBayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1099, 704);
+            this.Controls.Add(this.bookingdate_chkBox);
+            this.Controls.Add(this.bookingdate_Dtp);
+            this.Controls.Add(this.BookingDate_txtBox);
             this.Controls.Add(this.delete_Btn);
             this.Controls.Add(this.flightdate_chkBox);
             this.Controls.Add(this.LookUp_label);
@@ -256,5 +293,8 @@
         private Label LookUp_label;
         private CheckBox flightdate_chkBox;
         private Button delete_Btn;
+        private TextBox BookingDate_txtBox;
+        private DateTimePicker bookingdate_Dtp;
+        private CheckBox bookingdate_chkBox;
     }
 }

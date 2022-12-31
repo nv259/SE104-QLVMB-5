@@ -58,7 +58,9 @@ namespace Service
             flight_comboBox.SelectedItem = "All";
 
             flightdate_chkBox.Checked = false;
+            bookingdate_chkBox.Checked = false;
             flightdate_Dtp.Enabled = false;
+            bookingdate_Dtp.Enabled = false;
 
             ListAll();
         }
@@ -84,14 +86,35 @@ namespace Service
             string query = "SELECT * FROM [dbo].CT_DATVE JOIN CHUYENBAY ON CHUYENBAY.MaChuyenBay = CT_DATVE.MaChuyenBay JOIN [dbo].HANGVE ON HANGVE.MaHangVe = CT_DATVE.MaHangVe " +
                 " WHERE MaNguoiDat = @MaNguoiDat AND ( @MaChuyenBay = 'All' OR @MaChuyenBay1 = CT_DATVE.MaChuyenBay ) AND ( @SanBayDi = 'All' OR @SanBayDi1 = CHUYENBAY.MaSanBayDi ) AND ( @SanBayDen = 'All' OR @SanBayDen1 = CHUYENBAY.MaSanBayDen ) ";
             if (!flightdate_chkBox.Checked)
-                dt = DataProvider.Instance.ExecuteQuery(query, new object[] { account.MaDangNhap, MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1 });
+                if (!bookingdate_chkBox.Checked)
+                {
+                    dt = DataProvider.Instance.ExecuteQuery(query, new object[] { account.MaDangNhap, MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1 });
+                } else
+                {
+                    string NgayDatMin = bookingdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 00:00:00.000";
+                    string NgayDatMax = bookingdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 23:59:59.999";
+
+                    query = query + " AND ( @NgayDatMin <= NgayLap ) AND ( NgayLap <= @NgayDatMax ) ";
+                    dt = DataProvider.Instance.ExecuteQuery(query, new object[] { account.MaDangNhap, MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1, NgayDatMin, NgayDatMax });
+                }
             else
             {
                 string NgayBayMin = flightdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 00:00:00.000";
                 string NgayBayMax = flightdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 23:59:59.999";
 
                 query = query + " AND ( @NgayBayMin <= NgayGioBay ) AND ( NgayGioBay <= @NgayBayMax ) ";
-                dt = DataProvider.Instance.ExecuteQuery(query, new object[] { account.MaDangNhap , MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1, NgayBayMin, NgayBayMax });
+
+                if (!bookingdate_chkBox.Checked)
+                {
+                    dt = DataProvider.Instance.ExecuteQuery(query, new object[] { account.MaDangNhap, MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1, NgayBayMin, NgayBayMax });
+                } else
+                {
+                    string NgayDatMin = bookingdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 00:00:00.000";
+                    string NgayDatMax = bookingdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 23:59:59.999";
+
+                    query = query + " AND ( @NgayDatMin <= NgayLap ) AND ( NgayLap <= @NgayDatMax ) ";
+                    dt = DataProvider.Instance.ExecuteQuery(query, new object[] { account.MaDangNhap, MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1, NgayBayMin, NgayBayMax , NgayDatMin, NgayDatMax });
+                }
             }
 
             FullInfo.Rows.Clear();
@@ -180,6 +203,18 @@ namespace Service
         {
             if (flightdate_chkBox.Checked) flightdate_Dtp.Enabled = true;
             else flightdate_Dtp.Enabled = false;
+            ListAll();
+        }
+
+        private void bookingdate_Dtp_ValueChanged(object sender, EventArgs e)
+        {
+            ListAll();
+        }
+
+        private void bookingdate_chkBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (bookingdate_chkBox.Checked) bookingdate_Dtp.Enabled = true;
+            else bookingdate_Dtp.Enabled = false;
             ListAll();
         }
     }
