@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TraCuuChuyenBay));
             this.ChuyenBay_comboBox = new System.Windows.Forms.ComboBox();
             this.SanBayDi_comboBox = new System.Windows.Forms.ComboBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
@@ -181,8 +182,9 @@
             this.Controls.Add(this.SanBayDen_comboBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FullInfo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TraCuuChuyenBay";
-            this.Text = "TraCuuChuyenBay";
+            this.Text = "Tra cứu chuyến bay";
             ((System.ComponentModel.ISupportInitialize)(this.FullInfo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
