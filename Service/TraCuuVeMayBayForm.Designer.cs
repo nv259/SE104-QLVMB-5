@@ -59,81 +59,87 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(22, 99);
+            this.textBox1.Location = new System.Drawing.Point(60, 452);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(125, 20);
             this.textBox1.TabIndex = 1;
             this.textBox1.TabStop = false;
             this.textBox1.Text = "Tên đăng nhập:";
+            this.textBox1.Visible = false;
             // 
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.Color.White;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(760, 142);
+            this.textBox2.Location = new System.Drawing.Point(798, 495);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(125, 20);
             this.textBox2.TabIndex = 2;
             this.textBox2.TabStop = false;
             this.textBox2.Text = "Email:";
+            this.textBox2.Visible = false;
             // 
             // textBox3
             // 
             this.textBox3.BackColor = System.Drawing.Color.White;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Location = new System.Drawing.Point(22, 142);
+            this.textBox3.Location = new System.Drawing.Point(60, 495);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(82, 20);
             this.textBox3.TabIndex = 3;
             this.textBox3.TabStop = false;
             this.textBox3.Text = "Họ và tên:";
+            this.textBox3.Visible = false;
             // 
             // textBox4
             // 
             this.textBox4.BackColor = System.Drawing.Color.White;
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Location = new System.Drawing.Point(22, 185);
+            this.textBox4.Location = new System.Drawing.Point(60, 538);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(111, 20);
             this.textBox4.TabIndex = 4;
             this.textBox4.TabStop = false;
             this.textBox4.Text = "Mã định danh:";
+            this.textBox4.Visible = false;
             // 
             // textBox5
             // 
             this.textBox5.BackColor = System.Drawing.Color.White;
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Location = new System.Drawing.Point(760, 99);
+            this.textBox5.Location = new System.Drawing.Point(798, 452);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(125, 20);
             this.textBox5.TabIndex = 5;
             this.textBox5.TabStop = false;
             this.textBox5.Text = "Ngày sinh:";
+            this.textBox5.Visible = false;
             // 
             // textBox6
             // 
             this.textBox6.BackColor = System.Drawing.Color.White;
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Location = new System.Drawing.Point(760, 185);
+            this.textBox6.Location = new System.Drawing.Point(798, 538);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(125, 20);
             this.textBox6.TabIndex = 6;
             this.textBox6.TabStop = false;
             this.textBox6.Text = "Số điện thoại:";
+            this.textBox6.Visible = false;
             // 
             // SanBayDen_comboBox
             // 
             this.SanBayDen_comboBox.FormattingEnabled = true;
-            this.SanBayDen_comboBox.Location = new System.Drawing.Point(879, 301);
+            this.SanBayDen_comboBox.Location = new System.Drawing.Point(818, 139);
             this.SanBayDen_comboBox.Name = "SanBayDen_comboBox";
-            this.SanBayDen_comboBox.Size = new System.Drawing.Size(263, 28);
+            this.SanBayDen_comboBox.Size = new System.Drawing.Size(250, 28);
             this.SanBayDen_comboBox.TabIndex = 7;
             this.SanBayDen_comboBox.TabStop = false;
             this.SanBayDen_comboBox.SelectedIndexChanged += new System.EventHandler(this.SanBayDen_comboBox_SelectedIndexChanged);
             // 
             // NgayBay_datetime
             // 
-            this.NgayBay_datetime.Location = new System.Drawing.Point(901, 246);
+            this.NgayBay_datetime.Location = new System.Drawing.Point(840, 84);
             this.NgayBay_datetime.Name = "NgayBay_datetime";
             this.NgayBay_datetime.Size = new System.Drawing.Size(228, 27);
             this.NgayBay_datetime.TabIndex = 9;
@@ -143,7 +149,7 @@
             // 
             this.textBox7.BackColor = System.Drawing.Color.White;
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Location = new System.Drawing.Point(760, 304);
+            this.textBox7.Location = new System.Drawing.Point(699, 142);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(82, 20);
             this.textBox7.TabIndex = 10;
@@ -154,7 +160,7 @@
             // 
             this.textBox8.BackColor = System.Drawing.Color.White;
             this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Location = new System.Drawing.Point(22, 304);
+            this.textBox8.Location = new System.Drawing.Point(26, 142);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(82, 20);
             this.textBox8.TabIndex = 11;
@@ -165,7 +171,7 @@
             // 
             this.textBox9.BackColor = System.Drawing.Color.White;
             this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox9.Location = new System.Drawing.Point(760, 249);
+            this.textBox9.Location = new System.Drawing.Point(699, 87);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(82, 20);
             this.textBox9.TabIndex = 12;
@@ -176,62 +182,68 @@
             // 
             this.TenDangNhap_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TenDangNhap_txtBox.Enabled = false;
-            this.TenDangNhap_txtBox.Location = new System.Drawing.Point(153, 97);
+            this.TenDangNhap_txtBox.Location = new System.Drawing.Point(191, 450);
             this.TenDangNhap_txtBox.Name = "TenDangNhap_txtBox";
             this.TenDangNhap_txtBox.Size = new System.Drawing.Size(232, 27);
             this.TenDangNhap_txtBox.TabIndex = 13;
             this.TenDangNhap_txtBox.TabStop = false;
+            this.TenDangNhap_txtBox.Visible = false;
             // 
             // HoVaTen_txtBox
             // 
             this.HoVaTen_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.HoVaTen_txtBox.Enabled = false;
-            this.HoVaTen_txtBox.Location = new System.Drawing.Point(153, 140);
+            this.HoVaTen_txtBox.Location = new System.Drawing.Point(191, 493);
             this.HoVaTen_txtBox.Name = "HoVaTen_txtBox";
             this.HoVaTen_txtBox.Size = new System.Drawing.Size(232, 27);
             this.HoVaTen_txtBox.TabIndex = 14;
+            this.HoVaTen_txtBox.Visible = false;
             // 
             // Email_txtBox
             // 
             this.Email_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Email_txtBox.Enabled = false;
-            this.Email_txtBox.Location = new System.Drawing.Point(879, 140);
+            this.Email_txtBox.Location = new System.Drawing.Point(917, 493);
             this.Email_txtBox.Name = "Email_txtBox";
             this.Email_txtBox.Size = new System.Drawing.Size(250, 27);
             this.Email_txtBox.TabIndex = 15;
+            this.Email_txtBox.Visible = false;
             // 
             // NgaySinh_txtBox
             // 
             this.NgaySinh_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.NgaySinh_txtBox.Enabled = false;
-            this.NgaySinh_txtBox.Location = new System.Drawing.Point(879, 97);
+            this.NgaySinh_txtBox.Location = new System.Drawing.Point(917, 450);
             this.NgaySinh_txtBox.Name = "NgaySinh_txtBox";
             this.NgaySinh_txtBox.Size = new System.Drawing.Size(250, 27);
             this.NgaySinh_txtBox.TabIndex = 16;
+            this.NgaySinh_txtBox.Visible = false;
             // 
             // MaDinhDanh_txtBox
             // 
             this.MaDinhDanh_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MaDinhDanh_txtBox.Enabled = false;
-            this.MaDinhDanh_txtBox.Location = new System.Drawing.Point(153, 183);
+            this.MaDinhDanh_txtBox.Location = new System.Drawing.Point(191, 536);
             this.MaDinhDanh_txtBox.Name = "MaDinhDanh_txtBox";
             this.MaDinhDanh_txtBox.Size = new System.Drawing.Size(232, 27);
             this.MaDinhDanh_txtBox.TabIndex = 17;
+            this.MaDinhDanh_txtBox.Visible = false;
             // 
             // SoDienThoai_txtBox
             // 
             this.SoDienThoai_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SoDienThoai_txtBox.Enabled = false;
-            this.SoDienThoai_txtBox.Location = new System.Drawing.Point(879, 183);
+            this.SoDienThoai_txtBox.Location = new System.Drawing.Point(917, 536);
             this.SoDienThoai_txtBox.Name = "SoDienThoai_txtBox";
             this.SoDienThoai_txtBox.Size = new System.Drawing.Size(250, 27);
             this.SoDienThoai_txtBox.TabIndex = 18;
+            this.SoDienThoai_txtBox.Visible = false;
             // 
             // textBox16
             // 
             this.textBox16.BackColor = System.Drawing.Color.White;
             this.textBox16.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox16.Location = new System.Drawing.Point(22, 249);
+            this.textBox16.Location = new System.Drawing.Point(26, 87);
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(90, 20);
             this.textBox16.TabIndex = 19;
@@ -241,7 +253,7 @@
             // ChuyenBay_comboBox
             // 
             this.ChuyenBay_comboBox.FormattingEnabled = true;
-            this.ChuyenBay_comboBox.Location = new System.Drawing.Point(135, 246);
+            this.ChuyenBay_comboBox.Location = new System.Drawing.Point(139, 84);
             this.ChuyenBay_comboBox.Name = "ChuyenBay_comboBox";
             this.ChuyenBay_comboBox.Size = new System.Drawing.Size(250, 28);
             this.ChuyenBay_comboBox.TabIndex = 21;
@@ -250,7 +262,7 @@
             // SanBayDi_comboBox
             // 
             this.SanBayDi_comboBox.FormattingEnabled = true;
-            this.SanBayDi_comboBox.Location = new System.Drawing.Point(135, 301);
+            this.SanBayDi_comboBox.Location = new System.Drawing.Point(139, 139);
             this.SanBayDi_comboBox.Name = "SanBayDi_comboBox";
             this.SanBayDi_comboBox.Size = new System.Drawing.Size(250, 28);
             this.SanBayDi_comboBox.TabIndex = 22;
@@ -267,13 +279,13 @@
             this.FullInfo.BackgroundColor = System.Drawing.Color.White;
             this.FullInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FullInfo.EnableHeadersVisualStyles = false;
-            this.FullInfo.Location = new System.Drawing.Point(22, 367);
+            this.FullInfo.Location = new System.Drawing.Point(38, 186);
             this.FullInfo.MultiSelect = false;
             this.FullInfo.Name = "FullInfo";
             this.FullInfo.ReadOnly = true;
             this.FullInfo.RowHeadersWidth = 51;
             this.FullInfo.RowTemplate.Height = 29;
-            this.FullInfo.Size = new System.Drawing.Size(1107, 519);
+            this.FullInfo.Size = new System.Drawing.Size(1029, 506);
             this.FullInfo.TabIndex = 23;
             this.FullInfo.TabStop = false;
             // 
@@ -282,7 +294,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.label1.Location = new System.Drawing.Point(382, 21);
+            this.label1.Location = new System.Drawing.Point(383, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(407, 50);
             this.label1.TabIndex = 24;
@@ -291,7 +303,7 @@
             // NgayBay_chkBox
             // 
             this.NgayBay_chkBox.AutoSize = true;
-            this.NgayBay_chkBox.Location = new System.Drawing.Point(877, 252);
+            this.NgayBay_chkBox.Location = new System.Drawing.Point(816, 90);
             this.NgayBay_chkBox.Name = "NgayBay_chkBox";
             this.NgayBay_chkBox.Size = new System.Drawing.Size(18, 17);
             this.NgayBay_chkBox.TabIndex = 46;
@@ -303,7 +315,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1157, 962);
+            this.ClientSize = new System.Drawing.Size(1099, 704);
             this.Controls.Add(this.NgayBay_chkBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FullInfo);
