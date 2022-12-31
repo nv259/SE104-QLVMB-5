@@ -80,6 +80,32 @@ namespace Service
             //Load_dtgv();
         }
 
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn đăng xuất?", "Notification", MessageBoxButtons.OKCancel) != DialogResult.OK)
+            {
+                return;
+            }
+
+            //IsLogout = true;
+            this.Close();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn thoát?", "Notification", MessageBoxButtons.OKCancel) != DialogResult.OK)
+            {
+                return;
+            }
+
+            Application.Exit();
+        }
+
+        private void publicAnnoucementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hiện chưa có thông báo nào!");
+        }
+
         /*        public void MonthlyUpdate()
                 {
                     DateTime dt = DateTime.Now;

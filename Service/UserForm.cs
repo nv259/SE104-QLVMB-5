@@ -122,5 +122,10 @@ namespace Service
 
             this.Show();
         }
+
+        private void publicAnnoucementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hiện chưa có thông báo nào!");
+        }
     }
 }

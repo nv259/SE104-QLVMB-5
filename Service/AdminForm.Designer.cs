@@ -44,27 +44,32 @@
             this.Name_txtBox = new System.Windows.Forms.TextBox();
             this.ID_txtBox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.Add_btn = new System.Windows.Forms.Button();
-            this.userRole_comboBox = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.resetBtn = new System.Windows.Forms.Button();
-            this.txtBox4 = new System.Windows.Forms.TextBox();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.updateBtn = new System.Windows.Forms.Button();
+            this.userRole_comboBox = new System.Windows.Forms.ComboBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtBox4 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.user_dtgv = new System.Windows.Forms.DataGridView();
             this.MainTab = new System.Windows.Forms.TabControl();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.publicAnnoucementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.StatementTab.SuspendLayout();
             this.panel1.SuspendLayout();
             this.showData_panel.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.user_dtgv)).BeginInit();
             this.MainTab.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // StatementTab
@@ -82,7 +87,7 @@
             // 
             // findBtn
             // 
-            this.findBtn.Location = new System.Drawing.Point(299, 36);
+            this.findBtn.Location = new System.Drawing.Point(282, 36);
             this.findBtn.Name = "findBtn";
             this.findBtn.Size = new System.Drawing.Size(53, 27);
             this.findBtn.TabIndex = 2;
@@ -95,7 +100,7 @@
             this.searchTxtBox.Location = new System.Drawing.Point(6, 36);
             this.searchTxtBox.Name = "searchTxtBox";
             this.searchTxtBox.PlaceholderText = "Tìm kiếm theo tên đăng nhập";
-            this.searchTxtBox.Size = new System.Drawing.Size(287, 27);
+            this.searchTxtBox.Size = new System.Drawing.Size(270, 27);
             this.searchTxtBox.TabIndex = 1;
             this.searchTxtBox.TextChanged += new System.EventHandler(this.findBtn_Click);
             // 
@@ -189,6 +194,18 @@
             this.panel2.Size = new System.Drawing.Size(357, 438);
             this.panel2.TabIndex = 1;
             // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.Add_btn);
+            this.panel3.Controls.Add(this.resetBtn);
+            this.panel3.Controls.Add(this.deleteBtn);
+            this.panel3.Controls.Add(this.updateBtn);
+            this.panel3.Location = new System.Drawing.Point(133, 359);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(223, 78);
+            this.panel3.TabIndex = 22;
+            // 
             // Add_btn
             // 
             this.Add_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
@@ -201,6 +218,45 @@
             this.Add_btn.Text = "Thêm";
             this.Add_btn.UseVisualStyleBackColor = false;
             this.Add_btn.Click += new System.EventHandler(this.Add_btn_Click);
+            // 
+            // resetBtn
+            // 
+            this.resetBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.resetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resetBtn.ForeColor = System.Drawing.Color.White;
+            this.resetBtn.Location = new System.Drawing.Point(116, 6);
+            this.resetBtn.Name = "resetBtn";
+            this.resetBtn.Size = new System.Drawing.Size(101, 29);
+            this.resetBtn.TabIndex = 13;
+            this.resetBtn.Text = "Đặt lại";
+            this.resetBtn.UseVisualStyleBackColor = false;
+            this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteBtn.ForeColor = System.Drawing.Color.White;
+            this.deleteBtn.Location = new System.Drawing.Point(4, 41);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(106, 29);
+            this.deleteBtn.TabIndex = 4;
+            this.deleteBtn.Text = "Xóa";
+            this.deleteBtn.UseVisualStyleBackColor = false;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
+            // updateBtn
+            // 
+            this.updateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateBtn.ForeColor = System.Drawing.Color.White;
+            this.updateBtn.Location = new System.Drawing.Point(116, 41);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(101, 29);
+            this.updateBtn.TabIndex = 3;
+            this.updateBtn.Text = "Cập nhật";
+            this.updateBtn.UseVisualStyleBackColor = false;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // userRole_comboBox
             // 
@@ -229,19 +285,6 @@
             this.textBox3.Text = "Quyền:";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // resetBtn
-            // 
-            this.resetBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.resetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetBtn.ForeColor = System.Drawing.Color.White;
-            this.resetBtn.Location = new System.Drawing.Point(116, 6);
-            this.resetBtn.Name = "resetBtn";
-            this.resetBtn.Size = new System.Drawing.Size(101, 29);
-            this.resetBtn.TabIndex = 13;
-            this.resetBtn.Text = "Đặt lại";
-            this.resetBtn.UseVisualStyleBackColor = false;
-            this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
-            // 
             // txtBox4
             // 
             this.txtBox4.BackColor = System.Drawing.Color.White;
@@ -256,32 +299,6 @@
             this.txtBox4.TabStop = false;
             this.txtBox4.Text = "Tên đăng nhập:";
             this.txtBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // deleteBtn
-            // 
-            this.deleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteBtn.ForeColor = System.Drawing.Color.White;
-            this.deleteBtn.Location = new System.Drawing.Point(4, 41);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(106, 29);
-            this.deleteBtn.TabIndex = 4;
-            this.deleteBtn.Text = "Xóa";
-            this.deleteBtn.UseVisualStyleBackColor = false;
-            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
-            // 
-            // updateBtn
-            // 
-            this.updateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updateBtn.ForeColor = System.Drawing.Color.White;
-            this.updateBtn.Location = new System.Drawing.Point(116, 41);
-            this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(101, 29);
-            this.updateBtn.TabIndex = 3;
-            this.updateBtn.Text = "Cập nhật";
-            this.updateBtn.UseVisualStyleBackColor = false;
-            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // textBox10
             // 
@@ -366,7 +383,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.user_dtgv.DefaultCellStyle = dataGridViewCellStyle2;
-            this.user_dtgv.Location = new System.Drawing.Point(6, 0);
+            this.user_dtgv.Location = new System.Drawing.Point(6, 3);
             this.user_dtgv.Name = "user_dtgv";
             this.user_dtgv.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -383,7 +400,7 @@
             this.user_dtgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.user_dtgv.RowTemplate.Height = 29;
             this.user_dtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.user_dtgv.Size = new System.Drawing.Size(649, 441);
+            this.user_dtgv.Size = new System.Drawing.Size(649, 438);
             this.user_dtgv.TabIndex = 0;
             // 
             // MainTab
@@ -395,23 +412,48 @@
             this.MainTab.Size = new System.Drawing.Size(1032, 552);
             this.MainTab.TabIndex = 1;
             // 
-            // panel3
+            // menuStrip1
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.Add_btn);
-            this.panel3.Controls.Add(this.resetBtn);
-            this.panel3.Controls.Add(this.deleteBtn);
-            this.panel3.Controls.Add(this.updateBtn);
-            this.panel3.Location = new System.Drawing.Point(133, 359);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(223, 78);
-            this.panel3.TabIndex = 22;
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.publicAnnoucementToolStripMenuItem,
+            this.logoutToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1044, 28);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // publicAnnoucementToolStripMenuItem
+            // 
+            this.publicAnnoucementToolStripMenuItem.Name = "publicAnnoucementToolStripMenuItem";
+            this.publicAnnoucementToolStripMenuItem.Size = new System.Drawing.Size(159, 24);
+            this.publicAnnoucementToolStripMenuItem.Text = "Public Annoucement";
+            this.publicAnnoucementToolStripMenuItem.Click += new System.EventHandler(this.publicAnnoucementToolStripMenuItem_Click);
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1044, 564);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.MainTab);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -424,10 +466,13 @@
             this.showData_panel.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.user_dtgv)).EndInit();
             this.MainTab.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -444,19 +489,23 @@
         private TextBox Name_txtBox;
         private TextBox ID_txtBox;
         private Panel panel2;
+        private Panel panel3;
         private Button Add_btn;
+        private Button resetBtn;
+        private Button deleteBtn;
+        private Button updateBtn;
         private ComboBox userRole_comboBox;
         private TextBox textBox3;
-        private Button resetBtn;
         private TextBox txtBox4;
-        private Button updateBtn;
         private TextBox textBox10;
         private TextBox textBox6;
         private TextBox textBox4;
         private TextBox textBox1;
         private DataGridView user_dtgv;
         private TabControl MainTab;
-        private Button deleteBtn;
-        private Panel panel3;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem publicAnnoucementToolStripMenuItem;
+        private ToolStripMenuItem logoutToolStripMenuItem;
+        private ToolStripMenuItem exitToolStripMenuItem;
     }
 }
