@@ -15,14 +15,22 @@ namespace Service
 {
     public partial class TraCuuVeMayBayForm : Form
     {
-        public TraCuuVeMayBayForm(Account account)
+        public TraCuuVeMayBayForm(Account account = null)
         {
             this.account = account;
             InitializeComponent();
+            string query;
+            DataTable dt;
+            if (account == null)
+            {
+                query = "SELECT * FROM [dbo].BANVE";
+                dt = DataProvider.Instance.ExecuteQuery(query);
+            } else
+            {
+                query = "SELECT * FROM [dbo].CT_DATVE WHERE MaNguoiDat = @MaDangNhap ";
+                dt = DataProvider.Instance.ExecuteQuery(query, new object[] { account.MaDangNhap });
+            }
 
-            string query = "SELECT * FROM [dbo].CT_DATVE WHERE MaNguoiDat = @MaDangNhap ";
-            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { account.MaDangNhap });
-            
             flight_comboBox.BeginUpdate();
             flight_comboBox.Items.Clear();
             flight_comboBox.Items.Add("All");
@@ -83,54 +91,118 @@ namespace Service
 
             string MaChuyenBay1 = MaChuyenBay, SanBayDi1 = SanBayDi, SanBayDen1 = SanBayDen;
 
-            string query = "SELECT * FROM [dbo].CT_DATVE JOIN CHUYENBAY ON CHUYENBAY.MaChuyenBay = CT_DATVE.MaChuyenBay JOIN [dbo].HANGVE ON HANGVE.MaHangVe = CT_DATVE.MaHangVe " +
-                " WHERE MaNguoiDat = @MaNguoiDat AND ( @MaChuyenBay = 'All' OR @MaChuyenBay1 = CT_DATVE.MaChuyenBay ) AND ( @SanBayDi = 'All' OR @SanBayDi1 = CHUYENBAY.MaSanBayDi ) AND ( @SanBayDen = 'All' OR @SanBayDen1 = CHUYENBAY.MaSanBayDen ) ";
-            if (!flightdate_chkBox.Checked)
-                if (!bookingdate_chkBox.Checked)
-                {
-                    dt = DataProvider.Instance.ExecuteQuery(query, new object[] { account.MaDangNhap, MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1 });
-                } else
-                {
-                    string NgayDatMin = bookingdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 00:00:00.000";
-                    string NgayDatMax = bookingdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 23:59:59.999";
-
-                    query = query + " AND ( @NgayDatMin <= NgayLap ) AND ( NgayLap <= @NgayDatMax ) ";
-                    dt = DataProvider.Instance.ExecuteQuery(query, new object[] { account.MaDangNhap, MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1, NgayDatMin, NgayDatMax });
-                }
-            else
-            {
-                string NgayBayMin = flightdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 00:00:00.000";
-                string NgayBayMax = flightdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 23:59:59.999";
-
-                query = query + " AND ( @NgayBayMin <= NgayGioBay ) AND ( NgayGioBay <= @NgayBayMax ) ";
-
-                if (!bookingdate_chkBox.Checked)
-                {
-                    dt = DataProvider.Instance.ExecuteQuery(query, new object[] { account.MaDangNhap, MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1, NgayBayMin, NgayBayMax });
-                } else
-                {
-                    string NgayDatMin = bookingdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 00:00:00.000";
-                    string NgayDatMax = bookingdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 23:59:59.999";
-
-                    query = query + " AND ( @NgayDatMin <= NgayLap ) AND ( NgayLap <= @NgayDatMax ) ";
-                    dt = DataProvider.Instance.ExecuteQuery(query, new object[] { account.MaDangNhap, MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1, NgayBayMin, NgayBayMax , NgayDatMin, NgayDatMax });
-                }
-            }
-
             bookinglist_Dgv.Rows.Clear();
-            bookinglist_Dgv.ColumnCount = 8;
-            bookinglist_Dgv.Columns[0].Name = "Mã chuyến bay";
-            bookinglist_Dgv.Columns[1].Name = "Bay từ";
-            bookinglist_Dgv.Columns[2].Name = "Bay đến";
-            bookinglist_Dgv.Columns[3].Name = "Ngày giờ bay";
-            bookinglist_Dgv.Columns[4].Name = "Thời gian bay";
-            bookinglist_Dgv.Columns[5].Name = "Hạng vé";
-            bookinglist_Dgv.Columns[6].Name = "Ngày lập vé";
-            bookinglist_Dgv.Columns[7].Name = "Tình trạng vé";
-
-            foreach(DataRow dr in dt.Rows)
+            if (this.account != null)
             {
-                bookinglist_Dgv.Rows.Add(dr["MaChuyenBay"].ToString(), dr["MaSanBayDi"].ToString(), dr["MaSanBayDen"].ToString(), dr["NgayGioBay"].ToString(), dr["ThoiGianBay"].ToString(), dr["TenHangVe"].ToString(), dr["NgayLap"].ToString(), dr["TinhTrang"].ToString());
+                string query = "SELECT * FROM [dbo].CT_DATVE JOIN CHUYENBAY ON CHUYENBAY.MaChuyenBay = CT_DATVE.MaChuyenBay JOIN [dbo].HANGVE ON HANGVE.MaHangVe = CT_DATVE.MaHangVe " +
+                    " WHERE MaNguoiDat = @MaNguoiDat AND ( @MaChuyenBay = 'All' OR @MaChuyenBay1 = CT_DATVE.MaChuyenBay ) AND ( @SanBayDi = 'All' OR @SanBayDi1 = CHUYENBAY.MaSanBayDi ) AND ( @SanBayDen = 'All' OR @SanBayDen1 = CHUYENBAY.MaSanBayDen ) ";
+                
+                if (!flightdate_chkBox.Checked)
+                    if (!bookingdate_chkBox.Checked)
+                    {
+                        dt = DataProvider.Instance.ExecuteQuery(query, new object[] { account.MaDangNhap, MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1 });
+                    }
+                    else
+                    {
+                        string NgayDatMin = bookingdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 00:00:00.000";
+                        string NgayDatMax = bookingdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 23:59:59.999";
+
+                        query = query + " AND ( @NgayDatMin <= NgayLap ) AND ( NgayLap <= @NgayDatMax ) ";
+                        dt = DataProvider.Instance.ExecuteQuery(query, new object[] { account.MaDangNhap, MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1, NgayDatMin, NgayDatMax });
+                    }
+                else
+                {
+                    string NgayBayMin = flightdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 00:00:00.000";
+                    string NgayBayMax = flightdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 23:59:59.999";
+
+                    query = query + " AND ( @NgayBayMin <= NgayGioBay ) AND ( NgayGioBay <= @NgayBayMax ) ";
+
+                    if (!bookingdate_chkBox.Checked)
+                    {
+                        dt = DataProvider.Instance.ExecuteQuery(query, new object[] { account.MaDangNhap, MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1, NgayBayMin, NgayBayMax });
+                    }
+                    else
+                    {
+                        string NgayDatMin = bookingdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 00:00:00.000";
+                        string NgayDatMax = bookingdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 23:59:59.999";
+
+                        query = query + " AND ( @NgayDatMin <= NgayLap ) AND ( NgayLap <= @NgayDatMax ) ";
+                        dt = DataProvider.Instance.ExecuteQuery(query, new object[] { account.MaDangNhap, MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1, NgayBayMin, NgayBayMax, NgayDatMin, NgayDatMax });
+                    }
+                }
+
+                bookinglist_Dgv.ColumnCount = 8;
+                bookinglist_Dgv.Columns[0].Name = "Mã chuyến bay";
+                bookinglist_Dgv.Columns[1].Name = "Bay từ";
+                bookinglist_Dgv.Columns[2].Name = "Bay đến";
+                bookinglist_Dgv.Columns[3].Name = "Ngày giờ bay";
+                bookinglist_Dgv.Columns[4].Name = "Thời gian bay";
+                bookinglist_Dgv.Columns[5].Name = "Hạng vé";
+                bookinglist_Dgv.Columns[6].Name = "Ngày đặt vé";
+                bookinglist_Dgv.Columns[7].Name = "Tình trạng vé";
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    bookinglist_Dgv.Rows.Add(dr["MaChuyenBay"].ToString(), dr["MaSanBayDi"].ToString(), dr["MaSanBayDen"].ToString(), dr["NgayGioBay"].ToString(), dr["ThoiGianBay"].ToString(), dr["TenHangVe"].ToString(), dr["NgayLap"].ToString(), dr["TinhTrang"].ToString());
+                }
+            } else
+            {
+                string query = "SELECT * FROM [dbo].BANVE " +
+                    "JOIN [dbo].CHUYENBAY ON CHUYENBAY.MaChuyenBay = BANVE.MaChuyenBay " +
+                    "JOIN [dbo].HANGVE ON HANGVE.MaHangVe = BANVE.MaHangVe " +
+                    " WHERE ( @MaChuyenBay = 'All' OR @MaChuyenBay1 = BANVE.MaChuyenBay ) AND ( @SanBayDi = 'All' OR @SanBayDi1 = CHUYENBAY.MaSanBayDi ) AND ( @SanBayDen = 'All' OR @SanBayDen1 = CHUYENBAY.MaSanBayDen ) ";
+                
+                if (!flightdate_chkBox.Checked)
+                    if (!bookingdate_chkBox.Checked)
+                    {
+                        dt = DataProvider.Instance.ExecuteQuery(query, new object[] { MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1 });
+                    }
+                    else
+                    {
+                        string NgayDatMin = bookingdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 00:00:00.000";
+                        string NgayDatMax = bookingdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 23:59:59.999";
+
+                        query = query + " AND ( @NgayDatMin <= NgayLap ) AND ( NgayLap <= @NgayDatMax ) ";
+                        dt = DataProvider.Instance.ExecuteQuery(query, new object[] { MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1, NgayDatMin, NgayDatMax });
+                    }
+                else
+                {
+                    string NgayBayMin = flightdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 00:00:00.000";
+                    string NgayBayMax = flightdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 23:59:59.999";
+
+                    query = query + " AND ( @NgayBayMin <= NgayGioBay ) AND ( NgayGioBay <= @NgayBayMax ) ";
+
+                    if (!bookingdate_chkBox.Checked)
+                    {
+                        dt = DataProvider.Instance.ExecuteQuery(query, new object[] { MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1, NgayBayMin, NgayBayMax });
+                    }
+                    else
+                    {
+                        string NgayDatMin = bookingdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 00:00:00.000";
+                        string NgayDatMax = bookingdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 23:59:59.999";
+
+                        query = query + " AND ( @NgayDatMin <= NgayLap ) AND ( NgayLap <= @NgayDatMax ) ";
+                        dt = DataProvider.Instance.ExecuteQuery(query, new object[] { MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1, NgayBayMin, NgayBayMax, NgayDatMin, NgayDatMax });
+                    }
+                }
+
+                bookinglist_Dgv.ColumnCount = 11;
+                bookinglist_Dgv.Columns[0].Name = "Mã chuyến bay";
+                bookinglist_Dgv.Columns[0].Name = "Bay từ";
+                bookinglist_Dgv.Columns[0].Name = "Bay đến";
+                bookinglist_Dgv.Columns[3].Name = "Ngày giờ bay";
+                bookinglist_Dgv.Columns[4].Name = "Thời gian bay";
+                bookinglist_Dgv.Columns[5].Name = "Hạng vé";
+                bookinglist_Dgv.Columns[6].Name = "Tên khách hàng";
+                bookinglist_Dgv.Columns[7].Name = "Mã định danh";
+                bookinglist_Dgv.Columns[8].Name = "Số điện thoại";
+                bookinglist_Dgv.Columns[9].Name = "Email";
+                bookinglist_Dgv.Columns[9].Name = "Ngày đặt vé";
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    bookinglist_Dgv.Rows.Add(dr["MaChuyenBay"].ToString(), dr["MaSanBayDi"].ToString(), dr["MaSanBayDen"].ToString(), dr["NgayGioBay"].ToString(), dr["ThoiGianBay"].ToString(), dr["TenHangVe"].ToString(), dr["TenKhachHang"].ToString(), dr["DinhDanh"].ToString(), dr["SoDienThoai"].ToString(), dr["Email"].ToString(), dr["NgayLap"].ToString() );
+                }
             }
         }
 
@@ -177,13 +249,26 @@ namespace Service
                 {
                     tg_huy_ve_cham_nhat = Convert.ToInt32(dr["TGHuyChamNhat"]);
                 }
-
                 if (chk.Days >= tg_huy_ve_cham_nhat)
                 {
-
-                    query = "DELETE FROM [dbo].CT_DATVE WHERE MaChuyenBay = @MaChuyenBay AND MaNguoiDat = @MaNguoiDat";
-                    DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { maCB, this.account.MaDangNhap });
-                    ListAll();
+                    if (this.account != null)
+                    {
+                        query = "DELETE FROM [dbo].CT_DATVE WHERE MaChuyenBay = @MaChuyenBay AND MaNguoiDat = @MaNguoiDat";
+                        DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { maCB, this.account.MaDangNhap });
+                        ListAll();
+                    } else
+                    {
+                        string dinhDanh = Convert.ToString(bookinglist_Dgv.Rows[bookinglist_Dgv.SelectedRows[0].Index].Cells[5].Value);
+                        string maHangVe = Convert.ToString(bookinglist_Dgv.Rows[bookinglist_Dgv.SelectedRows[0].Index].Cells[1].Value);
+                        string ngayLap = Convert.ToString(bookinglist_Dgv.Rows[bookinglist_Dgv.SelectedRows[0].Index].Cells[2].Value);
+                        
+                        query = "DELETE FROM [dbo].BANVE WHERE MaChuyenBay = @MaChuyenBay AND DinhDanh = @DinhDanh";
+                        DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { maCB, dinhDanh });
+                        query = "DELETE TOP(1) FROM [dbo].CT_DATVE WHERE MaChuyenBay = @MaChuyenBay AND MaHangVe = @MaHangVe " +
+                            "AND NgayLap = @NgayLap AND MaNguoiDat IS NULL";
+                        dt = DataProvider.Instance.ExecuteQuery(query, new object[] { maCB, maHangVe, ngayLap });
+                        ListAll();
+                    }
 
                     MessageBox.Show("Vé đã được hủy thành công!");
                 }
