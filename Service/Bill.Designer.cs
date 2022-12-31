@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bill));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Birthday_Dtp = new System.Windows.Forms.DateTimePicker();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.chuyenBayComboBox = new System.Windows.Forms.ComboBox();
             this.cb_txtBox = new System.Windows.Forms.TextBox();
             this.Cost_txtBox = new System.Windows.Forms.TextBox();
@@ -47,14 +49,16 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.ngDatVeBox = new System.Windows.Forms.DateTimePicker();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.Dat_hoac_Ban_Btn = new System.Windows.Forms.Button();
+            this.Ticket_label = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.Birthday_Dtp);
+            this.panel1.Controls.Add(this.textBox4);
             this.panel1.Controls.Add(this.chuyenBayComboBox);
             this.panel1.Controls.Add(this.cb_txtBox);
             this.panel1.Controls.Add(this.Cost_txtBox);
@@ -74,8 +78,30 @@
             this.panel1.Controls.Add(this.textBox8);
             this.panel1.Location = new System.Drawing.Point(0, 44);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(427, 281);
+            this.panel1.Size = new System.Drawing.Size(427, 341);
             this.panel1.TabIndex = 0;
+            // 
+            // Birthday_Dtp
+            // 
+            this.Birthday_Dtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.Birthday_Dtp.Location = new System.Drawing.Point(3, 270);
+            this.Birthday_Dtp.Name = "Birthday_Dtp";
+            this.Birthday_Dtp.Size = new System.Drawing.Size(170, 27);
+            this.Birthday_Dtp.TabIndex = 38;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.White;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.textBox4.Location = new System.Drawing.Point(3, 242);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(92, 20);
+            this.textBox4.TabIndex = 37;
+            this.textBox4.TabStop = false;
+            this.textBox4.Text = "Ngày sinh:";
             // 
             // chuyenBayComboBox
             // 
@@ -99,10 +125,10 @@
             // 
             this.Cost_txtBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(242)))), ((int)(((byte)(235)))));
             this.Cost_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Cost_txtBox.Location = new System.Drawing.Point(261, 242);
+            this.Cost_txtBox.Location = new System.Drawing.Point(200, 270);
             this.Cost_txtBox.Name = "Cost_txtBox";
             this.Cost_txtBox.ReadOnly = true;
-            this.Cost_txtBox.Size = new System.Drawing.Size(161, 27);
+            this.Cost_txtBox.Size = new System.Drawing.Size(222, 27);
             this.Cost_txtBox.TabIndex = 34;
             this.Cost_txtBox.TabStop = false;
             // 
@@ -112,7 +138,7 @@
             this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox12.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.textBox12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.textBox12.Location = new System.Drawing.Point(196, 244);
+            this.textBox12.Location = new System.Drawing.Point(203, 244);
             this.textBox12.Name = "textBox12";
             this.textBox12.ReadOnly = true;
             this.textBox12.Size = new System.Drawing.Size(59, 20);
@@ -281,43 +307,43 @@
             this.textBox8.TabStop = false;
             this.textBox8.Text = "Ngày đặt vé:";
             // 
-            // button1
+            // Dat_hoac_Ban_Btn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(151, 341);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 47);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "Đặt Vé";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Dat_hoac_Ban_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.Dat_hoac_Ban_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Dat_hoac_Ban_Btn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Dat_hoac_Ban_Btn.ForeColor = System.Drawing.Color.White;
+            this.Dat_hoac_Ban_Btn.Location = new System.Drawing.Point(151, 413);
+            this.Dat_hoac_Ban_Btn.Name = "Dat_hoac_Ban_Btn";
+            this.Dat_hoac_Ban_Btn.Size = new System.Drawing.Size(131, 47);
+            this.Dat_hoac_Ban_Btn.TabIndex = 35;
+            this.Dat_hoac_Ban_Btn.Text = "Đặt Vé";
+            this.Dat_hoac_Ban_Btn.UseVisualStyleBackColor = false;
+            this.Dat_hoac_Ban_Btn.Click += new System.EventHandler(this.Dat_hoac_Ban_Btn_Click);
             // 
-            // textBox14
+            // Ticket_label
             // 
-            this.textBox14.BackColor = System.Drawing.Color.White;
-            this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox14.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.textBox14.Location = new System.Drawing.Point(0, -4);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.ReadOnly = true;
-            this.textBox14.Size = new System.Drawing.Size(427, 50);
-            this.textBox14.TabIndex = 36;
-            this.textBox14.TabStop = false;
-            this.textBox14.Text = "Vé chuyến bay";
-            this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Ticket_label.BackColor = System.Drawing.Color.White;
+            this.Ticket_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Ticket_label.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Ticket_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.Ticket_label.Location = new System.Drawing.Point(0, -4);
+            this.Ticket_label.Name = "Ticket_label";
+            this.Ticket_label.ReadOnly = true;
+            this.Ticket_label.Size = new System.Drawing.Size(427, 50);
+            this.Ticket_label.TabIndex = 36;
+            this.Ticket_label.TabStop = false;
+            this.Ticket_label.Text = "Vé chuyến bay";
+            this.Ticket_label.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Bill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(427, 411);
-            this.Controls.Add(this.textBox14);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(427, 472);
+            this.Controls.Add(this.Ticket_label);
+            this.Controls.Add(this.Dat_hoac_Ban_Btn);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -350,10 +376,12 @@
         private TextBox textBox9;
         private TextBox textBox12;
         private TextBox Cost_txtBox;
-        private Button button1;
-        private TextBox textBox14;
+        private Button Dat_hoac_Ban_Btn;
+        private TextBox Ticket_label;
         private Button button2;
         private TextBox cb_txtBox;
         private ComboBox chuyenBayComboBox;
+        private DateTimePicker Birthday_Dtp;
+        private TextBox textBox4;
     }
 }

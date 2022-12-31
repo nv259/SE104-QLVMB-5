@@ -165,7 +165,7 @@ namespace Service
 
             if (fullname_txtBox.Text.Length == 0)
             {
-                MessageBox.Show("Tên người dùng không được để trống!");
+                MessageBox.Show("Họ và tên không được để trống!");
                 return false;
             }
 

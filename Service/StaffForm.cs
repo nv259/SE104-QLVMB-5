@@ -47,7 +47,7 @@ namespace Service
             this.Show();
         }
 
-        private void traCuuBtn_Click(object sender, EventArgs e)
+        private void LookUpBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
             TraCuuChuyenBay tracuu = new TraCuuChuyenBay();
@@ -71,7 +71,7 @@ namespace Service
             this.Show();
         }
 
-        private void saleBtn_Click(object sender, EventArgs e)
+        private void sellBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
             Bill f = new Bill();
@@ -79,7 +79,7 @@ namespace Service
             this.Show();
         }
 
-        private void ChangePass_CheckedChanged(object sender, EventArgs e)
+        private void ChangePass_Btn_CheckedChanged(object sender, EventArgs e)
         {
             if (!ChangePass.Checked)
             {
@@ -208,14 +208,14 @@ namespace Service
             if (ChangePass.Checked)
             {
                 string oldPassword = Convert_to_SHA512(this.OldPassword_txtBox.Text);
-                string newPassword = this.NewPassword.Text;
-                string confirmnewPassword = this.ConfirmNewPassword.Text;
+                string newPassword = this.NewPassword_txtBox.Text;
+                string confirmnewPassword = this.ConfirmNewPassword_txtBox.Text;
                 if (oldPassword != account.MatKhau)
                 {
                     MessageBox.Show("Mật khẩu cũ không khớp!");
                     return false;
                 }
-                else if (newPassword != confirmnewPassword)
+                else if (NewPassword_txtBox != ConfirmNewPassword)
                 {
                     MessageBox.Show("Mật khẩu mới không khớp với xác nhận mật khẩu mới!");
                     return false;
@@ -229,7 +229,7 @@ namespace Service
 
             if (fullName_txtBox.Text.Length == 0)
             {
-                MessageBox.Show("Tên người dùng không được để trống!");
+                MessageBox.Show("Họ và tên không được để trống!");
                 return false;
             }
 
@@ -282,7 +282,7 @@ namespace Service
 
             if (ChangePass.Checked)
             {
-                MatKhau = Convert_to_SHA512(this.ChangePass.Text);
+                MatKhau = Convert_to_SHA512(NewPassword_txtBox.Text);
             }
             else
             {
