@@ -237,16 +237,16 @@
             this.userInfo_pnl.Controls.Add(this.textBox1);
             this.userInfo_pnl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.userInfo_pnl.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.userInfo_pnl.Location = new System.Drawing.Point(537, 12);
+            this.userInfo_pnl.Location = new System.Drawing.Point(548, 12);
             this.userInfo_pnl.Name = "userInfo_pnl";
-            this.userInfo_pnl.Size = new System.Drawing.Size(521, 581);
+            this.userInfo_pnl.Size = new System.Drawing.Size(404, 581);
             this.userInfo_pnl.TabIndex = 10;
             // 
             // BirthDay
             // 
-            this.BirthDay.Location = new System.Drawing.Point(178, 191);
+            this.BirthDay.Location = new System.Drawing.Point(121, 192);
             this.BirthDay.Name = "BirthDay";
-            this.BirthDay.Size = new System.Drawing.Size(331, 27);
+            this.BirthDay.Size = new System.Drawing.Size(268, 27);
             this.BirthDay.TabIndex = 24;
             // 
             // textBox12
@@ -255,10 +255,10 @@
             this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox12.ForeColor = System.Drawing.Color.White;
-            this.textBox12.Location = new System.Drawing.Point(16, 196);
+            this.textBox12.Location = new System.Drawing.Point(15, 197);
             this.textBox12.Name = "textBox12";
             this.textBox12.ReadOnly = true;
-            this.textBox12.Size = new System.Drawing.Size(156, 20);
+            this.textBox12.Size = new System.Drawing.Size(100, 20);
             this.textBox12.TabIndex = 23;
             this.textBox12.TabStop = false;
             this.textBox12.Text = "Ngày sinh:";
@@ -270,10 +270,10 @@
             this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox11.ForeColor = System.Drawing.Color.White;
-            this.textBox11.Location = new System.Drawing.Point(16, 334);
+            this.textBox11.Location = new System.Drawing.Point(15, 335);
             this.textBox11.Name = "textBox11";
             this.textBox11.ReadOnly = true;
-            this.textBox11.Size = new System.Drawing.Size(156, 20);
+            this.textBox11.Size = new System.Drawing.Size(100, 20);
             this.textBox11.TabIndex = 22;
             this.textBox11.TabStop = false;
             this.textBox11.Text = "Đổi mật khẩu:";
@@ -282,7 +282,7 @@
             // ChangePass
             // 
             this.ChangePass.AutoSize = true;
-            this.ChangePass.Location = new System.Drawing.Point(178, 336);
+            this.ChangePass.Location = new System.Drawing.Point(121, 337);
             this.ChangePass.Name = "ChangePass";
             this.ChangePass.Size = new System.Drawing.Size(18, 17);
             this.ChangePass.TabIndex = 21;
@@ -292,7 +292,7 @@
             // UpdateInfo_Btn
             // 
             this.UpdateInfo_Btn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.UpdateInfo_Btn.Location = new System.Drawing.Point(157, 496);
+            this.UpdateInfo_Btn.Location = new System.Drawing.Point(100, 497);
             this.UpdateInfo_Btn.Name = "UpdateInfo_Btn";
             this.UpdateInfo_Btn.Size = new System.Drawing.Size(227, 52);
             this.UpdateInfo_Btn.TabIndex = 20;
@@ -307,9 +307,9 @@
             this.OldPassword_txtBox.Enabled = false;
             this.OldPassword_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.OldPassword_txtBox.ForeColor = System.Drawing.Color.Black;
-            this.OldPassword_txtBox.Location = new System.Drawing.Point(178, 367);
+            this.OldPassword_txtBox.Location = new System.Drawing.Point(121, 368);
             this.OldPassword_txtBox.Name = "OldPassword_txtBox";
-            this.OldPassword_txtBox.Size = new System.Drawing.Size(331, 27);
+            this.OldPassword_txtBox.Size = new System.Drawing.Size(268, 27);
             this.OldPassword_txtBox.TabIndex = 19;
             this.OldPassword_txtBox.TabStop = false;
             this.OldPassword_txtBox.UseSystemPasswordChar = true;
@@ -321,9 +321,9 @@
             this.NewPassword.Enabled = false;
             this.NewPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.NewPassword.ForeColor = System.Drawing.Color.Black;
-            this.NewPassword.Location = new System.Drawing.Point(178, 400);
+            this.NewPassword.Location = new System.Drawing.Point(121, 401);
             this.NewPassword.Name = "NewPassword";
-            this.NewPassword.Size = new System.Drawing.Size(331, 27);
+            this.NewPassword.Size = new System.Drawing.Size(268, 27);
             this.NewPassword.TabIndex = 18;
             this.NewPassword.TabStop = false;
             this.NewPassword.UseSystemPasswordChar = true;
@@ -335,9 +335,9 @@
             this.ConfirmNewPassword.Enabled = false;
             this.ConfirmNewPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ConfirmNewPassword.ForeColor = System.Drawing.Color.Black;
-            this.ConfirmNewPassword.Location = new System.Drawing.Point(178, 433);
+            this.ConfirmNewPassword.Location = new System.Drawing.Point(121, 434);
             this.ConfirmNewPassword.Name = "ConfirmNewPassword";
-            this.ConfirmNewPassword.Size = new System.Drawing.Size(331, 27);
+            this.ConfirmNewPassword.Size = new System.Drawing.Size(268, 27);
             this.ConfirmNewPassword.TabIndex = 17;
             this.ConfirmNewPassword.TabStop = false;
             this.ConfirmNewPassword.UseSystemPasswordChar = true;
@@ -348,13 +348,13 @@
             this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox8.ForeColor = System.Drawing.Color.White;
-            this.textBox8.Location = new System.Drawing.Point(3, 435);
+            this.textBox8.Location = new System.Drawing.Point(2, 436);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(169, 20);
+            this.textBox8.Size = new System.Drawing.Size(113, 20);
             this.textBox8.TabIndex = 16;
             this.textBox8.TabStop = false;
-            this.textBox8.Text = "Nhập lại mật khẩu mới:";
+            this.textBox8.Text = "Re password:";
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox5
@@ -363,10 +363,10 @@
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox5.ForeColor = System.Drawing.Color.White;
-            this.textBox5.Location = new System.Drawing.Point(44, 402);
+            this.textBox5.Location = new System.Drawing.Point(15, 403);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(128, 20);
+            this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 15;
             this.textBox5.TabStop = false;
             this.textBox5.Text = "Mật khẩu mới:";
@@ -378,10 +378,10 @@
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox6.ForeColor = System.Drawing.Color.White;
-            this.textBox6.Location = new System.Drawing.Point(44, 369);
+            this.textBox6.Location = new System.Drawing.Point(15, 370);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(128, 20);
+            this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 14;
             this.textBox6.TabStop = false;
             this.textBox6.Text = "Mật khẩu cũ:";
@@ -393,10 +393,10 @@
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(16, 297);
+            this.textBox3.Location = new System.Drawing.Point(15, 298);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(156, 20);
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 11;
             this.textBox3.TabStop = false;
             this.textBox3.Text = "Số điện thoại:";
@@ -408,13 +408,13 @@
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(3, 263);
+            this.textBox2.Location = new System.Drawing.Point(2, 264);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(169, 20);
+            this.textBox2.Size = new System.Drawing.Size(113, 20);
             this.textBox2.TabIndex = 10;
             this.textBox2.TabStop = false;
-            this.textBox2.Text = "Mã định danh / CCCD:";
+            this.textBox2.Text = "Định danh:";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // pictureBox6
@@ -422,7 +422,7 @@
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.BackgroundImage = global::Service.Properties.Resources.staff;
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox6.Location = new System.Drawing.Point(226, 57);
+            this.pictureBox6.Location = new System.Drawing.Point(169, 58);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(94, 87);
             this.pictureBox6.TabIndex = 9;
@@ -434,9 +434,9 @@
             this.phoneNumber_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.phoneNumber_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.phoneNumber_txtBox.ForeColor = System.Drawing.Color.Black;
-            this.phoneNumber_txtBox.Location = new System.Drawing.Point(178, 295);
+            this.phoneNumber_txtBox.Location = new System.Drawing.Point(121, 296);
             this.phoneNumber_txtBox.Name = "phoneNumber_txtBox";
-            this.phoneNumber_txtBox.Size = new System.Drawing.Size(331, 27);
+            this.phoneNumber_txtBox.Size = new System.Drawing.Size(268, 27);
             this.phoneNumber_txtBox.TabIndex = 8;
             this.phoneNumber_txtBox.TabStop = false;
             // 
@@ -446,9 +446,9 @@
             this.ID_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ID_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ID_txtBox.ForeColor = System.Drawing.Color.Black;
-            this.ID_txtBox.Location = new System.Drawing.Point(178, 261);
+            this.ID_txtBox.Location = new System.Drawing.Point(121, 262);
             this.ID_txtBox.Name = "ID_txtBox";
-            this.ID_txtBox.Size = new System.Drawing.Size(331, 27);
+            this.ID_txtBox.Size = new System.Drawing.Size(268, 27);
             this.ID_txtBox.TabIndex = 7;
             this.ID_txtBox.TabStop = false;
             // 
@@ -458,9 +458,9 @@
             this.email_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.email_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.email_txtBox.ForeColor = System.Drawing.Color.Black;
-            this.email_txtBox.Location = new System.Drawing.Point(178, 226);
+            this.email_txtBox.Location = new System.Drawing.Point(121, 227);
             this.email_txtBox.Name = "email_txtBox";
-            this.email_txtBox.Size = new System.Drawing.Size(331, 27);
+            this.email_txtBox.Size = new System.Drawing.Size(268, 27);
             this.email_txtBox.TabIndex = 5;
             this.email_txtBox.TabStop = false;
             // 
@@ -470,10 +470,10 @@
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox4.ForeColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(16, 230);
+            this.textBox4.Location = new System.Drawing.Point(15, 231);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(156, 20);
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 4;
             this.textBox4.TabStop = false;
             this.textBox4.Text = "Email:";
@@ -487,7 +487,7 @@
             this.userName_txtBox.Enabled = false;
             this.userName_txtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.userName_txtBox.ForeColor = System.Drawing.Color.White;
-            this.userName_txtBox.Location = new System.Drawing.Point(87, 15);
+            this.userName_txtBox.Location = new System.Drawing.Point(30, 16);
             this.userName_txtBox.Multiline = true;
             this.userName_txtBox.Name = "userName_txtBox";
             this.userName_txtBox.PlaceholderText = "display_name";
@@ -503,9 +503,9 @@
             this.fullName_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.fullName_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.fullName_txtBox.ForeColor = System.Drawing.Color.Black;
-            this.fullName_txtBox.Location = new System.Drawing.Point(178, 158);
+            this.fullName_txtBox.Location = new System.Drawing.Point(121, 159);
             this.fullName_txtBox.Name = "fullName_txtBox";
-            this.fullName_txtBox.Size = new System.Drawing.Size(331, 27);
+            this.fullName_txtBox.Size = new System.Drawing.Size(268, 27);
             this.fullName_txtBox.TabIndex = 3;
             this.fullName_txtBox.TabStop = false;
             // 
@@ -515,10 +515,10 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(16, 160);
+            this.textBox1.Location = new System.Drawing.Point(15, 161);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(156, 20);
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 2;
             this.textBox1.TabStop = false;
             this.textBox1.Text = "Họ và tên:";
@@ -529,7 +529,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1070, 605);
+            this.ClientSize = new System.Drawing.Size(964, 605);
             this.Controls.Add(this.userInfo_pnl);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
