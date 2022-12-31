@@ -17,7 +17,6 @@ namespace Service
         private BindingSource userList = new BindingSource();
         public AdminForm()
         {
-            ///MonthlyUpdate();
             InitializeComponent();
             user_dtgv.DataSource = userList;
             Add_Binding();
@@ -62,7 +61,14 @@ namespace Service
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            string query = "DELETE FROM [dbo].NGUOIDUNG WHERE MaDangNhap = @MaDangNhap ";
+            string query = "SELECT * FROM [dbo].CT_DATVE WHERE MaDangNhap = @MaDangNhap ";
+            if (DataProvider.Instance.ExecuteQuery(query, new object[] { this.userName_txtBox.Text }).Rows.Count > 0)
+            {
+                MessageBox.Show("Không thể xóa user này!");
+                return;
+            }
+
+            query = "DELETE FROM [dbo].NGUOIDUNG WHERE MaDangNhap = @MaDangNhap ";
             int i = DataProvider.Instance.ExecuteNonQuery(query, new object[] { this.userName_txtBox.Text });
             MessageBox.Show("User đã được xóa!");
             Load_dtgv();
@@ -75,11 +81,6 @@ namespace Service
             Load_dtgv();
         }
 
-        private void userName_txtBox_TextChanged(object sender, EventArgs e)
-        {
-            //Load_dtgv();
-        }
-
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn đăng xuất?", "Notification", MessageBoxButtons.OKCancel) != DialogResult.OK)
@@ -87,7 +88,6 @@ namespace Service
                 return;
             }
 
-            //IsLogout = true;
             this.Close();
         }
 
@@ -100,81 +100,5 @@ namespace Service
 
             Application.Exit();
         }
-
-        private void publicAnnoucementToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Hiện chưa có thông báo nào!");
-        }
-
-        /*        public void MonthlyUpdate()
-                {
-                    DateTime dt = DateTime.Now;
-                    //int today_day = Convert.ToInt32(dt.Day);
-                    int today_month = Convert.ToInt32(dt.Month);
-
-                    string query = "SELECT TOP 1 (id) FROM dbo.KHTN2021 ORDER BY id DESC ";
-                    int id = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
-
-                    query = "SELECT * FROM dbo.KHTN2021 WHERE id = @id ";
-                    DataTable dtbl = DataProvider.Instance.ExecuteQuery(query, new object[] { id });
-                    DataRow row = dtbl.Rows[0];
-
-                    #region split data
-                    int db_current_income, db_current_outcome, db_num_months, db_current_charge, db_nxt_charge, db_current_month;
-                    db_current_income = Convert.ToInt32(row["current_income"]);
-                    db_current_outcome = Convert.ToInt32(row["current_outcome"]);
-                    db_current_charge = Convert.ToInt32(row["charge"]);
-                    db_nxt_charge = Convert.ToInt32(row["next_month_charge"]);
-                    db_current_month = Convert.ToInt32(row["current_month"]);
-                    #endregion
-
-                    query = "SELECT COUNT(*) FROM dbo.MonthlyFunding WHERE funded = 1";
-                    int num_person = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
-
-                    if (db_current_month == today_month)
-                    {
-                        return;
-                    }
-
-                    int i;
-
-                    db_current_income += num_person * db_current_charge;
-                    query = "UPDATE dbo.KHTN2021 SET current_income = @db_current_income , num_months = num_months + 1 WHERE id = @id ";
-                    i = DataProvider.Instance.ExecuteNonQuery(query, new object[] { db_current_income, id });
-
-                    if (db_current_charge != db_nxt_charge)
-                    {
-                        query = "INSERT INTO dbo.KHTN2021 (charge, next_month_charge, current_month) " +
-                                "VALUES ( @charge , @next_month_charge , @current_month ) ";
-                        i = DataProvider.Instance.ExecuteNonQuery(query, new object[] { db_nxt_charge, db_nxt_charge, today_month });
-                        id++;
-                    }
-
-                    query = "UPDATE dbo.KHTN2021 SET current_month = @today_month WHERE id = @id ";
-                    i = DataProvider.Instance.ExecuteNonQuery(query, new object[] { today_month, id });
-                    IncreaseDebt();
-                    ResetFundedColumn();
-                }
-
-                void IncreaseDebt()
-                {
-                    string query = "SELECT MSSV FROM dbo.MonthlyFunding WHERE funded = 0 ";
-                    DataTable dtbl = new DataTable();
-                    dtbl = DataProvider.Instance.ExecuteQuery(query);
-
-                    foreach (DataRow dr in dtbl.Rows)
-                    {
-                        int mssv = Convert.ToInt32(dr["MSSV"]);
-                        query = "UPDATE dbo.MonthlyFunding SET debt = debt + 1 WHERE MSSV = @mssv ";
-
-                        int i = DataProvider.Instance.ExecuteNonQuery(query, new object[] { mssv });
-                    }
-                }
-
-                void ResetFundedColumn()
-                {
-                    string query = "UPDATE dbo.MonthlyFunding SET funded = 0 ";
-                    int i = DataProvider.Instance.ExecuteNonQuery(query);
-                }*/
     }
 }

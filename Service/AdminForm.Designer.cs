@@ -136,7 +136,6 @@
             this.userName_txtBox.ReadOnly = true;
             this.userName_txtBox.Size = new System.Drawing.Size(209, 30);
             this.userName_txtBox.TabIndex = 19;
-            this.userName_txtBox.TextChanged += new System.EventHandler(this.userName_txtBox_TextChanged);
             // 
             // email_txtBox
             // 
@@ -305,6 +304,7 @@
             this.textBox10.BackColor = System.Drawing.Color.White;
             this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
             this.textBox10.Location = new System.Drawing.Point(65, 232);
             this.textBox10.Name = "textBox10";
             this.textBox10.ReadOnly = true;
@@ -319,6 +319,7 @@
             this.textBox6.BackColor = System.Drawing.Color.White;
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
             this.textBox6.Location = new System.Drawing.Point(10, 172);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
@@ -333,6 +334,7 @@
             this.textBox4.BackColor = System.Drawing.Color.White;
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
             this.textBox4.Location = new System.Drawing.Point(41, 112);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
@@ -431,7 +433,6 @@
             this.publicAnnoucementToolStripMenuItem.Name = "publicAnnoucementToolStripMenuItem";
             this.publicAnnoucementToolStripMenuItem.Size = new System.Drawing.Size(159, 24);
             this.publicAnnoucementToolStripMenuItem.Text = "Public Annoucement";
-            this.publicAnnoucementToolStripMenuItem.Click += new System.EventHandler(this.publicAnnoucementToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
