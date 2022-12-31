@@ -48,7 +48,7 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(566, 365);
+            this.textBox1.Location = new System.Drawing.Point(728, 483);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(113, 20);
             this.textBox1.TabIndex = 17;
@@ -57,7 +57,7 @@
             // totalIncome
             // 
             this.totalIncome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.totalIncome.Location = new System.Drawing.Point(690, 363);
+            this.totalIncome.Location = new System.Drawing.Point(847, 481);
             this.totalIncome.Name = "totalIncome";
             this.totalIncome.Size = new System.Drawing.Size(194, 27);
             this.totalIncome.TabIndex = 16;
@@ -68,7 +68,7 @@
             this.exportToExcelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exportToExcelBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.exportToExcelBtn.ForeColor = System.Drawing.Color.White;
-            this.exportToExcelBtn.Location = new System.Drawing.Point(713, 406);
+            this.exportToExcelBtn.Location = new System.Drawing.Point(870, 514);
             this.exportToExcelBtn.Name = "exportToExcelBtn";
             this.exportToExcelBtn.Size = new System.Drawing.Size(171, 31);
             this.exportToExcelBtn.TabIndex = 14;
@@ -182,7 +182,7 @@
             this.reportYearDgv.ReadOnly = true;
             this.reportYearDgv.RowHeadersWidth = 51;
             this.reportYearDgv.RowTemplate.Height = 29;
-            this.reportYearDgv.Size = new System.Drawing.Size(601, 236);
+            this.reportYearDgv.Size = new System.Drawing.Size(758, 361);
             this.reportYearDgv.TabIndex = 21;
             this.reportYearDgv.TabStop = false;
             // 
@@ -191,7 +191,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.label1.Location = new System.Drawing.Point(308, 26);
+            this.label1.Location = new System.Drawing.Point(400, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(265, 50);
             this.label1.TabIndex = 22;
@@ -203,7 +203,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(899, 452);
+            this.ClientSize = new System.Drawing.Size(1053, 557);
             this.Controls.Add(this.exportToExcelBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.reportYearDgv);
