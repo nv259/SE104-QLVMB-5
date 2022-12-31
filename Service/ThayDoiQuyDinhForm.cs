@@ -409,6 +409,16 @@ namespace Service
                 return;
             }
 
+            string[] chk_a = TenSB_Them_txtBox.Text.Trim().Split(' ');
+            foreach (string s in chk_a)
+            {
+                if (!s.All(char.IsLetterOrDigit))
+                {
+                    MessageBox.Show("Thêm sân bay: Tên sân bay không đúng định dạng!");
+                    return;
+                }
+            }
+
             string insert = "INSERT INTO [dbo].SANBAY VALUES ( @MaSanBay , @TenSanBay )";
             DataProvider.Instance.ExecuteNonQuery(insert, new object[] { MaSB_Them_txtBox.Text.ToString(), TenSB_Them_txtBox.Text.ToString() });
 
@@ -447,6 +457,16 @@ namespace Service
             {
                 MessageBox.Show("Thay đổi thông tin sân bay: Tên sân bay không được để trống!");
                 return;
+            }
+
+            string[] chk_a = TenSB_TD_txtBox.Text.Trim().Split(' ');
+            foreach (string s in chk_a)
+            {
+                if (!s.All(char.IsLetterOrDigit))
+                {
+                    MessageBox.Show("Thay đổi thông tin sân bay: Tên sân bay không đúng định dạng!");
+                    return;
+                }
             }
 
             string update = "UPDATE [dbo].SANBAY SET TenSanBay = @TenSanBay WHERE MaSanBay = @MaSanBay ";
@@ -560,6 +580,16 @@ namespace Service
                 return;
             }
 
+            string[] chk_a = TenHV_Them_txtBox.Text.Trim().Split(' ');
+            foreach (string s in chk_a)
+            {
+                if (!s.All(char.IsLetterOrDigit))
+                {
+                    MessageBox.Show("Thêm hạng vé: Tên hạng vé không đúng định dạng!");
+                    return;
+                }
+            }
+
             chk = TLGV_Them_txtBox.Text;
             if (chk.Length == 0)
             {
@@ -571,6 +601,12 @@ namespace Service
             if (!Decimal.TryParse(chk, out TiLe))
             {
                 MessageBox.Show("Thêm hạng vé: Tỉ lệ giá vé không đúng định dạng!");
+                return;
+            }
+
+            if (TiLe <= 0)
+            {
+                MessageBox.Show("Thêm hạng vé: Tỉ lệ giá vé phải lớn hơn 0!");
                 return;
             }
 
@@ -630,6 +666,16 @@ namespace Service
                 return;
             }
 
+            string[] chk_a = TenHV_TD_txtBox.Text.Trim().Split(' ');
+            foreach (string s in chk_a)
+            {
+                if (!s.All(char.IsLetterOrDigit))
+                {
+                    MessageBox.Show("Thay đổi thông tin hạng vé: Tên hạng vé không đúng định dạng!");
+                    return;
+                }
+            }
+
             string chk = TLGV_TD_txtBox.Text;
             if (chk.Length == 0)
             {
@@ -641,6 +687,12 @@ namespace Service
             if (!Decimal.TryParse(chk, out TiLe))
             {
                 MessageBox.Show("Thay đổi thông tin hạng vé: Tỉ lệ giá vé không đúng định dạng!");
+                return;
+            }
+
+            if (TiLe <= 0)
+            {
+                MessageBox.Show("Thay đổi thông tin hạng vé: Tỉ lệ giá vé phải lớn hơn 0!");
                 return;
             }
 

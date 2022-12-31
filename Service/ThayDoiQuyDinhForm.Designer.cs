@@ -98,10 +98,6 @@
             this.MaHV_Xoa_comboBox = new System.Windows.Forms.ComboBox();
             this.XoaHangVe_Btn = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
-            this.HangVe_listView = new System.Windows.Forms.ListView();
-            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.label21 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -116,6 +112,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
+            this.HangVe_listView = new System.Windows.Forms.ListView();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -429,7 +429,7 @@
             // 
             this.TGDVCN_chkBox.AutoSize = true;
             this.TGDVCN_chkBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.TGDVCN_chkBox.Location = new System.Drawing.Point(1029, 681);
+            this.TGDVCN_chkBox.Location = new System.Drawing.Point(1029, 679);
             this.TGDVCN_chkBox.Name = "TGDVCN_chkBox";
             this.TGDVCN_chkBox.Size = new System.Drawing.Size(31, 16);
             this.TGDVCN_chkBox.TabIndex = 37;
@@ -860,37 +860,6 @@
             this.label24.TabIndex = 48;
             this.label24.Text = "Mã hạng vé:";
             // 
-            // HangVe_listView
-            // 
-            this.HangVe_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
-            this.HangVe_listView.GridLines = true;
-            this.HangVe_listView.Location = new System.Drawing.Point(901, 366);
-            this.HangVe_listView.MultiSelect = false;
-            this.HangVe_listView.Name = "HangVe_listView";
-            this.HangVe_listView.Size = new System.Drawing.Size(465, 228);
-            this.HangVe_listView.TabIndex = 55;
-            this.HangVe_listView.TabStop = false;
-            this.HangVe_listView.UseCompatibleStateImageBehavior = false;
-            this.HangVe_listView.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Mã hạng vé";
-            this.columnHeader3.Width = 100;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Tên hạng vé";
-            this.columnHeader4.Width = 220;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Tỉ lệ giá vé";
-            this.columnHeader5.Width = 140;
-            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -1036,6 +1005,37 @@
             this.label1.TabIndex = 62;
             this.label1.Text = "Thay đổi các tham số khác";
             // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Mã hạng vé";
+            this.columnHeader3.Width = 100;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Tên hạng vé";
+            this.columnHeader4.Width = 220;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Tỉ lệ giá vé";
+            this.columnHeader5.Width = 140;
+            // 
+            // HangVe_listView
+            // 
+            this.HangVe_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.HangVe_listView.GridLines = true;
+            this.HangVe_listView.Location = new System.Drawing.Point(901, 366);
+            this.HangVe_listView.MultiSelect = false;
+            this.HangVe_listView.Name = "HangVe_listView";
+            this.HangVe_listView.Size = new System.Drawing.Size(465, 228);
+            this.HangVe_listView.TabIndex = 55;
+            this.HangVe_listView.TabStop = false;
+            this.HangVe_listView.UseCompatibleStateImageBehavior = false;
+            this.HangVe_listView.View = System.Windows.Forms.View.Details;
+            // 
             // ThayDoiQuyDinhForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1178,13 +1178,9 @@
         private ComboBox MaHV_Xoa_comboBox;
         private Button XoaHangVe_Btn;
         private Label label24;
-        private ListView HangVe_listView;
         private Label label21;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
-        private ColumnHeader columnHeader3;
-        private ColumnHeader columnHeader4;
-        private ColumnHeader columnHeader5;
         private Panel panel7;
         private Label label2;
         private Label label7;
@@ -1203,5 +1199,9 @@
         private Label label22;
         private Panel panel9;
         private Label label1;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
+        private ColumnHeader columnHeader5;
+        private ListView HangVe_listView;
     }
 }
