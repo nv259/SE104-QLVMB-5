@@ -73,8 +73,6 @@ namespace Service
             TrungGian_Dgv.Columns[1].Name = "Thời gian dừng";
             TrungGian_Dgv.Columns[2].Name = "Ghi chú";
 
-            
-
             query = "SELECT * FROM [dbo].THAMSO ";
             para = new Parameters(DataProvider.Instance.ExecuteQuery(query).Rows[0]);
 
@@ -396,6 +394,12 @@ namespace Service
             SanBayDi1_comboBox.EndUpdate();
             SanBayDen1_comboBox.EndUpdate();
             TrungGian_comboBox.EndUpdate();
+            SanBayDi1_comboBox.Text = "";
+            SanBayDen1_comboBox.Text = "";
+            TrungGian_comboBox.Text = "";
+            SanBayDi1_comboBox.SelectedItem = null;
+            SanBayDen1_comboBox.SelectedItem = null;
+            TrungGian_comboBox.SelectedItem = null;
 
             TrungGian1_comboBox.BeginUpdate();
             TrungGian1_comboBox.Items.Clear();
@@ -405,12 +409,12 @@ namespace Service
             }
 
             TrungGian1_comboBox.EndUpdate();
+            TrungGian1_comboBox.Text = "";
+            TrungGian1_comboBox.SelectedItem = null;
+            GhiChu_RichTxtBox.Text = "";
+            ThoiGianBay1_txtBox.Text = "";
             MessageBox.Show("Đã thêm thành công!");
 
-            this.TrungGian_comboBox.SelectedItem = null;
-            this.SanBayDi1_comboBox.SelectedItem = null;
-            this.SanBayDen1_comboBox.SelectedItem = null;
-            this.TrungGian1_comboBox.SelectedItem = null;
             if (TrungGian1_comboBox.Items.Count == para.SoSanBayTGToiDa)
             {
                 TrungGian_comboBox.Enabled = false;
@@ -474,6 +478,12 @@ namespace Service
             SanBayDi1_comboBox.EndUpdate();
             SanBayDen1_comboBox.EndUpdate();
             TrungGian_comboBox.EndUpdate();
+            SanBayDi1_comboBox.Text = "";
+            SanBayDen1_comboBox.Text = "";
+            TrungGian_comboBox.Text = "";
+            SanBayDi1_comboBox.SelectedItem = null;
+            SanBayDen1_comboBox.SelectedItem = null;
+            TrungGian_comboBox.SelectedItem = null;
 
             TrungGian1_comboBox.BeginUpdate();
             TrungGian1_comboBox.Items.Clear();
@@ -483,13 +493,12 @@ namespace Service
             }
 
             TrungGian1_comboBox.EndUpdate();
-
+            TrungGian1_comboBox.Text = "";
+            TrungGian1_comboBox.SelectedItem = null;
+            GhiChu_RichTxtBox.Text = "";
+            ThoiGianBay1_txtBox.Text = "";
             MessageBox.Show("Đã xóa thành công!");
 
-            this.TrungGian_comboBox.SelectedItem = null;
-            this.SanBayDi1_comboBox.SelectedItem = null;
-            this.SanBayDen1_comboBox.SelectedItem = null;
-            this.TrungGian1_comboBox.SelectedItem = null;
             if (TrungGian1_comboBox.Items.Count < para.SoSanBayTGToiDa)
             {
                 TrungGian_comboBox.Enabled = true;
