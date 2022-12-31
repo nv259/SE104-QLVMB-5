@@ -155,17 +155,27 @@ namespace Service
 
         private void Dat_hoac_Ban_Btn_Click(object sender, EventArgs e)
         {
+            string maCB;
+            if (this.acc != null)
+                maCB = this.cb_txtBox.Text.Trim();
+            else
+            {
+                if (chuyenBayComboBox.SelectedItem == null)
+                {
+                    MessageBox.Show("Chưa chọn mã chuyến bay!");
+                    return;
+                }
+                else
+                    maCB = this.chuyenBayComboBox.Text.Trim();
+            }
+
             if (ticket_cmbBox.SelectedItem == null)
             {
                 MessageBox.Show("Chưa chọn hạng vé!");
                 return;
             }
 
-            string maCB;
-            if (this.acc != null)
-                maCB = this.cb_txtBox.Text.Trim();
-            else
-                maCB = this.chuyenBayComboBox.Text.Trim();
+
             string ticket_type = this.ticket_cmbBox.Text.Trim();
             string fName = this.name_txtBox.Text;
             string id = this.ID_txtBox.Text;

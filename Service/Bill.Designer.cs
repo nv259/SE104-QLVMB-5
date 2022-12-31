@@ -105,7 +105,7 @@
             // 
             // chuyenBayComboBox
             // 
-            this.chuyenBayComboBox.Location = new System.Drawing.Point(200, 25);
+            this.chuyenBayComboBox.Location = new System.Drawing.Point(203, 25);
             this.chuyenBayComboBox.Name = "chuyenBayComboBox";
             this.chuyenBayComboBox.Size = new System.Drawing.Size(104, 28);
             this.chuyenBayComboBox.TabIndex = 36;
@@ -216,7 +216,7 @@
             this.textBox5.Size = new System.Drawing.Size(211, 20);
             this.textBox5.TabIndex = 27;
             this.textBox5.TabStop = false;
-            this.textBox5.Text = "Chứng minh thư/CCCD:";
+            this.textBox5.Text = "Mã định danh/CCCD:";
             // 
             // name_txtBox
             // 
