@@ -116,6 +116,7 @@
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.HangVe_listView = new System.Windows.Forms.ListView();
+            this.ThayDoiQuyDinh_label = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -123,13 +124,14 @@
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // tmp1
             // 
             this.tmp1.BackColor = System.Drawing.Color.White;
             this.tmp1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tmp1.Location = new System.Drawing.Point(278, 712);
+            this.tmp1.Location = new System.Drawing.Point(278, 792);
             this.tmp1.Name = "tmp1";
             this.tmp1.ReadOnly = true;
             this.tmp1.Size = new System.Drawing.Size(35, 20);
@@ -141,7 +143,7 @@
             // 
             this.TGBayToiThieu_txtBox.BackColor = System.Drawing.Color.White;
             this.TGBayToiThieu_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TGBayToiThieu_txtBox.Location = new System.Drawing.Point(60, 712);
+            this.TGBayToiThieu_txtBox.Location = new System.Drawing.Point(60, 792);
             this.TGBayToiThieu_txtBox.Name = "TGBayToiThieu_txtBox";
             this.TGBayToiThieu_txtBox.ReadOnly = true;
             this.TGBayToiThieu_txtBox.Size = new System.Drawing.Size(152, 20);
@@ -152,7 +154,7 @@
             // BayToiThieu_Gio
             // 
             this.BayToiThieu_Gio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BayToiThieu_Gio.Location = new System.Drawing.Point(225, 708);
+            this.BayToiThieu_Gio.Location = new System.Drawing.Point(225, 788);
             this.BayToiThieu_Gio.Name = "BayToiThieu_Gio";
             this.BayToiThieu_Gio.Size = new System.Drawing.Size(47, 27);
             this.BayToiThieu_Gio.TabIndex = 10;
@@ -162,7 +164,7 @@
             // SSBTGTD_txtBox
             // 
             this.SSBTGTD_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SSBTGTD_txtBox.Location = new System.Drawing.Point(266, 673);
+            this.SSBTGTD_txtBox.Location = new System.Drawing.Point(266, 753);
             this.SSBTGTD_txtBox.Name = "SSBTGTD_txtBox";
             this.SSBTGTD_txtBox.Size = new System.Drawing.Size(47, 27);
             this.SSBTGTD_txtBox.TabIndex = 9;
@@ -172,7 +174,7 @@
             // 
             this.SoSBTGToiDa_txtBox.BackColor = System.Drawing.Color.White;
             this.SoSBTGToiDa_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.SoSBTGToiDa_txtBox.Location = new System.Drawing.Point(60, 676);
+            this.SoSBTGToiDa_txtBox.Location = new System.Drawing.Point(60, 756);
             this.SoSBTGToiDa_txtBox.Name = "SoSBTGToiDa_txtBox";
             this.SoSBTGToiDa_txtBox.ReadOnly = true;
             this.SoSBTGToiDa_txtBox.Size = new System.Drawing.Size(199, 20);
@@ -183,7 +185,7 @@
             // BayToiThieu_Phut
             // 
             this.BayToiThieu_Phut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BayToiThieu_Phut.Location = new System.Drawing.Point(314, 708);
+            this.BayToiThieu_Phut.Location = new System.Drawing.Point(314, 788);
             this.BayToiThieu_Phut.Name = "BayToiThieu_Phut";
             this.BayToiThieu_Phut.Size = new System.Drawing.Size(47, 27);
             this.BayToiThieu_Phut.TabIndex = 13;
@@ -193,7 +195,7 @@
             // 
             this.tmp2.BackColor = System.Drawing.Color.White;
             this.tmp2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tmp2.Location = new System.Drawing.Point(367, 712);
+            this.tmp2.Location = new System.Drawing.Point(367, 792);
             this.tmp2.Name = "tmp2";
             this.tmp2.ReadOnly = true;
             this.tmp2.Size = new System.Drawing.Size(35, 20);
@@ -205,7 +207,7 @@
             // 
             this.TGDungToiThieu_txtBox.BackColor = System.Drawing.Color.White;
             this.TGDungToiThieu_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TGDungToiThieu_txtBox.Location = new System.Drawing.Point(575, 678);
+            this.TGDungToiThieu_txtBox.Location = new System.Drawing.Point(575, 758);
             this.TGDungToiThieu_txtBox.Name = "TGDungToiThieu_txtBox";
             this.TGDungToiThieu_txtBox.ReadOnly = true;
             this.TGDungToiThieu_txtBox.Size = new System.Drawing.Size(167, 20);
@@ -217,7 +219,7 @@
             // 
             this.tmp4.BackColor = System.Drawing.Color.White;
             this.tmp4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tmp4.Location = new System.Drawing.Point(894, 677);
+            this.tmp4.Location = new System.Drawing.Point(894, 757);
             this.tmp4.Name = "tmp4";
             this.tmp4.ReadOnly = true;
             this.tmp4.Size = new System.Drawing.Size(35, 20);
@@ -228,7 +230,7 @@
             // DungToiThieu_Phut
             // 
             this.DungToiThieu_Phut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DungToiThieu_Phut.Location = new System.Drawing.Point(841, 674);
+            this.DungToiThieu_Phut.Location = new System.Drawing.Point(841, 754);
             this.DungToiThieu_Phut.Name = "DungToiThieu_Phut";
             this.DungToiThieu_Phut.Size = new System.Drawing.Size(47, 27);
             this.DungToiThieu_Phut.TabIndex = 18;
@@ -238,7 +240,7 @@
             // 
             this.tmp3.BackColor = System.Drawing.Color.White;
             this.tmp3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tmp3.Location = new System.Drawing.Point(810, 678);
+            this.tmp3.Location = new System.Drawing.Point(810, 758);
             this.tmp3.Name = "tmp3";
             this.tmp3.ReadOnly = true;
             this.tmp3.Size = new System.Drawing.Size(35, 20);
@@ -249,7 +251,7 @@
             // DungToiThieu_Gio
             // 
             this.DungToiThieu_Gio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DungToiThieu_Gio.Location = new System.Drawing.Point(748, 675);
+            this.DungToiThieu_Gio.Location = new System.Drawing.Point(748, 755);
             this.DungToiThieu_Gio.Name = "DungToiThieu_Gio";
             this.DungToiThieu_Gio.Size = new System.Drawing.Size(47, 27);
             this.DungToiThieu_Gio.TabIndex = 16;
@@ -260,7 +262,7 @@
             // 
             this.tmp6.BackColor = System.Drawing.Color.White;
             this.tmp6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tmp6.Location = new System.Drawing.Point(894, 712);
+            this.tmp6.Location = new System.Drawing.Point(894, 792);
             this.tmp6.Name = "tmp6";
             this.tmp6.ReadOnly = true;
             this.tmp6.Size = new System.Drawing.Size(35, 20);
@@ -271,7 +273,7 @@
             // DungToiDa_Phut
             // 
             this.DungToiDa_Phut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DungToiDa_Phut.Location = new System.Drawing.Point(841, 708);
+            this.DungToiDa_Phut.Location = new System.Drawing.Point(841, 788);
             this.DungToiDa_Phut.Name = "DungToiDa_Phut";
             this.DungToiDa_Phut.Size = new System.Drawing.Size(47, 27);
             this.DungToiDa_Phut.TabIndex = 23;
@@ -281,7 +283,7 @@
             // 
             this.tmp5.BackColor = System.Drawing.Color.White;
             this.tmp5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tmp5.Location = new System.Drawing.Point(810, 711);
+            this.tmp5.Location = new System.Drawing.Point(810, 791);
             this.tmp5.Name = "tmp5";
             this.tmp5.ReadOnly = true;
             this.tmp5.Size = new System.Drawing.Size(35, 20);
@@ -292,7 +294,7 @@
             // DungToiDa_Gio
             // 
             this.DungToiDa_Gio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DungToiDa_Gio.Location = new System.Drawing.Point(748, 709);
+            this.DungToiDa_Gio.Location = new System.Drawing.Point(748, 789);
             this.DungToiDa_Gio.Name = "DungToiDa_Gio";
             this.DungToiDa_Gio.Size = new System.Drawing.Size(47, 27);
             this.DungToiDa_Gio.TabIndex = 21;
@@ -303,7 +305,7 @@
             // 
             this.textBox6.BackColor = System.Drawing.Color.White;
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Location = new System.Drawing.Point(575, 712);
+            this.textBox6.Location = new System.Drawing.Point(575, 792);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(167, 20);
@@ -315,7 +317,7 @@
             // 
             this.tmp7.BackColor = System.Drawing.Color.White;
             this.tmp7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tmp7.Location = new System.Drawing.Point(1324, 677);
+            this.tmp7.Location = new System.Drawing.Point(1324, 757);
             this.tmp7.Name = "tmp7";
             this.tmp7.ReadOnly = true;
             this.tmp7.Size = new System.Drawing.Size(35, 20);
@@ -326,7 +328,7 @@
             // DatVeChamNhat_txtBox
             // 
             this.DatVeChamNhat_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DatVeChamNhat_txtBox.Location = new System.Drawing.Point(1271, 674);
+            this.DatVeChamNhat_txtBox.Location = new System.Drawing.Point(1271, 754);
             this.DatVeChamNhat_txtBox.Name = "DatVeChamNhat_txtBox";
             this.DatVeChamNhat_txtBox.Size = new System.Drawing.Size(47, 27);
             this.DatVeChamNhat_txtBox.TabIndex = 26;
@@ -336,7 +338,7 @@
             // 
             this.textBox7.BackColor = System.Drawing.Color.White;
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Location = new System.Drawing.Point(1066, 677);
+            this.textBox7.Location = new System.Drawing.Point(1066, 757);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(199, 20);
@@ -348,7 +350,7 @@
             // 
             this.textBox3.BackColor = System.Drawing.Color.White;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Location = new System.Drawing.Point(1066, 712);
+            this.textBox3.Location = new System.Drawing.Point(1066, 792);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(199, 20);
@@ -359,7 +361,7 @@
             // HuyVeChamNhat_txtBox
             // 
             this.HuyVeChamNhat_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.HuyVeChamNhat_txtBox.Location = new System.Drawing.Point(1271, 709);
+            this.HuyVeChamNhat_txtBox.Location = new System.Drawing.Point(1271, 789);
             this.HuyVeChamNhat_txtBox.Name = "HuyVeChamNhat_txtBox";
             this.HuyVeChamNhat_txtBox.Size = new System.Drawing.Size(47, 27);
             this.HuyVeChamNhat_txtBox.TabIndex = 31;
@@ -369,7 +371,7 @@
             // 
             this.textBox2.BackColor = System.Drawing.Color.White;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(1324, 712);
+            this.textBox2.Location = new System.Drawing.Point(1324, 792);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(35, 20);
@@ -381,7 +383,7 @@
             // 
             this.SoSBTGToiDa_chkBox.AutoSize = true;
             this.SoSBTGToiDa_chkBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.SoSBTGToiDa_chkBox.Location = new System.Drawing.Point(23, 678);
+            this.SoSBTGToiDa_chkBox.Location = new System.Drawing.Point(14, 47);
             this.SoSBTGToiDa_chkBox.Name = "SoSBTGToiDa_chkBox";
             this.SoSBTGToiDa_chkBox.Size = new System.Drawing.Size(31, 16);
             this.SoSBTGToiDa_chkBox.TabIndex = 33;
@@ -393,7 +395,7 @@
             // 
             this.TGBTT_chkBox.AutoSize = true;
             this.TGBTT_chkBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.TGBTT_chkBox.Location = new System.Drawing.Point(23, 715);
+            this.TGBTT_chkBox.Location = new System.Drawing.Point(14, 81);
             this.TGBTT_chkBox.Name = "TGBTT_chkBox";
             this.TGBTT_chkBox.Size = new System.Drawing.Size(31, 16);
             this.TGBTT_chkBox.TabIndex = 34;
@@ -405,7 +407,7 @@
             // 
             this.TGDTT_chkBox.AutoSize = true;
             this.TGDTT_chkBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.TGDTT_chkBox.Location = new System.Drawing.Point(538, 681);
+            this.TGDTT_chkBox.Location = new System.Drawing.Point(538, 761);
             this.TGDTT_chkBox.Name = "TGDTT_chkBox";
             this.TGDTT_chkBox.Size = new System.Drawing.Size(31, 16);
             this.TGDTT_chkBox.TabIndex = 35;
@@ -417,7 +419,7 @@
             // 
             this.TGDTD_chkBox.AutoSize = true;
             this.TGDTD_chkBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.TGDTD_chkBox.Location = new System.Drawing.Point(538, 715);
+            this.TGDTD_chkBox.Location = new System.Drawing.Point(538, 795);
             this.TGDTD_chkBox.Name = "TGDTD_chkBox";
             this.TGDTD_chkBox.Size = new System.Drawing.Size(31, 16);
             this.TGDTD_chkBox.TabIndex = 36;
@@ -429,7 +431,7 @@
             // 
             this.TGDVCN_chkBox.AutoSize = true;
             this.TGDVCN_chkBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.TGDVCN_chkBox.Location = new System.Drawing.Point(1029, 679);
+            this.TGDVCN_chkBox.Location = new System.Drawing.Point(1029, 759);
             this.TGDVCN_chkBox.Name = "TGDVCN_chkBox";
             this.TGDVCN_chkBox.Size = new System.Drawing.Size(31, 16);
             this.TGDVCN_chkBox.TabIndex = 37;
@@ -441,7 +443,7 @@
             // 
             this.TGHVCN_chkBox.AutoSize = true;
             this.TGHVCN_chkBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.TGHVCN_chkBox.Location = new System.Drawing.Point(1029, 715);
+            this.TGHVCN_chkBox.Location = new System.Drawing.Point(1029, 795);
             this.TGHVCN_chkBox.Name = "TGHVCN_chkBox";
             this.TGHVCN_chkBox.Size = new System.Drawing.Size(31, 16);
             this.TGHVCN_chkBox.TabIndex = 38;
@@ -454,7 +456,7 @@
             this.change_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
             this.change_Btn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.change_Btn.ForeColor = System.Drawing.Color.White;
-            this.change_Btn.Location = new System.Drawing.Point(606, 759);
+            this.change_Btn.Location = new System.Drawing.Point(606, 839);
             this.change_Btn.Name = "change_Btn";
             this.change_Btn.Size = new System.Drawing.Size(259, 45);
             this.change_Btn.TabIndex = 39;
@@ -470,7 +472,7 @@
             this.columnHeader2});
             this.SanBay_listView.GridLines = true;
             this.SanBay_listView.LabelWrap = false;
-            this.SanBay_listView.Location = new System.Drawing.Point(901, 74);
+            this.SanBay_listView.Location = new System.Drawing.Point(901, 152);
             this.SanBay_listView.MultiSelect = false;
             this.SanBay_listView.Name = "SanBay_listView";
             this.SanBay_listView.Size = new System.Drawing.Size(465, 212);
@@ -638,7 +640,7 @@
             this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.MaHV_Them_txtBox);
             this.panel3.Controls.Add(this.label15);
-            this.panel3.Location = new System.Drawing.Point(23, 340);
+            this.panel3.Location = new System.Drawing.Point(23, 423);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(274, 254);
             this.panel3.TabIndex = 51;
@@ -728,7 +730,7 @@
             this.panel5.Controls.Add(this.TenHV_TD_txtBox);
             this.panel5.Controls.Add(this.label19);
             this.panel5.Controls.Add(this.label20);
-            this.panel5.Location = new System.Drawing.Point(314, 340);
+            this.panel5.Location = new System.Drawing.Point(314, 423);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(286, 254);
             this.panel5.TabIndex = 53;
@@ -815,7 +817,7 @@
             this.panel6.Controls.Add(this.MaHV_Xoa_comboBox);
             this.panel6.Controls.Add(this.XoaHangVe_Btn);
             this.panel6.Controls.Add(this.label24);
-            this.panel6.Location = new System.Drawing.Point(615, 340);
+            this.panel6.Location = new System.Drawing.Point(615, 423);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(273, 254);
             this.panel6.TabIndex = 54;
@@ -865,7 +867,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.label21.Location = new System.Drawing.Point(901, 340);
+            this.label21.Location = new System.Drawing.Point(901, 423);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(190, 23);
             this.label21.TabIndex = 56;
@@ -878,7 +880,7 @@
             this.panel7.Controls.Add(this.panel4);
             this.panel7.Controls.Add(this.panel2);
             this.panel7.Controls.Add(this.label3);
-            this.panel7.Location = new System.Drawing.Point(12, 21);
+            this.panel7.Location = new System.Drawing.Point(12, 99);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1369, 273);
             this.panel7.TabIndex = 57;
@@ -961,7 +963,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.label2.Location = new System.Drawing.Point(26, 5);
+            this.label2.Location = new System.Drawing.Point(26, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(274, 28);
             this.label2.TabIndex = 58;
@@ -970,7 +972,7 @@
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Location = new System.Drawing.Point(12, 316);
+            this.panel8.Location = new System.Drawing.Point(12, 399);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1369, 289);
             this.panel8.TabIndex = 59;
@@ -980,7 +982,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.label11.Location = new System.Drawing.Point(26, 299);
+            this.label11.Location = new System.Drawing.Point(26, 382);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(314, 28);
             this.label11.TabIndex = 60;
@@ -989,7 +991,9 @@
             // panel9
             // 
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel9.Location = new System.Drawing.Point(12, 632);
+            this.panel9.Controls.Add(this.SoSBTGToiDa_chkBox);
+            this.panel9.Controls.Add(this.TGBTT_chkBox);
+            this.panel9.Location = new System.Drawing.Point(12, 711);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1369, 182);
             this.panel9.TabIndex = 61;
@@ -999,7 +1003,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.label1.Location = new System.Drawing.Point(26, 615);
+            this.label1.Location = new System.Drawing.Point(26, 695);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(264, 28);
             this.label1.TabIndex = 62;
@@ -1027,7 +1031,7 @@
             this.columnHeader4,
             this.columnHeader5});
             this.HangVe_listView.GridLines = true;
-            this.HangVe_listView.Location = new System.Drawing.Point(901, 366);
+            this.HangVe_listView.Location = new System.Drawing.Point(901, 449);
             this.HangVe_listView.MultiSelect = false;
             this.HangVe_listView.Name = "HangVe_listView";
             this.HangVe_listView.Size = new System.Drawing.Size(465, 228);
@@ -1036,12 +1040,25 @@
             this.HangVe_listView.UseCompatibleStateImageBehavior = false;
             this.HangVe_listView.View = System.Windows.Forms.View.Details;
             // 
+            // ThayDoiQuyDinh_label
+            // 
+            this.ThayDoiQuyDinh_label.AutoSize = true;
+            this.ThayDoiQuyDinh_label.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ThayDoiQuyDinh_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.ThayDoiQuyDinh_label.Location = new System.Drawing.Point(498, 15);
+            this.ThayDoiQuyDinh_label.Name = "ThayDoiQuyDinh_label";
+            this.ThayDoiQuyDinh_label.Size = new System.Drawing.Size(387, 50);
+            this.ThayDoiQuyDinh_label.TabIndex = 63;
+            this.ThayDoiQuyDinh_label.Text = "THAY ĐỔI QUY ĐỊNH";
+            this.ThayDoiQuyDinh_label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // ThayDoiQuyDinhForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1393, 826);
+            this.ClientSize = new System.Drawing.Size(1393, 907);
+            this.Controls.Add(this.ThayDoiQuyDinh_label);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label2);
@@ -1056,8 +1073,6 @@
             this.Controls.Add(this.TGDVCN_chkBox);
             this.Controls.Add(this.TGDTD_chkBox);
             this.Controls.Add(this.TGDTT_chkBox);
-            this.Controls.Add(this.TGBTT_chkBox);
-            this.Controls.Add(this.SoSBTGToiDa_chkBox);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.HuyVeChamNhat_txtBox);
             this.Controls.Add(this.textBox3);
@@ -1103,6 +1118,8 @@
             this.panel7.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1203,5 +1220,6 @@
         private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader5;
         private ListView HangVe_listView;
+        private Label ThayDoiQuyDinh_label;
     }
 }
