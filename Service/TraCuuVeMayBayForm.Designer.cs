@@ -32,38 +32,40 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TraCuuVeMayBayForm));
-            this.SanBayDen_comboBox = new System.Windows.Forms.ComboBox();
-            this.NgayBay_datetime = new System.Windows.Forms.DateTimePicker();
+            this.to_comboBox = new System.Windows.Forms.ComboBox();
+            this.flightdate_Dtp = new System.Windows.Forms.DateTimePicker();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
-            this.ChuyenBay_comboBox = new System.Windows.Forms.ComboBox();
-            this.SanBayDi_comboBox = new System.Windows.Forms.ComboBox();
+            this.flight_comboBox = new System.Windows.Forms.ComboBox();
+            this.from_comboBox = new System.Windows.Forms.ComboBox();
             this.FullInfo = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.NgayBay_chkBox = new System.Windows.Forms.CheckBox();
-            this.deleteBtn = new System.Windows.Forms.Button();
+            this.LookUp_label = new System.Windows.Forms.Label();
+            this.flightdate_chkBox = new System.Windows.Forms.CheckBox();
+            this.delete_Btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.FullInfo)).BeginInit();
             this.SuspendLayout();
             // 
-            // SanBayDen_comboBox
+            // to_comboBox
             // 
-            this.SanBayDen_comboBox.FormattingEnabled = true;
-            this.SanBayDen_comboBox.Location = new System.Drawing.Point(818, 139);
-            this.SanBayDen_comboBox.Name = "SanBayDen_comboBox";
-            this.SanBayDen_comboBox.Size = new System.Drawing.Size(250, 28);
-            this.SanBayDen_comboBox.TabIndex = 7;
-            this.SanBayDen_comboBox.TabStop = false;
-            this.SanBayDen_comboBox.SelectedIndexChanged += new System.EventHandler(this.SanBayDen_comboBox_SelectedIndexChanged);
+            this.to_comboBox.FormattingEnabled = true;
+            this.to_comboBox.Location = new System.Drawing.Point(818, 139);
+            this.to_comboBox.Name = "to_comboBox";
+            this.to_comboBox.Size = new System.Drawing.Size(250, 28);
+            this.to_comboBox.TabIndex = 7;
+            this.to_comboBox.TabStop = false;
+            this.to_comboBox.SelectedIndexChanged += new System.EventHandler(this.to_comboBox_SelectedIndexChanged);
             // 
-            // NgayBay_datetime
+            // flightdate_Dtp
             // 
-            this.NgayBay_datetime.Location = new System.Drawing.Point(840, 84);
-            this.NgayBay_datetime.Name = "NgayBay_datetime";
-            this.NgayBay_datetime.Size = new System.Drawing.Size(228, 27);
-            this.NgayBay_datetime.TabIndex = 9;
-            this.NgayBay_datetime.ValueChanged += new System.EventHandler(this.NgayBay_datetime_ValueChanged);
+            this.flightdate_Dtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.flightdate_Dtp.Location = new System.Drawing.Point(840, 84);
+            this.flightdate_Dtp.Name = "flightdate_Dtp";
+            this.flightdate_Dtp.Size = new System.Drawing.Size(228, 27);
+            this.flightdate_Dtp.TabIndex = 9;
+            this.flightdate_Dtp.TabStop = false;
+            this.flightdate_Dtp.ValueChanged += new System.EventHandler(this.flightdate_Dtp_ValueChanged);
             // 
             // textBox7
             // 
@@ -109,23 +111,25 @@
             this.textBox16.TabStop = false;
             this.textBox16.Text = "Chuyến bay:";
             // 
-            // ChuyenBay_comboBox
+            // flight_comboBox
             // 
-            this.ChuyenBay_comboBox.FormattingEnabled = true;
-            this.ChuyenBay_comboBox.Location = new System.Drawing.Point(139, 84);
-            this.ChuyenBay_comboBox.Name = "ChuyenBay_comboBox";
-            this.ChuyenBay_comboBox.Size = new System.Drawing.Size(250, 28);
-            this.ChuyenBay_comboBox.TabIndex = 21;
-            this.ChuyenBay_comboBox.SelectedIndexChanged += new System.EventHandler(this.ChuyenBay_comboBox_SelectedIndexChanged);
+            this.flight_comboBox.FormattingEnabled = true;
+            this.flight_comboBox.Location = new System.Drawing.Point(139, 84);
+            this.flight_comboBox.Name = "flight_comboBox";
+            this.flight_comboBox.Size = new System.Drawing.Size(250, 28);
+            this.flight_comboBox.TabIndex = 21;
+            this.flight_comboBox.TabStop = false;
+            this.flight_comboBox.SelectedIndexChanged += new System.EventHandler(this.flight_comboBox_SelectedIndexChanged);
             // 
-            // SanBayDi_comboBox
+            // from_comboBox
             // 
-            this.SanBayDi_comboBox.FormattingEnabled = true;
-            this.SanBayDi_comboBox.Location = new System.Drawing.Point(139, 139);
-            this.SanBayDi_comboBox.Name = "SanBayDi_comboBox";
-            this.SanBayDi_comboBox.Size = new System.Drawing.Size(250, 28);
-            this.SanBayDi_comboBox.TabIndex = 22;
-            this.SanBayDi_comboBox.SelectedIndexChanged += new System.EventHandler(this.SanBayDi_comboBox_SelectedIndexChanged);
+            this.from_comboBox.FormattingEnabled = true;
+            this.from_comboBox.Location = new System.Drawing.Point(139, 139);
+            this.from_comboBox.Name = "from_comboBox";
+            this.from_comboBox.Size = new System.Drawing.Size(250, 28);
+            this.from_comboBox.TabIndex = 22;
+            this.from_comboBox.TabStop = false;
+            this.from_comboBox.SelectedIndexChanged += new System.EventHandler(this.from_comboBox_SelectedIndexChanged);
             // 
             // FullInfo
             // 
@@ -175,40 +179,40 @@
             this.FullInfo.TabIndex = 23;
             this.FullInfo.TabStop = false;
             // 
-            // label1
+            // LookUp_label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.label1.Location = new System.Drawing.Point(383, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(407, 50);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "TRA CỨU VÉ MÁY BAY";
+            this.LookUp_label.AutoSize = true;
+            this.LookUp_label.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LookUp_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.LookUp_label.Location = new System.Drawing.Point(383, 9);
+            this.LookUp_label.Name = "LookUp_label";
+            this.LookUp_label.Size = new System.Drawing.Size(407, 50);
+            this.LookUp_label.TabIndex = 24;
+            this.LookUp_label.Text = "TRA CỨU VÉ MÁY BAY";
             // 
-            // NgayBay_chkBox
+            // flightdate_chkBox
             // 
-            this.NgayBay_chkBox.AutoSize = true;
-            this.NgayBay_chkBox.Location = new System.Drawing.Point(816, 90);
-            this.NgayBay_chkBox.Name = "NgayBay_chkBox";
-            this.NgayBay_chkBox.Size = new System.Drawing.Size(18, 17);
-            this.NgayBay_chkBox.TabIndex = 46;
-            this.NgayBay_chkBox.UseVisualStyleBackColor = true;
-            this.NgayBay_chkBox.CheckedChanged += new System.EventHandler(this.NgayBay_chkBox_CheckedChanged);
+            this.flightdate_chkBox.AutoSize = true;
+            this.flightdate_chkBox.Location = new System.Drawing.Point(816, 90);
+            this.flightdate_chkBox.Name = "flightdate_chkBox";
+            this.flightdate_chkBox.Size = new System.Drawing.Size(18, 17);
+            this.flightdate_chkBox.TabIndex = 46;
+            this.flightdate_chkBox.UseVisualStyleBackColor = true;
+            this.flightdate_chkBox.CheckedChanged += new System.EventHandler(this.flightdate_chkBox_CheckedChanged);
             // 
-            // deleteBtn
+            // delete_Btn
             // 
-            this.deleteBtn.BackColor = System.Drawing.Color.Red;
-            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.deleteBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.deleteBtn.ForeColor = System.Drawing.Color.White;
-            this.deleteBtn.Location = new System.Drawing.Point(971, 657);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(97, 35);
-            this.deleteBtn.TabIndex = 47;
-            this.deleteBtn.Text = "Hủy Vé";
-            this.deleteBtn.UseVisualStyleBackColor = false;
-            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            this.delete_Btn.BackColor = System.Drawing.Color.Red;
+            this.delete_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.delete_Btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.delete_Btn.ForeColor = System.Drawing.Color.White;
+            this.delete_Btn.Location = new System.Drawing.Point(971, 657);
+            this.delete_Btn.Name = "delete_Btn";
+            this.delete_Btn.Size = new System.Drawing.Size(97, 35);
+            this.delete_Btn.TabIndex = 47;
+            this.delete_Btn.Text = "Hủy Vé";
+            this.delete_Btn.UseVisualStyleBackColor = false;
+            this.delete_Btn.Click += new System.EventHandler(this.delete_Btn_Click);
             // 
             // TraCuuVeMayBayForm
             // 
@@ -216,18 +220,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1099, 704);
-            this.Controls.Add(this.deleteBtn);
-            this.Controls.Add(this.NgayBay_chkBox);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.delete_Btn);
+            this.Controls.Add(this.flightdate_chkBox);
+            this.Controls.Add(this.LookUp_label);
             this.Controls.Add(this.FullInfo);
-            this.Controls.Add(this.SanBayDi_comboBox);
-            this.Controls.Add(this.ChuyenBay_comboBox);
+            this.Controls.Add(this.from_comboBox);
+            this.Controls.Add(this.flight_comboBox);
             this.Controls.Add(this.textBox16);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.NgayBay_datetime);
-            this.Controls.Add(this.SanBayDen_comboBox);
+            this.Controls.Add(this.flightdate_Dtp);
+            this.Controls.Add(this.to_comboBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "TraCuuVeMayBayForm";
@@ -240,17 +244,17 @@
         }
 
         #endregion
-        private ComboBox SanBayDen_comboBox;
-        private DateTimePicker NgayBay_datetime;
+        private ComboBox to_comboBox;
+        private DateTimePicker flightdate_Dtp;
         private TextBox textBox7;
         private TextBox textBox8;
         private TextBox textBox9;
         private TextBox textBox16;
-        private ComboBox ChuyenBay_comboBox;
-        private ComboBox SanBayDi_comboBox;
+        private ComboBox flight_comboBox;
+        private ComboBox from_comboBox;
         private DataGridView FullInfo;
-        private Label label1;
-        private CheckBox NgayBay_chkBox;
-        private Button deleteBtn;
+        private Label LookUp_label;
+        private CheckBox flightdate_chkBox;
+        private Button delete_Btn;
     }
 }

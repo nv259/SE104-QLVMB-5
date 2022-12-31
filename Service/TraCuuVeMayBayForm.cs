@@ -23,43 +23,42 @@ namespace Service
             string query = "SELECT * FROM [dbo].CT_DATVE WHERE MaNguoiDat = @MaDangNhap ";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { account.MaDangNhap });
             
-            ChuyenBay_comboBox.BeginUpdate();
-            ChuyenBay_comboBox.Items.Clear();
-            ChuyenBay_comboBox.Items.Add("None");
+            flight_comboBox.BeginUpdate();
+            flight_comboBox.Items.Clear();
+            flight_comboBox.Items.Add("All");
 
             foreach(DataRow dr in dt.Rows)
             {
-                ChuyenBay_comboBox.Items.Add(dr["MaChuyenBay"].ToString());
+                flight_comboBox.Items.Add(dr["MaChuyenBay"].ToString());
             }
-            ChuyenBay_comboBox.EndUpdate();
+            flight_comboBox.EndUpdate();
 
-            SanBayDi_comboBox.BeginUpdate();
-            SanBayDi_comboBox.Items.Clear();
-            SanBayDi_comboBox.BeginUpdate();
-            SanBayDen_comboBox.Items.Clear();
+            from_comboBox.BeginUpdate();
+            from_comboBox.Items.Clear();
+            from_comboBox.BeginUpdate();
+            to_comboBox.Items.Clear();
 
             query = "SELECT * FROM [dbo].SANBAY ";
             dt = DataProvider.Instance.ExecuteQuery(query);
 
-            ChuyenBay_comboBox.Items.Add("None");
-            SanBayDi_comboBox.Items.Add("None");
-            SanBayDen_comboBox.Items.Add("None");
+            from_comboBox.Items.Add("All");
+            to_comboBox.Items.Add("All");
 
             foreach(DataRow dr in dt.Rows)
             {
-                SanBayDi_comboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
-                SanBayDen_comboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
+                from_comboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
+                to_comboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
             }
 
-            SanBayDi_comboBox.EndUpdate();
-            SanBayDen_comboBox.EndUpdate();
+            from_comboBox.EndUpdate();
+            to_comboBox.EndUpdate();
 
-            SanBayDen_comboBox.SelectedItem = "None";
-            SanBayDi_comboBox.SelectedItem = "None";
-            ChuyenBay_comboBox.SelectedItem = "None";
+            to_comboBox.SelectedItem = "All";
+            from_comboBox.SelectedItem = "All";
+            flight_comboBox.SelectedItem = "All";
 
-            NgayBay_chkBox.Checked = false;
-            NgayBay_datetime.Enabled = false;
+            flightdate_chkBox.Checked = false;
+            flightdate_Dtp.Enabled = false;
 
             ListAll();
         }
@@ -69,27 +68,27 @@ namespace Service
 
         private string get_Ma(string inp)
         {
-            if (inp.Length == 0 || inp == "None") return inp;
+            if (inp.Length == 0 || inp == "All") return inp;
             return inp.Substring(0, inp.IndexOf('|') - 1);
         }
 
         private void ListAll()
         {
-            string MaChuyenBay = "None", SanBayDi = "None", SanBayDen = "None";
-            if (ChuyenBay_comboBox.SelectedItem != null && ChuyenBay_comboBox.SelectedItem != "None") MaChuyenBay = ChuyenBay_comboBox.SelectedItem.ToString();
-            if (SanBayDi_comboBox.SelectedItem != null && SanBayDi_comboBox.SelectedItem != "None") SanBayDi = get_Ma(SanBayDi_comboBox.SelectedItem.ToString());
-            if (SanBayDi_comboBox.SelectedItem != null && SanBayDen_comboBox.SelectedItem != "None") SanBayDen = get_Ma(SanBayDen_comboBox.SelectedItem.ToString());
+            string MaChuyenBay = "All", SanBayDi = "All", SanBayDen = "All";
+            if (flight_comboBox.SelectedItem != null && flight_comboBox.SelectedItem != "All") MaChuyenBay = flight_comboBox.SelectedItem.ToString();
+            if (from_comboBox.SelectedItem != null && from_comboBox.SelectedItem != "All") SanBayDi = get_Ma(from_comboBox.SelectedItem.ToString());
+            if (from_comboBox.SelectedItem != null && to_comboBox.SelectedItem != "All") SanBayDen = get_Ma(to_comboBox.SelectedItem.ToString());
 
             string MaChuyenBay1 = MaChuyenBay, SanBayDi1 = SanBayDi, SanBayDen1 = SanBayDen;
 
             string query = "SELECT * FROM [dbo].CT_DATVE JOIN CHUYENBAY ON CHUYENBAY.MaChuyenBay = CT_DATVE.MaChuyenBay JOIN [dbo].HANGVE ON HANGVE.MaHangVe = CT_DATVE.MaHangVe " +
-                " WHERE MaNguoiDat = @MaNguoiDat AND ( @MaChuyenBay = 'None' OR @MaChuyenBay1 = CT_DATVE.MaChuyenBay ) AND ( @SanBayDi = 'None' OR @SanBayDi1 = CHUYENBAY.MaSanBayDi ) AND ( @SanBayDen = 'None' OR @SanBayDen1 = CHUYENBAY.MaSanBayDen ) ";
-            if (!NgayBay_chkBox.Checked)
+                " WHERE MaNguoiDat = @MaNguoiDat AND ( @MaChuyenBay = 'All' OR @MaChuyenBay1 = CT_DATVE.MaChuyenBay ) AND ( @SanBayDi = 'All' OR @SanBayDi1 = CHUYENBAY.MaSanBayDi ) AND ( @SanBayDen = 'All' OR @SanBayDen1 = CHUYENBAY.MaSanBayDen ) ";
+            if (!flightdate_chkBox.Checked)
                 dt = DataProvider.Instance.ExecuteQuery(query, new object[] { account.MaDangNhap, MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1 });
             else
             {
-                string NgayBayMin = NgayBay_datetime.Value.Date.ToString("yyyy-MM-dd") + " 00:00:00.000";
-                string NgayBayMax = NgayBay_datetime.Value.Date.ToString("yyyy-MM-dd") + " 23:59:59.999";
+                string NgayBayMin = flightdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 00:00:00.000";
+                string NgayBayMax = flightdate_Dtp.Value.Date.ToString("yyyy-MM-dd") + " 23:59:59.999";
 
                 query = query + " AND ( @NgayBayMin <= NgayGioBay ) AND ( NgayGioBay <= @NgayBayMax ) ";
                 dt = DataProvider.Instance.ExecuteQuery(query, new object[] { account.MaDangNhap , MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1, NgayBayMin, NgayBayMax });
@@ -112,27 +111,27 @@ namespace Service
             }
         }
 
-        private void ChuyenBay_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void flight_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             ListAll();
         }
 
-        private void SanBayDi_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void from_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             ListAll();
         }
 
-        private void SanBayDen_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void to_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             ListAll();
         }
 
-        private void NgayBay_datetime_ValueChanged(object sender, EventArgs e)
+        private void flightdate_Dtp_ValueChanged(object sender, EventArgs e)
         {
             ListAll();
         }
 
-        private void deleteBtn_Click(object sender, EventArgs e)
+        private void delete_Btn_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn hủy vé?", "Notification", MessageBoxButtons.OKCancel) != DialogResult.OK)
             {
@@ -177,10 +176,10 @@ namespace Service
             }
         }
 
-        private void NgayBay_chkBox_CheckedChanged(object sender, EventArgs e)
+        private void flightdate_chkBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (NgayBay_chkBox.Checked) NgayBay_datetime.Enabled = true;
-            else NgayBay_datetime.Enabled = false;
+            if (flightdate_chkBox.Checked) flightdate_Dtp.Enabled = true;
+            else flightdate_Dtp.Enabled = false;
             ListAll();
         }
     }
