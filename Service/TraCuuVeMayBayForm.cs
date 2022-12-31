@@ -20,13 +20,6 @@ namespace Service
             this.account = account;
             InitializeComponent();
 
-            TenDangNhap_txtBox.Text = account.MaDangNhap;
-            HoVaTen_txtBox.Text = account.TenNguoiDung;
-            MaDinhDanh_txtBox.Text = account.DinhDanh;
-            NgaySinh_txtBox.Text = DateOnly.FromDateTime(account.NgaySinh).ToString("dd-MM-yyyy");
-            Email_txtBox.Text = account.Email;
-            SoDienThoai_txtBox.Text = account.Sdt;
-
             string query = "SELECT * FROM [dbo].CT_DATVE WHERE MaNguoiDat = @MaDangNhap ";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { account.MaDangNhap });
             
@@ -92,14 +85,14 @@ namespace Service
             string query = "SELECT * FROM [dbo].CT_DATVE JOIN CHUYENBAY ON CHUYENBAY.MaChuyenBay = CT_DATVE.MaChuyenBay JOIN [dbo].HANGVE ON HANGVE.MaHangVe = CT_DATVE.MaHangVe " +
                 " WHERE MaNguoiDat = @MaNguoiDat AND ( @MaChuyenBay = 'None' OR @MaChuyenBay1 = CT_DATVE.MaChuyenBay ) AND ( @SanBayDi = 'None' OR @SanBayDi1 = CHUYENBAY.MaSanBayDi ) AND ( @SanBayDen = 'None' OR @SanBayDen1 = CHUYENBAY.MaSanBayDen ) ";
             if (!NgayBay_chkBox.Checked)
-                dt = DataProvider.Instance.ExecuteQuery(query, new object[] { TenDangNhap_txtBox.Text , MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1 });
+                dt = DataProvider.Instance.ExecuteQuery(query, new object[] { account.MaDangNhap, MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1 });
             else
             {
                 string NgayBayMin = NgayBay_datetime.Value.Date.ToString("yyyy-MM-dd") + " 00:00:00.000";
                 string NgayBayMax = NgayBay_datetime.Value.Date.ToString("yyyy-MM-dd") + " 23:59:59.999";
 
                 query = query + " AND ( @NgayBayMin <= NgayGioBay ) AND ( NgayGioBay <= @NgayBayMax ) ";
-                dt = DataProvider.Instance.ExecuteQuery(query, new object[] { TenDangNhap_txtBox.Text , MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1, NgayBayMin, NgayBayMax });
+                dt = DataProvider.Instance.ExecuteQuery(query, new object[] { account.MaDangNhap , MaChuyenBay, MaChuyenBay1, SanBayDi, SanBayDi1, SanBayDen, SanBayDen1, NgayBayMin, NgayBayMax });
             }
 
             FullInfo.Rows.Clear();
@@ -168,7 +161,7 @@ namespace Service
                 {
 
                     query = "DELETE FROM [dbo].CT_DATVE WHERE MaChuyenBay = @MaChuyenBay AND MaNguoiDat = @MaNguoiDat";
-                    DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { maCB, this.TenDangNhap_txtBox.Text });
+                    DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { maCB, this.account.MaDangNhap });
                     ListAll();
 
                     MessageBox.Show("Vé đã được hủy thành công!");
