@@ -388,5 +388,13 @@ namespace Service
 
             Application.Exit();
         }
+
+        private void cancelTicket_Btn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TraCuuVeMayBayForm f = new TraCuuVeMayBayForm();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }

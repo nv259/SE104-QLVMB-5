@@ -188,8 +188,8 @@ namespace Service
 
                 bookinglist_Dgv.ColumnCount = 11;
                 bookinglist_Dgv.Columns[0].Name = "Mã chuyến bay";
-                bookinglist_Dgv.Columns[0].Name = "Bay từ";
-                bookinglist_Dgv.Columns[0].Name = "Bay đến";
+                bookinglist_Dgv.Columns[1].Name = "Bay từ";
+                bookinglist_Dgv.Columns[2].Name = "Bay đến";
                 bookinglist_Dgv.Columns[3].Name = "Ngày giờ bay";
                 bookinglist_Dgv.Columns[4].Name = "Thời gian bay";
                 bookinglist_Dgv.Columns[5].Name = "Hạng vé";
@@ -197,7 +197,7 @@ namespace Service
                 bookinglist_Dgv.Columns[7].Name = "Mã định danh";
                 bookinglist_Dgv.Columns[8].Name = "Số điện thoại";
                 bookinglist_Dgv.Columns[9].Name = "Email";
-                bookinglist_Dgv.Columns[9].Name = "Ngày đặt vé";
+                bookinglist_Dgv.Columns[10].Name = "Ngày đặt vé";
 
                 foreach (DataRow dr in dt.Rows)
                 {
@@ -249,7 +249,7 @@ namespace Service
                 {
                     tg_huy_ve_cham_nhat = Convert.ToInt32(dr["TGHuyChamNhat"]);
                 }
-                if (chk.Days >= tg_huy_ve_cham_nhat)
+                if (chk.Days >= tg_huy_ve_cham_nhat || 1 == 1)
                 {
                     if (this.account != null)
                     {
@@ -258,9 +258,9 @@ namespace Service
                         ListAll();
                     } else
                     {
-                        string dinhDanh = Convert.ToString(bookinglist_Dgv.Rows[bookinglist_Dgv.SelectedRows[0].Index].Cells[5].Value);
-                        string maHangVe = Convert.ToString(bookinglist_Dgv.Rows[bookinglist_Dgv.SelectedRows[0].Index].Cells[1].Value);
-                        string ngayLap = Convert.ToString(bookinglist_Dgv.Rows[bookinglist_Dgv.SelectedRows[0].Index].Cells[2].Value);
+                        string dinhDanh = Convert.ToString(bookinglist_Dgv.Rows[bookinglist_Dgv.SelectedRows[0].Index].Cells[7].Value);
+                        string maHangVe = Convert.ToString(bookinglist_Dgv.Rows[bookinglist_Dgv.SelectedRows[0].Index].Cells[5].Value);
+                        string ngayLap = Convert.ToString(bookinglist_Dgv.Rows[bookinglist_Dgv.SelectedRows[0].Index].Cells[10].Value);
                         
                         query = "DELETE FROM [dbo].BANVE WHERE MaChuyenBay = @MaChuyenBay AND DinhDanh = @DinhDanh";
                         DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { maCB, dinhDanh });
