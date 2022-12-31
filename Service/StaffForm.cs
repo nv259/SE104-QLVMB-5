@@ -280,7 +280,7 @@ namespace Service
             MaDangNhap = this.username_txtBox.Text;
             TenNguoiDung = this.fullName_txtBox.Text.Trim();
 
-            if (ChangePass.Checked)
+            if (ChangePass_chkBox.Checked)
             {
                 MatKhau = Convert_to_SHA512(NewPassword_txtBox.Text);
             }
@@ -299,11 +299,11 @@ namespace Service
             
             MessageBox.Show("Cập nhật thông tin thành công!");
 
-            account = AccountDAO.Instance.GetAccountByUserName(this.userName_txtBox.Text);
+            account = AccountDAO.Instance.GetAccountByUserName(this.username_txtBox.Text);
 
             this.account = account;
             fullName_txtBox.Text = account.TenNguoiDung;
-            userName_txtBox.Text = account.MaDangNhap;
+            username_txtBox.Text = account.MaDangNhap;
             BirthDay.Value = account.NgaySinh;
             email_txtBox.Text = account.Email;
             phoneNumber_txtBox.Text = account.Sdt;
@@ -312,10 +312,10 @@ namespace Service
             ChangePass_chkBox.Checked = false;
             OldPassword_txtBox.Enabled = false;
             OldPassword_txtBox.Text = "";
-            NewPassword.Enabled = false;
-            NewPassword.Text = "";
-            ConfirmNewPassword.Enabled = false;
-            ConfirmNewPassword.Text = "";
+            NewPassword_txtBox.Enabled = false;
+            NewPassword_txtBox.Text = "";
+            ConfirmNewPassword_txtBox.Enabled = false;
+            ConfirmNewPassword_txtBox.Text = "";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
