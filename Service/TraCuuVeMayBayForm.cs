@@ -25,10 +25,14 @@ namespace Service
             {
                 query = "SELECT * FROM [dbo].BANVE";
                 dt = DataProvider.Instance.ExecuteQuery(query);
+
+                LookUp_label.Text = "VÉ ĐÃ BÁN TRỰC TIẾP";
             } else
             {
                 query = "SELECT * FROM [dbo].CT_DATVE WHERE MaNguoiDat = @MaDangNhap ";
                 dt = DataProvider.Instance.ExecuteQuery(query, new object[] { account.MaDangNhap });
+
+                LookUp_label.Text = "TRA CỨU VÉ MÁY BAY";
             }
 
             flight_comboBox.BeginUpdate();
@@ -249,24 +253,24 @@ namespace Service
                 {
                     tg_huy_ve_cham_nhat = Convert.ToInt32(dr["TGHuyChamNhat"]);
                 }
-                if (chk.Days >= tg_huy_ve_cham_nhat || 1 == 1)
+                if (chk.Days >= tg_huy_ve_cham_nhat)
                 {
                     if (this.account != null)
                     {
-                        query = "DELETE FROM [dbo].CT_DATVE WHERE MaChuyenBay = @MaChuyenBay AND MaNguoiDat = @MaNguoiDat";
-                        DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { maCB, this.account.MaDangNhap });
+                        string delete = "DELETE FROM [dbo].CT_DATVE WHERE MaChuyenBay = @MaChuyenBay AND MaNguoiDat = @MaNguoiDat";
+                        DataProvider.Instance.ExecuteNonQuery(delete, new object[] { maCB, this.account.MaDangNhap });
                         ListAll();
                     } else
                     {
                         string dinhDanh = Convert.ToString(bookinglist_Dgv.Rows[bookinglist_Dgv.SelectedRows[0].Index].Cells[7].Value);
                         string maHangVe = Convert.ToString(bookinglist_Dgv.Rows[bookinglist_Dgv.SelectedRows[0].Index].Cells[5].Value);
-                        string ngayLap = Convert.ToString(bookinglist_Dgv.Rows[bookinglist_Dgv.SelectedRows[0].Index].Cells[10].Value);
-                        
-                        query = "DELETE FROM [dbo].BANVE WHERE MaChuyenBay = @MaChuyenBay AND DinhDanh = @DinhDanh";
-                        DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { maCB, dinhDanh });
-                        query = "DELETE TOP(1) FROM [dbo].CT_DATVE WHERE MaChuyenBay = @MaChuyenBay AND MaHangVe = @MaHangVe " +
+                        DateTime ngayLap = Convert.ToDateTime(bookinglist_Dgv.Rows[bookinglist_Dgv.SelectedRows[0].Index].Cells[10].Value.ToString());
+
+                        string delete = "DELETE FROM [dbo].BANVE WHERE MaChuyenBay = @MaChuyenBay AND DinhDanh = @DinhDanh ";
+                        DataProvider.Instance.ExecuteNonQuery(delete, new object[] { maCB, dinhDanh });
+                        delete = "DELETE TOP(1) FROM [dbo].CT_DATVE WHERE MaChuyenBay = @MaChuyenBay AND MaHangVe = @MaHangVe " +
                             "AND NgayLap = @NgayLap AND MaNguoiDat IS NULL";
-                        dt = DataProvider.Instance.ExecuteQuery(query, new object[] { maCB, maHangVe, ngayLap });
+                        DataProvider.Instance.ExecuteNonQuery(delete, new object[] { maCB, maHangVe, ngayLap.ToString("yyyy-MM-dd HH:mm:ss") });
                         ListAll();
                     }
 
