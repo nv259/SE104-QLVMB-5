@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddUserForm));
             this.username_txtBox = new System.Windows.Forms.TextBox();
             this.userRole_comboBox = new System.Windows.Forms.ComboBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -111,11 +112,12 @@
             this.Controls.Add(this.userRole_comboBox);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.txtBox4);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "AddUserForm";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "AddUserForm";
+            this.Text = "Thêm người dùng";
             this.ResumeLayout(false);
             this.PerformLayout();
 
