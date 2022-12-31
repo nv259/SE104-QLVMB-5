@@ -118,7 +118,7 @@ namespace Service
             this.ID_txtBox.Text = account.DinhDanh;
             this.email_txtBox.Text = account.Email;
             this.phonenumber_txtBox.Text = account.Sdt;
-            flightDgv.DataSource = flightList;
+            //flightDgv.DataSource = flightList;
 
             this.Show();
         }

@@ -161,14 +161,14 @@ namespace Service
 
                 foreach (DataRow dr in dt.Rows)
                 {
-                    tg_huy_ve_cham_nhat = Convert.ToInt32(dr["TGHuyVeChamNhat"]);
+                    tg_huy_ve_cham_nhat = Convert.ToInt32(dr["TGHuyChamNhat"]);
                 }
 
-                if (chk.Days <= tg_huy_ve_cham_nhat)
+                if (chk.Days >= tg_huy_ve_cham_nhat)
                 {
 
-                    query = "DELETE FROM [dbo].CT_DATVE WHERE MaChuyenBay = @MaChuyenBay AND MaNguoiDat = @MaNguoiDat AND DinhDanh = @DinhDanh";
-                    DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { maCB, this.TenDangNhap_txtBox.Text, this.MaDinhDanh_txtBox.Text });
+                    query = "DELETE FROM [dbo].CT_DATVE WHERE MaChuyenBay = @MaChuyenBay AND MaNguoiDat = @MaNguoiDat";
+                    DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { maCB, this.TenDangNhap_txtBox.Text });
                     ListAll();
 
                     MessageBox.Show("Vé đã được hủy thành công!");
