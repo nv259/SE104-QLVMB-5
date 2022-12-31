@@ -39,7 +39,7 @@
             this.yearTxtBox = new System.Windows.Forms.TextBox();
             this.reportMonthDgv = new System.Windows.Forms.DataGridView();
             this.reportYearDgv = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Report_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.reportMonthDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportYearDgv)).BeginInit();
             this.SuspendLayout();
@@ -186,16 +186,16 @@
             this.reportYearDgv.TabIndex = 21;
             this.reportYearDgv.TabStop = false;
             // 
-            // label1
+            // Report_label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.label1.Location = new System.Drawing.Point(400, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(265, 50);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "LẬP BÁO CÁO";
+            this.Report_label.AutoSize = true;
+            this.Report_label.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Report_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.Report_label.Location = new System.Drawing.Point(400, 21);
+            this.Report_label.Name = "Report_label";
+            this.Report_label.Size = new System.Drawing.Size(265, 50);
+            this.Report_label.TabIndex = 22;
+            this.Report_label.Text = "LẬP BÁO CÁO";
             // 
             // ReportForm
             // 
@@ -205,7 +205,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1053, 557);
             this.Controls.Add(this.exportToExcelBtn);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Report_label);
             this.Controls.Add(this.reportYearDgv);
             this.Controls.Add(this.reportMonthDgv);
             this.Controls.Add(this.yearTxtBox);
@@ -239,5 +239,6 @@
         private DataGridView reportMonthDgv;
         private DataGridView reportYearDgv;
         private Label label1;
+        private Label Report_label;
     }
 }
