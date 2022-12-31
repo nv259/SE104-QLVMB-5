@@ -161,7 +161,7 @@
             this.reportMonthDgv.ReadOnly = true;
             this.reportMonthDgv.RowHeadersWidth = 51;
             this.reportMonthDgv.RowTemplate.Height = 29;
-            this.reportMonthDgv.Size = new System.Drawing.Size(601, 236);
+            this.reportMonthDgv.Size = new System.Drawing.Size(758, 361);
             this.reportMonthDgv.TabIndex = 20;
             this.reportMonthDgv.TabStop = false;
             // 

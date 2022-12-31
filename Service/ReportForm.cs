@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -102,7 +103,7 @@ namespace Service
             this.totalIncome.Text = total.ToString();
             if (total > 0) 
             for (int i = 0; i < reportMonthDgv.Rows.Count; ++i)
-                reportMonthDgv.Rows[i].Cells[3].Value = Convert.ToInt32(reportMonthDgv.Rows[i].Cells[3].Value) / total;
+                reportMonthDgv.Rows[i].Cells[3].Value = Math.Round(Convert.ToDecimal(reportMonthDgv.Rows[i].Cells[3].Value) / total, 15);
         }
 
         string type = "";
