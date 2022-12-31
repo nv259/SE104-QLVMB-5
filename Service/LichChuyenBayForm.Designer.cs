@@ -41,16 +41,16 @@
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.ThoiGianBay1_txtBox = new System.Windows.Forms.TextBox();
-            this.HangVe_grid = new System.Windows.Forms.DataGridView();
+            this.HangVe_Dgv = new System.Windows.Forms.DataGridView();
             this.RecordBtn = new System.Windows.Forms.Button();
-            this.SanBayDi1_listBox = new System.Windows.Forms.ComboBox();
-            this.SanBayDen1_listBox = new System.Windows.Forms.ComboBox();
-            this.GhiChu = new System.Windows.Forms.RichTextBox();
+            this.SanBayDi1_comboBox = new System.Windows.Forms.ComboBox();
+            this.SanBayDen1_comboBox = new System.Windows.Forms.ComboBox();
+            this.GhiChu_RichTxtBox = new System.Windows.Forms.RichTextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.ThoiGianDung_txtBox = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
-            this.AddTrungGian_txtBox = new System.Windows.Forms.Button();
+            this.AddTrungGian_Btn = new System.Windows.Forms.Button();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.TenHangVe_txtBox = new System.Windows.Forms.TextBox();
@@ -58,7 +58,7 @@
             this.SoLuong_txtBox = new System.Windows.Forms.TextBox();
             this.Change_Btn = new System.Windows.Forms.Button();
             this.TrungGian1_comboBox = new System.Windows.Forms.ComboBox();
-            this.DeleteTrungGian = new System.Windows.Forms.Button();
+            this.DeleteTrungGian_Btn = new System.Windows.Forms.Button();
             this.HangVe_comboBox = new System.Windows.Forms.ComboBox();
             this.TrungGian_comboBox = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -67,13 +67,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.TrungGian = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.HangVe_grid)).BeginInit();
+            this.flightschedule_label = new System.Windows.Forms.Label();
+            this.TrungGian_Dgv = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.HangVe_Dgv)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TrungGian)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TrungGian_Dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // CreatedDate_txtBox
@@ -196,26 +196,26 @@
             this.ThoiGianBay1_txtBox.TabIndex = 13;
             this.ThoiGianBay1_txtBox.TabStop = false;
             // 
-            // HangVe_grid
+            // HangVe_Dgv
             // 
-            this.HangVe_grid.AllowUserToAddRows = false;
-            this.HangVe_grid.AllowUserToDeleteRows = false;
-            this.HangVe_grid.AllowUserToResizeColumns = false;
-            this.HangVe_grid.AllowUserToResizeRows = false;
-            this.HangVe_grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.HangVe_grid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.HangVe_grid.BackgroundColor = System.Drawing.Color.White;
-            this.HangVe_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.HangVe_grid.EnableHeadersVisualStyles = false;
-            this.HangVe_grid.Location = new System.Drawing.Point(12, 223);
-            this.HangVe_grid.MultiSelect = false;
-            this.HangVe_grid.Name = "HangVe_grid";
-            this.HangVe_grid.ReadOnly = true;
-            this.HangVe_grid.RowHeadersWidth = 51;
-            this.HangVe_grid.RowTemplate.Height = 29;
-            this.HangVe_grid.Size = new System.Drawing.Size(601, 202);
-            this.HangVe_grid.TabIndex = 14;
-            this.HangVe_grid.TabStop = false;
+            this.HangVe_Dgv.AllowUserToAddRows = false;
+            this.HangVe_Dgv.AllowUserToDeleteRows = false;
+            this.HangVe_Dgv.AllowUserToResizeColumns = false;
+            this.HangVe_Dgv.AllowUserToResizeRows = false;
+            this.HangVe_Dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.HangVe_Dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.HangVe_Dgv.BackgroundColor = System.Drawing.Color.White;
+            this.HangVe_Dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.HangVe_Dgv.EnableHeadersVisualStyles = false;
+            this.HangVe_Dgv.Location = new System.Drawing.Point(12, 223);
+            this.HangVe_Dgv.MultiSelect = false;
+            this.HangVe_Dgv.Name = "HangVe_Dgv";
+            this.HangVe_Dgv.ReadOnly = true;
+            this.HangVe_Dgv.RowHeadersWidth = 51;
+            this.HangVe_Dgv.RowTemplate.Height = 29;
+            this.HangVe_Dgv.Size = new System.Drawing.Size(601, 202);
+            this.HangVe_Dgv.TabIndex = 14;
+            this.HangVe_Dgv.TabStop = false;
             // 
             // RecordBtn
             // 
@@ -230,32 +230,32 @@
             this.RecordBtn.UseVisualStyleBackColor = false;
             this.RecordBtn.Click += new System.EventHandler(this.RecordBtn_Click);
             // 
-            // SanBayDi1_listBox
+            // SanBayDi1_comboBox
             // 
-            this.SanBayDi1_listBox.BackColor = System.Drawing.Color.White;
-            this.SanBayDi1_listBox.FormattingEnabled = true;
-            this.SanBayDi1_listBox.Location = new System.Drawing.Point(691, 116);
-            this.SanBayDi1_listBox.Name = "SanBayDi1_listBox";
-            this.SanBayDi1_listBox.Size = new System.Drawing.Size(201, 28);
-            this.SanBayDi1_listBox.TabIndex = 20;
+            this.SanBayDi1_comboBox.BackColor = System.Drawing.Color.White;
+            this.SanBayDi1_comboBox.FormattingEnabled = true;
+            this.SanBayDi1_comboBox.Location = new System.Drawing.Point(691, 116);
+            this.SanBayDi1_comboBox.Name = "SanBayDi1_comboBox";
+            this.SanBayDi1_comboBox.Size = new System.Drawing.Size(201, 28);
+            this.SanBayDi1_comboBox.TabIndex = 20;
             // 
-            // SanBayDen1_listBox
+            // SanBayDen1_comboBox
             // 
-            this.SanBayDen1_listBox.FormattingEnabled = true;
-            this.SanBayDen1_listBox.Location = new System.Drawing.Point(691, 149);
-            this.SanBayDen1_listBox.Name = "SanBayDen1_listBox";
-            this.SanBayDen1_listBox.Size = new System.Drawing.Size(201, 28);
-            this.SanBayDen1_listBox.TabIndex = 21;
+            this.SanBayDen1_comboBox.FormattingEnabled = true;
+            this.SanBayDen1_comboBox.Location = new System.Drawing.Point(691, 149);
+            this.SanBayDen1_comboBox.Name = "SanBayDen1_comboBox";
+            this.SanBayDen1_comboBox.Size = new System.Drawing.Size(201, 28);
+            this.SanBayDen1_comboBox.TabIndex = 21;
             // 
-            // GhiChu
+            // GhiChu_RichTxtBox
             // 
-            this.GhiChu.BackColor = System.Drawing.Color.White;
-            this.GhiChu.Location = new System.Drawing.Point(221, 38);
-            this.GhiChu.Name = "GhiChu";
-            this.GhiChu.Size = new System.Drawing.Size(232, 111);
-            this.GhiChu.TabIndex = 23;
-            this.GhiChu.TabStop = false;
-            this.GhiChu.Text = "";
+            this.GhiChu_RichTxtBox.BackColor = System.Drawing.Color.White;
+            this.GhiChu_RichTxtBox.Location = new System.Drawing.Point(221, 38);
+            this.GhiChu_RichTxtBox.Name = "GhiChu_RichTxtBox";
+            this.GhiChu_RichTxtBox.Size = new System.Drawing.Size(232, 111);
+            this.GhiChu_RichTxtBox.TabIndex = 23;
+            this.GhiChu_RichTxtBox.TabStop = false;
+            this.GhiChu_RichTxtBox.Text = "";
             // 
             // textBox1
             // 
@@ -298,17 +298,17 @@
             this.textBox9.TabIndex = 28;
             this.textBox9.Text = "Sân bay trung gian:";
             // 
-            // AddTrungGian_txtBox
+            // AddTrungGian_Btn
             // 
-            this.AddTrungGian_txtBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.AddTrungGian_txtBox.ForeColor = System.Drawing.Color.White;
-            this.AddTrungGian_txtBox.Location = new System.Drawing.Point(175, 209);
-            this.AddTrungGian_txtBox.Name = "AddTrungGian_txtBox";
-            this.AddTrungGian_txtBox.Size = new System.Drawing.Size(129, 35);
-            this.AddTrungGian_txtBox.TabIndex = 29;
-            this.AddTrungGian_txtBox.Text = "Thêm";
-            this.AddTrungGian_txtBox.UseVisualStyleBackColor = false;
-            this.AddTrungGian_txtBox.Click += new System.EventHandler(this.AddTrungGian_txtBox_Click);
+            this.AddTrungGian_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.AddTrungGian_Btn.ForeColor = System.Drawing.Color.White;
+            this.AddTrungGian_Btn.Location = new System.Drawing.Point(175, 209);
+            this.AddTrungGian_Btn.Name = "AddTrungGian_Btn";
+            this.AddTrungGian_Btn.Size = new System.Drawing.Size(129, 35);
+            this.AddTrungGian_Btn.TabIndex = 29;
+            this.AddTrungGian_Btn.Text = "Thêm";
+            this.AddTrungGian_Btn.UseVisualStyleBackColor = false;
+            this.AddTrungGian_Btn.Click += new System.EventHandler(this.AddTrungGian_Btn_Click);
             // 
             // textBox10
             // 
@@ -319,7 +319,6 @@
             this.textBox10.Size = new System.Drawing.Size(94, 20);
             this.textBox10.TabIndex = 30;
             this.textBox10.Text = "Mã hạng vé:";
-            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
             // textBox14
             // 
@@ -383,17 +382,17 @@
             this.TrungGian1_comboBox.TabIndex = 37;
             this.TrungGian1_comboBox.TabStop = false;
             // 
-            // DeleteTrungGian
+            // DeleteTrungGian_Btn
             // 
-            this.DeleteTrungGian.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.DeleteTrungGian.ForeColor = System.Drawing.Color.White;
-            this.DeleteTrungGian.Location = new System.Drawing.Point(90, 209);
-            this.DeleteTrungGian.Name = "DeleteTrungGian";
-            this.DeleteTrungGian.Size = new System.Drawing.Size(72, 35);
-            this.DeleteTrungGian.TabIndex = 38;
-            this.DeleteTrungGian.Text = "Xóa";
-            this.DeleteTrungGian.UseVisualStyleBackColor = false;
-            this.DeleteTrungGian.Click += new System.EventHandler(this.DeleteTrungGian_Click);
+            this.DeleteTrungGian_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.DeleteTrungGian_Btn.ForeColor = System.Drawing.Color.White;
+            this.DeleteTrungGian_Btn.Location = new System.Drawing.Point(90, 209);
+            this.DeleteTrungGian_Btn.Name = "DeleteTrungGian_Btn";
+            this.DeleteTrungGian_Btn.Size = new System.Drawing.Size(72, 35);
+            this.DeleteTrungGian_Btn.TabIndex = 38;
+            this.DeleteTrungGian_Btn.Text = "Xóa";
+            this.DeleteTrungGian_Btn.UseVisualStyleBackColor = false;
+            this.DeleteTrungGian_Btn.Click += new System.EventHandler(this.DeleteTrungGian_Btn_Click);
             // 
             // HangVe_comboBox
             // 
@@ -403,7 +402,7 @@
             this.HangVe_comboBox.Size = new System.Drawing.Size(171, 28);
             this.HangVe_comboBox.TabIndex = 40;
             this.HangVe_comboBox.TabStop = false;
-            this.HangVe_comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.HangVe_comboBox.SelectedIndexChanged += new System.EventHandler(this.HangVe_comboBox_SelectedIndexChanged);
             // 
             // TrungGian_comboBox
             // 
@@ -413,7 +412,6 @@
             this.TrungGian_comboBox.Name = "TrungGian_comboBox";
             this.TrungGian_comboBox.Size = new System.Drawing.Size(189, 28);
             this.TrungGian_comboBox.TabIndex = 41;
-            this.TrungGian_comboBox.SelectedIndexChanged += new System.EventHandler(this.TrungGian_comboBox_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -434,12 +432,12 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.TrungGian_comboBox);
-            this.panel2.Controls.Add(this.AddTrungGian_txtBox);
+            this.panel2.Controls.Add(this.AddTrungGian_Btn);
             this.panel2.Controls.Add(this.textBox9);
             this.panel2.Controls.Add(this.textBox4);
             this.panel2.Controls.Add(this.ThoiGianDung_txtBox);
             this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.GhiChu);
+            this.panel2.Controls.Add(this.GhiChu_RichTxtBox);
             this.panel2.Location = new System.Drawing.Point(646, 465);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(470, 275);
@@ -459,7 +457,7 @@
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.textBox11);
-            this.panel3.Controls.Add(this.DeleteTrungGian);
+            this.panel3.Controls.Add(this.DeleteTrungGian_Btn);
             this.panel3.Controls.Add(this.TrungGian1_comboBox);
             this.panel3.Location = new System.Drawing.Point(1144, 465);
             this.panel3.Name = "panel3";
@@ -484,37 +482,37 @@
             this.label2.TabIndex = 47;
             this.label2.Text = "Danh sách các sân bay trung gian:";
             // 
-            // label3
+            // flightschedule_label
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.label3.Location = new System.Drawing.Point(456, 17);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(505, 54);
-            this.label3.TabIndex = 48;
-            this.label3.Text = "NHẬN LỊCH CHUYẾN BAY";
+            this.flightschedule_label.AutoSize = true;
+            this.flightschedule_label.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.flightschedule_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            this.flightschedule_label.Location = new System.Drawing.Point(456, 17);
+            this.flightschedule_label.Name = "flightschedule_label";
+            this.flightschedule_label.Size = new System.Drawing.Size(505, 54);
+            this.flightschedule_label.TabIndex = 48;
+            this.flightschedule_label.Text = "NHẬN LỊCH CHUYẾN BAY";
             // 
-            // TrungGian
+            // TrungGian_Dgv
             // 
-            this.TrungGian.AllowUserToAddRows = false;
-            this.TrungGian.AllowUserToDeleteRows = false;
-            this.TrungGian.AllowUserToResizeColumns = false;
-            this.TrungGian.AllowUserToResizeRows = false;
-            this.TrungGian.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.TrungGian.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.TrungGian.BackgroundColor = System.Drawing.Color.White;
-            this.TrungGian.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TrungGian.EnableHeadersVisualStyles = false;
-            this.TrungGian.Location = new System.Drawing.Point(12, 488);
-            this.TrungGian.MultiSelect = false;
-            this.TrungGian.Name = "TrungGian";
-            this.TrungGian.ReadOnly = true;
-            this.TrungGian.RowHeadersWidth = 51;
-            this.TrungGian.RowTemplate.Height = 29;
-            this.TrungGian.Size = new System.Drawing.Size(601, 252);
-            this.TrungGian.TabIndex = 49;
-            this.TrungGian.TabStop = false;
+            this.TrungGian_Dgv.AllowUserToAddRows = false;
+            this.TrungGian_Dgv.AllowUserToDeleteRows = false;
+            this.TrungGian_Dgv.AllowUserToResizeColumns = false;
+            this.TrungGian_Dgv.AllowUserToResizeRows = false;
+            this.TrungGian_Dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.TrungGian_Dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.TrungGian_Dgv.BackgroundColor = System.Drawing.Color.White;
+            this.TrungGian_Dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TrungGian_Dgv.EnableHeadersVisualStyles = false;
+            this.TrungGian_Dgv.Location = new System.Drawing.Point(12, 488);
+            this.TrungGian_Dgv.MultiSelect = false;
+            this.TrungGian_Dgv.Name = "TrungGian_Dgv";
+            this.TrungGian_Dgv.ReadOnly = true;
+            this.TrungGian_Dgv.RowHeadersWidth = 51;
+            this.TrungGian_Dgv.RowTemplate.Height = 29;
+            this.TrungGian_Dgv.Size = new System.Drawing.Size(601, 252);
+            this.TrungGian_Dgv.TabIndex = 49;
+            this.TrungGian_Dgv.TabStop = false;
             // 
             // LichChuyenBayForm
             // 
@@ -522,17 +520,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1389, 812);
-            this.Controls.Add(this.TrungGian);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.TrungGian_Dgv);
+            this.Controls.Add(this.flightschedule_label);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.SanBayDen1_listBox);
-            this.Controls.Add(this.SanBayDi1_listBox);
+            this.Controls.Add(this.SanBayDen1_comboBox);
+            this.Controls.Add(this.SanBayDi1_comboBox);
             this.Controls.Add(this.RecordBtn);
-            this.Controls.Add(this.HangVe_grid);
+            this.Controls.Add(this.HangVe_Dgv);
             this.Controls.Add(this.ThoiGianBay1_txtBox);
             this.Controls.Add(this.textBox13);
             this.Controls.Add(this.textBox12);
@@ -550,14 +548,14 @@
             this.Name = "LichChuyenBayForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhận lịch chuyến bay";
-            ((System.ComponentModel.ISupportInitialize)(this.HangVe_grid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HangVe_Dgv)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TrungGian)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TrungGian_Dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -577,18 +575,18 @@
         private TextBox textBox12;
         private TextBox textBox13;
         private TextBox ThoiGianBay1_txtBox;
-        private DataGridView HangVe_grid;
+        private DataGridView HangVe_Dgv;
         private Button RecordBtn;
         private TextBox MaChuyenBay1_txtBox;
         private TextBox GiaVe1_txtBox;
         private TextBox SanBayDi1_txtBox;
-        private ComboBox SanBayDi1_listBox;
-        private ComboBox SanBayDen1_listBox;
-        private RichTextBox GhiChu;
+        private ComboBox SanBayDi1_comboBox;
+        private ComboBox SanBayDen1_comboBox;
+        private RichTextBox GhiChu_RichTxtBox;
         private TextBox textBox1;
         private TextBox ThoiGianDung_txtBox;
         private TextBox textBox9;
-        private Button AddTrungGian_txtBox;
+        private Button AddTrungGian_Btn;
         private TextBox textBox14;
         private TextBox TenHangVe_txtBox;
         private TextBox textBox16;
@@ -599,14 +597,14 @@
         private ComboBox HangVe_comboBox;
         private TextBox SoLuong_txtBox;
         private ComboBox TrungGian_comboBox;
-        private Button DeleteTrungGian;
+        private Button DeleteTrungGian_Btn;
         private Panel panel1;
         private Panel panel2;
         private TextBox textBox11;
         private Panel panel3;
         private Label label1;
         private Label label2;
-        private Label label3;
-        private DataGridView TrungGian;
+        private Label flightschedule_label;
+        private DataGridView TrungGian_Dgv;
     }
 }

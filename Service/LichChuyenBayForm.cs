@@ -24,22 +24,22 @@ namespace Service
             string query = "SELECT * FROM [dbo].SANBAY ";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
 
-            SanBayDi1_listBox.BeginUpdate();
-            SanBayDen1_listBox.BeginUpdate();
+            SanBayDi1_comboBox.BeginUpdate();
+            SanBayDen1_comboBox.BeginUpdate();
             TrungGian_comboBox.BeginUpdate();
-            SanBayDi1_listBox.Items.Clear();
-            SanBayDen1_listBox.Items.Clear();
+            SanBayDi1_comboBox.Items.Clear();
+            SanBayDen1_comboBox.Items.Clear();
             TrungGian_comboBox.Items.Clear();
         
             foreach (DataRow dr in dt.Rows)
             {
-                SanBayDi1_listBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
-                SanBayDen1_listBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
+                SanBayDi1_comboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
+                SanBayDen1_comboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
                 TrungGian_comboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
             }
 
-            SanBayDi1_listBox.EndUpdate();
-            SanBayDen1_listBox.EndUpdate();
+            SanBayDi1_comboBox.EndUpdate();
+            SanBayDen1_comboBox.EndUpdate();
             TrungGian_comboBox.EndUpdate();
 
             query = "SELECT * FROM [dbo].HANGVE ";
@@ -55,23 +55,23 @@ namespace Service
 
             HangVe_comboBox.EndUpdate();
 
-            HangVe_grid.Columns.Clear();
-            HangVe_grid.ColumnCount = 3;
-            HangVe_grid.Columns[0].Name = "Mã hạng vé";
-            HangVe_grid.Columns[1].Name = "Tên hạng vé";
-            HangVe_grid.Columns[2].Name = "Số lượng";
-            HangVe_grid.Columns[0].ReadOnly = true;
-            HangVe_grid.Columns[1].ReadOnly = true;
+            HangVe_Dgv.Columns.Clear();
+            HangVe_Dgv.ColumnCount = 3;
+            HangVe_Dgv.Columns[0].Name = "Mã hạng vé";
+            HangVe_Dgv.Columns[1].Name = "Tên hạng vé";
+            HangVe_Dgv.Columns[2].Name = "Số lượng";
+            HangVe_Dgv.Columns[0].ReadOnly = true;
+            HangVe_Dgv.Columns[1].ReadOnly = true;
 
             foreach(DataRow dr in dt.Rows)
             {
-                HangVe_grid.Rows.Add(dr["MaHangVe"].ToString(), dr["TenHangVe"].ToString(), "0");
+                HangVe_Dgv.Rows.Add(dr["MaHangVe"].ToString(), dr["TenHangVe"].ToString(), "0");
             }
 
-            TrungGian.ColumnCount = 3;
-            TrungGian.Columns[0].Name = "Sân bay trung gian";
-            TrungGian.Columns[1].Name = "Thời gian dừng";
-            TrungGian.Columns[2].Name = "Ghi chú";
+            TrungGian_Dgv.ColumnCount = 3;
+            TrungGian_Dgv.Columns[0].Name = "Sân bay trung gian";
+            TrungGian_Dgv.Columns[1].Name = "Thời gian dừng";
+            TrungGian_Dgv.Columns[2].Name = "Ghi chú";
 
             
 
@@ -79,7 +79,7 @@ namespace Service
             para = new Parameters(DataProvider.Instance.ExecuteQuery(query).Rows[0]);
 
             TrungGian1_comboBox.Enabled = false;
-            DeleteTrungGian.Enabled = false;
+            DeleteTrungGian_Btn.Enabled = false;
         }
 
         Parameters para;
@@ -151,19 +151,19 @@ namespace Service
                 }
             }
 
-            if (SanBayDi1_listBox.SelectedItem == null)
+            if (SanBayDi1_comboBox.SelectedItem == null)
             {
                 MessageBox.Show("Chưa chọn sân bay đi!");
                 return false;
             }
 
-            if (SanBayDen1_listBox.SelectedItem == null)
+            if (SanBayDen1_comboBox.SelectedItem == null)
             {
                 MessageBox.Show("Chưa chọn sân bay đến!");
                 return false;
             }
 
-            if (SanBayDi1_listBox.SelectedItem.ToString() == SanBayDen1_listBox.SelectedItem.ToString())
+            if (SanBayDi1_comboBox.SelectedItem.ToString() == SanBayDen1_comboBox.SelectedItem.ToString())
             {
                 MessageBox.Show("Sân bay đi và sân bay đến phải khác nhau!");
                 return false;
@@ -215,7 +215,7 @@ namespace Service
                 }
             }
 
-            foreach(DataGridViewRow row in HangVe_grid.Rows)
+            foreach(DataGridViewRow row in HangVe_Dgv.Rows)
             {
                 if (row.Cells["Số lượng"].Value == null)
                 {
@@ -239,7 +239,7 @@ namespace Service
 
 
             bool allZero = true;
-            foreach (DataGridViewRow row in HangVe_grid.Rows)
+            foreach (DataGridViewRow row in HangVe_Dgv.Rows)
             {
                 if (Convert.ToInt32(row.Cells["Số lượng"].Value.ToString()) != 0) allZero = false;
             }
@@ -259,15 +259,15 @@ namespace Service
 
             string MaChuyenBay = MaChuyenBay1_txtBox.Text;
             Decimal GiaVe = Convert.ToDecimal(GiaVe1_txtBox.Text);
-            string MaSanBayDi = MASANBAY(SanBayDi1_listBox.SelectedItem.ToString());
-            string MaSanBayDen = MASANBAY(SanBayDen1_listBox.SelectedItem.ToString());
+            string MaSanBayDi = MASANBAY(SanBayDi1_comboBox.SelectedItem.ToString());
+            string MaSanBayDen = MASANBAY(SanBayDen1_comboBox.SelectedItem.ToString());
             string NgayGioBay = DateTime.ParseExact(NgayGioBay1_txtBox.Text.TrimEnd(), "dd-MM-yyyy HH:mm", null, DateTimeStyles.None).ToString("yyyy-MM-dd HH:mm");
             string ThoiGianBay = ThoiGianBay1_txtBox.Text.TrimEnd();
 
             string query = "INSERT INTO [dbo].CHUYENBAY VALUES ( @MaChuyenBay , @MaSanBayDi , @MaSanBayDen , @NgayGioBay , @ThoiGianBay , @GiaVe )";
             DataProvider.Instance.ExecuteNonQuery(query, new object[] { MaChuyenBay, MaSanBayDi, MaSanBayDen, NgayGioBay, ThoiGianBay, GiaVe });
 
-            foreach (DataGridViewRow row in HangVe_grid.Rows)
+            foreach (DataGridViewRow row in HangVe_Dgv.Rows)
             {
                 string MaHangVe = row.Cells["Mã hạng vé"].Value.ToString();
                 int SoLuong = Convert.ToInt32(row.Cells["Số lượng"].Value);
@@ -275,7 +275,7 @@ namespace Service
                 DataProvider.Instance.ExecuteNonQuery(query, new object[] { MaHangVe , MaChuyenBay, SoLuong });
             }
 
-            foreach(DataGridViewRow row in TrungGian.Rows)
+            foreach(DataGridViewRow row in TrungGian_Dgv.Rows)
             {
                 string trunggian = row.Cells["Sân bay trung gian"].Value.ToString();
                 string thoigiandung = row.Cells["Thời gian dừng"].Value.ToString();
@@ -289,12 +289,7 @@ namespace Service
             this.Close();
         }
 
-        private void textBox10_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void HangVe_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (HangVe_comboBox.SelectedItem == null)
             {
@@ -307,7 +302,7 @@ namespace Service
             string query = "SELECT * FROM [dbo].HANGVE WHERE MaHangVe = @MaHangVe ";
             TenHangVe_txtBox.Text = DataProvider.Instance.ExecuteQuery(query, new object[] { MaHangVe }).Rows[0]["TenHangVe"].ToString();
             
-            foreach(DataGridViewRow row in HangVe_grid.Rows)
+            foreach(DataGridViewRow row in HangVe_Dgv.Rows)
             {
                 if (row.Cells["Mã hạng vé"].Value.ToString() == MaHangVe)
                 {
@@ -337,7 +332,7 @@ namespace Service
             }
 
             string MaHangVe = HangVe_comboBox.SelectedItem.ToString();
-            foreach (DataGridViewRow row in HangVe_grid.Rows)
+            foreach (DataGridViewRow row in HangVe_Dgv.Rows)
             {
                 if (row.Cells["Mã hạng vé"].Value.ToString() == MaHangVe)
                 {
@@ -347,12 +342,7 @@ namespace Service
             }
         }
 
-        private void TrungGian_comboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AddTrungGian_txtBox_Click(object sender, EventArgs e)
+        private void AddTrungGian_Btn_Click(object sender, EventArgs e)
         {
             if (TrungGian_comboBox.SelectedItem == null)
             {
@@ -374,13 +364,13 @@ namespace Service
                 return;
             }
 
-            TrungGian.Rows.Add(TrungGian_comboBox.SelectedItem.ToString(), ThoiGianDung, GhiChu.Text);
+            TrungGian_Dgv.Rows.Add(TrungGian_comboBox.SelectedItem.ToString(), ThoiGianDung, GhiChu_RichTxtBox.Text);
 
-            SanBayDi1_listBox.BeginUpdate();
-            SanBayDen1_listBox.BeginUpdate();
+            SanBayDi1_comboBox.BeginUpdate();
+            SanBayDen1_comboBox.BeginUpdate();
             TrungGian_comboBox.BeginUpdate();
-            SanBayDi1_listBox.Items.Clear();
-            SanBayDen1_listBox.Items.Clear();
+            SanBayDi1_comboBox.Items.Clear();
+            SanBayDen1_comboBox.Items.Clear();
             TrungGian_comboBox.Items.Clear();
 
             string query = "SELECT * FROM [dbo].SANBAY ";
@@ -389,7 +379,7 @@ namespace Service
             foreach (DataRow dr in dt.Rows)
             {
                 bool Find = false;
-                foreach(DataGridViewRow row in TrungGian.Rows)
+                foreach(DataGridViewRow row in TrungGian_Dgv.Rows)
                 if (MASANBAY(row.Cells["Sân bay trung gian"].Value.ToString()) == dr["MaSanBay"].ToString().TrimEnd())
                 {
                     Find = true;
@@ -398,18 +388,18 @@ namespace Service
 
                 if (Find) continue;
 
-                SanBayDi1_listBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
-                SanBayDen1_listBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
+                SanBayDi1_comboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
+                SanBayDen1_comboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
                 TrungGian_comboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
             }
 
-            SanBayDi1_listBox.EndUpdate();
-            SanBayDen1_listBox.EndUpdate();
+            SanBayDi1_comboBox.EndUpdate();
+            SanBayDen1_comboBox.EndUpdate();
             TrungGian_comboBox.EndUpdate();
 
             TrungGian1_comboBox.BeginUpdate();
             TrungGian1_comboBox.Items.Clear();
-            foreach (DataGridViewRow row in TrungGian.Rows)
+            foreach (DataGridViewRow row in TrungGian_Dgv.Rows)
             {
                 TrungGian1_comboBox.Items.Add(row.Cells["Sân bay trung gian"].Value.ToString());
             }
@@ -418,25 +408,25 @@ namespace Service
             MessageBox.Show("Đã thêm thành công!");
 
             this.TrungGian_comboBox.SelectedItem = null;
-            this.SanBayDi1_listBox.SelectedItem = null;
-            this.SanBayDen1_listBox.SelectedItem = null;
+            this.SanBayDi1_comboBox.SelectedItem = null;
+            this.SanBayDen1_comboBox.SelectedItem = null;
             this.TrungGian1_comboBox.SelectedItem = null;
             if (TrungGian1_comboBox.Items.Count == para.SoSanBayTGToiDa)
             {
                 TrungGian_comboBox.Enabled = false;
                 ThoiGianDung_txtBox.Enabled = false;
-                GhiChu.Enabled = false;
-                AddTrungGian_txtBox.Enabled = false;
+                GhiChu_RichTxtBox.Enabled = false;
+                AddTrungGian_Btn.Enabled = false;
             }
 
             if (TrungGian1_comboBox.Items.Count > 0)
             {
                 TrungGian1_comboBox.Enabled = true;
-                DeleteTrungGian.Enabled = true;
+                DeleteTrungGian_Btn.Enabled = true;
             }
         }
 
-        private void DeleteTrungGian_Click(object sender, EventArgs e)
+        private void DeleteTrungGian_Btn_Click(object sender, EventArgs e)
         {
             if (TrungGian1_comboBox.SelectedItem == null)
             {
@@ -445,20 +435,20 @@ namespace Service
             }
 
             string SanBay = TrungGian1_comboBox.SelectedItem.ToString();
-            foreach(DataGridViewRow row in TrungGian.Rows)
+            foreach(DataGridViewRow row in TrungGian_Dgv.Rows)
             {
                 if (row.Cells["Sân bay trung gian"].Value.ToString() == SanBay)
                 {
-                    TrungGian.Rows.Remove(row);
+                    TrungGian_Dgv.Rows.Remove(row);
                     break;
                 }
             }
 
-            SanBayDi1_listBox.BeginUpdate();
-            SanBayDen1_listBox.BeginUpdate();
+            SanBayDi1_comboBox.BeginUpdate();
+            SanBayDen1_comboBox.BeginUpdate();
             TrungGian_comboBox.BeginUpdate();
-            SanBayDi1_listBox.Items.Clear();
-            SanBayDen1_listBox.Items.Clear();
+            SanBayDi1_comboBox.Items.Clear();
+            SanBayDen1_comboBox.Items.Clear();
             TrungGian_comboBox.Items.Clear();
 
             string query = "SELECT * FROM [dbo].SANBAY ";
@@ -467,7 +457,7 @@ namespace Service
             foreach (DataRow dr in dt.Rows)
             {
                 bool Find = false;
-                foreach (DataGridViewRow row in TrungGian.Rows)
+                foreach (DataGridViewRow row in TrungGian_Dgv.Rows)
                     if (MASANBAY(row.Cells["Sân bay trung gian"].Value.ToString()) == dr["MaSanBay"].ToString().TrimEnd())
                     {
                         Find = true;
@@ -476,18 +466,18 @@ namespace Service
 
                 if (Find) continue;
 
-                SanBayDi1_listBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
-                SanBayDen1_listBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
+                SanBayDi1_comboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
+                SanBayDen1_comboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
                 TrungGian_comboBox.Items.Add(dr["MaSanBay"].ToString().TrimEnd() + " | " + dr["TenSanBay"].ToString());
             }
 
-            SanBayDi1_listBox.EndUpdate();
-            SanBayDen1_listBox.EndUpdate();
+            SanBayDi1_comboBox.EndUpdate();
+            SanBayDen1_comboBox.EndUpdate();
             TrungGian_comboBox.EndUpdate();
 
             TrungGian1_comboBox.BeginUpdate();
             TrungGian1_comboBox.Items.Clear();
-            foreach (DataGridViewRow row in TrungGian.Rows)
+            foreach (DataGridViewRow row in TrungGian_Dgv.Rows)
             {
                 TrungGian1_comboBox.Items.Add(row.Cells["Sân bay trung gian"].Value.ToString());
             }
@@ -497,32 +487,22 @@ namespace Service
             MessageBox.Show("Đã xóa thành công!");
 
             this.TrungGian_comboBox.SelectedItem = null;
-            this.SanBayDi1_listBox.SelectedItem = null;
-            this.SanBayDen1_listBox.SelectedItem = null;
+            this.SanBayDi1_comboBox.SelectedItem = null;
+            this.SanBayDen1_comboBox.SelectedItem = null;
             this.TrungGian1_comboBox.SelectedItem = null;
             if (TrungGian1_comboBox.Items.Count < para.SoSanBayTGToiDa)
             {
                 TrungGian_comboBox.Enabled = true;
                 ThoiGianDung_txtBox.Enabled = true;
-                GhiChu.Enabled = true;
-                AddTrungGian_txtBox.Enabled = true;
+                GhiChu_RichTxtBox.Enabled = true;
+                AddTrungGian_Btn.Enabled = true;
             }
 
             if (TrungGian1_comboBox.Items.Count == 0)
             {
                 TrungGian1_comboBox.Enabled = false;
-                DeleteTrungGian.Enabled = false;
+                DeleteTrungGian_Btn.Enabled = false;
             }
-        }
-
-        private void TrungGian_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void LichChuyenBayForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
