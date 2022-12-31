@@ -193,11 +193,6 @@ namespace Service
             this.Close();
         }
 
-        private void intermediaryDtgv_MouseClick(object sender, MouseEventArgs e)
-        {
-
-        }
-
         private void flightDtgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             maCB = Convert.ToString(flightDtgv.Rows[flightDtgv.SelectedRows[0].Index].Cells[1].Value);

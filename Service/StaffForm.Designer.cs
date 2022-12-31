@@ -484,7 +484,6 @@
             this.textBox4.TabStop = false;
             this.textBox4.Text = "Email:";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // userName_txtBox
             // 

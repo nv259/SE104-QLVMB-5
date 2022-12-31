@@ -403,7 +403,6 @@
             this.intermediaryDtgv.Size = new System.Drawing.Size(365, 158);
             this.intermediaryDtgv.TabIndex = 14;
             this.intermediaryDtgv.TabStop = false;
-            this.intermediaryDtgv.MouseClick += new System.Windows.Forms.MouseEventHandler(this.intermediaryDtgv_MouseClick);
             // 
             // textBox6
             // 
