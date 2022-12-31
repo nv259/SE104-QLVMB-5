@@ -205,7 +205,7 @@ namespace Service
                 }
             }
 
-            if (ChangePass.Checked)
+            if (ChangePass_chkBox.Checked)
             {
                 string oldPassword = Convert_to_SHA512(this.OldPassword_txtBox.Text);
                 string newPassword = this.NewPassword_txtBox.Text;
@@ -277,7 +277,7 @@ namespace Service
             if (!CheckAll()) return;
 
             string MaDangNhap, MatKhau, TenNguoiDung, DinhDanh, SoDienThoai, Email;
-            MaDangNhap = this.userName_txtBox.Text;
+            MaDangNhap = this.username_txtBox.Text;
             TenNguoiDung = this.fullName_txtBox.Text.Trim();
 
             if (ChangePass.Checked)
@@ -309,7 +309,7 @@ namespace Service
             phoneNumber_txtBox.Text = account.Sdt;
             ID_txtBox.Text = account.DinhDanh;
 
-            ChangePass.Checked = false;
+            ChangePass_chkBox.Checked = false;
             OldPassword_txtBox.Enabled = false;
             OldPassword_txtBox.Text = "";
             NewPassword.Enabled = false;
