@@ -257,14 +257,15 @@
             // 
             this.ngDatVeBox.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.ngDatVeBox.CustomFormat = "MM/dd/yyyy";
-            this.ngDatVeBox.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ngDatVeBox.Enabled = false;
+            this.ngDatVeBox.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.ngDatVeBox.Location = new System.Drawing.Point(3, 26);
             this.ngDatVeBox.MinDate = new System.DateTime(2022, 12, 21, 11, 25, 7, 0);
             this.ngDatVeBox.Name = "ngDatVeBox";
             this.ngDatVeBox.Size = new System.Drawing.Size(170, 27);
             this.ngDatVeBox.TabIndex = 20;
+            this.ngDatVeBox.TabStop = false;
             this.ngDatVeBox.Value = new System.DateTime(2022, 12, 30, 13, 4, 10, 587);
-            this.ngDatVeBox.ValueChanged += new System.EventHandler(this.ngDatVeBox_ValueChanged);
             // 
             // textBox8
             // 

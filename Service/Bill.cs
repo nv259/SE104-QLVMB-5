@@ -41,29 +41,59 @@ namespace Service
                 this.ID_txtBox.Text = this.acc.DinhDanh;
                 this.phone_txtBox.Text = this.acc.Sdt;
                 this.email_txtBox.Text = this.acc.Email;
+                this.name_txtBox.ReadOnly = true;
+                this.ID_txtBox.ReadOnly = true;
+                this.phone_txtBox.ReadOnly = true;
+                this.email_txtBox.ReadOnly = true;
+                this.cb_txtBox.Text = maCB;
             }
             else {
                 this.name_txtBox.Text = string.Empty;
                 this.ID_txtBox.Text = string.Empty;
                 this.phone_txtBox.Text = string.Empty;
                 this.email_txtBox.Text = string.Empty;
+                this.name_txtBox.ReadOnly = false;
+                this.ID_txtBox.ReadOnly = false;
+                this.phone_txtBox.ReadOnly = false;
+                this.email_txtBox.ReadOnly = false;
             }
 
             query = "SELECT TenHangVe FROM [dbo].HANGVE";
             dt = DataProvider.Instance.ExecuteQuery(query);
+
+            ticket_cmbBox.BeginUpdate();
+            ticket_cmbBox.Items.Clear();
+
             foreach (DataRow dr in dt.Rows)
             {
                 ticket_cmbBox.Items.Add(dr["TenHangVe"].ToString());
             }
 
-            this.cb_txtBox.Text = maCB;
+            ticket_cmbBox.EndUpdate();
+            ticket_cmbBox.SelectedItem = null;
+            ticket_cmbBox.Text = "";
+
+            this.ngDatVeBox.Value = DateTime.Now;
         }
 
         private void cb_cmbBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string query = "SELECT GiaCoBan FROM [dbo].CHUYENBAY WHERE MaChuyenBay = @MaChuyenBay";
-            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { this.cb_txtBox.Text.Trim() });
-            decimal GiaCoBan = 1;
+            DataTable dt;
+            string MaChuyenBay;
+
+            if (acc != null)
+            {
+                MaChuyenBay = cb_txtBox.Text;
+            }
+            else if (chuyenBayComboBox.SelectedItem != null)
+            {
+                MaChuyenBay = chuyenBayComboBox.SelectedItem.ToString();
+            }
+            else MaChuyenBay = "";
+
+            dt = DataProvider.Instance.ExecuteQuery(query, new object[] { MaChuyenBay.Trim() });
+            decimal GiaCoBan = 0;
             foreach (DataRow dr in dt.Rows)
             {
                 GiaCoBan = (decimal)dr["GiaCoBan"];
@@ -72,7 +102,7 @@ namespace Service
 
             query = "SELECT TiLeGiaVe FROM [dbo].HANGVE WHERE TenHangVe = @TenHangVe";
             dt = DataProvider.Instance.ExecuteQuery(query, new object[] { this.ticket_cmbBox.Text });
-            double TiLe = 1;
+            double TiLe = 0;
             foreach (DataRow dr in dt.Rows)
             {
                 TiLe = (double)dr["TiLeGiaVe"];
@@ -155,11 +185,6 @@ namespace Service
                     MessageBox.Show("Error: Mỗi hành khách chỉ được đặt một vé. Hãy hủy vé cũ trước khi đặt vé mới.");
                 }
              }
-        }
-
-        private void ngDatVeBox_ValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
