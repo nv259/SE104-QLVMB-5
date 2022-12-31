@@ -141,32 +141,46 @@ namespace Service
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            string maCB = Convert.ToString(FullInfo.Rows[FullInfo.SelectedRows[0].Index].Cells[0].Value);
-
-            DateTime NgayGioBay = Convert.ToDateTime(FullInfo.Rows[FullInfo.SelectedRows[0].Index].Cells[3].Value);
-            TimeSpan chk = NgayGioBay.Subtract(DateTime.Now);
-
-            string query = "SELECT * FROM [dbo].THAMSO ";
-            dt = DataProvider.Instance.ExecuteQuery(query);
-
-            int tg_huy_ve_cham_nhat = int.MaxValue;
-
-            foreach (DataRow dr in dt.Rows)
+            if (MessageBox.Show("Bạn có muốn hủy vé?", "Notification", MessageBoxButtons.OKCancel) != DialogResult.OK)
             {
-                tg_huy_ve_cham_nhat = Convert.ToInt32(dr["TGHuyVeChamNhat"]);
+                return;
             }
 
-            if (chk.Days <= tg_huy_ve_cham_nhat) {
-
-                query = "DELETE FROM [dbo].CT_DATVE WHERE MaChuyenBay = @MaChuyenBay AND MaNguoiDat = @MaNguoiDat AND DinhDanh = @DinhDanh";
-                DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { maCB, this.TenDangNhap_txtBox.Text, this.MaDinhDanh_txtBox.Text });
-                ListAll();
-
-                MessageBox.Show("Vé đã được hủy thành công!");
-            }
-            else
+            try
             {
-                MessageBox.Show("Đã quá hạn hủy vé này!");
+
+                string maCB = Convert.ToString(FullInfo.Rows[FullInfo.SelectedRows[0].Index].Cells[0].Value);
+
+                DateTime NgayGioBay = Convert.ToDateTime(FullInfo.Rows[FullInfo.SelectedRows[0].Index].Cells[3].Value);
+                TimeSpan chk = NgayGioBay.Subtract(DateTime.Now);
+
+                string query = "SELECT * FROM [dbo].THAMSO ";
+                dt = DataProvider.Instance.ExecuteQuery(query);
+
+                int tg_huy_ve_cham_nhat = int.MaxValue;
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    tg_huy_ve_cham_nhat = Convert.ToInt32(dr["TGHuyVeChamNhat"]);
+                }
+
+                if (chk.Days <= tg_huy_ve_cham_nhat)
+                {
+
+                    query = "DELETE FROM [dbo].CT_DATVE WHERE MaChuyenBay = @MaChuyenBay AND MaNguoiDat = @MaNguoiDat AND DinhDanh = @DinhDanh";
+                    DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { maCB, this.TenDangNhap_txtBox.Text, this.MaDinhDanh_txtBox.Text });
+                    ListAll();
+
+                    MessageBox.Show("Vé đã được hủy thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Đã quá hạn hủy vé này!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Đã có lỗi xảy ra! Vui lòng thử lại sau!");
             }
         }
 

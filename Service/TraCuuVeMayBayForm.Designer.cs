@@ -52,6 +52,7 @@
             this.FullInfo = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.NgayBay_chkBox = new System.Windows.Forms.CheckBox();
+            this.deleteBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.FullInfo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -310,12 +311,27 @@
             this.NgayBay_chkBox.UseVisualStyleBackColor = true;
             this.NgayBay_chkBox.CheckedChanged += new System.EventHandler(this.NgayBay_chkBox_CheckedChanged);
             // 
+            // deleteBtn
+            // 
+            this.deleteBtn.BackColor = System.Drawing.Color.Red;
+            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.deleteBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.deleteBtn.ForeColor = System.Drawing.Color.White;
+            this.deleteBtn.Location = new System.Drawing.Point(971, 657);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(97, 35);
+            this.deleteBtn.TabIndex = 47;
+            this.deleteBtn.Text = "Hủy Vé";
+            this.deleteBtn.UseVisualStyleBackColor = false;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
             // TraCuuVeMayBayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1099, 704);
+            this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.NgayBay_chkBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FullInfo);
@@ -374,5 +390,6 @@
         private DataGridView FullInfo;
         private Label label1;
         private CheckBox NgayBay_chkBox;
+        private Button deleteBtn;
     }
 }
