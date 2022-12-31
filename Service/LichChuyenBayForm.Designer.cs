@@ -91,7 +91,7 @@
             // 
             this.CreatedDate1_txtBox.BackColor = System.Drawing.Color.White;
             this.CreatedDate1_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.CreatedDate1_txtBox.Location = new System.Drawing.Point(196, 61);
+            this.CreatedDate1_txtBox.Location = new System.Drawing.Point(199, 87);
             this.CreatedDate1_txtBox.Name = "CreatedDate1_txtBox";
             this.CreatedDate1_txtBox.Size = new System.Drawing.Size(178, 20);
             this.CreatedDate1_txtBox.TabIndex = 1;
