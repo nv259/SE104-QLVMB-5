@@ -349,7 +349,7 @@
             this.MaximizeBox = false;
             this.Name = "Bill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "BillForm";
+            this.Text = "Bill";
             this.Load += new System.EventHandler(this.cb_cmbBox_SelectedIndexChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
