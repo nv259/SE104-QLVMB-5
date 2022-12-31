@@ -177,7 +177,7 @@ namespace Service
             else
             {
                 string query = "SELECT * FROM [dbo].NGUOIDUNG WHERE MaDangNhap != @MaDangNhap AND Email = @Email ";
-                if (DataProvider.Instance.ExecuteQuery(query, new object[] { userName_txtBox.Text.ToString().TrimEnd(), email_txtBox.Text.ToString() }).Rows.Count > 0)
+                if (DataProvider.Instance.ExecuteQuery(query, new object[] { username_txtBox.Text.ToString().TrimEnd(), email_txtBox.Text.ToString() }).Rows.Count > 0)
                 {
                     MessageBox.Show("Email bạn nhập đã được đăng ký bởi người dùng khác!");
                     return false;
