@@ -156,7 +156,7 @@ namespace Service
             else
             {
                 string query = "SELECT * FROM [dbo].NGUOIDUNG WHERE MaDangNhap != @MaDangNhap AND DinhDanh = @DinhDanh ";
-                if (DataProvider.Instance.ExecuteQuery(query, new object[] { userName_txtBox.Text.ToString().TrimEnd(), national_id }).Rows.Count > 0)
+                if (DataProvider.Instance.ExecuteQuery(query, new object[] { username_txtBox.Text.ToString().TrimEnd(), national_id }).Rows.Count > 0)
                 {
                     MessageBox.Show("Mã định danh / CCCD bạn nhập đã được đăng ký bởi người dùng khác!");
                     return false;
