@@ -84,7 +84,11 @@ namespace Service
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string maCB = this.cb_txtBox.Text.Trim();
+            string maCB;
+            if (this.acc != null)
+                maCB = this.cb_txtBox.Text.Trim();
+            else
+                maCB = this.chuyenBayComboBox.Text.Trim();
             string ticket_type = this.ticket_cmbBox.Text.Trim();
             string fName = this.name_txtBox.Text;
             string id = this.ID_txtBox.Text;
@@ -94,7 +98,8 @@ namespace Service
             string query = "SELECT SoLuong FROM [dbo].CT_HANGVE cthv JOIN [dbo].CHUYENBAY cb ON cthv.MaChuyenBay = cb.MaChuyenBay " +
                             "JOIN [dbo].HANGVE hv ON cthv.MaHangVe = hv.MaHangVe " + "WHERE cthv.MaChuyenBay = @maCB AND hv.TenHangVe = @TenHangVe";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { maCB, ticket_type });
-
+            textBox4.Text = maCB;
+            textBox6.Text = ticket_type;
             Int16 total = 0;
             foreach (DataRow dr in dt.Rows)
             {
@@ -126,19 +131,19 @@ namespace Service
 
                 if (acc == null) // is staff
                 {
-                    try
+                    //try
                     {
-                        query = "INSERT INTO [dbo].BANVE VALUES( @maCB, @MaHangVe, @NgLap, @TenKhachHang, @DinhDanh, @SoDienThoai, @Email)";
+                        query = "INSERT INTO [dbo].BANVE VALUES( @maCB , @MaHangVe , @NgLap , @TenKhachHang , @DinhDanh , @SoDienThoai , @Email )";
                         dt = DataProvider.Instance.ExecuteQuery(query, new object[] { maCB, MaHangVe, this.ngDatVeBox.Text, fName, id, phone, email });
-                        query = "INSERT INTO [dbo].CT_DATVE (MaChuyenBay, MaHangVe, NgayLap, TinhTrang" +
+                        query = "INSERT INTO [dbo].CT_DATVE (MaChuyenBay, MaHangVe, NgayLap, TinhTrang) " +
                             "VALUES( @maCB , @MaHangVe , @NgLap , @TinhTrang )";
                         dt = DataProvider.Instance.ExecuteQuery(query, new object[] { maCB, MaHangVe, this.ngDatVeBox.Text, "Done" });
                         MessageBox.Show("Vé đã được đặt thành công!");
                     }
-                    catch
-                    {
-                        MessageBox.Show("Error: Mỗi hành khách chỉ được đặt một vé. Hãy hủy vé cũ trước khi đặt vé mới.");
-                    }
+                    //catch
+                    //{
+                    //    MessageBox.Show("Error: Mỗi hành khách chỉ được đặt một vé. Hãy hủy vé cũ trước khi đặt vé mới.");
+                    //}
 
                 } else // is user
                 try
