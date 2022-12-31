@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.userName_txtBox = new System.Windows.Forms.TextBox();
+            this.username_txtBox = new System.Windows.Forms.TextBox();
             this.userRole_comboBox = new System.Windows.Forms.ComboBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.txtBox4 = new System.Windows.Forms.TextBox();
             this.Add_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // userName_txtBox
+            // username_txtBox
             // 
-            this.userName_txtBox.BackColor = System.Drawing.Color.White;
-            this.userName_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userName_txtBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.userName_txtBox.Location = new System.Drawing.Point(12, 41);
-            this.userName_txtBox.Name = "userName_txtBox";
-            this.userName_txtBox.Size = new System.Drawing.Size(209, 30);
-            this.userName_txtBox.TabIndex = 22;
+            this.username_txtBox.BackColor = System.Drawing.Color.White;
+            this.username_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.username_txtBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.username_txtBox.Location = new System.Drawing.Point(12, 41);
+            this.username_txtBox.Name = "username_txtBox";
+            this.username_txtBox.Size = new System.Drawing.Size(209, 30);
+            this.username_txtBox.TabIndex = 22;
             // 
             // userRole_comboBox
             // 
@@ -107,7 +107,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(393, 123);
             this.Controls.Add(this.Add_btn);
-            this.Controls.Add(this.userName_txtBox);
+            this.Controls.Add(this.username_txtBox);
             this.Controls.Add(this.userRole_comboBox);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.txtBox4);
@@ -128,5 +128,6 @@
         private TextBox textBox3;
         private TextBox txtBox4;
         private Button Add_btn;
+        private TextBox username_txtBox;
     }
 }
