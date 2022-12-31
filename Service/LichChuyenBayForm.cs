@@ -280,7 +280,7 @@ namespace Service
                 string ghichu = row.Cells["Ghi chú"].Value.ToString();
 
                 query = "INSERT INTO [dbo].TRUNGGIAN VALUES ( @trunggian , @MaChuyenBay , @thoigiandung , @ghichu )";
-                DataProvider.Instance.ExecuteNonQuery(query, new object[] { trunggian , MaChuyenBay , thoigiandung, ghichu });
+                DataProvider.Instance.ExecuteNonQuery(query, new object[] { MASANBAY(trunggian) , MaChuyenBay , thoigiandung, ghichu });
             }
 
             MessageBox.Show("Đã ghi nhận chuyến bay thành công!");
