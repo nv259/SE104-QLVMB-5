@@ -65,6 +65,7 @@
             this.publicAnnoucementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cancelTicket_Btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -83,7 +84,7 @@
             this.RecordFlightBtn.ForeColor = System.Drawing.Color.White;
             this.RecordFlightBtn.Location = new System.Drawing.Point(11, 341);
             this.RecordFlightBtn.Name = "RecordFlightBtn";
-            this.RecordFlightBtn.Size = new System.Drawing.Size(244, 252);
+            this.RecordFlightBtn.Size = new System.Drawing.Size(160, 252);
             this.RecordFlightBtn.TabIndex = 0;
             this.RecordFlightBtn.Text = "Ghi nhận chuyến bay";
             this.RecordFlightBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -111,9 +112,9 @@
             this.changeRuleBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.changeRuleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.changeRuleBtn.ForeColor = System.Drawing.Color.White;
-            this.changeRuleBtn.Location = new System.Drawing.Point(261, 341);
+            this.changeRuleBtn.Location = new System.Drawing.Point(343, 341);
             this.changeRuleBtn.Name = "changeRuleBtn";
-            this.changeRuleBtn.Size = new System.Drawing.Size(241, 252);
+            this.changeRuleBtn.Size = new System.Drawing.Size(159, 252);
             this.changeRuleBtn.TabIndex = 2;
             this.changeRuleBtn.Text = "Thay đổi quy định";
             this.changeRuleBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -195,9 +196,9 @@
             this.pictureBox4.BackgroundImage = global::Service.Properties.Resources.change;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Location = new System.Drawing.Point(312, 382);
+            this.pictureBox4.Location = new System.Drawing.Point(381, 416);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(126, 120);
+            this.pictureBox4.Size = new System.Drawing.Size(95, 92);
             this.pictureBox4.TabIndex = 8;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
@@ -208,9 +209,9 @@
             this.pictureBox5.BackgroundImage = global::Service.Properties.Resources.notes;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Location = new System.Drawing.Point(68, 382);
+            this.pictureBox5.Location = new System.Drawing.Point(40, 403);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(128, 120);
+            this.pictureBox5.Size = new System.Drawing.Size(104, 105);
             this.pictureBox5.TabIndex = 9;
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
@@ -564,12 +565,28 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // cancelTicket_Btn
+            // 
+            this.cancelTicket_Btn.BackColor = System.Drawing.Color.RosyBrown;
+            this.cancelTicket_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cancelTicket_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelTicket_Btn.ForeColor = System.Drawing.Color.White;
+            this.cancelTicket_Btn.Location = new System.Drawing.Point(177, 341);
+            this.cancelTicket_Btn.Name = "cancelTicket_Btn";
+            this.cancelTicket_Btn.Size = new System.Drawing.Size(160, 252);
+            this.cancelTicket_Btn.TabIndex = 12;
+            this.cancelTicket_Btn.Text = "Hủy vé";
+            this.cancelTicket_Btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.cancelTicket_Btn.UseVisualStyleBackColor = false;
+            this.cancelTicket_Btn.Click += new System.EventHandler(this.cancelTicket_Btn_Click);
+            // 
             // StaffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(964, 605);
+            this.Controls.Add(this.cancelTicket_Btn);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.userInfo_pnl);
             this.Controls.Add(this.pictureBox5);
@@ -640,5 +657,6 @@
         private ToolStripMenuItem publicAnnoucementToolStripMenuItem;
         private ToolStripMenuItem logoutToolStripMenuItem;
         private ToolStripMenuItem exitToolStripMenuItem;
+        private Button cancelTicket_Btn;
     }
 }
