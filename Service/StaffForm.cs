@@ -22,19 +22,19 @@ namespace Service
 
             this.account = account;
             fullName_txtBox.Text = account.TenNguoiDung;
-            userName_txtBox.Text = account.MaDangNhap;
+            username_txtBox.Text = account.MaDangNhap;
             BirthDay.Value = account.NgaySinh;
             email_txtBox.Text = account.Email;
             phoneNumber_txtBox.Text = account.Sdt;
             ID_txtBox.Text = account.DinhDanh;
 
-            ChangePass.Checked = false;
+            ChangePass_chkBox.Checked = false;
             OldPassword_txtBox.Enabled = false;
             OldPassword_txtBox.BackColor = Color.LightGray;
-            NewPassword.Enabled = false;
-            NewPassword.BackColor = Color.LightGray;
-            ConfirmNewPassword.Enabled = false;
-            ConfirmNewPassword.BackColor = Color.LightGray;
+            NewPassword_txtBox.Enabled = false;
+            NewPassword_txtBox.BackColor = Color.LightGray;
+            ConfirmNewPassword_txtBox.Enabled = false;
+            ConfirmNewPassword_txtBox.BackColor = Color.LightGray;
         }
 
         Account account;
@@ -81,22 +81,22 @@ namespace Service
 
         private void ChangePass_Btn_CheckedChanged(object sender, EventArgs e)
         {
-            if (!ChangePass.Checked)
+            if (!ChangePass_chkBox.Checked)
             {
                 OldPassword_txtBox.Enabled = false;
                 OldPassword_txtBox.BackColor = Color.LightGray;
-                NewPassword.Enabled = false;
-                NewPassword.BackColor = Color.LightGray;
-                ConfirmNewPassword.Enabled = false;
-                ConfirmNewPassword.BackColor = Color.LightGray;
+                NewPassword_txtBox.Enabled = false;
+                NewPassword_txtBox.BackColor = Color.LightGray;
+                ConfirmNewPassword_txtBox.Enabled = false;
+                ConfirmNewPassword_txtBox.BackColor = Color.LightGray;
             } else
             {
                 OldPassword_txtBox.Enabled = true;
                 OldPassword_txtBox.BackColor = Color.White;
-                NewPassword.Enabled = true;
-                NewPassword.BackColor = Color.White;
-                ConfirmNewPassword.Enabled = true;
-                ConfirmNewPassword.BackColor = Color.White;
+                NewPassword_txtBox.Enabled = true;
+                NewPassword_txtBox.BackColor = Color.White;
+                ConfirmNewPassword_txtBox.Enabled = true;
+                ConfirmNewPassword_txtBox.BackColor = Color.White;
             }
         }
 
