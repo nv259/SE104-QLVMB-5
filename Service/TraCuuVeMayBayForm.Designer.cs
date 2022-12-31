@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TraCuuVeMayBayForm));
             this.to_comboBox = new System.Windows.Forms.ComboBox();
             this.flightdate_Dtp = new System.Windows.Forms.DateTimePicker();
@@ -40,14 +40,14 @@
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.flight_comboBox = new System.Windows.Forms.ComboBox();
             this.from_comboBox = new System.Windows.Forms.ComboBox();
-            this.FullInfo = new System.Windows.Forms.DataGridView();
+            this.bookinglist_Dgv = new System.Windows.Forms.DataGridView();
             this.LookUp_label = new System.Windows.Forms.Label();
             this.flightdate_chkBox = new System.Windows.Forms.CheckBox();
             this.delete_Btn = new System.Windows.Forms.Button();
             this.BookingDate_txtBox = new System.Windows.Forms.TextBox();
             this.bookingdate_Dtp = new System.Windows.Forms.DateTimePicker();
             this.bookingdate_chkBox = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.FullInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookinglist_Dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // to_comboBox
@@ -134,53 +134,53 @@
             this.from_comboBox.TabStop = false;
             this.from_comboBox.SelectedIndexChanged += new System.EventHandler(this.from_comboBox_SelectedIndexChanged);
             // 
-            // FullInfo
+            // bookinglist_Dgv
             // 
-            this.FullInfo.AllowUserToAddRows = false;
-            this.FullInfo.AllowUserToDeleteRows = false;
-            this.FullInfo.AllowUserToResizeColumns = false;
-            this.FullInfo.AllowUserToResizeRows = false;
-            this.FullInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.FullInfo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.FullInfo.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FullInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.FullInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.FullInfo.DefaultCellStyle = dataGridViewCellStyle2;
-            this.FullInfo.EnableHeadersVisualStyles = false;
-            this.FullInfo.GridColor = System.Drawing.Color.White;
-            this.FullInfo.Location = new System.Drawing.Point(26, 222);
-            this.FullInfo.MultiSelect = false;
-            this.FullInfo.Name = "FullInfo";
-            this.FullInfo.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.RosyBrown;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FullInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.FullInfo.RowHeadersVisible = false;
-            this.FullInfo.RowHeadersWidth = 51;
-            this.FullInfo.RowTemplate.Height = 29;
-            this.FullInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.FullInfo.Size = new System.Drawing.Size(1042, 470);
-            this.FullInfo.TabIndex = 23;
-            this.FullInfo.TabStop = false;
+            this.bookinglist_Dgv.AllowUserToAddRows = false;
+            this.bookinglist_Dgv.AllowUserToDeleteRows = false;
+            this.bookinglist_Dgv.AllowUserToResizeColumns = false;
+            this.bookinglist_Dgv.AllowUserToResizeRows = false;
+            this.bookinglist_Dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.bookinglist_Dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.bookinglist_Dgv.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bookinglist_Dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.bookinglist_Dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bookinglist_Dgv.DefaultCellStyle = dataGridViewCellStyle5;
+            this.bookinglist_Dgv.EnableHeadersVisualStyles = false;
+            this.bookinglist_Dgv.GridColor = System.Drawing.Color.White;
+            this.bookinglist_Dgv.Location = new System.Drawing.Point(26, 222);
+            this.bookinglist_Dgv.MultiSelect = false;
+            this.bookinglist_Dgv.Name = "bookinglist_Dgv";
+            this.bookinglist_Dgv.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.RosyBrown;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bookinglist_Dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.bookinglist_Dgv.RowHeadersVisible = false;
+            this.bookinglist_Dgv.RowHeadersWidth = 51;
+            this.bookinglist_Dgv.RowTemplate.Height = 29;
+            this.bookinglist_Dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.bookinglist_Dgv.Size = new System.Drawing.Size(1042, 470);
+            this.bookinglist_Dgv.TabIndex = 23;
+            this.bookinglist_Dgv.TabStop = false;
             // 
             // LookUp_label
             // 
@@ -260,7 +260,7 @@
             this.Controls.Add(this.delete_Btn);
             this.Controls.Add(this.flightdate_chkBox);
             this.Controls.Add(this.LookUp_label);
-            this.Controls.Add(this.FullInfo);
+            this.Controls.Add(this.bookinglist_Dgv);
             this.Controls.Add(this.from_comboBox);
             this.Controls.Add(this.flight_comboBox);
             this.Controls.Add(this.textBox16);
@@ -274,7 +274,7 @@
             this.Name = "TraCuuVeMayBayForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tra cứu vé máy bay";
-            ((System.ComponentModel.ISupportInitialize)(this.FullInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookinglist_Dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,7 +289,7 @@
         private TextBox textBox16;
         private ComboBox flight_comboBox;
         private ComboBox from_comboBox;
-        private DataGridView FullInfo;
+        private DataGridView bookinglist_Dgv;
         private Label LookUp_label;
         private CheckBox flightdate_chkBox;
         private Button delete_Btn;

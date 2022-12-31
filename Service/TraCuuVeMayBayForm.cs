@@ -117,20 +117,20 @@ namespace Service
                 }
             }
 
-            FullInfo.Rows.Clear();
-            FullInfo.ColumnCount = 8;
-            FullInfo.Columns[0].Name = "Mã chuyến bay";
-            FullInfo.Columns[1].Name = "Bay từ";
-            FullInfo.Columns[2].Name = "Bay đến";
-            FullInfo.Columns[3].Name = "Ngày giờ bay";
-            FullInfo.Columns[4].Name = "Thời gian bay";
-            FullInfo.Columns[5].Name = "Hạng vé";
-            FullInfo.Columns[6].Name = "Ngày lập vé";
-            FullInfo.Columns[7].Name = "Tình trạng vé";
+            bookinglist_Dgv.Rows.Clear();
+            bookinglist_Dgv.ColumnCount = 8;
+            bookinglist_Dgv.Columns[0].Name = "Mã chuyến bay";
+            bookinglist_Dgv.Columns[1].Name = "Bay từ";
+            bookinglist_Dgv.Columns[2].Name = "Bay đến";
+            bookinglist_Dgv.Columns[3].Name = "Ngày giờ bay";
+            bookinglist_Dgv.Columns[4].Name = "Thời gian bay";
+            bookinglist_Dgv.Columns[5].Name = "Hạng vé";
+            bookinglist_Dgv.Columns[6].Name = "Ngày lập vé";
+            bookinglist_Dgv.Columns[7].Name = "Tình trạng vé";
 
             foreach(DataRow dr in dt.Rows)
             {
-                FullInfo.Rows.Add(dr["MaChuyenBay"].ToString(), dr["MaSanBayDi"].ToString(), dr["MaSanBayDen"].ToString(), dr["NgayGioBay"].ToString(), dr["ThoiGianBay"].ToString(), dr["TenHangVe"].ToString(), dr["NgayLap"].ToString(), dr["TinhTrang"].ToString());
+                bookinglist_Dgv.Rows.Add(dr["MaChuyenBay"].ToString(), dr["MaSanBayDi"].ToString(), dr["MaSanBayDen"].ToString(), dr["NgayGioBay"].ToString(), dr["ThoiGianBay"].ToString(), dr["TenHangVe"].ToString(), dr["NgayLap"].ToString(), dr["TinhTrang"].ToString());
             }
         }
 
@@ -163,10 +163,9 @@ namespace Service
 
             try
             {
+                string maCB = Convert.ToString(bookinglist_Dgv.Rows[bookinglist_Dgv.SelectedRows[0].Index].Cells[0].Value);
 
-                string maCB = Convert.ToString(FullInfo.Rows[FullInfo.SelectedRows[0].Index].Cells[0].Value);
-
-                DateTime NgayGioBay = Convert.ToDateTime(FullInfo.Rows[FullInfo.SelectedRows[0].Index].Cells[3].Value);
+                DateTime NgayGioBay = Convert.ToDateTime(bookinglist_Dgv.Rows[bookinglist_Dgv.SelectedRows[0].Index].Cells[3].Value);
                 TimeSpan chk = NgayGioBay.Subtract(DateTime.Now);
 
                 string query = "SELECT * FROM [dbo].THAMSO ";
