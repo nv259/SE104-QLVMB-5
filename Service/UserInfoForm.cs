@@ -23,19 +23,19 @@ namespace Service
             this.account = account;
             InitializeComponent();
 
-            this.usernameTxtBox.Text = account.MaDangNhap;
-            this.fullNameTxtBox.Text = account.TenNguoiDung;
-            this.idTxtBox.Text = account.DinhDanh;
-            this.emailTxtBox.Text = account.Email;
-            this.phoneTxtBox.Text = account.Sdt;
-            this.NgaySinh.Value = account.NgaySinh;
+            this.username_txtBox.Text = account.MaDangNhap;
+            this.fullname_txtBox.Text = account.TenNguoiDung;
+            this.id_txtBox.Text = account.DinhDanh;
+            this.email_txtBox.Text = account.Email;
+            this.phonenumber_txtBox.Text = account.Sdt;
+            this.birthday_Dtp.Value = account.NgaySinh;
 
-            this.oldPasswordTxtBox.Enabled = false;
-            this.oldPasswordTxtBox.BackColor = Color.LightGray;
-            this.newPasswordTxtBox.Enabled = false;
-            this.newPasswordTxtBox.BackColor = Color.LightGray;
-            this.confirmnewPasswordTxtBox.Enabled = false;
-            this.confirmnewPasswordTxtBox.BackColor = Color.LightGray;
+            this.oldPassword_txtBox.Enabled = false;
+            this.oldPassword_txtBox.BackColor = Color.LightGray;
+            this.newPassword_txtBox.Enabled = false;
+            this.newPassword_txtBox.BackColor = Color.LightGray;
+            this.confirmnewPassword_txtBox.Enabled = false;
+            this.confirmnewPassword_txtBox.BackColor = Color.LightGray;
         }
 
         Account account;
@@ -82,7 +82,7 @@ namespace Service
 
         private bool CheckAll()
         {
-            string national_id = idTxtBox.Text.ToString();
+            string national_id = id_txtBox.Text.ToString();
             if (national_id.Length == 0)
             {
                 MessageBox.Show("Mã định danh / CCCD không được để trống!");
@@ -96,7 +96,7 @@ namespace Service
             else
             {
                 string query = "SELECT * FROM [dbo].NGUOIDUNG WHERE MaDangNhap != @MaDangNhap AND DinhDanh = @DinhDanh ";
-                if (DataProvider.Instance.ExecuteQuery(query, new object[] { usernameTxtBox.Text.ToString().TrimEnd(), national_id }).Rows.Count > 0)
+                if (DataProvider.Instance.ExecuteQuery(query, new object[] { username_txtBox.Text.ToString().TrimEnd(), national_id }).Rows.Count > 0)
                 {
                     MessageBox.Show("Mã định danh / CCCD bạn nhập đã được đăng ký bởi người dùng khác!");
                     return false;
@@ -104,25 +104,25 @@ namespace Service
             }
             Regex validate_emailaddress = email_validation();
 
-            if (emailTxtBox.Text.Length == 0)
+            if (email_txtBox.Text.Length == 0)
             {
                 MessageBox.Show("Email không được để trống!");
                 return false;
-            } else if (validate_emailaddress.IsMatch(emailTxtBox.Text.Trim()) != true)
+            } else if (validate_emailaddress.IsMatch(email_txtBox.Text.Trim()) != true)
             {
                 MessageBox.Show("Email không đúng định dạng!");
                 return false;
             } else
             {
                 string query = "SELECT * FROM [dbo].NGUOIDUNG WHERE MaDangNhap != @MaDangNhap AND Email = @Email ";
-                if (DataProvider.Instance.ExecuteQuery(query, new object[] { usernameTxtBox.Text.ToString().TrimEnd() , emailTxtBox.Text.ToString() }).Rows.Count > 0)
+                if (DataProvider.Instance.ExecuteQuery(query, new object[] { username_txtBox.Text.ToString().TrimEnd() , email_txtBox.Text.ToString() }).Rows.Count > 0)
                 {
                     MessageBox.Show("Email bạn nhập đã được đăng ký bởi người dùng khác!");
                     return false;
                 }
             }
 
-            string phone_number = phoneTxtBox.Text.ToString();
+            string phone_number = phonenumber_txtBox.Text.ToString();
             if (phone_number.Length == 0)
             {
                 MessageBox.Show("Số điện thoại không được để trống!");
@@ -134,18 +134,18 @@ namespace Service
             } else
             {
                 string query = "SELECT * FROM [dbo].NGUOIDUNG WHERE MaDangNhap != @MaDangNhap AND SoDienThoai = @SoDienThoai ";
-                if (DataProvider.Instance.ExecuteQuery(query, new object[] { usernameTxtBox.Text.ToString().TrimEnd(), phone_number }).Rows.Count > 0)
+                if (DataProvider.Instance.ExecuteQuery(query, new object[] { username_txtBox.Text.ToString().TrimEnd(), phone_number }).Rows.Count > 0)
                 {
                     MessageBox.Show("Số điện thoại bạn nhập đã được đăng ký bởi người dùng khác!");
                     return false;
                 }
             }
 
-            if (changePasswordCkBox.Checked)
+            if (changePassword_chkBox.Checked)
             {
-                string oldPassword = Convert_to_SHA512(this.oldPasswordTxtBox.Text);
-                string newPassword = this.newPasswordTxtBox.Text;
-                string confirmnewPassword = this.confirmnewPasswordTxtBox.Text;
+                string oldPassword = Convert_to_SHA512(this.oldPassword_txtBox.Text);
+                string newPassword = this.newPassword_txtBox.Text;
+                string confirmnewPassword = this.confirmnewPassword_txtBox.Text;
                 if (oldPassword != account.MatKhau)
                 {
                     MessageBox.Show("Mật khẩu cũ không khớp!");
@@ -163,13 +163,13 @@ namespace Service
                 }
             }
 
-            if (fullNameTxtBox.Text.Length == 0)
+            if (fullname_txtBox.Text.Length == 0)
             {
                 MessageBox.Show("Tên người dùng không được để trống!");
                 return false;
             }
 
-            string[] chk = fullNameTxtBox.Text.Trim().Split(' ');
+            string[] chk = fullname_txtBox.Text.Trim().Split(' ');
             foreach (string s in chk)
             {
                 if (s.Length < 2)
@@ -198,7 +198,7 @@ namespace Service
                     }
             }
 
-            if (CalculateAge(NgaySinh.Value, DateTime.Now) < 18)
+            if (CalculateAge(birthday_Dtp.Value, DateTime.Now) < 18)
             {
                 MessageBox.Show("Ngày sinh không hợp lệ (Phải đủ 18 tuổi trở lên)!");
                 return false;
@@ -209,22 +209,22 @@ namespace Service
 
         private void changePasswordCkBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (changePasswordCkBox.Checked)
+            if (changePassword_chkBox.Checked)
             {
-                this.oldPasswordTxtBox.Enabled = true;
-                this.oldPasswordTxtBox.BackColor = SystemColors.Control;
-                this.newPasswordTxtBox.Enabled = true;
-                this.newPasswordTxtBox.BackColor = SystemColors.Control;
-                this.confirmnewPasswordTxtBox.Enabled = true;
-                this.confirmnewPasswordTxtBox.BackColor = SystemColors.Control;
+                this.oldPassword_txtBox.Enabled = true;
+                this.oldPassword_txtBox.BackColor = SystemColors.Control;
+                this.newPassword_txtBox.Enabled = true;
+                this.newPassword_txtBox.BackColor = SystemColors.Control;
+                this.confirmnewPassword_txtBox.Enabled = true;
+                this.confirmnewPassword_txtBox.BackColor = SystemColors.Control;
             } else
             {
-                this.oldPasswordTxtBox.Enabled = false;
-                this.oldPasswordTxtBox.BackColor = Color.LightGray;
-                this.newPasswordTxtBox.Enabled = false;
-                this.newPasswordTxtBox.BackColor = Color.LightGray;
-                this.confirmnewPasswordTxtBox.Enabled = false;
-                this.confirmnewPasswordTxtBox.BackColor = Color.LightGray;
+                this.oldPassword_txtBox.Enabled = false;
+                this.oldPassword_txtBox.BackColor = Color.LightGray;
+                this.newPassword_txtBox.Enabled = false;
+                this.newPassword_txtBox.BackColor = Color.LightGray;
+                this.confirmnewPassword_txtBox.Enabled = false;
+                this.confirmnewPassword_txtBox.BackColor = Color.LightGray;
             }
         }
 
@@ -233,21 +233,21 @@ namespace Service
             if (!CheckAll()) return;
 
             string MaDangNhap, MatKhau, TenNguoiDung, DinhDanh, SoDienThoai, Email;
-            MaDangNhap = this.usernameTxtBox.Text;
-            TenNguoiDung = this.fullNameTxtBox.Text.Trim();
+            MaDangNhap = this.username_txtBox.Text;
+            TenNguoiDung = this.fullname_txtBox.Text.Trim();
             
-            if (changePasswordCkBox.Checked)
+            if (changePassword_chkBox.Checked)
             {
-                MatKhau = Convert_to_SHA512(this.newPasswordTxtBox.Text);
+                MatKhau = Convert_to_SHA512(this.newPassword_txtBox.Text);
             } else
             {
                 MatKhau = account.MatKhau;
             }
 
-            DinhDanh = this.idTxtBox.Text;
-            SoDienThoai = this.phoneTxtBox.Text.Trim();
-            Email = this.emailTxtBox.Text;
-            DateTime NgaySinh1 = NgaySinh.Value; 
+            DinhDanh = this.id_txtBox.Text;
+            SoDienThoai = this.phonenumber_txtBox.Text.Trim();
+            Email = this.email_txtBox.Text;
+            DateTime NgaySinh1 = birthday_Dtp.Value; 
             
             string query = "UPDATE [dbo].NGUOIDUNG SET MatKhau = @MatKhau , TenNguoiDung = @TenNguoiDung , DinhDanh = @DinhDanh , SoDienThoai = @SoDienThoai , Email = @Email , NgaySinh = @NgaySinh WHERE MaDangNhap = @MaDangNhap ";
             object i = DataProvider.Instance.ExecuteNonQuery(query, new object[] { MatKhau, TenNguoiDung, DinhDanh, SoDienThoai, Email , NgaySinh1.ToString("yyyy-MM-dd") , MaDangNhap });
