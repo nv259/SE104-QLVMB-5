@@ -188,7 +188,7 @@ namespace Service
             timeGoneTxtBox.Text = "";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ExitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
