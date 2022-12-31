@@ -90,6 +90,48 @@ namespace Service
             MaHV_TD_comboBox.EndUpdate();
             MaHV_Xoa_comboBox.EndUpdate();
             HangVe_listView.EndUpdate();
+
+            if (MaSB_TD_comboBox.Items.Count == 0)
+            {
+                MaSB_TD_comboBox.Enabled = false;
+                TenSB_TD_txtBox.Enabled = false;
+                ThayDoiTTSB_Btn.Enabled = false;
+            } else
+            {
+                MaSB_TD_comboBox.Enabled = true;
+                TenSB_TD_txtBox.Enabled = true;
+                ThayDoiTTSB_Btn.Enabled = true;
+            }
+
+            if (MaSB_Xoa_comboBox.Items.Count < 2)
+            {
+                MaSB_Xoa_comboBox.Enabled = false;
+                XoaSanBay_Btn.Enabled = false;
+            }
+
+            if (MaHV_TD_comboBox.Items.Count == 0)
+            {
+                MaHV_TD_comboBox.Enabled = false;
+                TenHV_TD_txtBox.Enabled = false;
+                TLGV_TD_txtBox.Enabled = false;
+                ThayDoiTTHV_Btn.Enabled = false;
+            } else
+            {
+                MaHV_TD_comboBox.Enabled = true;
+                TenHV_TD_txtBox.Enabled = true;
+                TLGV_TD_txtBox.Enabled = true;
+                ThayDoiTTHV_Btn.Enabled = true;
+            }
+
+            if (MaHV_Xoa_comboBox.Items.Count <= 1)
+            {
+                MaHV_Xoa_comboBox.Enabled = false;
+                XoaHangVe_Btn.Enabled = false;
+            } else
+            {
+                MaHV_Xoa_comboBox.Enabled = true;
+                XoaHangVe_Btn.Enabled = true;
+            }
         }
 
         private void SoSBTGToiDa_chkBox_CheckedChanged(object sender, EventArgs e)
@@ -444,6 +486,25 @@ namespace Service
             SanBay_listView.EndUpdate();
 
             MessageBox.Show("Thêm sân bay thành công!");
+
+            if (MaSB_TD_comboBox.Items.Count == 0)
+            {
+                MaSB_TD_comboBox.Enabled = false;
+                TenSB_TD_txtBox.Enabled = false;
+                ThayDoiTTSB_Btn.Enabled = false;
+            }
+            else
+            {
+                MaSB_TD_comboBox.Enabled = true;
+                TenSB_TD_txtBox.Enabled = true;
+                ThayDoiTTSB_Btn.Enabled = true;
+            }
+
+            if (MaSB_Xoa_comboBox.Items.Count < 2)
+            {
+                MaSB_Xoa_comboBox.Enabled = false;
+                XoaSanBay_Btn.Enabled = false;
+            }
         }
         private void ThayDoiTTSB_Btn_Click(object sender, EventArgs e)
         {
@@ -512,10 +573,24 @@ namespace Service
                 return;
             }
 
+            string query = "SELECT * FROM [dbo].CHUYENBAY WHERE MaSanBayDi = @MaSanBay1 OR MaSanBayDen = @MaSanBay2 ";
+            if (DataProvider.Instance.ExecuteQuery(query, new object[] { MaSB_Xoa_comboBox.SelectedItem.ToString() , MaSB_Xoa_comboBox.SelectedItem.ToString() }).Rows.Count > 0)
+            {
+                MessageBox.Show("Không thể xóa sân bay này!");
+                return;
+            }
+
+            query = "SELECT * FROM [dbo].TRUNGGIAN WHERE MaSanBay = @MaSanBay ";
+            if (DataProvider.Instance.ExecuteQuery(query, new object[] { MaSB_Xoa_comboBox.SelectedItem.ToString() }).Rows.Count > 0)
+            {
+                MessageBox.Show("Không thể xóa sân bay này!");
+                return;
+            }
+
             string delete = "DELETE FROM [dbo].SANBAY WHERE MaSanBay = @MaSanBay ";
             DataProvider.Instance.ExecuteNonQuery(delete, new object[] { MaSB_Xoa_comboBox.SelectedItem.ToString() });
 
-            string query = "SELECT * FROM [dbo].SANBAY";
+            query = "SELECT * FROM [dbo].SANBAY";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
 
             MaSB_TD_comboBox.BeginUpdate();
@@ -537,6 +612,25 @@ namespace Service
             SanBay_listView.EndUpdate();
 
             MessageBox.Show("Xóa sân bay thành công!");
+
+            if (MaSB_TD_comboBox.Items.Count == 0)
+            {
+                MaSB_TD_comboBox.Enabled = false;
+                TenSB_TD_txtBox.Enabled = false;
+                ThayDoiTTSB_Btn.Enabled = false;
+            }
+            else
+            {
+                MaSB_TD_comboBox.Enabled = true;
+                TenSB_TD_txtBox.Enabled = true;
+                ThayDoiTTSB_Btn.Enabled = true;
+            }
+
+            if (MaSB_Xoa_comboBox.Items.Count < 2)
+            {
+                MaSB_Xoa_comboBox.Enabled = false;
+                XoaSanBay_Btn.Enabled = false;
+            }
         }
 
         private void ThemHangVe_Btn_Click(object sender, EventArgs e)
@@ -635,6 +729,32 @@ namespace Service
             HangVe_listView.EndUpdate();
 
             MessageBox.Show("Thêm hạng vé thành công!");
+
+            if (MaHV_TD_comboBox.Items.Count == 0)
+            {
+                MaHV_TD_comboBox.Enabled = false;
+                TenHV_TD_txtBox.Enabled = false;
+                TLGV_TD_txtBox.Enabled = false;
+                ThayDoiTTHV_Btn.Enabled = false;
+            }
+            else
+            {
+                MaHV_TD_comboBox.Enabled = true;
+                TenHV_TD_txtBox.Enabled = true;
+                TLGV_TD_txtBox.Enabled = true;
+                ThayDoiTTHV_Btn.Enabled = true;
+            }
+
+            if (MaHV_Xoa_comboBox.Items.Count <= 1)
+            {
+                MaHV_Xoa_comboBox.Enabled = false;
+                XoaHangVe_Btn.Enabled = false;
+            }
+            else
+            {
+                MaHV_Xoa_comboBox.Enabled = true;
+                XoaHangVe_Btn.Enabled = true;
+            }
         }
 
         private void MaHV_TD_comboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -723,10 +843,17 @@ namespace Service
                 return;
             }
 
+            string query = "SELECT * FROM [dbo].CT_HANGVE WHERE @MaHangVe = MaHangVe ";
+            if (DataProvider.Instance.ExecuteQuery(query, new object[] { MaHV_Xoa_comboBox.SelectedItem.ToString() }).Rows.Count > 0)
+            {
+                MessageBox.Show("Không thể xóa hạng vé này!");
+                return;
+            }
+
             string delete = "DELETE FROM [dbo].HANGVE WHERE MaHangVe = @MaHangVe ";
             DataProvider.Instance.ExecuteNonQuery(delete, new object[] { MaHV_Xoa_comboBox.SelectedItem.ToString() });
 
-            string query = "SELECT * FROM [dbo].HANGVE ";
+            query = "SELECT * FROM [dbo].HANGVE ";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
 
             MaHV_TD_comboBox.BeginUpdate();
@@ -748,6 +875,32 @@ namespace Service
             HangVe_listView.EndUpdate();
 
             MessageBox.Show("Xóa hạng vé thành công!");
+
+            if (MaHV_TD_comboBox.Items.Count == 0)
+            {
+                MaHV_TD_comboBox.Enabled = false;
+                TenHV_TD_txtBox.Enabled = false;
+                TLGV_TD_txtBox.Enabled = false;
+                ThayDoiTTHV_Btn.Enabled = false;
+            }
+            else
+            {
+                MaHV_TD_comboBox.Enabled = true;
+                TenHV_TD_txtBox.Enabled = true;
+                TLGV_TD_txtBox.Enabled = true;
+                ThayDoiTTHV_Btn.Enabled = true;
+            }
+
+            if (MaHV_Xoa_comboBox.Items.Count <= 1)
+            {
+                MaHV_Xoa_comboBox.Enabled = false;
+                XoaHangVe_Btn.Enabled = false;
+            }
+            else
+            {
+                MaHV_Xoa_comboBox.Enabled = true;
+                XoaHangVe_Btn.Enabled = true;
+            }
         }
     }
 }
