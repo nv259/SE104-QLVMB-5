@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bill));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chuyenBayComboBox = new System.Windows.Forms.ComboBox();
             this.cb_txtBox = new System.Windows.Forms.TextBox();
             this.Cost_txtBox = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
@@ -48,7 +49,6 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox14 = new System.Windows.Forms.TextBox();
-            this.chuyenBayComboBox = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +76,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(427, 281);
             this.panel1.TabIndex = 0;
+            // 
+            // chuyenBayComboBox
+            // 
+            this.chuyenBayComboBox.Location = new System.Drawing.Point(200, 25);
+            this.chuyenBayComboBox.Name = "chuyenBayComboBox";
+            this.chuyenBayComboBox.Size = new System.Drawing.Size(104, 28);
+            this.chuyenBayComboBox.TabIndex = 36;
             // 
             // cb_txtBox
             // 
@@ -301,13 +308,6 @@
             this.textBox14.TabStop = false;
             this.textBox14.Text = "Vé chuyến bay";
             this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // chuyenBayComboBox
-            // 
-            this.chuyenBayComboBox.Location = new System.Drawing.Point(200, 25);
-            this.chuyenBayComboBox.Name = "chuyenBayComboBox";
-            this.chuyenBayComboBox.Size = new System.Drawing.Size(104, 28);
-            this.chuyenBayComboBox.TabIndex = 36;
             // 
             // Bill
             // 
