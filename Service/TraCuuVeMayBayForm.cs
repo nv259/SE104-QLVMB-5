@@ -188,6 +188,7 @@ namespace Service
         {
             if (NgayBay_chkBox.Checked) NgayBay_datetime.Enabled = true;
             else NgayBay_datetime.Enabled = false;
+            ListAll();
         }
     }
 }

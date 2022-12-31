@@ -32,23 +32,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TraCuuVeMayBayForm));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.SanBayDen_comboBox = new System.Windows.Forms.ComboBox();
             this.NgayBay_datetime = new System.Windows.Forms.DateTimePicker();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
-            this.TenDangNhap_txtBox = new System.Windows.Forms.TextBox();
-            this.HoVaTen_txtBox = new System.Windows.Forms.TextBox();
-            this.Email_txtBox = new System.Windows.Forms.TextBox();
-            this.NgaySinh_txtBox = new System.Windows.Forms.TextBox();
-            this.MaDinhDanh_txtBox = new System.Windows.Forms.TextBox();
-            this.SoDienThoai_txtBox = new System.Windows.Forms.TextBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.ChuyenBay_comboBox = new System.Windows.Forms.ComboBox();
             this.SanBayDi_comboBox = new System.Windows.Forms.ComboBox();
@@ -58,78 +46,6 @@
             this.deleteBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.FullInfo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(60, 452);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TabStop = false;
-            this.textBox1.Text = "Tên đăng nhập:";
-            this.textBox1.Visible = false;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(798, 495);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 20);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.TabStop = false;
-            this.textBox2.Text = "Email:";
-            this.textBox2.Visible = false;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Location = new System.Drawing.Point(60, 495);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(82, 20);
-            this.textBox3.TabIndex = 3;
-            this.textBox3.TabStop = false;
-            this.textBox3.Text = "Họ và tên:";
-            this.textBox3.Visible = false;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Location = new System.Drawing.Point(60, 538);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(111, 20);
-            this.textBox4.TabIndex = 4;
-            this.textBox4.TabStop = false;
-            this.textBox4.Text = "Mã định danh:";
-            this.textBox4.Visible = false;
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Location = new System.Drawing.Point(798, 452);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(125, 20);
-            this.textBox5.TabIndex = 5;
-            this.textBox5.TabStop = false;
-            this.textBox5.Text = "Ngày sinh:";
-            this.textBox5.Visible = false;
-            // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.Color.White;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Location = new System.Drawing.Point(798, 538);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(125, 20);
-            this.textBox6.TabIndex = 6;
-            this.textBox6.TabStop = false;
-            this.textBox6.Text = "Số điện thoại:";
-            this.textBox6.Visible = false;
             // 
             // SanBayDen_comboBox
             // 
@@ -181,67 +97,6 @@
             this.textBox9.TabIndex = 12;
             this.textBox9.TabStop = false;
             this.textBox9.Text = "Ngày bay:";
-            // 
-            // TenDangNhap_txtBox
-            // 
-            this.TenDangNhap_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TenDangNhap_txtBox.Enabled = false;
-            this.TenDangNhap_txtBox.Location = new System.Drawing.Point(191, 450);
-            this.TenDangNhap_txtBox.Name = "TenDangNhap_txtBox";
-            this.TenDangNhap_txtBox.Size = new System.Drawing.Size(232, 27);
-            this.TenDangNhap_txtBox.TabIndex = 13;
-            this.TenDangNhap_txtBox.TabStop = false;
-            this.TenDangNhap_txtBox.Visible = false;
-            // 
-            // HoVaTen_txtBox
-            // 
-            this.HoVaTen_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.HoVaTen_txtBox.Enabled = false;
-            this.HoVaTen_txtBox.Location = new System.Drawing.Point(191, 493);
-            this.HoVaTen_txtBox.Name = "HoVaTen_txtBox";
-            this.HoVaTen_txtBox.Size = new System.Drawing.Size(232, 27);
-            this.HoVaTen_txtBox.TabIndex = 14;
-            this.HoVaTen_txtBox.Visible = false;
-            // 
-            // Email_txtBox
-            // 
-            this.Email_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Email_txtBox.Enabled = false;
-            this.Email_txtBox.Location = new System.Drawing.Point(917, 493);
-            this.Email_txtBox.Name = "Email_txtBox";
-            this.Email_txtBox.Size = new System.Drawing.Size(250, 27);
-            this.Email_txtBox.TabIndex = 15;
-            this.Email_txtBox.Visible = false;
-            // 
-            // NgaySinh_txtBox
-            // 
-            this.NgaySinh_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NgaySinh_txtBox.Enabled = false;
-            this.NgaySinh_txtBox.Location = new System.Drawing.Point(917, 450);
-            this.NgaySinh_txtBox.Name = "NgaySinh_txtBox";
-            this.NgaySinh_txtBox.Size = new System.Drawing.Size(250, 27);
-            this.NgaySinh_txtBox.TabIndex = 16;
-            this.NgaySinh_txtBox.Visible = false;
-            // 
-            // MaDinhDanh_txtBox
-            // 
-            this.MaDinhDanh_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MaDinhDanh_txtBox.Enabled = false;
-            this.MaDinhDanh_txtBox.Location = new System.Drawing.Point(191, 536);
-            this.MaDinhDanh_txtBox.Name = "MaDinhDanh_txtBox";
-            this.MaDinhDanh_txtBox.Size = new System.Drawing.Size(232, 27);
-            this.MaDinhDanh_txtBox.TabIndex = 17;
-            this.MaDinhDanh_txtBox.Visible = false;
-            // 
-            // SoDienThoai_txtBox
-            // 
-            this.SoDienThoai_txtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SoDienThoai_txtBox.Enabled = false;
-            this.SoDienThoai_txtBox.Location = new System.Drawing.Point(917, 536);
-            this.SoDienThoai_txtBox.Name = "SoDienThoai_txtBox";
-            this.SoDienThoai_txtBox.Size = new System.Drawing.Size(250, 27);
-            this.SoDienThoai_txtBox.TabIndex = 18;
-            this.SoDienThoai_txtBox.Visible = false;
             // 
             // textBox16
             // 
@@ -316,7 +171,7 @@
             this.FullInfo.RowHeadersWidth = 51;
             this.FullInfo.RowTemplate.Height = 29;
             this.FullInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.FullInfo.Size = new System.Drawing.Size(1029, 506);
+            this.FullInfo.Size = new System.Drawing.Size(1030, 506);
             this.FullInfo.TabIndex = 23;
             this.FullInfo.TabStop = false;
             // 
@@ -368,23 +223,11 @@
             this.Controls.Add(this.SanBayDi_comboBox);
             this.Controls.Add(this.ChuyenBay_comboBox);
             this.Controls.Add(this.textBox16);
-            this.Controls.Add(this.SoDienThoai_txtBox);
-            this.Controls.Add(this.MaDinhDanh_txtBox);
-            this.Controls.Add(this.NgaySinh_txtBox);
-            this.Controls.Add(this.Email_txtBox);
-            this.Controls.Add(this.HoVaTen_txtBox);
-            this.Controls.Add(this.TenDangNhap_txtBox);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.NgayBay_datetime);
             this.Controls.Add(this.SanBayDen_comboBox);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "TraCuuVeMayBayForm";
@@ -397,23 +240,11 @@
         }
 
         #endregion
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
         private ComboBox SanBayDen_comboBox;
         private DateTimePicker NgayBay_datetime;
         private TextBox textBox7;
         private TextBox textBox8;
         private TextBox textBox9;
-        private TextBox TenDangNhap_txtBox;
-        private TextBox HoVaTen_txtBox;
-        private TextBox Email_txtBox;
-        private TextBox NgaySinh_txtBox;
-        private TextBox MaDinhDanh_txtBox;
-        private TextBox SoDienThoai_txtBox;
         private TextBox textBox16;
         private ComboBox ChuyenBay_comboBox;
         private ComboBox SanBayDi_comboBox;
