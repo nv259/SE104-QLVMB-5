@@ -36,4 +36,4 @@ cũng phát sinh ra những sai sót không đáng có trong công việc quản
 điều vô cùng cần thiết. Do đó, nhóm quyết định thực hiện đề tài “Xây dựng phần
 mềm quản lý bán vé máy bay”
 ### 2.  Kiến trúc Hệ Thống
-![Kiến trúc hệ thống](https://raw.githubusercontent.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/KienTrucHeThong.png)
+![Kiến trúc hệ thống](https://github.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/KienTrucHeThong.png)
