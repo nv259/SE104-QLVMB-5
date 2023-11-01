@@ -22,4 +22,4 @@
 
 ## Về đồ án môn học:
 * **Chủ đề**: Xây dựng phần mềm quản lí bán vé máy bay
-* **Ngôn ngữ**: C#, SQL Server
+* **Ngôn ngữ được sử dụng**: C#, SQL Server
