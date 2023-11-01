@@ -40,9 +40,9 @@ mềm quản lý bán vé máy bay”
 ### 3. Sơ đồ logic SQL hoàn chỉnh
 ![](https://github.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/KienTrucHeThong.png)
 ### 4. Một số màn hình chức năng
-#### 4.1. Trang chủ dành cho khách hàng:
+#### 4.1. Màn hình trang chủ dành cho khách hàng:
 ![](https://github.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/TCKH.png)
-#### 4.2. Thêm người dùng dành cho quản trị viên:
+#### 4.2. Màn hình thêm người dùng dành cho quản trị viên:
 ![](https://github.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/ThemndQTV.png)
-#### 4.3. Trang chủ dành cho nhân viên bán vé:
+#### 4.3. Màn hình trang chủ dành cho nhân viên bán vé:
 ![](https://github.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/TCNV.png)
