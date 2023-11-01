@@ -14,7 +14,7 @@
 |   3   |21520117| Phan Trường Trí  |Thành viên |21520117@gm.uit.edu.vn|
 
 ## Giới thiệu môn học:
-* **Tên môn học:** Phân tích và thiết kế thuật toán
+* **Tên môn học:** Nhập môn Công nghệ phần mềm
 * **Mã môn học:** SE104
 * **Mã lớp:** SE104.N11.KHTN
 * **Năm học:** HK1 (2022 - 2023)
