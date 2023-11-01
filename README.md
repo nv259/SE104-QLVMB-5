@@ -7,13 +7,11 @@
 <h1 align="center"><b>SE104.N11.KHTN - Nhập môn Công nghệ phần mềm</b></h>
 
 ## Nhóm 5:
-<center>
 |**STT**|**MSSV**|   **Họ và tên**  |**Chức vụ**|       **Email**      |
 |-------|--------|------------------|-----------|----------------------|
 |   1   |21520378| Nguyễn Việt Nhật |Nhóm trưởng|21520378@gm.uit.edu.vn|
 |   2   |21520033|   Hà Văn Hoàng   |Thành viên |21520033@gm.uit.edu.vn|
 |   3   |21520117| Phan Trường Trí  |Thành viên |21520117@gm.uit.edu.vn|
-</center>
 
 ## Giới thiệu môn học:
 * **Tên môn học:** Nhập môn Công nghệ phần mềm
