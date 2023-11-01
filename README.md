@@ -36,13 +36,13 @@ cũng phát sinh ra những sai sót không đáng có trong công việc quản
 điều vô cùng cần thiết. Do đó, nhóm quyết định thực hiện đề tài “Xây dựng phần
 mềm quản lý bán vé máy bay”
 ### 2.  Kiến trúc Hệ Thống
-!(https://github.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/KienTrucHeThong.png)
+![](https://github.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/KienTrucHeThong.png)
 ### 3. Sơ đồ logic SQL hoàn chỉnh
-!(https://github.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/KienTrucHeThong.png)
+![](https://github.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/KienTrucHeThong.png)
 ### 4. Một số màn hình chức năng
 #### 4.1. Trang chủ dành cho khách hàng:
-!(https://github.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/TCKH.png)
+![](https://github.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/TCKH.png)
 #### 4.2. Thêm người dùng dành cho quản trị viên:
-!(https://github.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/ThemndQTV.png)
+![](https://github.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/ThemndQTV.png)
 #### 4.3. Trang chủ dành cho nhân viên bán vé:
-!(https://github.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/TCNV.png)
+![](https://github.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/TCNV.png)
