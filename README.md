@@ -24,7 +24,7 @@
 * **Chủ đề**: Xây dựng phần mềm quản lí bán vé máy bay
 * **Ngôn ngữ được sử dụng**: C#, SQL
 * **Chi tiết đồ án**: [Tại đây](https://github.com/nv259/SE104-QLVMB-5/blob/master/air_ticket_management_system.pdf)
-### Tổng quan:
+### 1. Tổng quan:
 Với sự tăng trưởng vượt trội của ngành du lịch hàng không trong thời gian
 gần đây, phát sinh nhu cầu được tương tác một cách hiệu quả giữa các hãng hàng
 không với khách hàng của mình. Bên cạnh đó, việc quản lý doanh thu cũng là một
@@ -35,3 +35,5 @@ cũng phát sinh ra những sai sót không đáng có trong công việc quản
 Để đáp ứng được những nhu cầu trên, một mô hình mua bán vé trực tuyến là
 điều vô cùng cần thiết. Do đó, nhóm quyết định thực hiện đề tài “Xây dựng phần
 mềm quản lý bán vé máy bay”
+### 2.  Kiến trúc Hệ Thống
+![Kiến trúc hệ thống]([https://raw.githubusercontent.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/KienTrucHeThong.png])
