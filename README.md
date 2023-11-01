@@ -23,3 +23,4 @@
 ## Về đồ án môn học:
 * **Chủ đề**: Xây dựng phần mềm quản lí bán vé máy bay
 * **Ngôn ngữ được sử dụng**: C#, SQL Server
+* **Chi tiết đồ án**: [Tại đây](https://github.com/nv259/SE104-QLVMB-5/blob/master/air_ticket_management_system.pdf)
