@@ -6,7 +6,7 @@
 
 <h1 align="center"><b>SE104.N11.KHTN - Nhập môn Công nghệ phần mềm</b></h>
 
-## Nhóm 8:
+## Nhóm 5:
 |**STT**|**MSSV**|   **Họ và tên**  |**Chức vụ**|       **Email**      |
 |-------|--------|------------------|-----------|----------------------|
 |   1   |21520378| Nguyễn Việt Nhật |Nhóm trưởng|21520378@gm.uit.edu.vn|
@@ -18,7 +18,7 @@
 * **Mã môn học:** SE104
 * **Mã lớp:** SE104.N11.KHTN
 * **Năm học:** HK1 (2022 - 2023)
-* **Giảng viên**: TS. Nguyễn Thị Thanh Tuyền
+* **Giảng viên**: TS. Đỗ Thị Thanh Tuyền
 
 ## Về đồ án môn học:
 * **Chủ đề**: Xây dựng phần mềm quản lí bán vé máy bay
