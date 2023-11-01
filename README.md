@@ -36,10 +36,10 @@ cũng phát sinh ra những sai sót không đáng có trong công việc quản
 điều vô cùng cần thiết. Do đó, nhóm quyết định thực hiện đề tài “Xây dựng phần
 mềm quản lý bán vé máy bay”
 ### 2.  Kiến trúc Hệ Thống
-![Kiến trúc hệ thống:](https://github.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/KienTrucHeThong.png)
+[Kiến trúc hệ thống:](https://github.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/KienTrucHeThong.png)
 ### 3. Sơ đồ logic SQL hoàn chỉnh
-![Sơ đồ logic hoàn chỉnh:](https://github.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/KienTrucHeThong.png)
+[Sơ đồ logic hoàn chỉnh:](https://github.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/KienTrucHeThong.png)
 ### 4. Một số màn hình chức năng
-![Trang chủ dành cho khách hàng:](https://github.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/TCKH.png)
+[Trang chủ dành cho khách hàng:](https://github.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/TCKH.png)
 ![Thêm người dùng dành cho quản trị viên:](https://github.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/ThemndQTV.png)
 ![Trang chủ dành cho nhân viên bán vé:](https://github.com/nv259/SE104-QLVMB-5/blob/master/readme-imgs/TCNV.png)
